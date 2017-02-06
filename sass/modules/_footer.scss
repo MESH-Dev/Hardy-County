@@ -1,0 +1,128 @@
+footer{
+	@include adelle-thin;
+	//font-size:1.6em; 
+	.top-bar{
+		background:$gray;
+
+		p{
+			color:$white;
+		}
+	}
+
+	.copyright{
+		float:left;
+		padding:0;
+		margin:0;
+		padding:15px 0;
+		
+	}
+
+	.signature{
+		float:right;
+		padding:0;
+		margin:0;
+		padding:15px 0;
+
+	}
+
+	//Mailchimp & Search form styling
+	.signup,
+	#searchform{
+		//.subscribe-form{
+
+			.mail-statement{
+				margin-top:5px;
+			}
+
+			.form{
+				display:inline-block;
+				float:left;
+			}
+
+			.form.input{
+				width:95%;
+				input{
+					background:none;
+					border:none;
+					border-bottom:2px solid $white;
+					font-size:2em;
+					width:100%;
+				}
+
+				
+				
+			}
+
+			.form.submit{
+				width:5%;
+				button{
+					//background:none;
+					-webkit-appearance:none;
+					border:none;
+					
+					background-repeat:no-repeat;
+					background-position:center center;
+					border-bottom:2px solid $white;
+					padding:0 15px;
+					width:100%;
+
+					&.mail-submit{
+						background-image:url('img/arrow-icon.png');
+						&:focus,
+						&:active,
+						&:hover{
+							background-image:url('img/arrow-icon_hover.png');
+						}
+					}
+
+					&.search-submit{
+						background-image:url('img/search-icon.png');
+						&:focus,
+						&:active,
+						&:hover{
+							background-image:url('img/search-icon_hover.png');
+						}
+
+					}
+					
+				}
+
+				
+			}
+		//}
+	}
+}
+
+
+input{
+	@include alt_gothic_reg;
+	color:white;
+	font-size:2em;
+}
+
+input::-webkit-input-placeholder {
+	@include alt_gothic_reg;
+    color:$white;
+}
+
+input::-moz-placeholder {
+    @include alt_gothic_reg;
+    color:$white;
+}
+
+ input:-ms-input-placeholder {
+    @include alt_gothic_reg;
+    color:$white;
+}
+
+ input:-moz-placeholder {
+    @include alt_gothic_reg;
+    color:$white;
+}
+
+ input::webkit-input-placeholder {
+    @include alt_gothic_reg;
+    color:$white;
+}
+
+// Mailchimp API 03cc5f3ef60c69444095b05f57683e3b-us15
