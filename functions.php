@@ -3,7 +3,7 @@
 //Add all custom functions, hooks, filters, ajax etc here
 
 include('functions/start.php');
-
+include('functions/cpt.php');
 include('functions/clean.php');
 
 //Custon wp-admin logo
@@ -16,5 +16,11 @@ function my_custom_login_logo() {
 		    </style>';
 }
 
+//Add ACF Options page, good for Global ACF inputs, like things in the header/footer.
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
 
 ?>

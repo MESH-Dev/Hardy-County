@@ -20,6 +20,7 @@ $std_black: #292929;
 $creme: #f3efea;
 $offwhite: #f9f7f4;
 $gray: #7f8084;
+$menu_gray: #c9ccc8;
 
 
 
@@ -31,6 +32,7 @@ $bp-larger-than-tablet    : "min-width: 750px" !default;
 $bp-larger-than-desktop   : "min-width: 1000px" !default;
 $bp-larger-than-desktophd : "min-width: 1200px" !default;
 
+$bp-smaller-than-desktophd : "max-width: 1200px" !default;
 $bp-smaller-than-desktop : "max-width: 1060px" !default;
 $bp-smaller-than-tablet : "max-width: 750px" !default;
 $bp-smaller-than-mobile : "max-width: 480px" !default;

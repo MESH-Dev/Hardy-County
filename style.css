@@ -428,154 +428,160 @@ a:hover, a:focus, a:active {
   max-width: 1200px;
   margin: 0 auto;
 }
+@media (max-width: 1200px) {
+  /* line 22, sass/base/_grid.scss */
+  .container {
+    margin: 0 1em;
+  }
+}
 
-/* line 28, sass/base/_grid.scss */
+/* line 32, sass/base/_grid.scss */
 .row {
   width: 100%;
   margin: 0 0 0 0;
 }
-/* line 31, sass/base/_grid.scss */
+/* line 35, sass/base/_grid.scss */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 36, sass/base/_grid.scss */
+/* line 40, sass/base/_grid.scss */
 .row.padding-bottom {
   margin-bottom: 15px;
 }
 
-/* line 41, sass/base/_grid.scss */
+/* line 45, sass/base/_grid.scss */
 .columns-1 {
   width: 8.33333%;
 }
 
-/* line 42, sass/base/_grid.scss */
+/* line 46, sass/base/_grid.scss */
 .columns-2 {
   width: 16.66667%;
 }
 
-/* line 43, sass/base/_grid.scss */
+/* line 47, sass/base/_grid.scss */
 .columns-3 {
   width: 25%;
 }
 
-/* line 44, sass/base/_grid.scss */
+/* line 48, sass/base/_grid.scss */
 .columns-4 {
   width: 33.33333%;
 }
 
-/* line 45, sass/base/_grid.scss */
+/* line 49, sass/base/_grid.scss */
 .columns-5 {
   width: 41.66667%;
 }
 
-/* line 46, sass/base/_grid.scss */
+/* line 50, sass/base/_grid.scss */
 .columns-6 {
   width: 50%;
 }
 
-/* line 47, sass/base/_grid.scss */
+/* line 51, sass/base/_grid.scss */
 .columns-7 {
   width: 58.33333%;
 }
 
-/* line 48, sass/base/_grid.scss */
+/* line 52, sass/base/_grid.scss */
 .columns-8 {
   width: 66.66667%;
 }
 
-/* line 49, sass/base/_grid.scss */
+/* line 53, sass/base/_grid.scss */
 .columns-9 {
   width: 75%;
 }
 
-/* line 50, sass/base/_grid.scss */
+/* line 54, sass/base/_grid.scss */
 .columns-10 {
   width: 83.33333%;
 }
 
-/* line 51, sass/base/_grid.scss */
+/* line 55, sass/base/_grid.scss */
 .columns-11 {
   width: 91.66667%;
 }
 
-/* line 52, sass/base/_grid.scss */
+/* line 56, sass/base/_grid.scss */
 .columns-12 {
   width: 100%;
 }
 
-/* line 54, sass/base/_grid.scss */
+/* line 71, sass/base/_grid.scss */
 .offset-by-1 {
   margin-left: 8.33333%;
 }
 
-/* line 55, sass/base/_grid.scss */
+/* line 72, sass/base/_grid.scss */
 .offset-by-2 {
   margin-left: 16.66667%;
 }
 
-/* line 56, sass/base/_grid.scss */
+/* line 73, sass/base/_grid.scss */
 .offset-by-3 {
   margin-left: 25%;
 }
 
-/* line 57, sass/base/_grid.scss */
+/* line 74, sass/base/_grid.scss */
 .offset-by-4 {
   margin-left: 33.33333%;
 }
 
-/* line 58, sass/base/_grid.scss */
+/* line 75, sass/base/_grid.scss */
 .offset-by-5 {
   margin-left: 41.66667%;
 }
 
-/* line 59, sass/base/_grid.scss */
+/* line 76, sass/base/_grid.scss */
 .offset-by-6 {
   margin-left: 50%;
 }
 
-/* line 60, sass/base/_grid.scss */
+/* line 77, sass/base/_grid.scss */
 .offset-by-7 {
   margin-left: 58.33333%;
 }
 
-/* line 61, sass/base/_grid.scss */
+/* line 78, sass/base/_grid.scss */
 .offset-by-8 {
   margin-left: 66.66667%;
 }
 
-/* line 62, sass/base/_grid.scss */
+/* line 79, sass/base/_grid.scss */
 .offset-by-9 {
   margin-left: 75%;
 }
 
-/* line 63, sass/base/_grid.scss */
+/* line 80, sass/base/_grid.scss */
 .offset-by-10 {
   margin-left: 83.33333%;
 }
 
-/* line 64, sass/base/_grid.scss */
+/* line 81, sass/base/_grid.scss */
 .offset-by-11 {
   margin-left: 91.66667%;
 }
 
-/* line 65, sass/base/_grid.scss */
+/* line 82, sass/base/_grid.scss */
 .offset-by-12 {
   margin-left: 100%;
 }
 
-/* line 69, sass/base/_grid.scss */
+/* line 86, sass/base/_grid.scss */
 [class*='columns-'] {
   float: left;
   padding-right: 15px;
 }
-/* line 73, sass/base/_grid.scss */
+/* line 90, sass/base/_grid.scss */
 .row [class*='columns-']:last-of-type {
   padding-right: 0;
 }
 @media (max-width: 750px) {
-  /* line 69, sass/base/_grid.scss */
+  /* line 86, sass/base/_grid.scss */
   [class*='columns-'] {
     width: 100%;
     padding: 0;
@@ -583,13 +589,13 @@ a:hover, a:focus, a:active {
 }
 
 @media (max-width: 750px) {
-  /* line 85, sass/base/_grid.scss */
+  /* line 102, sass/base/_grid.scss */
   [class*='offset-by-'] {
     margin-left: 0;
   }
 }
 
-/* line 94, sass/base/_grid.scss */
+/* line 111, sass/base/_grid.scss */
 .no-padding {
   padding-right: 0;
 }
@@ -817,36 +823,111 @@ header {
   width: 100%;
   position: absolute;
   z-index: 100;
-  padding-top: 20px;
+  padding-top: 2em;
 }
 /* line 7, sass/modules/_header.scss */
 header .logo,
 header .main-navigation {
   display: inline-block;
 }
-/* line 15, sass/modules/_header.scss */
-header .main-navigation {
-  vertical-align: middle;
+/* line 12, sass/modules/_header.scss */
+header .logo {
+  width: 25%;
 }
 /* line 17, sass/modules/_header.scss */
-header .main-navigation ul {
-  margin-top: -30px;
+header .main-navigation {
+  width: 73%;
+  vertical-align: bottom;
 }
-/* line 19, sass/modules/_header.scss */
+@media (max-width: 1060px) {
+  /* line 17, sass/modules/_header.scss */
+  header .main-navigation {
+    width: 100%;
+  }
+}
+@media (max-width: 750px) {
+  /* line 17, sass/modules/_header.scss */
+  header .main-navigation {
+    display: none;
+  }
+}
+/* line 29, sass/modules/_header.scss */
+header .main-navigation ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 1060px) {
+  /* line 29, sass/modules/_header.scss */
+  header .main-navigation ul {
+    float: none;
+  }
+}
+/* line 39, sass/modules/_header.scss */
 header .main-navigation ul li {
   display: inline-block;
   float: left;
   margin-right: 2em;
+  border-bottom: 5px solid #FFFFFF;
+  margin-bottom: 3px;
 }
-/* line 24, sass/modules/_header.scss */
+/* line 46, sass/modules/_header.scss */
 header .main-navigation ul li a {
   color: white;
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
   font-style: normal;
-  border-bottom: 2px solid #FFFFFF;
   font-size: 2.8em;
   padding-bottom: 5px;
+}
+/* line 57, sass/modules/_header.scss */
+header .gateway-nav {
+  position: absolute;
+  right: 0;
+  top: 2em;
+  background-color: #c9ccc8;
+  padding-left: 1em;
+  height: 2em;
+}
+/* line 65, sass/modules/_header.scss */
+header .gateway-nav ul {
+  display: inline-block;
+  float: left;
+  margin: 0;
+  list-style-type: none;
+}
+/* line 73, sass/modules/_header.scss */
+header .gateway-nav ul#menu-gateway_nav li a {
+  font-size: 1.6em;
+}
+/* line 81, sass/modules/_header.scss */
+header .gateway-nav ul.social_nav li {
+  vertical-align: middle;
+}
+/* line 84, sass/modules/_header.scss */
+header .gateway-nav ul.social_nav li a i {
+  padding-top: 5px;
+}
+/* line 90, sass/modules/_header.scss */
+header .gateway-nav ul li {
+  display: inline-block;
+  float: left;
+  margin: 0;
+  margin-right: 1em;
+  height: 20px;
+  vertical-align: middle;
+}
+/* line 97, sass/modules/_header.scss */
+header .gateway-nav ul li a {
+  color: #292929;
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+}
+/* line 103, sass/modules/_header.scss */
+header .gateway-nav ul li a:hover, header .gateway-nav ul li a:active, header .gateway-nav ul li a:focus {
+  opacity: .7;
 }
 
 /* line 1, sass/modules/_footer.scss */
@@ -858,42 +939,43 @@ footer {
 /* line 4, sass/modules/_footer.scss */
 footer .top-bar {
   background: #7f8084;
+  padding: 10px 0;
 }
-/* line 7, sass/modules/_footer.scss */
+/* line 8, sass/modules/_footer.scss */
 footer .top-bar p {
   color: #FFFFFF;
 }
-/* line 12, sass/modules/_footer.scss */
+/* line 13, sass/modules/_footer.scss */
 footer .copyright {
   float: left;
   padding: 0;
   margin: 0;
   padding: 15px 0;
 }
-/* line 20, sass/modules/_footer.scss */
+/* line 21, sass/modules/_footer.scss */
 footer .signature {
   float: right;
   padding: 0;
   margin: 0;
   padding: 15px 0;
 }
-/* line 33, sass/modules/_footer.scss */
+/* line 34, sass/modules/_footer.scss */
 footer .signup .mail-statement,
 footer #searchform .mail-statement {
   margin-top: 5px;
 }
-/* line 37, sass/modules/_footer.scss */
+/* line 38, sass/modules/_footer.scss */
 footer .signup .form,
 footer #searchform .form {
   display: inline-block;
   float: left;
 }
-/* line 42, sass/modules/_footer.scss */
+/* line 43, sass/modules/_footer.scss */
 footer .signup .form.input,
 footer #searchform .form.input {
   width: 95%;
 }
-/* line 44, sass/modules/_footer.scss */
+/* line 45, sass/modules/_footer.scss */
 footer .signup .form.input input,
 footer #searchform .form.input input {
   background: none;
@@ -901,13 +983,14 @@ footer #searchform .form.input input {
   border-bottom: 2px solid #FFFFFF;
   font-size: 2em;
   width: 100%;
+  padding: 6px 10px 6px 0;
 }
-/* line 56, sass/modules/_footer.scss */
+/* line 58, sass/modules/_footer.scss */
 footer .signup .form.submit,
 footer #searchform .form.submit {
   width: 5%;
 }
-/* line 58, sass/modules/_footer.scss */
+/* line 60, sass/modules/_footer.scss */
 footer .signup .form.submit button,
 footer #searchform .form.submit button {
   -webkit-appearance: none;
@@ -918,24 +1001,24 @@ footer #searchform .form.submit button {
   padding: 0 15px;
   width: 100%;
 }
-/* line 69, sass/modules/_footer.scss */
+/* line 71, sass/modules/_footer.scss */
 footer .signup .form.submit button.mail-submit,
 footer #searchform .form.submit button.mail-submit {
   background-image: url("img/arrow-icon.png");
 }
-/* line 71, sass/modules/_footer.scss */
+/* line 73, sass/modules/_footer.scss */
 footer .signup .form.submit button.mail-submit:focus, footer .signup .form.submit button.mail-submit:active, footer .signup .form.submit button.mail-submit:hover,
 footer #searchform .form.submit button.mail-submit:focus,
 footer #searchform .form.submit button.mail-submit:active,
 footer #searchform .form.submit button.mail-submit:hover {
   background-image: url("img/arrow-icon_hover.png");
 }
-/* line 78, sass/modules/_footer.scss */
+/* line 80, sass/modules/_footer.scss */
 footer .signup .form.submit button.search-submit,
 footer #searchform .form.submit button.search-submit {
   background-image: url("img/search-icon.png");
 }
-/* line 80, sass/modules/_footer.scss */
+/* line 82, sass/modules/_footer.scss */
 footer .signup .form.submit button.search-submit:focus, footer .signup .form.submit button.search-submit:active, footer .signup .form.submit button.search-submit:hover,
 footer #searchform .form.submit button.search-submit:focus,
 footer #searchform .form.submit button.search-submit:active,
@@ -943,7 +1026,7 @@ footer #searchform .form.submit button.search-submit:hover {
   background-image: url("img/search-icon_hover.png");
 }
 
-/* line 97, sass/modules/_footer.scss */
+/* line 101, sass/modules/_footer.scss */
 input {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -952,7 +1035,7 @@ input {
   font-size: 2em;
 }
 
-/* line 103, sass/modules/_footer.scss */
+/* line 107, sass/modules/_footer.scss */
 input::-webkit-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -960,7 +1043,7 @@ input::-webkit-input-placeholder {
   color: #FFFFFF;
 }
 
-/* line 108, sass/modules/_footer.scss */
+/* line 112, sass/modules/_footer.scss */
 input::-moz-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -968,7 +1051,7 @@ input::-moz-placeholder {
   color: #FFFFFF;
 }
 
-/* line 113, sass/modules/_footer.scss */
+/* line 117, sass/modules/_footer.scss */
 input:-ms-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -976,7 +1059,7 @@ input:-ms-input-placeholder {
   color: #FFFFFF;
 }
 
-/* line 118, sass/modules/_footer.scss */
+/* line 122, sass/modules/_footer.scss */
 input:-moz-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -984,7 +1067,7 @@ input:-moz-placeholder {
   color: #FFFFFF;
 }
 
-/* line 123, sass/modules/_footer.scss */
+/* line 127, sass/modules/_footer.scss */
 input::webkit-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -997,16 +1080,34 @@ body {
   background-color: #f9f7f4;
 }
 
-/* line 1, sass/modules/_layout.scss */
+/* line 3, sass/modules/_layout.scss */
 .cta {
-  padding-left: 15px;
+  margin: 10px 0;
 }
-/* line 2, sass/modules/_layout.scss */
+/* line 6, sass/modules/_layout.scss */
+.cta .cta-link {
+  color: #FFFFFF;
+  padding-right: 35px;
+  background-image: url("img/arrow-icon.png");
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  font-size: 2em;
+  background-size: 9%;
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+}
+/* line 16, sass/modules/_layout.scss */
+.cta .cta-link:active, .cta .cta-link:focus, .cta .cta-link:hover {
+  background-image: url("img/arrow-icon_hover.png");
+  opacity: .7;
+}
+/* line 23, sass/modules/_layout.scss */
 .cta.white {
   color: white;
 }
 
-/* line 12, sass/modules/_layout.scss */
+/* line 32, sass/modules/_layout.scss */
 .banner {
   position: relative;
   background-repeat: no-repeat;
@@ -1016,7 +1117,7 @@ body {
   background-blend-mode: mulitply;
   -webkit-background-blend-mode: multiply;
 }
-/* line 22, sass/modules/_layout.scss */
+/* line 42, sass/modules/_layout.scss */
 .banner .overlay {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#292929+0,2989d8+15,207cca+51,292929+100&0.5+0,0+15,0+51,0.5+100 */
   background: -moz-linear-gradient(top, rgba(41, 41, 41, 0.5) 0%, rgba(41, 137, 216, 0) 15%, rgba(32, 124, 202, 0) 51%, rgba(41, 41, 41, 0.5) 100%);
@@ -1034,7 +1135,7 @@ body {
   left: 0;
   z-index: 0;
 }
-/* line 37, sass/modules/_layout.scss */
+/* line 57, sass/modules/_layout.scss */
 .banner.large {
   height: 650px;
   background-repeat: no-repeat;
@@ -1043,24 +1144,24 @@ body {
   display: flex;
   align-items: center;
 }
-/* line 52, sass/modules/_layout.scss */
+/* line 72, sass/modules/_layout.scss */
 .banner.interior {
   height: 400px;
 }
-/* line 56, sass/modules/_layout.scss */
+/* line 76, sass/modules/_layout.scss */
 .banner .banner-content {
   align-self: flex-end;
   width: 100%;
   position: relative;
   margin-bottom: 2em;
 }
-/* line 68, sass/modules/_layout.scss */
+/* line 88, sass/modules/_layout.scss */
 .banner .banner-content h1 {
   line-height: .8;
   margin-bottom: .5em;
   text-transform: none;
 }
-/* line 73, sass/modules/_layout.scss */
+/* line 93, sass/modules/_layout.scss */
 .banner .banner-content h2 {
   color: #FFFFFF;
   margin: 0;
@@ -1068,22 +1169,23 @@ body {
   text-transform: none;
   text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.8);
 }
-/* line 82, sass/modules/_layout.scss */
+/* line 102, sass/modules/_layout.scss */
 .banner .banner-content .banner-cta {
   font-family: 'adelle-condensed';
   font-weight: 700;
   font-style: italic;
 }
-/* line 87, sass/modules/_layout.scss */
+/* line 107, sass/modules/_layout.scss */
 .banner .wv-logo {
-  text-align: left;
+  text-align: right;
+  margin-top: 2em;
 }
 
-/* line 110, sass/modules/_layout.scss */
+/* line 131, sass/modules/_layout.scss */
 .intro-statement {
   margin: 6em 0;
 }
-/* line 113, sass/modules/_layout.scss */
+/* line 134, sass/modules/_layout.scss */
 .intro-statement .intro-text {
   width: 90%;
   margin: 0 auto;
@@ -1095,11 +1197,12 @@ body {
   text-transform: none;
 }
 
-/* line 127, sass/modules/_layout.scss */
-.home-grid {
-  height: 2000px !important;
+/* line 151, sass/modules/_layout.scss */
+.home-grid .primary {
+  background-color: rgba(4, 4, 4, 0.5);
+  background-blend-mode: multiply;
 }
-/* line 131, sass/modules/_layout.scss */
+/* line 154, sass/modules/_layout.scss */
 .home-grid .primary .wrap {
   width: 100%;
   height: 100%;
@@ -1107,24 +1210,53 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* line 144, sass/modules/_layout.scss */
+/* line 167, sass/modules/_layout.scss */
 .home-grid .primary .wrap .content h1 {
   width: 65%;
   line-height: .8;
   text-align: center;
   margin: 0 auto;
+  position: relative;
 }
-/* line 154, sass/modules/_layout.scss */
+/* line 178, sass/modules/_layout.scss */
 .home-grid .secondary {
   display: flex;
   align-items: center;
   padding: 1em;
+  background-color: rgba(4, 4, 4, 0.5);
+  background-blend-mode: multiply;
 }
-/* line 159, sass/modules/_layout.scss */
+/* line 185, sass/modules/_layout.scss */
 .home-grid .secondary .content {
   align-self: flex-end;
 }
-/* line 164, sass/modules/_layout.scss */
+/* line 190, sass/modules/_layout.scss */
+.home-grid .event {
+  background-color: #7ac3bd;
+}
+/* line 195, sass/modules/_layout.scss */
+.home-grid .event.second {
+  background-color: #017667;
+}
+/* line 198, sass/modules/_layout.scss */
+.home-grid .event.third {
+  background-color: #b87860;
+}
+/* line 203, sass/modules/_layout.scss */
+.home-grid .weather {
+  background-color: #e5b070;
+}
+/* line 208, sass/modules/_layout.scss */
+.home-grid .instagram .instagram-icon {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+/* line 212, sass/modules/_layout.scss */
+.home-grid .instagram .instagram-icon i {
+  color: white;
+}
+/* line 218, sass/modules/_layout.scss */
 .home-grid .post-parent {
   font-size: 2em;
   font-family: 'adelle-condensed';
@@ -1132,11 +1264,13 @@ body {
   font-style: normal;
   letter-spacing: .0025em;
   color: #FFFFFF;
+  margin-bottom: 15px;
 }
-/* line 171, sass/modules/_layout.scss */
+/* line 226, sass/modules/_layout.scss */
 .home-grid .post-title {
   font-size: 3em;
   text-transform: uppercase;
+  line-height: .8;
   letter-spacing: .0015em;
   color: #FFFFFF;
   font-family: 'alternate-gothic-no-1-d';
@@ -1144,8 +1278,9 @@ body {
   font-style: normal;
 }
 
-/* line 181, sass/modules/_layout.scss */
+/* line 237, sass/modules/_layout.scss */
 .overlay {
+  display: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1154,62 +1289,62 @@ body {
   background-color: rgba(4, 4, 4, 0.2);
 }
 
-/* line 190, sass/modules/_layout.scss */
+/* line 247, sass/modules/_layout.scss */
 .grid-item {
   width: 8.66667%;
   float: left;
   position: relative;
 }
-/* line 197, sass/modules/_layout.scss */
+/* line 254, sass/modules/_layout.scss */
 .grid-item p {
   position: absolute;
   bottom: 5px;
   left: 5px;
 }
 
-/* line 211, sass/modules/_layout.scss */
+/* line 268, sass/modules/_layout.scss */
 .grid-item-width2 {
   width: 16.66667%;
 }
-/* line 218, sass/modules/_layout.scss */
-.grid-item-width2.nest .grid-item-width2 {
-  height: 200px;
-}
-/* line 222, sass/modules/_layout.scss */
-.grid-item-width2.nest div {
-  width: 100%;
-  height: 200px;
+/* line 281, sass/modules/_layout.scss */
+.grid-item-width2.nest .nested {
   position: relative;
 }
 
-/* line 230, sass/modules/_layout.scss */
+/* line 293, sass/modules/_layout.scss */
 .grid-item-width3 {
   width: 25%;
 }
 
-/* line 235, sass/modules/_layout.scss */
+/* line 298, sass/modules/_layout.scss */
 .grid-item-width4 {
   width: 33.33333%;
 }
 
-/* line 240, sass/modules/_layout.scss */
+/* line 303, sass/modules/_layout.scss */
 .grid-item-width6 {
   width: 50%;
 }
+/* line 308, sass/modules/_layout.scss */
+.grid-item-width6.nest .nested {
+  width: 33.33333%;
+  float: left;
+  position: relative;
+}
 
 @media screen and (max-width: 768px) {
-  /* line 246, sass/modules/_layout.scss */
+  /* line 321, sass/modules/_layout.scss */
   .grid-item {
     width: 50%;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 250, sass/modules/_layout.scss */
+  /* line 325, sass/modules/_layout.scss */
   .grid-item {
     width: 100%;
   }
 }
-/* line 253, sass/modules/_layout.scss */
+/* line 328, sass/modules/_layout.scss */
 .hg {
   background-color: red;
   background-repeat: no-repeat;
@@ -1217,37 +1352,37 @@ body {
   background-position: center center;
 }
 
-/* line 265, sass/modules/_layout.scss */
+/* line 340, sass/modules/_layout.scss */
 .hg.columns-2 {
   padding-bottom: 16.66667%;
 }
 
-/* line 269, sass/modules/_layout.scss */
+/* line 344, sass/modules/_layout.scss */
 .hg.columns-3 {
   padding-bottom: 25%;
 }
 
-/* line 273, sass/modules/_layout.scss */
+/* line 348, sass/modules/_layout.scss */
 .hg.columns-4 {
   padding-bottom: 33.33333%;
 }
 
-/* line 276, sass/modules/_layout.scss */
+/* line 351, sass/modules/_layout.scss */
 .hg.columns-5 {
   padding-bottom: 41.66667%;
 }
 
-/* line 279, sass/modules/_layout.scss */
+/* line 354, sass/modules/_layout.scss */
 .hg.columns-6 {
   padding-bottom: 50%;
 }
 
-/* line 283, sass/modules/_layout.scss */
+/* line 358, sass/modules/_layout.scss */
 .hg.columns-8 {
   padding-bottom: 66.66667%;
 }
 
-/* line 300, sass/modules/_layout.scss */
+/* line 375, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;

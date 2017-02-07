@@ -3,6 +3,7 @@ footer{
 	//font-size:1.6em; 
 	.top-bar{
 		background:$gray;
+		padding:10px 0;
 
 		p{
 			color:$white;
@@ -47,6 +48,7 @@ footer{
 					border-bottom:2px solid $white;
 					font-size:2em;
 					width:100%;
+				    padding: 6px 10px 6px 0;
 				}
 
 				
@@ -89,8 +91,10 @@ footer{
 
 				
 			}
-		//}
+		
 	}
+
+
 }
 
 

@@ -25,14 +25,16 @@
 										</p>
 									</div>
 									<div class="search columns-3 offset-by-2">
-										<a href="#">Download a visitors guide brochure</a>
+										<div class="cta">
+											<a class="cta-link" href="#">Download a visitors guide brochure</a>
+										</div>
 										<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
 											<div class="form input">
-												<label for="searchHeader" class="sr-only">Search our site</label>
-												<input id="searchHeader" class="hide" type="text" placeholder="Search our site" value="<?php the_search_query(); ?>" name="s" id="s" />
+												<label for="searchHeader" class="sr-only">Search the site</label>
+												<input id="searchHeader" class="hide" type="text" placeholder="Search the site..." value="<?php the_search_query(); ?>" name="s" id="s" />
 											</div>
 											<div class="form submit">
-												<button type="submit" class="submit-search" id="searchsubmit" value="" >
+												<button type="submit" class="search-submit" id="searchsubmit" value="" >
 													<span class="sr-only">Submit search</span>
 												</button>
 											</div>

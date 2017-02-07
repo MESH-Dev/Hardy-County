@@ -1,12 +1,32 @@
+//General
+
 .cta{
+	margin:10px 0;
+
+	.cta-link{
+		color:$white;
+		padding-right:35px;
+		background-image:url('img/arrow-icon.png');
+		background-repeat:no-repeat;
+		background-position:95% center;
+		font-size:2em;
+	    background-size: 9%;
+		@include alt_gothic_reg;
+
+		&:active,
+		&:focus, 
+		&:hover{
+			background-image:url('img/arrow-icon_hover.png');
+			opacity:.7;
+		}
+	}
 	&.white{
 		color:white;
 	}
 
-	padding-left:15px;
+	//padding-left:15px;
 	//background-image:
 }
-
 
 //Top banner for all pages
 .banner{
@@ -85,7 +105,8 @@
 	}
 
 	.wv-logo{
-		text-align:left;
+		text-align:right;
+		margin-top:2em;
 	}
 
 }
@@ -125,9 +146,11 @@
 //--__--Homepage grid setup
 
 .home-grid{
-	height:2000px !important;
+	//height:2000px !important;
 
 	.primary{
+		background-color:rgba(4,4,4,.5);
+		background-blend-mode:multiply;
 		.wrap{
 			//display:table;
 			width:100%;
@@ -146,6 +169,7 @@
 				    line-height: .8;
 				    text-align: center;
 				    margin: 0 auto;
+				    position:relative;
 				}
 			}
 		}
@@ -155,9 +179,39 @@
 		display: flex;
 		align-items: center;
 		padding:1em;
+		background-color:rgba(4,4,4,.5);
+		background-blend-mode:multiply;
 
 		.content{
 			align-self: flex-end;
+		}
+	}
+
+	.event{
+
+		
+			background-color:$aqua_marine;
+		
+		&.second{
+			background-color:$seafoam;
+		}
+		&.third{
+			background-color:$burnt_red;
+		}
+	}
+
+	.weather{
+		background-color:$peach;
+	}
+
+	.instagram{
+		.instagram-icon{
+			position:absolute;
+			bottom:10px;
+			left:10px;
+			i{
+				color:white;
+			}
 		}
 	}
 
@@ -166,11 +220,13 @@
 		@include adelle_thin;
 		letter-spacing: .0025em;
 		color:$white;
+		margin-bottom:15px;
 	}
 
 	.post-title{
 		font-size:3em;
 		text-transform:uppercase;
+	    line-height: .8;
 		letter-spacing: .0015em;
 		color:$white;
 		@include alt_gothic_reg;
@@ -179,6 +235,7 @@
 }
 
 .overlay{
+	display:none;
 	position:absolute;
 	top:0;
 	bottom:0;
@@ -214,16 +271,22 @@
 
 	&.nest{
 		//padding-bottom:0;
-
+		// @media ($bp-smaller-than-tablet) {
+		// 	width:33.33333%
+		// }
 		.grid-item-width2{
-			height:200px;
+			//height:200px;
 		}
 
-		div{
-			width:100%;
-			height:200px;
+		.nested{
 			position:relative;
 		}
+
+		// div{
+		// 	width:100%;
+		// 	height:200px;
+		// 	position:relative;
+		// }
 	}
 }
 
@@ -240,6 +303,18 @@
 .grid-item-width6{
 	width:50%;
 	//padding-bottom:25%;
+
+	&.nest{
+		.nested{
+			width:33.33333%;
+			float:left;
+			position:relative;
+
+			// @media($bp-smaller-than-tablet){
+			// 	width:100%;
+			// }
+		}
+	}
 }
 
 @media screen and (max-width: 768px) {

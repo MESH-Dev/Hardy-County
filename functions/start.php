@@ -32,7 +32,8 @@ add_image_size('square', 500, 500, true); // Custom Square Size
 register_nav_menus(
     array(
         'main_nav' => 'Header and breadcrumb trail heirarchy',
-        'social_nav' => 'Social menu used throughout'
+        'social_nav' => 'Social menu used throughout',
+        'gateway_nav' => 'Gateway navigation appearing in the header'
     )
 );
 

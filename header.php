@@ -41,9 +41,58 @@
 	<header>
 		<div class="container">
 
-			<div class="columns-12">
+			<div class=""><!-- columns-12 -->
+
+				<nav class="gateway-nav">
+					<?php if(has_nav_menu('gateway_nav')){
+								$defaults = array(
+									'theme_location'  => 'gateway_nav',
+									'menu'            => 'gateway_nav',
+									'container'       => false,
+									'container_class' => '',
+									'container_id'    => '',
+									'menu_class'      => 'menu',
+									'menu_id'         => '',
+									'echo'            => true,
+									'fallback_cb'     => 'wp_page_menu',
+									'before'          => '',
+									'after'           => '',
+									'link_before'     => '',
+									'link_after'      => '',
+									'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+									'depth'           => 0,
+									'walker'          => ''
+								); wp_nav_menu( $defaults );
+							}else{
+								echo "<p><em>gateway_nav</em> doesn't exist! Create it and it'll render here.</p>";
+							} ?>
+					<ul class="social_nav">
+						<li>
+							<a href="#">
+								<i class="fa fa-fw fa-twitter fa-lg">
+									<span class="sr-only">Follow us on twitter</span>
+								</i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-fw fa-facebook fa-lg">
+									<span class="sr-only">Follow us on facebook</span>
+								</i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-fw fa-instagram fa-lg">
+									<span class="sr-only">Follow us on instagram</span>
+								</i>
+							</a>
+						</li>
+					</ul>
+				</nav>
+
 				<div class="logo">
-					<h1 class="site-title">
+					<!-- <h1 class="site-title"> -->
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<span class="sr-only"><?php bloginfo( 'name' ); ?></span>
 							<img src="<?php bloginfo('template_directory'); ?>/img/hardy-logo.png">
@@ -57,7 +106,7 @@
 							 width="240px" height="75px" 
 							</svg> -->
 						</a>
-					</h1>
+					<!-- </h1> -->
 				</div>
 				
 				<nav class="main-navigation">
