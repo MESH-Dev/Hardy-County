@@ -35,9 +35,8 @@
 	background-size:cover;
 	background-position:center center;
 
-	background-color:black;
-	background-blend-mode:mulitply;
-	-webkit-background-blend-mode:multiply;
+	display: flex;
+	align-items: center;
 
 	.overlay{
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#292929+0,2989d8+15,207cca+51,292929+100&0.5+0,0+15,0+51,0.5+100 */
@@ -56,12 +55,11 @@
 	
 	&.large{
 		height:650px;
-		background-repeat:no-repeat;
-		background-size:cover;
-		background-position:center center;
+		// background-repeat:no-repeat;
+		// background-size:cover;
+		// background-position:center center;
 
-		display: flex;
-		align-items: center;
+		
 		//justify-content: center;
 
 		// background-color:black;
@@ -71,7 +69,14 @@
 
 	&.interior{
 		height:400px;
-	}
+		background-color:$black_overlay;
+		background-blend-mode:mulitply;
+		-webkit-background-blend-mode:multiply;
+
+		.page-title{	
+			margin-bottom:0;
+		}
+	}	
 
 	.banner-content{
 		// position:absolute;
@@ -89,6 +94,10 @@
 		line-height:.8; //Need this line height for grid headers/titles, as well.
 		margin-bottom:.5em;
 		text-transform:none;
+
+			&.page-title{	
+				margin-bottom:0;
+			}
 		}
 		h2{
 			color:$white;
@@ -110,21 +119,6 @@
 	}
 
 }
-
-// .Enjoy_the_natural_beauty_and_genuine_hospitalit {
-//   font-size: 30px;
-//   font-family: "Adelle Condensed";
-//   color: rgb(255, 255, 255);
-//   line-height: 1.2;
-//   text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.8);
-//   position: absolute;
-//   left: 77px;
-//   top: 405.078px;
-//   width: 697px;
-//   height: 149px;
-//   z-index: 692;
-// }
-
 
 //Homepage
 
@@ -300,6 +294,10 @@
 	//padding-bottom:33.33333%;
 }
 
+.grid-item-width5{
+	width:41.66667%;
+}
+
 .grid-item-width6{
 	width:50%;
 	//padding-bottom:25%;
@@ -315,6 +313,10 @@
 			// }
 		}
 	}
+}
+
+.grid-item-width7{
+	width:58.33333%;
 }
 
 @media screen and (max-width: 768px) {
@@ -369,6 +371,9 @@
 
 
 //Landing Pages
+
+//__Landing page grid
+
 
 
 //Accessibility

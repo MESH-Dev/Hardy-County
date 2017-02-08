@@ -30,15 +30,13 @@ get_header();
 		</div>
 	</div>
 
-	<div class="container">
-		<?php $intro_text=get_field('intro_text'); ?>
-		<div class="intro-statement">
-			<h2 class="intro-text">
-				<?php echo $intro_text; ?>
-			</h2>
-		</div>
-		
-	</div> 
+
+	<?php 
+
+	//Call the Intro Statement partial 
+	get_template_part('partials/intro-statement'); 
+	?>
+
 	<div class="container">
 		<div class="row">
 			<div class="home-grid" id="packery"><!-- macy --><!-- masonry --><!-- macy -->

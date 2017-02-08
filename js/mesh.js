@@ -27,25 +27,26 @@ jQuery(document).ready(function($){
   percentPosition: true
 	});
 
-  
-
   //Force divs in homepage grid to be square
 
-  var gi2, gi3, gi4, gi6;
+  var gi2, gi3, gi4, gi5, gi6, gi7, cp6;
 
 function gi_resize(){
   gi2 = $('.grid-item-width2').width();
   gi3 = $('.grid-item-width3').width();
   gi4 = $('.grid-item-width4').width();
+  gi5 = $('.grid-item-width5').width();
   gi6 = $('.grid-item-width6').width();
+  gi7 = $('.grid-item-width7').width();
+  cp6 =  $('.columns-6.promo').width();
   //return gi2, gi3, gi4;
 }
- $(document).ready(gi_resize(gi2, gi3, gi4, gi6));
- $(window).resize(gi_resize(gi2, gi3, gi4, gi6));
+ $(document).ready(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp6));
+ $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7));
 
 function _resize(){
-  gi_resize(gi2, gi3, gi4);
-   $(window).resize(gi_resize(gi2, gi3, gi4, gi6));
+  gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp6);
+   $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp6));
 
   console.log("Width 2: "+gi2);
 	console.log("Width 3: "+gi3);
@@ -55,9 +56,12 @@ function _resize(){
   $('.grid-item-width2.nest .nested').css({height: gi2});
   $('.grid-item-width3').css({height: gi3});
   $('.grid-item-width4').css({height: gi4});
+  $('.grid-item-width5').css({height: gi5})
   $('.grid-item-width6').css({height: (gi6*.66)});
+  $('.columns-6.promo').css({height: (cp6*.66)});
   $('.grid-item-width6.nest').css({height: gi2});
   $('.grid-item-width6.nest .nested').css({height: gi2});
+  $('.grid-item-width7').css({height: (gi5)});
 
 }
 

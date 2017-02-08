@@ -26,7 +26,8 @@
 									</div>
 									<div class="search columns-3 offset-by-2">
 										<div class="cta">
-											<a class="cta-link" href="#">Download a visitors guide brochure</a>
+											<?php $brochure_link = get_field('brochure_link', 'options'); ?>
+											<a class="cta-link" href="<?php echo $brochure_link; ?>" target="_blank" rel="Visit Brochure">Download a visitors guide brochure</a>
 										</div>
 										<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
 											<div class="form input">
