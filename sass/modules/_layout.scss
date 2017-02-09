@@ -157,7 +157,7 @@
 		h1{
 			text-align: center;
 			display: inline-block;
-			line-height: 0.8em;
+			line-height: 0.8;
 			// centering two elements on top of each other
 			position: absolute;
 			top: 0;
@@ -173,6 +173,7 @@
 		}
 		p{
 			text-align: center;
+			font-size: 2em;
 			opacity: 0;
 			-webkit-transition: all 0.3s ease-in-out;
 			transition: all 0.3s ease-in-out;
@@ -188,7 +189,7 @@
 			// centering two elements on top of each other
 		}
 		span{
-			font-size: 2em;
+			font-size: 2.2em;
 		}
 		figcaption{
 			&::before {
@@ -237,8 +238,6 @@
 		}
 	}
 	.primary{
-		background-color:rgba(4,4,4,.5);
-		background-blend-mode:multiply;
 		.wrap{
 			//display:table;
 			width:100%;
@@ -263,22 +262,47 @@
 		}
 	}
 
-	.secondary{
-		display: flex;
-		align-items: center;
-		padding:1em;
-		background-color:rgba(4,4,4,.5);
-		background-blend-mode:multiply;
-
-		.content{
-			align-self: flex-end;
+	figure.secondary{
+		overflow: hidden;
+		margin: 0px;
+		background-color: #000;
+		img{
+			opacity: 0.7;
+			position: relative;
+			display: block;
+			min-width: 100%;
+			-webkit-transition: all 0.35s ease-in-out;
+			transition: all 0.35s ease-in-out;			
+		}
+		figcaption{
+			position: absolute;
+			bottom: 1em;
+			left: 1em;
+			opacity: 1;
+			-webkit-transition: all 0.35s ease-in-out;
+			transition: all 0.35s ease-in-out;
+		}
+		p{
+			color: #fff;
+			line-height: 2em;
+		}
+		&:hover{
+			img{
+				opacity: 1;
+				-webkit-transform: scale3d(1.05,1.05,1);
+				transform: scale3d(1.05,1.05,1);
+			}
+			figcaption{
+				opacity: 0;
+				bottom: 3em;
+			}			
 		}
 	}
 
 	.event{
 		overflow: hidden;
 		position: relative;
-		padding: 12px;
+		padding: 1em;
 		background-color:$aqua_marine;
 		.date{
 			position: absolute;
@@ -287,12 +311,22 @@
 		}
 		.info{
 			position: absolute;
-			bottom: -42px;
+			bottom: -56px;
 			-webkit-transition: all 0.3s ease-in-out;
 			transition: all 0.3s ease-in-out;
 		}
 		p{
 			color: #fff;
+			line-height: 2em;
+		}
+		span{
+			font-size: 2.2em;
+		}		
+		h6{
+			color: #fff;
+		}
+		a{
+			color: #292929;
 		}
 		.reveal{
 			opacity: 0;
@@ -310,6 +344,9 @@
 		}
 		&:hover .info .reveal{
 			opacity: 1;
+		}
+		h3{
+			line-height: 0.8em;
 		}
 	}
 
@@ -344,6 +381,14 @@
 		color:$white;
 		@include alt_gothic_reg;
 	}
+	h2, h3, h5, h6{
+		margin: 0px;
+		line-height: normal;
+	}
+	p{
+		@include adelle;
+		margin: 0px;
+	}
 }
 
 .overlay{
@@ -364,7 +409,6 @@
 	
 
 	p{
-		position:absolute;
 		bottom:5px;
 		left:5px;
 	}

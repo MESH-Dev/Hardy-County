@@ -398,7 +398,7 @@ h6 {
 
 /* line 152, sass/base/_typography.scss */
 p {
-  font-size: 1.6em;
+  font-size: 2em;
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: 1.8em;
@@ -1222,7 +1222,7 @@ body {
 .home-grid figure.primary h1 {
   text-align: center;
   display: inline-block;
-  line-height: 0.8em;
+  line-height: 0.8;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1237,6 +1237,7 @@ body {
 /* line 174, sass/modules/_layout.scss */
 .home-grid figure.primary p {
   text-align: center;
+  font-size: 2em;
   opacity: 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -1249,11 +1250,11 @@ body {
   width: 60%;
   height: 15%;
 }
-/* line 190, sass/modules/_layout.scss */
+/* line 191, sass/modules/_layout.scss */
 .home-grid figure.primary span {
-  font-size: 2em;
+  font-size: 2.2em;
 }
-/* line 194, sass/modules/_layout.scss */
+/* line 195, sass/modules/_layout.scss */
 .home-grid figure.primary figcaption::before {
   position: absolute;
   top: 20%;
@@ -1270,34 +1271,29 @@ body {
   transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
   pointer-events: none;
 }
-/* line 219, sass/modules/_layout.scss */
+/* line 220, sass/modules/_layout.scss */
 .home-grid figure.primary:hover img {
   opacity: 1;
   -webkit-transform: scale3d(1.05, 1.05, 1);
   transform: scale3d(1.05, 1.05, 1);
 }
-/* line 224, sass/modules/_layout.scss */
+/* line 225, sass/modules/_layout.scss */
 .home-grid figure.primary:hover figcaption::before {
   opacity: 1;
   -webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
   transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
 }
-/* line 229, sass/modules/_layout.scss */
+/* line 230, sass/modules/_layout.scss */
 .home-grid figure.primary:hover h1 {
   opacity: 0;
 }
-/* line 232, sass/modules/_layout.scss */
+/* line 233, sass/modules/_layout.scss */
 .home-grid figure.primary:hover p {
   opacity: 1;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
 }
-/* line 239, sass/modules/_layout.scss */
-.home-grid .primary {
-  background-color: rgba(4, 4, 4, 0.5);
-  background-blend-mode: multiply;
-}
-/* line 242, sass/modules/_layout.scss */
+/* line 241, sass/modules/_layout.scss */
 .home-grid .primary .wrap {
   width: 100%;
   height: 100%;
@@ -1305,7 +1301,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* line 255, sass/modules/_layout.scss */
+/* line 254, sass/modules/_layout.scss */
 .home-grid .primary .wrap .content h1 {
   width: 65%;
   line-height: .8;
@@ -1313,79 +1309,124 @@ body {
   margin: 0 auto;
   position: relative;
 }
-/* line 266, sass/modules/_layout.scss */
-.home-grid .secondary {
-  display: flex;
-  align-items: center;
-  padding: 1em;
-  background-color: rgba(4, 4, 4, 0.5);
-  background-blend-mode: multiply;
+/* line 265, sass/modules/_layout.scss */
+.home-grid figure.secondary {
+  overflow: hidden;
+  margin: 0px;
+  background-color: #000;
 }
-/* line 273, sass/modules/_layout.scss */
-.home-grid .secondary .content {
-  align-self: flex-end;
+/* line 269, sass/modules/_layout.scss */
+.home-grid figure.secondary img {
+  opacity: 0.7;
+  position: relative;
+  display: block;
+  min-width: 100%;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
-/* line 278, sass/modules/_layout.scss */
+/* line 277, sass/modules/_layout.scss */
+.home-grid figure.secondary figcaption {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  opacity: 1;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+/* line 285, sass/modules/_layout.scss */
+.home-grid figure.secondary p {
+  color: #fff;
+  line-height: 2em;
+}
+/* line 290, sass/modules/_layout.scss */
+.home-grid figure.secondary:hover img {
+  opacity: 1;
+  -webkit-transform: scale3d(1.05, 1.05, 1);
+  transform: scale3d(1.05, 1.05, 1);
+}
+/* line 295, sass/modules/_layout.scss */
+.home-grid figure.secondary:hover figcaption {
+  opacity: 0;
+  bottom: 3em;
+}
+/* line 302, sass/modules/_layout.scss */
 .home-grid .event {
   overflow: hidden;
   position: relative;
-  padding: 12px;
+  padding: 1em;
   background-color: #7ac3bd;
 }
-/* line 283, sass/modules/_layout.scss */
+/* line 307, sass/modules/_layout.scss */
 .home-grid .event .date {
   position: absolute;
   border-top: solid 2px #fff;
   border-bottom: solid 2px #fff;
 }
-/* line 288, sass/modules/_layout.scss */
+/* line 312, sass/modules/_layout.scss */
 .home-grid .event .info {
   position: absolute;
-  bottom: -42px;
+  bottom: -56px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 294, sass/modules/_layout.scss */
+/* line 318, sass/modules/_layout.scss */
 .home-grid .event p {
   color: #fff;
+  line-height: 2em;
 }
-/* line 297, sass/modules/_layout.scss */
+/* line 322, sass/modules/_layout.scss */
+.home-grid .event span {
+  font-size: 2.2em;
+}
+/* line 325, sass/modules/_layout.scss */
+.home-grid .event h6 {
+  color: #fff;
+}
+/* line 328, sass/modules/_layout.scss */
+.home-grid .event a {
+  color: #292929;
+}
+/* line 331, sass/modules/_layout.scss */
 .home-grid .event .reveal {
   opacity: 0;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-/* line 302, sass/modules/_layout.scss */
+/* line 336, sass/modules/_layout.scss */
 .home-grid .event.second {
   background-color: #017667;
 }
-/* line 305, sass/modules/_layout.scss */
+/* line 339, sass/modules/_layout.scss */
 .home-grid .event.third {
   background-color: #b87860;
 }
-/* line 308, sass/modules/_layout.scss */
+/* line 342, sass/modules/_layout.scss */
 .home-grid .event:hover .info {
   bottom: 10px;
 }
-/* line 311, sass/modules/_layout.scss */
+/* line 345, sass/modules/_layout.scss */
 .home-grid .event:hover .info .reveal {
   opacity: 1;
 }
-/* line 316, sass/modules/_layout.scss */
+/* line 348, sass/modules/_layout.scss */
+.home-grid .event h3 {
+  line-height: 0.8em;
+}
+/* line 353, sass/modules/_layout.scss */
 .home-grid .weather {
   background-color: #e5b070;
 }
-/* line 321, sass/modules/_layout.scss */
+/* line 358, sass/modules/_layout.scss */
 .home-grid .instagram .instagram-icon {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-/* line 325, sass/modules/_layout.scss */
+/* line 362, sass/modules/_layout.scss */
 .home-grid .instagram .instagram-icon i {
   color: white;
 }
-/* line 331, sass/modules/_layout.scss */
+/* line 368, sass/modules/_layout.scss */
 .home-grid .post-parent {
   font-size: 2em;
   font-family: 'adelle-condensed';
@@ -1395,7 +1436,7 @@ body {
   color: #FFFFFF;
   margin-bottom: 15px;
 }
-/* line 339, sass/modules/_layout.scss */
+/* line 376, sass/modules/_layout.scss */
 .home-grid .post-title {
   font-size: 3em;
   text-transform: uppercase;
@@ -1406,8 +1447,18 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+/* line 384, sass/modules/_layout.scss */
+.home-grid h2, .home-grid h3, .home-grid h5, .home-grid h6 {
+  margin: 0px;
+  line-height: normal;
+}
+/* line 388, sass/modules/_layout.scss */
+.home-grid p {
+  font-family: 'adelle-condensed';
+  margin: 0px;
+}
 
-/* line 349, sass/modules/_layout.scss */
+/* line 394, sass/modules/_layout.scss */
 .overlay {
   display: none;
   position: absolute;
@@ -1418,72 +1469,71 @@ body {
   background-color: rgba(4, 4, 4, 0.2);
 }
 
-/* line 359, sass/modules/_layout.scss */
+/* line 404, sass/modules/_layout.scss */
 .grid-item {
   width: 8.66667%;
   float: left;
   position: relative;
 }
-/* line 366, sass/modules/_layout.scss */
+/* line 411, sass/modules/_layout.scss */
 .grid-item p {
-  position: absolute;
   bottom: 5px;
   left: 5px;
 }
 
-/* line 380, sass/modules/_layout.scss */
+/* line 424, sass/modules/_layout.scss */
 .grid-item-width2 {
   width: 16.66667%;
 }
-/* line 393, sass/modules/_layout.scss */
+/* line 437, sass/modules/_layout.scss */
 .grid-item-width2.nest .nested {
   position: relative;
 }
 
-/* line 405, sass/modules/_layout.scss */
+/* line 449, sass/modules/_layout.scss */
 .grid-item-width3 {
   width: 25%;
 }
 
-/* line 410, sass/modules/_layout.scss */
+/* line 454, sass/modules/_layout.scss */
 .grid-item-width4 {
   width: 33.33333%;
 }
 
-/* line 415, sass/modules/_layout.scss */
+/* line 459, sass/modules/_layout.scss */
 .grid-item-width5 {
   width: 41.66667%;
 }
 
-/* line 419, sass/modules/_layout.scss */
+/* line 463, sass/modules/_layout.scss */
 .grid-item-width6 {
   width: 50%;
 }
-/* line 424, sass/modules/_layout.scss */
+/* line 468, sass/modules/_layout.scss */
 .grid-item-width6.nest .nested {
   width: 33.33333%;
   float: left;
   position: relative;
 }
 
-/* line 436, sass/modules/_layout.scss */
+/* line 480, sass/modules/_layout.scss */
 .grid-item-width7 {
   width: 58.33333%;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 441, sass/modules/_layout.scss */
+  /* line 485, sass/modules/_layout.scss */
   .grid-item {
     width: 50%;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 445, sass/modules/_layout.scss */
+  /* line 489, sass/modules/_layout.scss */
   .grid-item {
     width: 100%;
   }
 }
-/* line 448, sass/modules/_layout.scss */
+/* line 492, sass/modules/_layout.scss */
 .hg {
   background-color: red;
   background-repeat: no-repeat;
@@ -1491,37 +1541,37 @@ body {
   background-position: center center;
 }
 
-/* line 460, sass/modules/_layout.scss */
+/* line 504, sass/modules/_layout.scss */
 .hg.columns-2 {
   padding-bottom: 16.66667%;
 }
 
-/* line 464, sass/modules/_layout.scss */
+/* line 508, sass/modules/_layout.scss */
 .hg.columns-3 {
   padding-bottom: 25%;
 }
 
-/* line 468, sass/modules/_layout.scss */
+/* line 512, sass/modules/_layout.scss */
 .hg.columns-4 {
   padding-bottom: 33.33333%;
 }
 
-/* line 471, sass/modules/_layout.scss */
+/* line 515, sass/modules/_layout.scss */
 .hg.columns-5 {
   padding-bottom: 41.66667%;
 }
 
-/* line 474, sass/modules/_layout.scss */
+/* line 518, sass/modules/_layout.scss */
 .hg.columns-6 {
   padding-bottom: 50%;
 }
 
-/* line 478, sass/modules/_layout.scss */
+/* line 522, sass/modules/_layout.scss */
 .hg.columns-8 {
   padding-bottom: 66.66667%;
 }
 
-/* line 498, sass/modules/_layout.scss */
+/* line 542, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
