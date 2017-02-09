@@ -1202,12 +1202,102 @@ body {
   text-transform: none;
 }
 
-/* line 145, sass/modules/_layout.scss */
+/* line 144, sass/modules/_layout.scss */
+.home-grid figure.primary {
+  overflow: hidden;
+  margin: 0px;
+  background-color: #000;
+}
+/* line 148, sass/modules/_layout.scss */
+.home-grid figure.primary img {
+  opacity: 0.7;
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+/* line 157, sass/modules/_layout.scss */
+.home-grid figure.primary h1 {
+  text-align: center;
+  display: inline-block;
+  line-height: 0.8em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 60%;
+  height: 30%;
+  -webkit-transition: -webkit-all 0.35s;
+  transition: all 0.35s;
+}
+/* line 174, sass/modules/_layout.scss */
+.home-grid figure.primary p {
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 60%;
+  height: 15%;
+}
+/* line 190, sass/modules/_layout.scss */
+.home-grid figure.primary span {
+  font-size: 2em;
+}
+/* line 194, sass/modules/_layout.scss */
+.home-grid figure.primary figcaption::before {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.8);
+  content: '';
+  opacity: 0;
+  -webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(0, 0, 1);
+  transform: rotate3d(0, 0, 1, 45deg) scale3d(0, 0, 1);
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+  pointer-events: none;
+}
+/* line 219, sass/modules/_layout.scss */
+.home-grid figure.primary:hover img {
+  opacity: 1;
+  -webkit-transform: scale3d(1.05, 1.05, 1);
+  transform: scale3d(1.05, 1.05, 1);
+}
+/* line 224, sass/modules/_layout.scss */
+.home-grid figure.primary:hover figcaption::before {
+  opacity: 1;
+  -webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
+  transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
+}
+/* line 229, sass/modules/_layout.scss */
+.home-grid figure.primary:hover h1 {
+  opacity: 0;
+}
+/* line 232, sass/modules/_layout.scss */
+.home-grid figure.primary:hover p {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+/* line 239, sass/modules/_layout.scss */
 .home-grid .primary {
   background-color: rgba(4, 4, 4, 0.5);
   background-blend-mode: multiply;
 }
-/* line 148, sass/modules/_layout.scss */
+/* line 242, sass/modules/_layout.scss */
 .home-grid .primary .wrap {
   width: 100%;
   height: 100%;
@@ -1215,7 +1305,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* line 161, sass/modules/_layout.scss */
+/* line 255, sass/modules/_layout.scss */
 .home-grid .primary .wrap .content h1 {
   width: 65%;
   line-height: .8;
@@ -1223,7 +1313,7 @@ body {
   margin: 0 auto;
   position: relative;
 }
-/* line 172, sass/modules/_layout.scss */
+/* line 266, sass/modules/_layout.scss */
 .home-grid .secondary {
   display: flex;
   align-items: center;
@@ -1231,37 +1321,71 @@ body {
   background-color: rgba(4, 4, 4, 0.5);
   background-blend-mode: multiply;
 }
-/* line 179, sass/modules/_layout.scss */
+/* line 273, sass/modules/_layout.scss */
 .home-grid .secondary .content {
   align-self: flex-end;
 }
-/* line 184, sass/modules/_layout.scss */
+/* line 278, sass/modules/_layout.scss */
 .home-grid .event {
+  overflow: hidden;
+  position: relative;
+  padding: 12px;
   background-color: #7ac3bd;
 }
-/* line 189, sass/modules/_layout.scss */
+/* line 283, sass/modules/_layout.scss */
+.home-grid .event .date {
+  position: absolute;
+  border-top: solid 2px #fff;
+  border-bottom: solid 2px #fff;
+}
+/* line 288, sass/modules/_layout.scss */
+.home-grid .event .info {
+  position: absolute;
+  bottom: -42px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/* line 294, sass/modules/_layout.scss */
+.home-grid .event p {
+  color: #fff;
+}
+/* line 297, sass/modules/_layout.scss */
+.home-grid .event .reveal {
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+/* line 302, sass/modules/_layout.scss */
 .home-grid .event.second {
   background-color: #017667;
 }
-/* line 192, sass/modules/_layout.scss */
+/* line 305, sass/modules/_layout.scss */
 .home-grid .event.third {
   background-color: #b87860;
 }
-/* line 197, sass/modules/_layout.scss */
+/* line 308, sass/modules/_layout.scss */
+.home-grid .event:hover .info {
+  bottom: 10px;
+}
+/* line 311, sass/modules/_layout.scss */
+.home-grid .event:hover .info .reveal {
+  opacity: 1;
+}
+/* line 316, sass/modules/_layout.scss */
 .home-grid .weather {
   background-color: #e5b070;
 }
-/* line 202, sass/modules/_layout.scss */
+/* line 321, sass/modules/_layout.scss */
 .home-grid .instagram .instagram-icon {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-/* line 206, sass/modules/_layout.scss */
+/* line 325, sass/modules/_layout.scss */
 .home-grid .instagram .instagram-icon i {
   color: white;
 }
-/* line 212, sass/modules/_layout.scss */
+/* line 331, sass/modules/_layout.scss */
 .home-grid .post-parent {
   font-size: 2em;
   font-family: 'adelle-condensed';
@@ -1271,7 +1395,7 @@ body {
   color: #FFFFFF;
   margin-bottom: 15px;
 }
-/* line 220, sass/modules/_layout.scss */
+/* line 339, sass/modules/_layout.scss */
 .home-grid .post-title {
   font-size: 3em;
   text-transform: uppercase;
@@ -1283,7 +1407,7 @@ body {
   font-style: normal;
 }
 
-/* line 231, sass/modules/_layout.scss */
+/* line 349, sass/modules/_layout.scss */
 .overlay {
   display: none;
   position: absolute;
@@ -1294,72 +1418,72 @@ body {
   background-color: rgba(4, 4, 4, 0.2);
 }
 
-/* line 241, sass/modules/_layout.scss */
+/* line 359, sass/modules/_layout.scss */
 .grid-item {
   width: 8.66667%;
   float: left;
   position: relative;
 }
-/* line 248, sass/modules/_layout.scss */
+/* line 366, sass/modules/_layout.scss */
 .grid-item p {
   position: absolute;
   bottom: 5px;
   left: 5px;
 }
 
-/* line 262, sass/modules/_layout.scss */
+/* line 380, sass/modules/_layout.scss */
 .grid-item-width2 {
   width: 16.66667%;
 }
-/* line 275, sass/modules/_layout.scss */
+/* line 393, sass/modules/_layout.scss */
 .grid-item-width2.nest .nested {
   position: relative;
 }
 
-/* line 287, sass/modules/_layout.scss */
+/* line 405, sass/modules/_layout.scss */
 .grid-item-width3 {
   width: 25%;
 }
 
-/* line 292, sass/modules/_layout.scss */
+/* line 410, sass/modules/_layout.scss */
 .grid-item-width4 {
   width: 33.33333%;
 }
 
-/* line 297, sass/modules/_layout.scss */
+/* line 415, sass/modules/_layout.scss */
 .grid-item-width5 {
   width: 41.66667%;
 }
 
-/* line 301, sass/modules/_layout.scss */
+/* line 419, sass/modules/_layout.scss */
 .grid-item-width6 {
   width: 50%;
 }
-/* line 306, sass/modules/_layout.scss */
+/* line 424, sass/modules/_layout.scss */
 .grid-item-width6.nest .nested {
   width: 33.33333%;
   float: left;
   position: relative;
 }
 
-/* line 318, sass/modules/_layout.scss */
+/* line 436, sass/modules/_layout.scss */
 .grid-item-width7 {
   width: 58.33333%;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 323, sass/modules/_layout.scss */
+  /* line 441, sass/modules/_layout.scss */
   .grid-item {
     width: 50%;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 327, sass/modules/_layout.scss */
+  /* line 445, sass/modules/_layout.scss */
   .grid-item {
     width: 100%;
   }
 }
-/* line 330, sass/modules/_layout.scss */
+/* line 448, sass/modules/_layout.scss */
 .hg {
   background-color: red;
   background-repeat: no-repeat;
@@ -1367,37 +1491,37 @@ body {
   background-position: center center;
 }
 
-/* line 342, sass/modules/_layout.scss */
+/* line 460, sass/modules/_layout.scss */
 .hg.columns-2 {
   padding-bottom: 16.66667%;
 }
 
-/* line 346, sass/modules/_layout.scss */
+/* line 464, sass/modules/_layout.scss */
 .hg.columns-3 {
   padding-bottom: 25%;
 }
 
-/* line 350, sass/modules/_layout.scss */
+/* line 468, sass/modules/_layout.scss */
 .hg.columns-4 {
   padding-bottom: 33.33333%;
 }
 
-/* line 353, sass/modules/_layout.scss */
+/* line 471, sass/modules/_layout.scss */
 .hg.columns-5 {
   padding-bottom: 41.66667%;
 }
 
-/* line 356, sass/modules/_layout.scss */
+/* line 474, sass/modules/_layout.scss */
 .hg.columns-6 {
   padding-bottom: 50%;
 }
 
-/* line 360, sass/modules/_layout.scss */
+/* line 478, sass/modules/_layout.scss */
 .hg.columns-8 {
   padding-bottom: 66.66667%;
 }
 
-/* line 380, sass/modules/_layout.scss */
+/* line 498, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
