@@ -276,15 +276,12 @@ get_header();
 
 						?>
 
-						<div class="hg grid-item grid-item-width6 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
-							<div class="wrap">
-								<div class="content">
-									<div class="overlay" aria-hidden="true"></div>
-									<h1><?php echo $post_1->post_title; ?></h1>
-									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-								</div>
-							</div>
-						</div>
+						<figure class="hg grid-item grid-item-width6 primary no-padding">
+							<img src="<?php echo $primary_row_url; ?>">
+							<h1><?php echo $post_1->post_title; ?></h1>
+							<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
+							<div class="width6-diamond"></div>
+						</figure>
 						
 						<?php wp_reset_postdata(); } ?>
 
@@ -446,14 +443,12 @@ get_header();
 							$post_1 = $post_link;
 							setup_postdata( $post_1 );
 						?>
-						<div class="hg grid-item grid-item-width6 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
-							<div class="wrap">
-								<div class="content">
-									<div class="overlay" aria-hidden="true"></div>
-									<h1><?php echo $post_1->post_title; ?></h1>
-								</div>
-							</div>
-						</div>
+						<figure class="hg grid-item grid-item-width6 primary no-padding">
+							<img src="<?php echo $primary_row_url; ?>">
+							<h1><?php echo $post_1->post_title; ?></h1>
+							<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
+							<div class="width6-diamond"></div>
+						</figure>
 
 						<?php wp_reset_postdata(); } ?>
 

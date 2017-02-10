@@ -58,6 +58,7 @@ function _resize(){
   $('.grid-item-width4').css({height: gi4});
   $('.grid-item-width5').css({height: gi5})
   $('.grid-item-width6').css({height: (gi6*.66)});
+  $('.width6-diamond').css({height: (gi6*0.4)});
   $('.columns-6.promo').css({height: (cp6*.66)});
   $('.grid-item-width6.nest').css({height: gi2});
   $('.grid-item-width6.nest .nested').css({height: gi2});
