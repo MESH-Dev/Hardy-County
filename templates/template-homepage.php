@@ -245,15 +245,16 @@ get_header();
 							setup_postdata( $post_2 );
 
 						?>
-						<div class="hg grid-item grid-item-width3 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
-							<div class="wrap">
-								<div class="content">
-									<div class="overlay" aria-hidden="true"></div>
-									<h1><?php echo $post_2->post_title; ?></h1>
-									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-								</div>
-							</div>
-						</div>
+						<figure class="hg grid-item grid-item-width3 primary no-padding">
+							<!-- columns-4 -->
+							<img src="<?php echo $primary_row_url; ?>" alt=""/>
+							<figcaption>
+								<h1><?php echo $post_1->post_title; ?></h1>
+								<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
+								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
+								
+							</figcaption>
+						</figure>						
 
 						<?php wp_reset_postdata(); } ?>
 
@@ -322,22 +323,16 @@ get_header();
 								}
 
 							?>
-							<div class="hg nested secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
-								<div class="overlay" aria-hidden="true"></div>
+							<figure class="hg nested secondary no-padding">
+								<img src="<?php echo $secondary_row_bg_url; ?>">
+								<?php if ($s_post_1 != ''){ ?>
 
-								<?php 
-								//Don't render this stuff if we aren't passing any of the variables above
-								if ($s_post_link != null){ 
-								?>
-
-								<div class="content">
-									<div class="post-parent"><?php echo $s_parent_post_title; ?></div>
-									<div class="post-title"><?php echo $s_post_1->post_title; ?></div>
-								</div>
-
+								<figcaption>
+									<p><?php echo $s_parent_post_title; ?></p>
+									<h2><?php echo $s_post_1->post_title; ?></h2>
+								</figcaption>	
 								<?php } ?>
-
-							</div>
+							</figure>
 
 							<?php wp_reset_postdata(); } ?>
 
@@ -487,19 +482,19 @@ get_header();
 
 						?>
 
-						<div class="hg grid-item grid-item-width2 secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
+						<figure class="hg grid-item grid-item-width2 secondary no-padding">
+							<img src="<?php echo $secondary_row_bg_url; ?>">
 							<?php 
 							//Don't render this stuff if we aren't passing any of the variables above
 							if ($s_post_link != null){ 
 							?>
-
-							<div class="content">
-								<div class="post-parent"><?php echo $s_parent_post_title; ?></div>
-								<div class="post-title"><?php echo $s_post_1->post_title; ?></div>
-							</div>	
+							<figcaption>
+								<p><?php echo $s_parent_post_title; ?></p>
+								<h2><?php echo $s_post_1->post_title; ?></h2>
+							</figcaption>	
 
 							<?php } ?>
-						</div>
+						</figure>
 						<?php wp_reset_postdata(); } ?>
 
 						<!-- Secondary CTA block 7 - Small -->
@@ -531,19 +526,20 @@ get_header();
 							    $s_parent_post_title = $s_parent_post->post_title;
 							}
 						?>
-						<div class="hg grid-item grid-item-width2 secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
+						<figure class="hg grid-item grid-item-width2 secondary no-padding">
+							<img src="<?php echo $secondary_row_bg_url; ?>">
 							<?php 
 							//Don't render this stuff if we aren't passing any of the variables above
 							if ($s_post_link != null ){ 
 							?>
 
-							<div class="content">
-								<div class="post-parent"><?php echo $s_parent_post_title; ?></div>
-								<div class="post-title"><?php echo $s_post_1->post_title; ?></div>
-							</div>	
+							<figcaption>
+								<p><?php echo $s_parent_post_title; ?></p>
+								<h2><?php echo $s_post_1->post_title; ?></h2>
+							</figcaption>	
 
 							<?php } ?>
-						</div>
+						</figure>
 
 						<?php wp_reset_postdata(); } ?>	
 
