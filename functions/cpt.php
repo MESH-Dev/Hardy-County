@@ -38,7 +38,7 @@ function listing_custom_post() {
 		'label'                 => __( 'Listing', 'text_domain' ),
 		'description'           => __( 'Custom Post Types for Listings', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', ),
+		'supports'              => array( 'title', 'editor', 'thumbnail'),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -97,7 +97,7 @@ function event_custom_post() {
 		'description'           => __( 'Custom Post Types for Events', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
+		'taxonomies'            => array( ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -116,5 +116,44 @@ function event_custom_post() {
 
 }
 add_action( 'init', 'event_custom_post', 0 );
+
+// Register Primary Section Custom Taxonomy
+function primary_section() {
+
+	$labels = array(
+		'name'                       => _x( 'Primary Sections', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Primary Section', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Primary Section', 'text_domain' ),
+		'all_items'                  => __( 'All Primary Sections', 'text_domain' ),
+		'parent_item'                => __( 'Parent Primary Section', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Primary Section:', 'text_domain' ),
+		'new_item_name'              => __( 'New Primary Section', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Primary Section', 'text_domain' ),
+		'edit_item'                  => __( 'Edit Primary Section', 'text_domain' ),
+		'update_item'                => __( 'Update Primary Section', 'text_domain' ),
+		'view_item'                  => __( 'View Primary Section', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove Primary Sections', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'popular_items'              => __( 'Popular Primary Sections', 'text_domain' ),
+		'search_items'               => __( 'Search Primary Sections', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+		'no_terms'                   => __( 'No Primary Sections', 'text_domain' ),
+		'items_list'                 => __( 'Items list', 'text_domain' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'primary_section', array( 'listing', 'event' ), $args );
+
+}
+add_action( 'init', 'primary_section', 0 );
 
 ?>

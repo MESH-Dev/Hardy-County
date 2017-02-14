@@ -12,7 +12,7 @@ function my_custom_login_logo() {
 		        h1 a {
 		          background-size: 227px 85px !important;
 		          margin-bottom: 20px !important;
-		          background-image:url('.get_bloginfo('template_directory').'/images/logo.png) !important; }
+		          background-image:url('.get_bloginfo('template_directory').'/images/hardy-logo.png) !important; }
 		    </style>';
 }
 

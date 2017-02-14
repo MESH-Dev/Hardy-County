@@ -32,20 +32,30 @@ get_header();
 
 
 	<?php 
-
 	//Call the Intro Statement partial 
 	get_template_part('partials/intro-statement'); 
 	?>
 
 	<div class="container">
 		<div class="row">
-			<div class="home-grid" id="packery"><!-- macy --><!-- masonry --><!-- macy -->
+			<div class="home-grid grid" id="packery"><!-- macy --><!-- masonry --><!-- macy -->
 
 						<?php //Row 1 ?>
 
 						<!-- Event Block 1 -->
 						<div class="hg grid-item grid-item-width3 event no-padding">
-							<h2>EVENT BLOCK!</h2>
+							<div class="date">
+								<h5>APR</h5>
+								<h3>03</h3>
+							</div>
+							<div class="info">
+								<p>Paragraph</p>
+								<h2>The Poultry Festival</h2>
+								<div class="reveal">
+									<p>Paragraph | <a href="http://poultryfest.com">poultryfest.com</a></p>
+									<h6>Learn More &#10165;</h6>
+								</div>
+							</div>
 						</div>
 
 						<!-- Secondary CTA block 1 -->
@@ -79,13 +89,13 @@ get_header();
 							    $s_parent_post_title = $s_parent_post->post_title;
 
 						?>
-						<div class="hg grid-item grid-item-width3 secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
-							<div class="overlay" aria-hidden="true"></div>
-							<div class="content">
-								<div class="post-parent"><?php echo $s_parent_post_title; ?></div>
-								<div class="post-title"><?php echo $s_post_1->post_title; ?></div>
-							</div>
-						</div>
+						<figure class="hg grid-item grid-item-width3 secondary no-padding">
+							<img src="<?php echo $secondary_row_bg_url; ?>">
+							<figcaption>
+								<p><?php echo $s_parent_post_title; ?></p>
+								<h2><?php echo $s_post_1->post_title; ?></h2>
+							</figcaption>
+						</figure>
 
 						<?php wp_reset_postdata(); } ?>
 					
@@ -114,17 +124,17 @@ get_header();
 						?>
 
 						<!-- Primary Block 1 -->
-						<div class="hg grid-item grid-item-width4 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
+						<figure class="hg grid-item grid-item-width4 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
 							<!-- columns-4 -->
-							<!-- <img src="http://placehold.it/1000x500"> -->
-							<div class="wrap">
-								<div class="content">
-									<div class="overlay" aria-hidden="true"></div>
-									<h1><?php echo $post_1->post_title; ?></h1>
-									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-								</div>
-							</div>
-						</div>
+							<img src="<?php echo $primary_row_url; ?>" alt=""/>
+							<figcaption>
+								<h1><?php echo $post_1->post_title; ?></h1>
+								<!--Hover Content?-->
+								<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
+								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
+								
+							</figcaption>
+						</figure>
 						<?php wp_reset_postdata(); } ?>
 						<div class="hg grid-item grid-item-width2 weather weather-api no-padding">
 							<h2>WEATHER BLOCK!</h2>
@@ -163,13 +173,13 @@ get_header();
 							    $s2_parent_post_title = $s2_parent_post->post_title;
 
 						?>
-						<div class="hg grid-item grid-item-width3 secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url_2; ?>');">
-							<div class="overlay" aria-hidden="true"></div>
-							<div class="content">
-								<div class="post-parent"><?php echo $s2_parent_post_title; ?></div>
-								<div class="post-title"><?php echo $s_post_2->post_title; ?></div>
-							</div>	
-						</div>
+						<figure class="hg grid-item grid-item-width3 secondary no-padding">
+							<img src="<?php echo $secondary_row_bg_url_2; ?>">
+							<figcaption>
+								<p><?php echo $s2_parent_post_title; ?></p>
+								<h2><?php echo $s_post_2->post_title; ?></h2>
+							</figcaption>	
+						</figure>
 
 						<?php wp_reset_postdata(); } ?>
 
@@ -179,7 +189,7 @@ get_header();
 
 								//Declare sub_fields for this row
 								$secondary_row_bg_3 = $third_secondary_row['background_image'];
-								$secondary_row_bg_url = $secondary_row_bg['sizes']['medium'];
+								$secondary_row_bg_url = $secondary_row_bg['sizes']['large'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
 								$s_post_link = $third_secondary_row['section_title'];
@@ -193,19 +203,30 @@ get_header();
 							    $s_parent_post_title = $s_parent_post->post_title;
 
 						?>
-						<div class="hg grid-item grid-item-width3 secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
-							<div class="overlay" aria-hidden="true"></div>
-							<div class="content">
-								<div class="post-parent"><?php echo $s_parent_post_title; ?></div>
-								<div class="post-title"><?php echo $s_post_1->post_title; ?></div>
-							</div>	
-						</div>
+						<figure class="hg grid-item grid-item-width3 secondary no-padding">
+							<img src="<?php echo $secondary_row_bg_url; ?>">
+							<figcaption>
+								<p><?php echo $s_parent_post_title; ?></p>
+								<h2><?php echo $s_post_1->post_title; ?></h2>
+							</figcaption>	
+						</figure>
 						
 						<?php wp_reset_postdata(); } ?>
 
 						<!-- Event Block 2 -->
 						<div class="hg grid-item grid-item-width3 event second no-padding">
-							<h2>EVENT BLOCK!</h2>
+							<div class="date">
+								<h5>APR</h5>
+								<h3>03</h3>
+							</div>
+							<div class="info">
+								<p>Paragraph</p>
+								<h2>The Poultry Festival</h2>
+								<div class="reveal">
+									<p>Paragraph | <a href="http://poultryfest.com">poultryfest.com</a></p>
+									<h6>Learn More &#10165;</h6>
+								</div>
+							</div>
 						</div>
 
 						<!-- Primary CTA Block 2 -->
@@ -224,15 +245,17 @@ get_header();
 							setup_postdata( $post_2 );
 
 						?>
-						<div class="hg grid-item grid-item-width3 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
-							<div class="wrap">
-								<div class="content">
-									<div class="overlay" aria-hidden="true"></div>
-									<h1><?php echo $post_2->post_title; ?></h1>
-									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-								</div>
-							</div>
-						</div>
+						<figure class="hg grid-item grid-item-width3 primary no-padding">
+							<!-- columns-4 -->
+							<img src="<?php echo $primary_row_url; ?>" alt=""/>
+							<figcaption>
+								<h1><?php echo $post_1->post_title; ?></h1>
+								<!-- Hover? -->
+								<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
+								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
+								
+							</figcaption>
+						</figure>						
 
 						<?php wp_reset_postdata(); } ?>
 
@@ -255,15 +278,13 @@ get_header();
 
 						?>
 
-						<div class="hg grid-item grid-item-width6 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
-							<div class="wrap">
-								<div class="content">
-									<div class="overlay" aria-hidden="true"></div>
-									<h1><?php echo $post_1->post_title; ?></h1>
-									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-								</div>
-							</div>
-						</div>
+						<figure class="hg grid-item grid-item-width6 primary no-padding">
+							<img src="<?php echo $primary_row_url; ?>">
+							<h1><?php echo $post_1->post_title; ?></h1>
+							<!--Hover?-->
+							<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
+							<div class="width6-diamond"></div>
+						</figure>
 						
 						<?php wp_reset_postdata(); } ?>
 
@@ -282,7 +303,7 @@ get_header();
 
 								//Declare sub_fields for this row
 								$secondary_row_bg = $fourth_secondary_row['background_image'];
-								$secondary_row_bg_url = $secondary_row_bg['sizes']['medium'];
+								$secondary_row_bg_url = $secondary_row_bg['sizes']['large'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
 								$s_post_link = $fourth_secondary_row['section_title'];
@@ -304,22 +325,21 @@ get_header();
 								}
 
 							?>
-							<div class="hg nested secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
-								<div class="overlay" aria-hidden="true"></div>
-
+							<figure class="hg nested secondary no-padding">
+								<img src="<?php echo $secondary_row_bg_url; ?>">
 								<?php 
 								//Don't render this stuff if we aren't passing any of the variables above
 								if ($s_post_link != null){ 
 								?>
 
-								<div class="content">
-									<div class="post-parent"><?php echo $s_parent_post_title; ?></div>
-									<div class="post-title"><?php echo $s_post_1->post_title; ?></div>
-								</div>
+								<figcaption>
+									<p><?php echo $s_parent_post_title; ?></p>
+									<h2><?php echo $s_post_1->post_title; ?></h2>
+								</figcaption>	
 
 								<?php } ?>
 
-							</div>
+							</figure>
 
 							<?php wp_reset_postdata(); } ?>
 
@@ -341,15 +361,15 @@ get_header();
 							setup_postdata( $post_1 );
 
 						?>
-						<div class="hg grid-item grid-item-width4 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
-							<div class="wrap">
-								<div class="content">
-									<div class="overlay" aria-hidden="true"></div>
-									<h1><?php echo $post_1->post_title; ?></h1>
-									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-								</div>
-							</div>
-						</div>
+						<figure class="hg grid-item grid-item-width4 primary no-padding">
+							<img src="<?php echo $primary_row_url; ?>" alt=""/>
+							<figcaption>
+								<h1><?php echo $post_1->post_title; ?></h1>
+								<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
+								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
+								
+							</figcaption>
+						</figure>
 
 						<?php wp_reset_postdata(); } ?>
 
@@ -357,7 +377,18 @@ get_header();
 						<?php //End Row 3::Start Row 4 ?>
 
 						<div class="hg grid-item grid-item-width3 event third no-padding">
-							<h2>EVENT BLOCK!</h2>
+							<div class="date">
+								<h5>APR</h5>
+								<h3>03</h3>
+							</div>
+							<div class="info">
+								<p>Paragraph</p>
+								<h2>The Poultry Festival</h2>
+								<div class="reveal">
+									<p>Paragraph | <a href="http://poultryfest.com">poultryfest.com</a></p>
+									<h6>Learn More &#10165;</h6>
+								</div>
+							</div>
 						</div>
 
 						<!-- Secondary CTA Block 5 -->
@@ -370,7 +401,7 @@ get_header();
 
 								//Declare sub_fields for this row
 								$secondary_row_bg = $fifth_secondary_row['background_image'];
-								$secondary_row_bg_url = $secondary_row_bg['sizes']['medium'];
+								$secondary_row_bg_url = $secondary_row_bg['sizes']['large'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
 								$s_post_link = $fifth_secondary_row['section_title'];
@@ -384,17 +415,17 @@ get_header();
 							    $s_parent_post_title = $s_parent_post->post_title;
 
 							?>
-						<div class="hg grid-item grid-item-width3 secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
-							<div class="overlay" aria-hidden="true"></div>
+						<figure class="hg grid-item grid-item-width3 secondary no-padding">
+							<img src="<?php echo $secondary_row_bg_url; ?>">
 							<?php if ($s_post_1 != ''){ ?>
 
-							<div class="content">
-								<div class="post-parent"><?php echo $s_parent_post_title; ?></div>
-								<div class="post-title"><?php echo $s_post_1->post_title; ?></div>
-							</div>	
+							<figcaption>
+								<p><?php echo $s_parent_post_title; ?></p>
+								<h2><?php echo $s_post_1->post_title; ?></h2>
+							</figcaption>		
 
 							<?php } ?>
-						</div>
+						</figure>
 
 						<?php //End Row 4::Start Row 5 ?>
 
@@ -415,14 +446,13 @@ get_header();
 							$post_1 = $post_link;
 							setup_postdata( $post_1 );
 						?>
-						<div class="hg grid-item grid-item-width6 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
-							<div class="wrap">
-								<div class="content">
-									<div class="overlay" aria-hidden="true"></div>
-									<h1><?php echo $post_1->post_title; ?></h1>
-								</div>
-							</div>
-						</div>
+						<figure class="hg grid-item grid-item-width6 primary no-padding">
+							<img src="<?php echo $primary_row_url; ?>">
+							<h1><?php echo $post_1->post_title; ?></h1>
+							<!--Hover?-->
+							<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
+							<div class="width6-diamond"></div>
+						</figure>
 
 						<?php wp_reset_postdata(); } ?>
 
@@ -439,7 +469,7 @@ get_header();
 
 							//Declare sub_fields for this row
 							$secondary_row_bg = $sixth_secondary_row['background_image'];
-							$secondary_row_bg_url = $secondary_row_bg['sizes']['medium'];
+							$secondary_row_bg_url = $secondary_row_bg['sizes']['large'];
 
 							//__This section sets up the post_object for the 'section_title' subfield
 							$s_post_link = $sixth_secondary_row['section_title'];
@@ -461,19 +491,20 @@ get_header();
 
 						?>
 
-						<div class="hg grid-item grid-item-width2 secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
+						<figure class="hg grid-item grid-item-width2 secondary no-padding">
+							<img src="<?php echo $secondary_row_bg_url; ?>">
 							<?php 
 							//Don't render this stuff if we aren't passing any of the variables above
 							if ($s_post_link != null){ 
 							?>
 
-							<div class="content">
-								<div class="post-parent"><?php echo $s_parent_post_title; ?></div>
-								<div class="post-title"><?php echo $s_post_1->post_title; ?></div>
-							</div>	
+							<figcaption>
+								<p><?php echo $s_parent_post_title; ?></p>
+								<h2><?php echo $s_post_1->post_title; ?></h2>
+							</figcaption>	
 
 							<?php } ?>
-						</div>
+						</figure>
 						<?php wp_reset_postdata(); } ?>
 
 						<!-- Secondary CTA block 7 - Small -->
@@ -482,7 +513,7 @@ get_header();
 
 							//Declare sub_fields for this row
 							$secondary_row_bg = $seventh_secondary_row['background_image'];
-							$secondary_row_bg_url = $secondary_row_bg['sizes']['medium'];
+							$secondary_row_bg_url = $secondary_row_bg['sizes']['large'];
 
 							
 							//__This section sets up the post_object for the 'section_title' subfield
@@ -505,19 +536,20 @@ get_header();
 							    $s_parent_post_title = $s_parent_post->post_title;
 							}
 						?>
-						<div class="hg grid-item grid-item-width2 secondary no-padding" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
+						<figure class="hg grid-item grid-item-width2 secondary no-padding">
+							<img src="<?php echo $secondary_row_bg_url; ?>">
 							<?php 
 							//Don't render this stuff if we aren't passing any of the variables above
 							if ($s_post_link != null ){ 
 							?>
 
-							<div class="content">
-								<div class="post-parent"><?php echo $s_parent_post_title; ?></div>
-								<div class="post-title"><?php echo $s_post_1->post_title; ?></div>
-							</div>	
+							<figcaption>
+								<p><?php echo $s_parent_post_title; ?></p>
+								<h2><?php echo $s_post_1->post_title; ?></h2>
+							</figcaption>	
 
 							<?php } ?>
-						</div>
+						</figure>
 
 						<?php wp_reset_postdata(); } ?>	
 
