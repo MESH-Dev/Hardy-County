@@ -1075,7 +1075,7 @@ footer #searchform button {
   right: 10px;
   z-index: 1;
   color: #fff;
-  font-size: 2em;
+  font-size: 2.5em;
   line-height: 0.4;
   text-align: center;
   vertical-align: middle;
@@ -1199,7 +1199,7 @@ input::webkit-input-placeholder {
 
 /* line 1, sass/modules/_modules.scss */
 body {
-  background-color: #f9f7f4;
+  background-color: #f3efea;
 }
 
 /* line 3, sass/modules/_layout.scss */
@@ -2002,12 +2002,104 @@ body {
   background-position: center center;
 }
 
+/* line 721, sass/modules/_layout.scss */
+.body-content {
+  font-family: 'adelle-condensed';
+}
 /* line 723, sass/modules/_layout.scss */
+.body-content h2 {
+  color: #000;
+}
+/* line 726, sass/modules/_layout.scss */
+.body-content .body-copy {
+  color: #292929;
+  margin-top: 4em;
+}
+/* line 730, sass/modules/_layout.scss */
+.body-content .body-copy p:first-of-type {
+  font-size: 2.4em;
+}
+/* line 735, sass/modules/_layout.scss */
+.body-content .sidebar {
+  float: right;
+  background-color: #f9f7f4;
+}
+/* line 738, sass/modules/_layout.scss */
+.body-content .sidebar h2 {
+  margin: 0;
+}
+/* line 741, sass/modules/_layout.scss */
+.body-content .sidebar .info {
+  padding: 4em;
+}
+/* line 743, sass/modules/_layout.scss */
+.body-content .sidebar .info p {
+  margin: 0;
+}
+/* line 746, sass/modules/_layout.scss */
+.body-content .sidebar .info .linksection {
+  font-family: 'alternate-gothic-no-1-d';
+  margin-top: 2em;
+}
+/* line 752, sass/modules/_layout.scss */
+.body-content figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0px;
+  background-color: #000;
+}
+/* line 757, sass/modules/_layout.scss */
+.body-content figure img {
+  opacity: 0.7;
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+/* line 771, sass/modules/_layout.scss */
+.body-content figure figcaption {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  opacity: 1;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+/* line 779, sass/modules/_layout.scss */
+.body-content figure p {
+  color: #fff;
+  line-height: 2em;
+  padding: 0;
+  margin: 0;
+}
+/* line 785, sass/modules/_layout.scss */
+.body-content figure h2 {
+  color: #fff;
+}
+/* line 788, sass/modules/_layout.scss */
+.body-content figure:hover {
+  background-size: 110% 110%;
+}
+/* line 789, sass/modules/_layout.scss */
+.body-content figure:hover img {
+  opacity: 1;
+  -webkit-transform: scale3d(1.05, 1.05, 1);
+  transform: scale3d(1.05, 1.05, 1);
+}
+/* line 796, sass/modules/_layout.scss */
+.body-content figure:hover figcaption {
+  opacity: 0;
+  bottom: 3em;
+}
+
+/* line 807, sass/modules/_layout.scss */
 .cp-leadin {
   background: #e5b070;
   padding: 2em 0;
 }
-/* line 726, sass/modules/_layout.scss */
+/* line 810, sass/modules/_layout.scss */
 .cp-leadin p {
   padding: 0;
   margin: 0;
@@ -2019,7 +2111,7 @@ body {
   font-style: italic;
 }
 
-/* line 738, sass/modules/_layout.scss */
+/* line 822, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
