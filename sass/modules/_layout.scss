@@ -432,15 +432,18 @@
 	.event{
 		overflow: hidden;
 		position: relative;
-		padding: 1em;
+		// padding: 1em;
 		background-color:$aqua_marine;
 		.date{
 			position: absolute;
+			top: 1em;
+			left: 1em;
 			border-top: solid 2px #fff;
 			border-bottom: solid 2px #fff;
 		}
 		.info{
 			position: absolute;
+			left: 1em;
 			bottom: -56px;
 			-webkit-transition: all 0.3s ease-in-out;
 			transition: all 0.3s ease-in-out;
@@ -740,7 +743,7 @@
 		}
 		.info{
 			padding: 4em;
-			p{
+			p, h2{
 				margin: 0;
 			}
 			.linksection{
@@ -828,4 +831,60 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+p img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+p img.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+p img.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+p img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
 }
