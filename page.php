@@ -16,7 +16,6 @@
 	<div class="container body-content">
 		<div class="row">
 			<div class="columns-7 body-copy">
-				<h2>H2 Sub-Title Style</h2>
 
 				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
@@ -26,8 +25,8 @@
 			</div>
 
 			<div class="columns-4 sidebar">
-				<figure class="">
-					<img src="/wp-content/uploads/2017/01/secondary-cta-placeholder.png">		
+				<figure>
+					<img src="http://localhost:8888/hardy/wp-content/uploads/2017/01/secondary-cta-placeholder.png">		
 				</figure>
 				<div class="info">
 					<h2>Item Title Style</h2>
@@ -39,8 +38,8 @@
 					</div>
 				</div>				
 				<!-- Change this to repeater of custom fields -->
-				<figure class="">
-					<img src="/wp-content/uploads/2017/01/primary-cta-placeholder2.png">
+				<figure>
+					<img src="http://localhost:8888/hardy/wp-content/uploads/2017/01/primary-cta-placeholder2.png">
 					<figcaption>
 						<p>Paragraph</p>
 						<h2>Heading 2</h2>
