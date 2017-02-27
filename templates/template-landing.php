@@ -21,8 +21,8 @@ get_header(); ?>
 	get_template_part('partials/intro-statement'); 
 	?>
 	<div class="container">
-		<div class="landing-grid grid" id="packery">
-
+		<div class="landing-grid grid" id=""><!-- packery -->
+			<div class="row">
 			<?php 
 
 			//Per Codex https://codex.wordpress.org/Function_Reference/get_page_children#Examples
@@ -41,7 +41,7 @@ get_header(); ?>
 
 			?>
 			<!-- Row 1 stuff from sub-pages -->
-
+			<!-- <div class="row"> -->
 			<?php foreach( $get_children as $children){ 
 					
 					$child_ID = $children->ID; //var_dump($children->ID);
@@ -50,15 +50,20 @@ get_header(); ?>
 
 				?>
 			<a href="<?php the_permalink($children->ID); ?>">
-			<div class="grid-item grid-item-width4 primary" style="background-image:url('<?php echo $thumbnail; ?>')">
-				<div class="wrap">
-					<div class="content">
+			<figure class="columns-4 no-padding primary" style="background-image:url('<?php echo $thumbnail; ?>')"><!-- grid-item grid-item-width4 -->
+				<!-- <div class="wrap">
+					<div class="content"> -->
+						<img src="<?php echo $thumbnail; ?>">
+						<figcaption>
 						<h1><?php echo $children->post_title; ?></h1>
-					</div>
-				</div>
-			</div>
+						</figcaption>
+					<!-- </div>
+				</div> -->
+
+			</figure>
 			</a>
 			<?php } wp_reset_query(); ?>
+			<!-- </div> -->
 			<!-- <div class="grid-item grid-item-width4 primary" style="background-color:purple;">
 				<h1>PRIMARY ITEM!</h1>
 			</div>
@@ -68,72 +73,82 @@ get_header(); ?>
 
 			<!-- Row 2 Calendar Feed/See More -->
 
-			<div class="grid-item grid-item-width5 event-feed">
-				<div class="head">
-					<div class="title">Upcoming Events</div>
-					<div class="see-all">
-						<a href="#">See all events</a>
-					</div>
-
-				</div>
-				<div class="feed">
-					<div class="feed-item">
-						<div class="date columns-2">
-							Apr 28
+			<div class="columns-5 event-feed no-padding"> <!-- grid-item grid-item-width5  -->
+				<div class="content">
+					<div class="head row">
+						<div class="title">Upcoming Events</div>
+						<div class="see-all">
+							<a href="#">See all events &#10165;</a>
 						</div>
-						<div class="event-desc columns-10">	
-							<h1 class="title" style="font-size:2em; color:black;">Bean Festival</h1>
-							<h2 class="loc">Moorfield</h2>
-							<div class="more">
-								<span class="website">
-									<a href="#">beanfestival.com</a>
-								</span> |
-								<span class="phone">
-									304.530.280
+					</div>
+					<div class="feed row">
+						<div class="feed-item row">
+							<div class="date columns-2">
+								<span class="date-wrap">
+									<h5 class="month">Apr</h5>
+									<h3 class="range">28</h3>
 								</span>
+							</div>
+							<div class="event-desc columns-10">	
+								<h1 class="title">Bean Festival</h1>
+								<h2 class="loc">Moorfield</h2>
+								<div class="more">
+									<span class="website">
+										<a href="#">beanfestival.com</a>
+									</span> |
+									<span class="phone">
+										304.530.280
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="feed-item row">
+							<div class="date columns-2">
+								<span class="date-wrap">
+									<h5 class="month">Apr</h5>
+									<h3 class="range">28</h3>
+								</span>
+							</div>
+							<div class="event-desc columns-10">	
+								<h1 class="title">Bean Festival</h1>
+								<h2 class="loc">Moorfield</h2>
+								<div class="more">
+									<span class="website">
+										<a href="#">beanfestival.com</a>
+									</span> |
+									<span class="phone">
+										304.530.280
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="feed-item row">
+							<div class="date columns-2">
+								<span class="date-wrap">
+									<h5 class="month">Apr</h5>
+									<h3 class="range">28</h3>
+								</span>
+							</div>
+							<div class="event-desc columns-10">	
+								<h1 class="title">Bean Festival</h1>
+								<h2 class="loc">Moorfield | <span class="time">Noon-6pm</span></h2>
+								<div class="more">
+									<span class="website">
+										<a href="#">beanfestival.com</a>
+									</span> |
+									<span class="phone">
+										304.530.280
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="feed-item">
-						<div class="date columns-2">
-							<span class="month">Apr</span>
-							<span class="range">28</span>
-						</div>
-						<div class="event-desc columns-10">	
-							<h1 class="title">Bean Festival</h1>
-							<h2 class="loc">Moorfield</h2>
-							<div class="more">
-								<span class="website">
-									<a href="#">beanfestival.com</a>
-								</span> |
-								<span class="phone">
-									304.530.280
-								</span>
-							</div>
-						</div>
+					<div class="foot row">
+						Have an event you want to tell people about? <a href="#">Share it with us! &#10165;</a>
 					</div>
-					<div class="feed-item">
-						<div class="date columns-2">
-							Apr 28
-						</div>
-						<div class="event-desc columns-10">	
-							<h1 class="title">Bean Festival</h1>
-							<h2 class="loc">Moorfield</h2>
-							<div class="more">
-								<span class="website">
-									<a href="#">beanfestival.com</a>
-								</span> |
-								<span class="phone">
-									304.530.280
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foot">
-					Have an event you want to tell people about? <a href="#">Share it with us!</a>
-				</div>
+				</div>	
 			</div>
+			
 			<?php if(have_rows('trip_idea_block')):
 					while(have_rows('trip_idea_block')):the_row(); 
 
@@ -142,7 +157,7 @@ get_header(); ?>
 					$background_url = $background['sizes']['large'];
 
 			?>
-			<div class="grid-item grid-item-width7 trip" style="background-image:url('<?php echo $background_url; ?>')">
+			<div class="columns-7 trip no-padding" style="background-image:url('<?php echo $background_url; ?>')"><!-- grid-item grid-item-width7 -->
 				<div class="wrap">
 					<div class="head">
 						<h1> -  ideas for your trip  - </h1>
@@ -170,6 +185,7 @@ get_header(); ?>
 			</div>
 
 			<?php endwhile; endif; ?>
+			</div>
 		</div><!-- End Packery Grid -->
 
 
@@ -207,17 +223,18 @@ get_header(); ?>
 						$background_url = $cp_background['sizes']['large'];
 						$tagline = $featured_items[0]['tagline'];
 					?>
-					<!-- <a href="<?php the_permalink($post_p->ID); ?>" >
- -->						<div class="columns-6 secondary promo no-padding" style="background-image:url('<?php echo $background_url; ?>');">
+					<a href="<?php echo the_permalink($post_p->ID); ?>" >
+						<figure class="columns-6 secondary promo no-padding" ><!-- style="background-image:url('<?php echo $background_url; ?>');" -->
 							<!-- <div class="wrap"> -->
-							<div class="content">
-								<h1><?php echo $tagline; ?></h1>
+							<img src="<?php echo $background_url; ?>">
+							<figcaption class="content">
+								<p><?php echo $tagline; ?></p>
 								<h2><?php echo $post_p->post_title; ?></h2>
 								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-							</div>
+							</figcaption>
 							<!-- </div> -->
-						</div>
-					<!-- </a> -->
+						</figure>
+					</a>
 				<?php wp_reset_postdata(); endwhile; endif; ?>
 			</div>
 		</div>
