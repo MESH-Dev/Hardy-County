@@ -118,8 +118,17 @@ get_header();
 						</div>
 					</div><div class="single_event">
 						<div class="date">
-							<h5>Jun</h5>
-							<h3>20 - 25</h3>
+							<div class="day_container">
+								<h5>Jun</h5>
+								<h3>20</h3>
+							</div>
+							<div class="day_container">
+								<h3>-</h3>
+							</div>
+							<div class="day_container">
+								<h5>Jun</h5>
+								<h3>25</h3>
+							</div>
 						</div>
 						<div class="info">
 							<h2>Hardy County Heritage Weekend</h2>
@@ -164,8 +173,8 @@ get_header();
 					<!-- <?//php the_content(); ?> -->
 				<!-- <?//php endwhile; ?> -->
 				<div class="events_cta">
-					<a href=""><div class="widebutton aquamarine"><h6>Have an event related to Hunting and Fishing that you want to tell people about? Fill out a form to get your post out there for people to attend.</h6><h5>Share it with us! &#10165;</h5></div></a>
-					<div class="widebutton white"><p><em>Keep learning about all the things Outdoors &amp; In around Hardy County and the Potomac Highlands...</em></p></div><figure>
+					<div class="widebutton aquamarine"><div class="button_text"><h6>Have an event related to Hunting and Fishing that you want to tell people about? Fill out a form to get your post out there for people to attend.</h6><a href=""><h5>Share it with us! &#10165;</h5></a></div></div>
+					<div class="widebutton white"><div class="button_text"><p><em>Keep learning about all the things Outdoors &amp; In around Hardy County and the Potomac Highlands...</em></p></div></div><figure>
 						<img src="http://localhost:8888/hardy/wp-content/uploads/2017/01/primary-cta-placeholder3.png">
 						<figcaption>
 							<p>Paragraph</p>
