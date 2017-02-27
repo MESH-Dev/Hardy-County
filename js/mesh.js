@@ -75,4 +75,26 @@ $('#packery').packery({
   percentPosition: true
 });
 
+$('#monthselectors a').on('click', function(){
+  $('a.active_month').removeClass('active_month');
+  $(this).addClass('active_month');
+});
+
+// $(".monthscrolltrigger").each(function(index, element){
+//   $(this).click(function(){
+//     TweenMax.to(window, 0.5, {scrollTo:{y:"#section" + (index+1)}});
+//   })
+// })
+var $menu = $("#monthselectors"),
+    $window = $(window);
+
+$menu.on("click","a", function(){
+    var $this = $(this),
+        href = $this.attr("href"),
+        topY = $(href).offset().top;
+    TweenMax.to($window, 1, {scrollTo:{y:(topY-40), autoKill: true}, ease:Power3.easeInOut});
+  
+  return false;
+});
+
 });
