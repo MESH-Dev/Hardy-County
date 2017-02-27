@@ -4,25 +4,28 @@
 	margin:10px 0;
 
 	.cta-link{
-		color:$white;
+		//color:$white;
 		padding-right:35px;
-		background-image:url('img/arrow-icon.png');
+		//background-image:url('img/arrow-icon.png');
 		background-repeat:no-repeat;
 		background-position:95% center;
 		font-size:2em;
-	    background-size: 9%;
+		text-transform:uppercase;
+	    //background-size: 9%;
 		@include alt_gothic_reg;
+
+		&.white{
+			color:$white;
+		}
 
 		&:active,
 		&:focus, 
 		&:hover{
-			background-image:url('img/arrow-icon_hover.png');
+			//background-image:url('img/arrow-icon_hover.png');
 			opacity:.7;
 		}
 	}
-	&.white{
-		color:white;
-	}
+	
 
 	//padding-left:15px;
 	//background-image:
@@ -75,6 +78,19 @@
 
 		.page-title{	
 			margin-bottom:0;
+
+			span{
+					font-size:.25em;
+					@include adelle-thin;
+					display:block;
+					line-height:0;
+				    margin-bottom: -1.5em;
+
+					a{
+						color:$white;
+					}
+
+				}
 		}
 		.banner-heading{
 			width: 100%;
@@ -89,9 +105,11 @@
 			p{
 				margin-bottom: 0.5em;
 			}
+
+
 		}
 		p{
-			@include adelle;
+			@include adelle-thin;
 			color: #fff;
 		}
 	}	
@@ -115,6 +133,7 @@
 
 			&.page-title{	
 				margin-bottom:0;
+
 			}
 		}
 		h2{
@@ -161,14 +180,22 @@
 .landing-grid,
 .grid{
 	//height:2000px !important;
-
+	a{
+		&:hover,
+		&:focus,
+		&:active{
+		opacity:1;
+		text-decoration:none;
+  }
+	}
 	figure{
 		//padding:1em;
 	}
-	figure.primary{
+	.primary{//figure
 		overflow: hidden;
 		margin: 0px;
 		background-color: #000;
+
 		img{
 			opacity: 0.7;
 			position:relative;
@@ -185,7 +212,10 @@
 		}
 		h1{
 			text-align: center;
-			display: inline-block;
+			//display: inline-block; //SD Change
+		    display: flex; //SD Change
+			align-items: center; //SD Change
+			justify-content: center; //SD Change
 			line-height: 0.8;
 			// centering two elements on top of each other
 			position: absolute;
@@ -195,7 +225,7 @@
 			right: 0;
 			margin: auto;
 			width: 60%;
-			height: 30%;
+			//height: 30%; //SD Change
 			// centering two elements on top of each other	
 			-webkit-transition: -webkit-all 0.35s;
 			transition: all 0.35s;
@@ -259,7 +289,7 @@
 			}
 		}
 	}
-	figure.grid-item-width3{
+	.grid-item-width3{//figure
 		@media screen and (min-width: 1000px){
 			figcaption::before{
 				-webkit-transform: rotate3d(0,0,1,0deg) scale3d(0,0,1);
@@ -276,7 +306,7 @@
 			}
 		}	
 	}
-	figure.grid-item-width6{
+	.grid-item-width6{//figure
 		figcaption::before{
 			display: none;
 		}
@@ -284,7 +314,7 @@
 			z-index: 10;
 		}
 		h1{
-			width: 30%
+			width: 40%
 		}
 		p{
 			width: 40%;
@@ -334,7 +364,7 @@
 		}
 	}		
 
-	figure.secondary{
+	.secondary{//figure
 		overflow: hidden;
 		margin: 0px;
 		background-color: #000;
@@ -390,8 +420,15 @@
 		background-position:center center;
 	}
 
+	.primary,
+	.secondary{
+		&[class*='columns-']{
+			position:relative;
+		}
+	}
+
 	.primary{
-		background-color:rgba(4,4,4,.5);
+		//background-color:rgba(4,4,4,.5); //SD Change
 		background-blend-mode:multiply;
 		.wrap{
 			//display:table;
@@ -421,7 +458,7 @@
 		// display: flex;
 		// align-items: center;
 		//padding:1em;
-		background-color:rgba(4,4,4,.5);
+		//background-color:rgba(4,4,4,.5); //SD Change
 		background-blend-mode:multiply;
 
 		.content{
@@ -576,6 +613,82 @@
 
 	.event-feed{
 		background-color:$offwhite;
+
+		.content{
+			width:90%;
+			margin:0 auto;
+			padding:2em 0;
+		}
+
+		.event-desc{
+			.title{
+				margin:0;
+				font-size:3em;
+				@include alt_gothic_reg;
+				text-transform:uppercase;
+				color:$std_black;
+			}
+
+			.loc{
+				font-size:2em;
+				@include adelle-thin;
+				color:$std_black;
+			}
+		}
+		
+		.see-all{
+			float:right;
+		}
+
+		.head{
+			margin-bottom:3em;
+			.title,
+			.see-all a{
+				font-size:2em;
+				@include adelle-thin;
+				//color:$std_black;
+			}
+
+			.title{
+				float:left;
+			}
+		}
+
+		.feed-item{
+			position:relative;
+			padding-bottom:3em;
+		}
+
+		.date{
+			//position: absolute;
+			//top: 1em;
+			//left: 1em;
+			// border-top: solid 2px #fff;
+			// border-bottom: solid 2px #fff;
+			color:$std_black;
+
+			.month,
+			.range{
+				color:$std_black;
+			}
+
+			.date-wrap{
+			border-top:3px solid $std_black;
+			border-bottom:3px solid $std_black;
+			float:left;
+			}
+		}
+
+		.more{
+			font-size:2em;
+			@include adelle-thin;
+		}
+
+		.foot{
+			font-size:1.6em;
+			@include adelle-thin;
+			color:$std_black;
+		}
 	}
 
 	.post-parent{
@@ -706,17 +819,7 @@
   .grid-item{width: 100%}
 }
 
-.hg{
-	background-color:red;
-	//border:1px solid $std_black;
-
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center center;
-
-}
-
-
+//SD Change Remove .hg class declaration
 
 //Landing Pages
 
@@ -857,16 +960,26 @@
 
 //"Text" Default Page
 .body-content{
-	@include adelle;
+	@include adelle_thin;
 	h2{
 		color: #000;
 	}	
+
+	.page-intro{
+		font-size: 2.4em;
+		@include adelle_thin;
+		color:$std_black;
+		margin-bottom:2.5em;
+		text-transform:none;
+		line-height: 1.5;
+	}
+
 	.body-copy{
-		color: #292929;
+		color: $std_black;
 		margin-top: 4em;
 		p{
 			&:first-of-type{
-				font-size: 2.4em;
+				//font-size: 2.4em;
 			}
 		}
 	}
@@ -891,7 +1004,7 @@
 		position: relative;
 		overflow: hidden;
 		margin: 0px;
-		background-color: #000;
+		background-color: $black;
 		img{
 			opacity: 0.7;
 			position:relative;
@@ -910,13 +1023,13 @@
 			transition: all 0.35s ease-in-out;
 		}
 		p{
-			color: #fff;
+			color: $white;
 			line-height: 2em;
 			padding:0;
 			margin:0;
 		}
 		h2{
-			color: #fff;
+			color: $white;
 		}
 		&:hover{
 			img{

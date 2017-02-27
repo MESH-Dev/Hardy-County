@@ -43,21 +43,22 @@ get_header();
 						<?php //Row 1 ?>
 
 						<!-- Event Block 1 -->
-						<div class="hg grid-item grid-item-width3 event no-padding">
-							<div class="date">
-								<h5>APR</h5>
-								<h3>03</h3>
-							</div>
-							<div class="info">
-								<p>Paragraph</p>
-								<h2>The Poultry Festival</h2>
-								<div class="reveal">
-									<p>Paragraph | <a href="http://poultryfest.com">poultryfest.com</a></p>
-									<h6>Learn More &#10165;</h6>
+						<a href="#">
+							<div class="hg grid-item grid-item-width3 event no-padding">
+								<div class="date">
+									<h5>APR</h5>
+									<h3>03</h3>
+								</div>
+								<div class="info">
+									<p>Paragraph</p>
+									<h2>The Poultry Festival</h2>
+									<div class="reveal">
+										<p>Paragraph | <!-- <a href="http://poultryfest.com"> -->poultryfest.com<!-- </a> --></p>
+										<h6>Learn More &#10165;</h6>
+									</div>
 								</div>
 							</div>
-						</div>
-
+						</a>
 						<!-- Secondary CTA block 1 -->
 						<?php $secondary_row = get_field('secondary_cta_blocks');
 
@@ -89,14 +90,15 @@ get_header();
 							    $s_parent_post_title = $s_parent_post->post_title;
 
 						?>
-						<figure class="hg grid-item grid-item-width3 secondary no-padding">
-							<img src="<?php echo $secondary_row_bg_url; ?>">
-							<figcaption>
-								<p><?php echo $s_parent_post_title; ?></p>
-								<h2><?php echo $s_post_1->post_title; ?></h2>
-							</figcaption>
-						</figure>
-
+						<a href="<?php echo the_permalink($s_post_1->ID); ?>">
+							<figure class="hg grid-item grid-item-width3 secondary no-padding">
+								<img src="<?php echo $secondary_row_bg_url; ?>">
+								<figcaption>
+									<p><?php echo $s_parent_post_title; ?></p>
+									<h2><?php echo $s_post_1->post_title; ?></h2>
+								</figcaption>
+							</figure>
+						</a>
 						<?php wp_reset_postdata(); } ?>
 					
 						<!-- Primary CTA block 1 -->
@@ -116,6 +118,7 @@ get_header();
 								//Declare sub_fields for this row
 								$primary_row_bg = $first_primary_row['background_image'];
 								$primary_row_url = $primary_row_bg['sizes']['large'];
+								$hover = $first_primary_row['hover_text'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
 								$post_link=$first_primary_row['section_title'];
@@ -124,18 +127,21 @@ get_header();
 						?>
 
 						<!-- Primary Block 1 -->
-						<figure class="hg grid-item grid-item-width4 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
-							<!-- columns-4 -->
-							<img src="<?php echo $primary_row_url; ?>" alt=""/>
-							<figcaption>
-								<h1><?php echo $post_1->post_title; ?></h1>
-								<!--Hover Content?-->
-								<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
-								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-								
-							</figcaption>
-						</figure>
+						<a href="<?php echo the_permalink($post_1->ID); ?>">
+							<figure class="hg grid-item grid-item-width4 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
+								<!-- columns-4 -->
+								<img src="<?php echo $primary_row_url; ?>" alt=""/>
+								<figcaption>
+									<h1><?php echo $post_1->post_title; ?></h1>
+									<!--Hover Content?-->
+									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
+									
+								</figcaption>
+							</figure>
+						</a>
 						<?php wp_reset_postdata(); } ?>
+
 						<div class="hg grid-item grid-item-width2 weather weather-api no-padding">
 							<h2>WEATHER BLOCK!</h2>
 						</div>
@@ -143,16 +149,18 @@ get_header();
 						<?php //Setup Instagram look at helpers/instagram.php with questions
 
 						$instagram = getInstagram();
-
+						//var_dump($instagram);
 						?>
 
 						<!-- Instagram Block 1 -->
-						<div class="hg grid-item grid-item-width2 instagram no-padding"style="background-image:url('<?php echo $instagram[2]->images->low_resolution->url; ?>');">
-							<div class="instagram-icon">
-								<i class="fa fa-fw fa-instagram fa-2x"></i>
-							</div>
-						</div>
 
+						<a href="<?php echo $instagram[2]->link; ?>" target="_blank">
+							<div class="hg grid-item grid-item-width2 instagram no-padding"style="background-image:url('<?php echo $instagram[2]->images->low_resolution->url; ?>');">
+								<div class="instagram-icon">
+									<i class="fa fa-fw fa-instagram fa-2x"></i>
+								</div>
+							</div>
+						</a>
 						<?php //End Row 1::Start Row 2 ?>
 
 						<!-- Secondary CTA block 2 -->
@@ -173,14 +181,15 @@ get_header();
 							    $s2_parent_post_title = $s2_parent_post->post_title;
 
 						?>
-						<figure class="hg grid-item grid-item-width3 secondary no-padding">
-							<img src="<?php echo $secondary_row_bg_url_2; ?>">
-							<figcaption>
-								<p><?php echo $s2_parent_post_title; ?></p>
-								<h2><?php echo $s_post_2->post_title; ?></h2>
-							</figcaption>	
-						</figure>
-
+						<a href="<?php echo the_permalink($s_post_2->ID); ?>">
+							<figure class="hg grid-item grid-item-width3 secondary no-padding">
+								<img src="<?php echo $secondary_row_bg_url_2; ?>">
+								<figcaption>
+									<p><?php echo $s2_parent_post_title; ?></p>
+									<h2><?php echo $s_post_2->post_title; ?></h2>
+								</figcaption>	
+							</figure>
+						</a>
 						<?php wp_reset_postdata(); } ?>
 
 						<!-- Secondary CTA block 3 -->
@@ -203,32 +212,35 @@ get_header();
 							    $s_parent_post_title = $s_parent_post->post_title;
 
 						?>
-						<figure class="hg grid-item grid-item-width3 secondary no-padding">
-							<img src="<?php echo $secondary_row_bg_url; ?>">
-							<figcaption>
-								<p><?php echo $s_parent_post_title; ?></p>
-								<h2><?php echo $s_post_1->post_title; ?></h2>
-							</figcaption>	
-						</figure>
+						<a href="<?php echo the_permalink($s_post_1->ID); ?>">
+							<figure class="hg grid-item grid-item-width3 secondary no-padding">
+								<img src="<?php echo $secondary_row_bg_url; ?>">
+								<figcaption>
+									<p><?php echo $s_parent_post_title; ?></p>
+									<h2><?php echo $s_post_1->post_title; ?></h2>
+								</figcaption>	
+							</figure>
+						</a>
 						
 						<?php wp_reset_postdata(); } ?>
 
 						<!-- Event Block 2 -->
-						<div class="hg grid-item grid-item-width3 event second no-padding">
-							<div class="date">
-								<h5>APR</h5>
-								<h3>03</h3>
-							</div>
-							<div class="info">
-								<p>Paragraph</p>
-								<h2>The Poultry Festival</h2>
-								<div class="reveal">
-									<p>Paragraph | <a href="http://poultryfest.com">poultryfest.com</a></p>
-									<h6>Learn More &#10165;</h6>
+						<a href="#">
+							<div class="hg grid-item grid-item-width3 event second no-padding">
+								<div class="date">
+									<h5>APR</h5>
+									<h3>03</h3>
+								</div>
+								<div class="info">
+									<p>Paragraph</p>
+									<h2>The Poultry Festival</h2>
+									<div class="reveal">
+										<p>Paragraph | <a href="http://poultryfest.com">poultryfest.com</a></p>
+										<h6>Learn More &#10165;</h6>
+									</div>
 								</div>
 							</div>
-						</div>
-
+						</a>
 						<!-- Primary CTA Block 2 -->
 
 						<?php 
@@ -238,6 +250,7 @@ get_header();
 							//Declare sub_fields for this row
 							$primary_row_bg = $second_primary_row['background_image'];
 							$primary_row_url = $primary_row_bg['sizes']['large'];
+							$hover = $second_primary_row['hover_text'];
 
 							//__This section sets up the post_object for the 'section_title' subfield
 							$post_link=$second_primary_row['section_title'];
@@ -245,18 +258,19 @@ get_header();
 							setup_postdata( $post_2 );
 
 						?>
-						<figure class="hg grid-item grid-item-width3 primary no-padding">
-							<!-- columns-4 -->
-							<img src="<?php echo $primary_row_url; ?>" alt=""/>
-							<figcaption>
-								<h1><?php echo $post_1->post_title; ?></h1>
-								<!-- Hover? -->
-								<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
-								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-								
-							</figcaption>
-						</figure>						
-
+						<a href="<?php echo the_permalink($post_2->ID); ?>">
+							<figure class="hg grid-item grid-item-width3 primary no-padding">
+								<!-- columns-4 -->
+								<img src="<?php echo $primary_row_url; ?>" alt=""/>
+								<figcaption>
+									<h1><?php echo $post_1->post_title; ?></h1>
+									<!-- Hover? -->
+									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
+									
+								</figcaption>
+							</figure>						
+						</a>
 						<?php wp_reset_postdata(); } ?>
 
 						<?php //End Row 2::Start Row 3 ?>
@@ -270,6 +284,7 @@ get_header();
 							//Declare sub_fields for this row
 							$primary_row_bg = $third_primary_row['background_image'];
 							$primary_row_url = $primary_row_bg['sizes']['large'];
+							$hover = $third_primary_row['hover_text'];
 
 							//__This section sets up the post_object for the 'section_title' subfield
 							$post_link=$third_primary_row['section_title'];
@@ -277,26 +292,27 @@ get_header();
 							setup_postdata( $post_1 );
 
 						?>
-
-						<figure class="hg grid-item grid-item-width6 primary no-padding">
-							<img src="<?php echo $primary_row_url; ?>">
-							<h1><?php echo $post_1->post_title; ?></h1>
-							<!--Hover?-->
-							<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
-							<div class="width6-diamond"></div>
-						</figure>
-						
+						<a href="<?php echo the_permalink($post_1->ID); ?>">
+							<figure class="hg grid-item grid-item-width6 primary no-padding">
+								<img src="<?php echo $primary_row_url; ?>">
+								<h1><?php echo $post_1->post_title; ?></h1>
+								<!--Hover?-->
+								<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+								<div class="width6-diamond"></div>
+							</figure>
+						</a>
 						<?php wp_reset_postdata(); } ?>
 
 						<div class="hg grid-item grid-item-width2 nest">
 
 							<!-- Instagram Block 2 -->
-							<div class="hg nested instagram no-padding" style="background-image:url('<?php echo $instagram[3]->images->low_resolution->url; ?>');">
-								<div class="instagram-icon">
-									<i class="fa fa-fw fa-instagram fa-2x"></i>
+							<a href="<?php echo $instagram[3]->link; ?>" target="_blank">
+								<div class="hg nested instagram no-padding" style="background-image:url('<?php echo $instagram[3]->images->low_resolution->url; ?>');">
+									<div class="instagram-icon">
+										<i class="fa fa-fw fa-instagram fa-2x"></i>
+									</div>
 								</div>
-							</div>
-
+							</a>
 							<!-- Secondary CTA block 4 - Small -->
 
 							<?php if($fourth_secondary_row){
@@ -325,22 +341,23 @@ get_header();
 								}
 
 							?>
-							<figure class="hg nested secondary no-padding">
-								<img src="<?php echo $secondary_row_bg_url; ?>">
-								<?php 
-								//Don't render this stuff if we aren't passing any of the variables above
-								if ($s_post_link != null){ 
-								?>
+							<a href="<?php echo the_permalink($s_post_1->ID); ?>">
+								<figure class="hg nested secondary no-padding">
+									<img src="<?php echo $secondary_row_bg_url; ?>">
+									<?php 
+									//Don't render this stuff if we aren't passing any of the variables above
+									if ($s_post_link != null){ 
+									?>
 
-								<figcaption>
-									<p><?php echo $s_parent_post_title; ?></p>
-									<h2><?php echo $s_post_1->post_title; ?></h2>
-								</figcaption>	
+									<figcaption>
+										<p><?php echo $s_parent_post_title; ?></p>
+										<h2><?php echo $s_post_1->post_title; ?></h2>
+									</figcaption>	
 
-								<?php } ?>
+									<?php } ?>
 
-							</figure>
-
+								</figure>
+							</a>
 							<?php wp_reset_postdata(); } ?>
 
 						</div>
@@ -354,6 +371,7 @@ get_header();
 							//Declare sub_fields for this row
 							$primary_row_bg = $fourth_primary_row['background_image'];
 							$primary_row_url = $primary_row_bg['sizes']['large'];
+							$hover = $fourth_primary_row['hover_text'];
 
 							//__This section sets up the post_object for the 'section_title' subfield
 							$post_link=$fourth_primary_row['section_title'];
@@ -361,36 +379,38 @@ get_header();
 							setup_postdata( $post_1 );
 
 						?>
-						<figure class="hg grid-item grid-item-width4 primary no-padding">
-							<img src="<?php echo $primary_row_url; ?>" alt=""/>
-							<figcaption>
-								<h1><?php echo $post_1->post_title; ?></h1>
-								<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
-								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-								
-							</figcaption>
-						</figure>
-
+						<a href="<?php echo the_permalink($post_1->ID); ?>">
+							<figure class="hg grid-item grid-item-width4 primary no-padding">
+								<img src="<?php echo $primary_row_url; ?>" alt=""/>
+								<figcaption>
+									<h1><?php echo $post_1->post_title; ?></h1>
+									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
+									
+								</figcaption>
+							</figure>
+						</a>
 						<?php wp_reset_postdata(); } ?>
 
 
 						<?php //End Row 3::Start Row 4 ?>
 
-						<div class="hg grid-item grid-item-width3 event third no-padding">
-							<div class="date">
-								<h5>APR</h5>
-								<h3>03</h3>
-							</div>
-							<div class="info">
-								<p>Paragraph</p>
-								<h2>The Poultry Festival</h2>
-								<div class="reveal">
-									<p>Paragraph | <a href="http://poultryfest.com">poultryfest.com</a></p>
-									<h6>Learn More &#10165;</h6>
+						<a href="#">
+							<div class="hg grid-item grid-item-width3 event third no-padding">
+								<div class="date">
+									<h5>APR</h5>
+									<h3>03</h3>
+								</div>
+								<div class="info">
+									<p>Paragraph</p>
+									<h2>The Poultry Festival</h2>
+									<div class="reveal">
+										<p>Paragraph | <!-- <a href="http://poultryfest.com"> -->poultryfest.com<!-- </a> --></p>
+										<h6>Learn More &#10165;</h6>
+									</div>
 								</div>
 							</div>
-						</div>
-
+						</a>
 						<!-- Secondary CTA Block 5 -->
 
 						<?php if($fifth_secondary_row){
@@ -415,17 +435,19 @@ get_header();
 							    $s_parent_post_title = $s_parent_post->post_title;
 
 							?>
-						<figure class="hg grid-item grid-item-width3 secondary no-padding">
-							<img src="<?php echo $secondary_row_bg_url; ?>">
-							<?php if ($s_post_1 != ''){ ?>
+						<a href="<?php echo the_permalink($s_post_1->ID); ?>">
+							<figure class="hg grid-item grid-item-width3 secondary no-padding">
+								<img src="<?php echo $secondary_row_bg_url; ?>">
+								<?php if ($s_post_1 != ''){ ?>
 
-							<figcaption>
-								<p><?php echo $s_parent_post_title; ?></p>
-								<h2><?php echo $s_post_1->post_title; ?></h2>
-							</figcaption>		
+								<figcaption>
+									<p><?php echo $s_parent_post_title; ?></p>
+									<h2><?php echo $s_post_1->post_title; ?></h2>
+								</figcaption>		
 
-							<?php } ?>
-						</figure>
+								<?php } ?>
+							</figure>
+						</a>
 
 						<?php //End Row 4::Start Row 5 ?>
 
@@ -440,29 +462,33 @@ get_header();
 							//Declare sub_fields for this row
 							$primary_row_bg = $fifth_primary_row['background_image'];
 							$primary_row_url = $primary_row_bg['sizes']['large'];
+							$hover = $fifth_primary_row['hover_text'];
 
 							//__This section sets up the post_object for the 'section_title' subfield
 							$post_link=$fifth_primary_row['section_title'];
 							$post_1 = $post_link;
 							setup_postdata( $post_1 );
 						?>
-						<figure class="hg grid-item grid-item-width6 primary no-padding">
-							<img src="<?php echo $primary_row_url; ?>">
-							<h1><?php echo $post_1->post_title; ?></h1>
-							<!--Hover?-->
-							<p>Your hike is over and you're ready to tear into a burger.<br><span>&#10165;</span></p>
-							<div class="width6-diamond"></div>
-						</figure>
+						<a href="<?php echo the_permalink($post_1->ID); ?>">
+							<figure class="hg grid-item grid-item-width6 primary no-padding">
+								<img src="<?php echo $primary_row_url; ?>">
+								<h1><?php echo $post_1->post_title; ?></h1>
+								<!--Hover?-->
+								<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+								<div class="width6-diamond"></div>
+							</figure>
+						</a>
 
 						<?php wp_reset_postdata(); } ?>
 
 						<!-- Instagram block  3-->
-						<div class="hg grid-item grid-item-width2 instagram no-padding" style="background-image:url('<?php echo $instagram[4]->images->low_resolution->url; ?>');">
-							<div class="instagram-icon">
-								<i class="fa fa-fw fa-instagram fa-2x"></i>
+						<a href="<?php echo $instagram[4]->link; ?>" target="_blank">
+							<div class="hg grid-item grid-item-width2 instagram no-padding" style="background-image:url('<?php echo $instagram[4]->images->low_resolution->url; ?>');">
+								<div class="instagram-icon">
+									<i class="fa fa-fw fa-instagram fa-2x"></i>
+								</div>
 							</div>
-						</div>
-
+						</a>
 						<!-- Secondary CTA block 6 - Small -->
 
 						<?php if($sixth_secondary_row){
@@ -490,21 +516,22 @@ get_header();
 							}
 
 						?>
+						<a href="<?php echo the_permalink($s_post_1->ID); ?>">
+							<figure class="hg grid-item grid-item-width2 secondary no-padding">
+								<img src="<?php echo $secondary_row_bg_url; ?>">
+								<?php 
+								//Don't render this stuff if we aren't passing any of the variables above
+								if ($s_post_link != null){ 
+								?>
 
-						<figure class="hg grid-item grid-item-width2 secondary no-padding">
-							<img src="<?php echo $secondary_row_bg_url; ?>">
-							<?php 
-							//Don't render this stuff if we aren't passing any of the variables above
-							if ($s_post_link != null){ 
-							?>
+								<figcaption>
+									<p><?php echo $s_parent_post_title; ?></p>
+									<h2><?php echo $s_post_1->post_title; ?></h2>
+								</figcaption>	
 
-							<figcaption>
-								<p><?php echo $s_parent_post_title; ?></p>
-								<h2><?php echo $s_post_1->post_title; ?></h2>
-							</figcaption>	
-
-							<?php } ?>
-						</figure>
+								<?php } ?>
+							</figure>
+						</a>
 						<?php wp_reset_postdata(); } ?>
 
 						<!-- Secondary CTA block 7 - Small -->
@@ -536,21 +563,22 @@ get_header();
 							    $s_parent_post_title = $s_parent_post->post_title;
 							}
 						?>
-						<figure class="hg grid-item grid-item-width2 secondary no-padding">
-							<img src="<?php echo $secondary_row_bg_url; ?>">
-							<?php 
-							//Don't render this stuff if we aren't passing any of the variables above
-							if ($s_post_link != null ){ 
-							?>
+						<a href="<?php echo the_permalink($s_post_1->ID); ?>">
+							<figure class="hg grid-item grid-item-width2 secondary no-padding">
+								<img src="<?php echo $secondary_row_bg_url; ?>">
+								<?php 
+								//Don't render this stuff if we aren't passing any of the variables above
+								if ($s_post_link != null ){ 
+								?>
 
-							<figcaption>
-								<p><?php echo $s_parent_post_title; ?></p>
-								<h2><?php echo $s_post_1->post_title; ?></h2>
-							</figcaption>	
+								<figcaption>
+									<p><?php echo $s_parent_post_title; ?></p>
+									<h2><?php echo $s_post_1->post_title; ?></h2>
+								</figcaption>	
 
-							<?php } ?>
-						</figure>
-
+								<?php } ?>
+							</figure>
+						</a>
 						<?php wp_reset_postdata(); } ?>	
 
 						<?php //End Row 5 ?>
