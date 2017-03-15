@@ -72,9 +72,10 @@
 
 	&.interior{
 		height:400px;
-		background-color:$black_overlay;
-		background-blend-mode:mulitply;
-		-webkit-background-blend-mode:multiply;
+		//background-image:url('img/banner_placeholder2.png');
+		//background-color:$black_overlay;
+		//background-blend-mode:mulitply;
+		//-webkit-background-blend-mode:multiply;
 
 		.page-title{	
 			margin-bottom:0;
@@ -160,7 +161,7 @@
 //Homepage
 
 .intro-statement{
-	margin:6em 0;
+	margin:6em 0 8em 0;
 
 	.intro-text{
 		width:90%;
@@ -172,7 +173,21 @@
 		// @include adelle-thin;
 		// font-size:3em;
 	}
+
+	&.listing{
+		margin:6em 0 11em 0;
+		.intro-text{
+			font-size:20px;
+		}
+	}
+
 }
+
+// .page-template-template-listing .intro-statement{
+// 		.intro-text{
+// 			font-size:20px;
+// 		}
+// }
 
 //--__--Homepage grid setup
 
@@ -245,6 +260,7 @@
 			margin: auto;
 			width: 60%;
 			height: 15%;
+			color:$dark_aquamarine;
 			// centering two elements on top of each other
 		}
 		span{
@@ -306,7 +322,8 @@
 			}
 		}	
 	}
-	.grid-item-width6{//figure
+	.grid-item-width6,
+	.columns-6.cpromo{//figure
 		figcaption::before{
 			display: none;
 		}
@@ -396,7 +413,7 @@
 			padding:0;
 			margin:0;
 		}
-		&:hover{
+		&:not(.no-hover):hover{
 			img{
 				opacity: 1;
 				-webkit-transform: scale3d(1.05,1.05,1);
@@ -485,12 +502,60 @@
 			-webkit-transition: all 0.3s ease-in-out;
 			transition: all 0.3s ease-in-out;
 		}
+
+		.date-wrap{
+			border-top:3px solid $white;
+			border-bottom:3px solid $white;
+			float:left;
+
+				.date-info,
+				.date-sep{
+					display:inline-block;
+					float:left;
+				}
+
+				.month,
+				.range{
+					color:$white;
+					display:block;
+				}
+
+				.month{
+					font-size:1.8em;
+					@include alt_gothic_reg;
+					line-height:normal;
+					color:$white;
+					text-transform:uppercase;
+				}
+
+				.range{
+					font-size:2.8em;
+					@include alt_gothic_reg;
+					line-height:.8em;
+					color:$white
+				}
+
+				.date-sep{
+					position:relative;
+					margin:0 1em;
+					//display:table;
+					@include alt_gothic_reg;
+					font-weight:bold;
+					height:46px;
+					color:$white;
+					span{
+						position:absolute;
+						bottom:9px;
+						left:-3px;
+					}
+				}
+			}
 		p{
 			color: #fff;
 			line-height: 2em;
 		}
 		span{
-			font-size: 2.2em;
+			//font-size: 2.2em;
 		}		
 		h6{
 			color: #fff;
@@ -676,6 +741,45 @@
 			border-top:3px solid $std_black;
 			border-bottom:3px solid $std_black;
 			float:left;
+
+				.month,
+				.range{
+					color:$std_black;
+					display:block;
+				}
+
+				.month{
+					font-size:1.8em;
+					@include alt_gothic_reg;
+					line-height:normal;
+					text-transform:uppercase;
+				}
+
+				.range{
+					font-size:2.8em;
+					@include alt_gothic_reg;
+					line-height:.8em;
+				}
+
+				.date-info,
+				.date-sep{
+					display:inline-block;
+					float:left;
+				}
+
+				.date-sep{
+					position:relative;
+					margin:0 1em;
+					//display:table;
+					@include alt_gothic_reg;
+					font-weight:bold;
+					height:46px;
+					span{
+						position:absolute;
+						bottom:9px;
+						left:-3px;
+					}
+				}
 			}
 		}
 
@@ -825,8 +929,78 @@
 
 // Events Page
 .events_heading{
-	width: 66.66667%;
+	//width: 66.66667%;
 	margin: 40px auto;
+}
+
+.event-listing{
+	h2,h3,h4,h5,h6{
+		color:$std_black;
+	}
+	.date-wrap{
+		border-top:3px solid $std_black;
+		border-bottom:3px solid $std_black;
+		float:left;
+		h5,h3{
+			margin: 0px;
+    		line-height: normal;
+		}
+		.date-info,
+		.date-sep{
+			display:inline-block;
+			float:left;
+		}
+
+		.month,
+		.range{
+			color:$std_black;
+			display:block;
+		}
+
+		.month{
+			font-size:1.8em;
+			@include alt_gothic_reg;
+			line-height:normal;
+
+			text-transform:uppercase;
+		}
+
+		.range{
+			font-size:2.8em;
+			@include alt_gothic_reg;
+			line-height:.8em;
+
+		}
+
+		.date-sep{
+			position:relative;
+			margin:0 1em;
+			//display:table;
+			@include alt_gothic_reg;
+			font-weight:bold;
+			height:46px;
+			span{
+				position:absolute;
+				bottom:9px;
+				left:-3px;
+			}
+		}
+	}
+
+	.date-item{
+		max-width:25%;
+		display:inline-block;
+		margin-right:2em;
+	}
+
+	.info{
+		max-width: 80%;
+		vertical-align: top;
+		display: inline-block;
+		h2{
+			line-height: 0.8em;
+		}
+	}
 }
 
 #monthselectors{
@@ -834,9 +1008,15 @@
 	word-spacing: 2em;
 	text-align: -webkit-center;
 	text-align: center;
+	li{
+		list-style-type: none;
+		display:inline-block;
+		//float:left;
+		margin-right:1em;
+	}
 	.active_month{
 		p{
-			color: $bright_green;
+			color: $dark_orange;
 		}
 		.arrow_indicator{
 			opacity: 1;
@@ -849,7 +1029,18 @@
 	a{
 		cursor: pointer;
 		display: inline-block;
-		color: #333;
+		color: $std_black;
+
+		&:hover,
+		&:active,
+		&:focus{
+			opacity:1;
+
+			p{
+				color: $dark_orange;
+			}
+			
+		}
 	}
 	.arrow_indicator{
 		-webkit-transform: rotate(90deg) translateY(0.15em);
@@ -862,10 +1053,16 @@
 
 .events_month{
 	position: relative;
+	.event-title{
+		@include adelle_thin;
+		margin-bottom:1em;
+		font-size:2em;
+	}
+	
 	h2, h3, h5, h6{
 		margin: 0px;
 		line-height: normal;
-		color: #000;
+		color: $black;
 	}
 	h3{
 		line-height: 0.8em;
@@ -875,6 +1072,12 @@
 		width: 30%;
 		min-width: 325px;
 		margin-right: 40px;
+
+		.date-item{
+			max-width:25%;
+			display:inline-block;
+			margin-right:2em;
+		}
 	}
 	.date{
 		vertical-align: top;
@@ -893,6 +1096,13 @@
 		h2{
 			line-height: 0.8em;
 		}
+	}
+}
+
+.single_month{
+	p{
+		font-size:3em; 
+		text-transform:uppercase;
 	}
 }
 
@@ -1022,9 +1232,36 @@
 //"Text" Default Page
 .body-content{
 	@include adelle_thin;
+	h1, h2, h3, h4, h5, h6{
+		color:$std_black;
+	}
 	h2{
 		color: #000;
-	}	
+	}
+
+	h1{
+
+	}
+	h2{
+		padding-top:.4em; //2em, to account for 3em font size
+		margin-bottom:1em; //4em, to account for 3em font size
+	}
+	h3{
+		padding-top: .714em; //2em, to account for 2.8em font size
+		margin-bottom: 1.428em;
+	}
+	h4{
+		padding-top:.666em; //2em, to account for 3em font size
+		margin-bottom:1.33em;
+	}
+	h5{
+		padding-top: .9em; //2em, to account for 1.8em font size
+		margin-bottom: 2.222em; //4em, to account for 1.8em font size
+	}
+	h6{
+		padding-top: 1.333em; //2em, to account for 1.5em font size
+		margin-bottom: 2.666em; //4em, to account for 1.5em font size
+	}
 
 	.page-intro{
 		font-size: 2.4em;
@@ -1039,6 +1276,7 @@
 		color: $std_black;
 		margin-top: 4em;
 		p{
+			margin-bottom:2em; //4em rendered, to account for font size (2em) on p tags
 			&:first-of-type{
 				//font-size: 2.4em;
 			}
@@ -1110,10 +1348,73 @@
 
 //__Landing page grid --Refer to .grid above
 
+.phone{
+	color:$dark_aquamarine;
+}
+
+//Listing page
+
+.listing-grid{
+	margin-bottom:2em;
+	.listings{
+		width:80%;
+		margin:0 auto;
+		@media($bp-smaller-than-tablet){
+			width:96%;
+		}
+
+		.listing{
+			margin-bottom:2em;
+		}
+		h2{
+			color:$std_black;
+			margin:0;
+
+		}
+
+		h3{
+			color:$std_black;
+		}
+
+		.loc{
+			@include adelle_thin;
+			
+		}
+
+		.tags{
+			text-transform:uppercase;
+			font-size:1.4em;
+			@include adelle_thin;
+		}
+
+		.push{
+			margin-left:2em;
+		}
+
+		li{
+			list-style-type:decimal;
+		}
+	}
+}
 //__Elements
 .cp-leadin{
-	background:$peach;
+	
 	padding:2em 0;
+
+	&.landing{
+		background-color:$peach;
+	}
+
+	&.listing{
+		background-color:$burnt_red;
+	}
+
+	&.event{
+		background-color:$white;
+		p{
+			color:$dark_orange;
+		}
+	}
 	p{
 		padding:0;
 		margin:0;
@@ -1124,6 +1425,12 @@
 	}
 }
 
+//Map specific
+.label{
+	@include adelle-thin;
+	font-size:2em;
+	color:$white;
+}
 
 //Accessibility
 .sr-only {

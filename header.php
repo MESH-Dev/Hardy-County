@@ -35,7 +35,7 @@
 	<?php wp_head(); ?>
 
 </head>
-
+<script>var $dir = '<?php echo get_template_directory_uri(); ?>'; console.log($dir);</script>
 <body <?php body_class(); ?>>
  
 	<header>
@@ -153,8 +153,8 @@
 	?>
 
 		<!-- <div class="post-instagram-feature">
-			<a href="<?php echo $instagram[3]->link; ?>">
-				<img src="<?php echo $instagram[3]->images->low_resolution->url; ?>" />
+			<a href="<?php //echo $instagram[3]->link; ?>">
+				<img src="<?php //echo $instagram[3]->images->low_resolution->url; ?>" />
 			</a>
 		</div> -->
 		

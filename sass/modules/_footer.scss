@@ -14,6 +14,9 @@ footer{
 		padding:0;
 		margin:0;
 		padding:15px 0;
+		
+			font-size:1.6em;
+		
 	}
 
 	.signature{
@@ -21,7 +24,15 @@ footer{
 		padding:0;
 		margin:0;
 		padding:15px 0;
+		
+			font-size:1.6em;
+		
 	}
+
+	.mail-statement{
+			margin-top:5px;
+			font-size:1.6em;
+		}
 
 	//Mailchimp & Search form styling
 	.subscribe-form, 
@@ -57,9 +68,7 @@ footer{
 			-webkit-transition: all 0.25s ease-in-out;
 			transition: all 0.25s ease-in-out;
 		}
-		.mail-statement{
-			margin-top:5px;
-		}
+		
 
 		.form{
 			display:inline-block;

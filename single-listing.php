@@ -1,23 +1,30 @@
 <?php get_header(); ?>
 
-<div id="content">
+<main id="content">
+	<?php get_template_part('partials/banner-interior')?>
 	
-	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-		
-		<div class="post">
-			<h1><?php the_title(); ?></h1>
-			<p class="postinfo">By <?php the_author(); ?> | Categories: <?php the_category(', '); ?> | <?php comments_popup_link(); ?></p>
-			
-			<?php the_content(); ?>
+	<div class="container body-content">
+		<div class="row">
+			<div class="columns-7 body-copy">
+
+					<?php 
+						$page_intro = get_field('page_intro_text');
+						if ($page_intro != ''){?>
+						<h1 class="page-intro"><?php echo $page_intro; ?></h1>
+					<?php } ?>
+
+					<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+						<?php the_content(); ?>
+					<?php endwhile; ?>
+
+				
+			</div>
+
+			<?php get_template_part('partials/side-bar')?>
+
 		</div>
-		
-		<?php comments_template( '', true ); ?>
-		
-	<?php endwhile; ?>
+	</div>
 
-</div><!-- End of Content -->
+</main><!-- End of Content -->
 
-
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

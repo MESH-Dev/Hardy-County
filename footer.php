@@ -13,7 +13,7 @@
 									<div class="footer-logo columns-1">
 										<img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.png">
 									</div>
-									<div class="signup columns-5">
+									<div class="signup columns-6">
 										<div class="row">
 										<?php echo do_shortcode('[mc4wp_form id="29"]'); ?>
 										</div>
@@ -61,6 +61,10 @@
 </footer><!-- End of Footer -->
 
 <?php wp_footer(); ?>
-
+<?php if(is_page_template('templates/template-listing.php')){?>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8&amp;callback=initMap"></script>
+ <script async src="<?php echo get_template_directory_uri() ?>/js/listings.js"></script>-->
+<?php } ?>
 </body>
 </html>

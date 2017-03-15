@@ -40,7 +40,9 @@ function gi_resize(){
   gi6 = $('.grid-item-width6 ').width();
   gi7 = $('.grid-item-width7 ').width();
   cp5 = $('.columns-5').width();
-  cp6 =  $('.columns-6.promo ').width();
+  cp6 =  $('.columns-6.eq ').width();
+  console.log(cp6);
+  //cp6_alt = $('.columns-6')
   cp7 = $('.columns-7.trip').width();
   //return gi2, gi3, gi4;
 }
@@ -62,7 +64,10 @@ function _resize(){
   $('.grid-item-width5').css({height: gi5})
   $('.grid-item-width6').css({height: (gi6*.66)});
   $('.width6-diamond').css({height: (gi6*0.4)});
-  $('.columns-6.promo').css({height: (cp6*.66)});
+  $('.columns-6.promo').css({height: (cp6*.5)});
+  $('.columns-6.cpromo').css({height: (cp6*.66)});
+  //console.log(cp6*.66);
+  $('.columns-6 .width6-diamond').css({height: (cp6*0.4)});
   $('.columns-5.event-feed').css({height: (cp5)});
   $('.columns-7.trip').css({height: cp5});
   $('.grid-item-width6.nest').css({height: gi2});
@@ -100,5 +105,7 @@ $menu.on("click","a", function(){
   
   return false;
 });
+
+//google map api key: AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8
 
 });

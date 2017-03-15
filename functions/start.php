@@ -58,7 +58,6 @@ function getInstagram(){
     //$instagram = getInstagram();
 }
 
-
 //var_dump(getInstagram());
 
 // function blogrollPosts($include, $tag_id, $returnNum){
@@ -79,7 +78,15 @@ function getInstagram(){
 //             // }
 // }
 
-
+//Add ajax functionality to pages, all not just in admin
+add_action('wp_head','pluginname_ajaxurl');
+function pluginname_ajaxurl() {
+    ?>
+    <script type="text/javascript">
+    var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+    </script>
+    <?php
+    }
 
 
 ?>

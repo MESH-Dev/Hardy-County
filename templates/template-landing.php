@@ -46,16 +46,26 @@ get_header(); ?>
 					
 					$child_ID = $children->ID; //var_dump($children->ID);
 					$thumbnail = get_the_post_thumbnail_url($child_ID, 'large'); 
+					$alt = get_the_post_thumbnail($child_ID, 'large');
+					$landing_link = get_field('landing_link', $child_ID);
+					$landing_link_row = $landing_link[0];
+					$background= $landing_link_row['background'];
+					$background_url = $background['sizes']['large'];
+					$background_alt = $background['alt'];
+					$hover = $landing_link_row['hover_text'];
+					//var_dump($alt);
 					//var_dump('Thumbnail info: '. $thumbnail);
 
 				?>
 			<a href="<?php the_permalink($children->ID); ?>">
-			<figure class="columns-4 no-padding primary" style="background-image:url('<?php echo $thumbnail; ?>')"><!-- grid-item grid-item-width4 -->
+			<figure class="columns-4 no-padding primary" style="background-image:url('<?php echo $background_url; ?>')"><!-- grid-item grid-item-width4 -->
 				<!-- <div class="wrap">
 					<div class="content"> -->
-						<img src="<?php echo $thumbnail; ?>">
+						<!-- <img src="<?php echo $thumbnail; ?>"> -->
+						<img alt="<?php echo $background_alt; ?>" src="<?php echo $background_url; ?>">
 						<figcaption>
 						<h1><?php echo $children->post_title; ?></h1>
+						<p><?php echo $hover; ?><br><span>&#10165;</span></p>
 						</figcaption>
 					<!-- </div>
 				</div> -->
@@ -73,7 +83,8 @@ get_header(); ?>
 
 			<!-- Row 2 Calendar Feed/See More -->
 
-			<div class="columns-5 event-feed no-padding"> <!-- grid-item grid-item-width5  -->
+			<div class="columns-5 event-feed no-padding"> 
+
 				<div class="content">
 					<div class="head row">
 						<div class="title">Upcoming Events</div>
@@ -81,67 +92,73 @@ get_header(); ?>
 							<a href="#">See all events &#10165;</a>
 						</div>
 					</div>
-					<div class="feed row">
+				<div class="feed row">
+				<?php 
+					//$da_date = get_field('start_date');
+					//var_dump($da_date);
+					$today=date('Ymd');
+					$currMonth = date('m');
+					$currYear = date('Y');
+					$args = array(
+						'post_type' => 'event',
+						'posts_per_page' => 3,
+						'orderby'=>'meta_value_num',
+						'order'=>'ASC',
+						'meta_key'=>'start_date',
+						// 'date_query'=>array(
+						// 		'month'=>'12',
+						// 	),
+						'meta_query' => array(
+								array(
+										'key'=>'start_date',
+										'compare'=>'>=',
+										'value'=>$today,
+									)
+							)
+					);
+
+					$curr_label = '';
+					$the_query = new WP_Query( $args );
+
+					if ($the_query->have_posts()){
+					
+						//$first_loop = 0; 
+						while($the_query->have_posts()) { $the_query->the_post();
+							$start_date = get_field('start_date', false, false);
+							$s_date = new DateTime($start_date);
+							$event_month = $s_date->format('m');
+							$event_year = $s_date->format('Y');
+							$event_month_text = $s_date->format('F');
+							$event_month_abbr = strtolower($s_date->format('M'));
+							$event_city = get_field('city');
+							$event_address = get_field('street_address');
+							$event_site = get_field('web_address');
+							$event_phone = get_field('phone');
+							?>
+
 						<div class="feed-item row">
 							<div class="date columns-2">
 								<span class="date-wrap">
-									<h5 class="month">Apr</h5>
-									<h3 class="range">28</h3>
+									<h5 class="month"><?php echo $s_date->format('M'); ?></h5>
+									<h3 class="range"><?php echo $s_date->format('d'); ?></h3>
 								</span>
 							</div>
 							<div class="event-desc columns-10">	
-								<h1 class="title">Bean Festival</h1>
-								<h2 class="loc">Moorfield</h2>
+								<h1 class="title"><?php the_title(); ?></h1>
+								<h2 class="loc"><?php echo $event_city; ?></h2>
 								<div class="more">
 									<span class="website">
-										<a href="#">beanfestival.com</a>
+										<a href="<?php echo $event_site; ?>"><?php echo $event_site; ?></a>
 									</span> |
 									<span class="phone">
-										304.530.280
+										<?php echo $event_phone; ?>
 									</span>
 								</div>
 							</div>
 						</div>
-						<div class="feed-item row">
-							<div class="date columns-2">
-								<span class="date-wrap">
-									<h5 class="month">Apr</h5>
-									<h3 class="range">28</h3>
-								</span>
-							</div>
-							<div class="event-desc columns-10">	
-								<h1 class="title">Bean Festival</h1>
-								<h2 class="loc">Moorfield</h2>
-								<div class="more">
-									<span class="website">
-										<a href="#">beanfestival.com</a>
-									</span> |
-									<span class="phone">
-										304.530.280
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="feed-item row">
-							<div class="date columns-2">
-								<span class="date-wrap">
-									<h5 class="month">Apr</h5>
-									<h3 class="range">28</h3>
-								</span>
-							</div>
-							<div class="event-desc columns-10">	
-								<h1 class="title">Bean Festival</h1>
-								<h2 class="loc">Moorfield | <span class="time">Noon-6pm</span></h2>
-								<div class="more">
-									<span class="website">
-										<a href="#">beanfestival.com</a>
-									</span> |
-									<span class="phone">
-										304.530.280
-									</span>
-								</div>
-							</div>
-						</div>
+						<?php } } wp_reset_query(); ?>
+					
+						
 					</div>
 					<div class="foot row">
 						Have an event you want to tell people about? <a href="#">Share it with us! &#10165;</a>
@@ -155,12 +172,13 @@ get_header(); ?>
 					$callout_text = get_sub_field('callout_text');
 					$background = get_sub_field('bg_image');
 					$background_url = $background['sizes']['large'];
+					$trip_title = get_sub_field('title');
 
 			?>
 			<div class="columns-7 trip no-padding" style="background-image:url('<?php echo $background_url; ?>')"><!-- grid-item grid-item-width7 -->
 				<div class="wrap">
 					<div class="head">
-						<h1> -  ideas for your trip  - </h1>
+						<h1> -  <?php echo $trip_title; ?>  - </h1>
 					</div>
 					<div class="foot">
 						<h2><?php echo $callout_text; ?></h2>
@@ -188,57 +206,9 @@ get_header(); ?>
 			</div>
 		</div><!-- End Packery Grid -->
 
-
-		<div class="cp-leadin">
-			<?php $cp_leadin = get_field('cpl_text');?>
-			<?php if($cp_leadin != ''){ ?>
-				<p><?php echo $cp_leadin; ?></p>
-			<?php }else{ ?>
-				<p class="error">**You have not included text here, please return to the edit screen to add</p>
-			<?php } ?>
-		</div>
-
-		<!-- Cross promotion row -->
-		<div class="grid">
-			<div class="row">
-				<?php 
-					if(have_rows('cross_promotion_items')):
-						while(have_rows('cross_promotion_items')):the_row();
-
-						//Declare sub_fields for this row
-
-						//__This section sets up the post_object for the 'cross_promotion_item' subfield
-						$post_link=get_sub_field('cross_promotion_item');
-						$promotion_row_bg = get_the_post_thumbnail_url($post_link->ID, 'large');
-						$post_p = $post_link;
-						setup_postdata( $post_p );
-
-						//We used a repeater here to group content in the CMS
-						//Get started pulling that content...
-						$featured_items = get_field('featured_information', $post_p->ID);
-						
-						//Get all of your sub fields by looking at our "array" (it has only 1 row) by calling position [0]
-						//We add to that the name of our sub_field in array syntax ['{ sub_field_name }']
-						$cp_background=$featured_items[0]['background'];
-						$background_url = $cp_background['sizes']['large'];
-						$tagline = $featured_items[0]['tagline'];
-					?>
-					<a href="<?php echo the_permalink($post_p->ID); ?>" >
-						<figure class="columns-6 secondary promo no-padding" ><!-- style="background-image:url('<?php echo $background_url; ?>');" -->
-							<!-- <div class="wrap"> -->
-							<img src="<?php echo $background_url; ?>">
-							<figcaption class="content">
-								<p><?php echo $tagline; ?></p>
-								<h2><?php echo $post_p->post_title; ?></h2>
-								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-							</figcaption>
-							<!-- </div> -->
-						</figure>
-					</a>
-				<?php wp_reset_postdata(); endwhile; endif; ?>
-			</div>
-		</div>
-		<!-- End cross promotion grid -->
+		<?php 
+		//Add Cross promotional partial
+		get_template_part('partials/cross-promo'); ?>
 	</div>
 
 </main><!-- End of Content -->
