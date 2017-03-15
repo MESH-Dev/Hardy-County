@@ -2858,7 +2858,16 @@ body {
   color: #FFFFFF;
 }
 
-/* line 1436, sass/modules/_layout.scss */
+/* line 1435, sass/modules/_layout.scss */
+.map-marker-title {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #75BB3E;
+  font-size: 2em;
+}
+
+/* line 1442, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2872,66 +2881,66 @@ body {
 
 /* =WordPress Core
 -------------------------------------------------------------- */
-/* line 1449, sass/modules/_layout.scss */
+/* line 1455, sass/modules/_layout.scss */
 .alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 1453, sass/modules/_layout.scss */
+/* line 1459, sass/modules/_layout.scss */
 .aligncenter,
 div.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
 
-/* line 1459, sass/modules/_layout.scss */
+/* line 1465, sass/modules/_layout.scss */
 .alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 1464, sass/modules/_layout.scss */
+/* line 1470, sass/modules/_layout.scss */
 .alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 1469, sass/modules/_layout.scss */
+/* line 1475, sass/modules/_layout.scss */
 p img.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 1473, sass/modules/_layout.scss */
+/* line 1479, sass/modules/_layout.scss */
 p img.aligncenter,
 div.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
 
-/* line 1479, sass/modules/_layout.scss */
+/* line 1485, sass/modules/_layout.scss */
 p img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 1484, sass/modules/_layout.scss */
+/* line 1490, sass/modules/_layout.scss */
 p img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 1489, sass/modules/_layout.scss */
+/* line 1495, sass/modules/_layout.scss */
 a img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 1494, sass/modules/_layout.scss */
+/* line 1500, sass/modules/_layout.scss */
 a img.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 1498, sass/modules/_layout.scss */
+/* line 1504, sass/modules/_layout.scss */
 a img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;

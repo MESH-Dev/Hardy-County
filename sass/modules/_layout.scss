@@ -1432,6 +1432,12 @@
 	color:$white;
 }
 
+.map-marker-title{
+	@include alt_gothic_reg;
+	color:$bright_green;
+	font-size:2em;
+}
+
 //Accessibility
 .sr-only {
   position: absolute;
