@@ -19,6 +19,20 @@ jQuery(document).ready(function($){
     }
     });
 
+
+  //Homepage parallax
+
+  var windowW = $(window).width();
+  
+  if (windowW > 768){
+  $('.panel').each(function(i){
+      i = i++;
+      $(this).parallax("50%", .05);
+    });   
+
+  $('.has-parallax').parallax("50%",.5);
+  }
+
   $('#masonry').masonry({
   // set itemSelector so .grid-sizer is not used in layout
   itemSelector: '[class*="columns-"]',

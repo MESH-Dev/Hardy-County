@@ -47,12 +47,12 @@ get_header(); ?>
 					$child_ID = $children->ID; //var_dump($children->ID);
 					$thumbnail = get_the_post_thumbnail_url($child_ID, 'large'); 
 					$alt = get_the_post_thumbnail($child_ID, 'large');
-					$landing_link = get_field('landing_link', $child_ID);
+					$landing_link = get_field('featured_information', $child_ID);
 					$landing_link_row = $landing_link[0];
 					$background= $landing_link_row['background'];
 					$background_url = $background['sizes']['large'];
 					$background_alt = $background['alt'];
-					$hover = $landing_link_row['hover_text'];
+					$hover = $landing_link_row['tagline'];
 					//var_dump($alt);
 					//var_dump('Thumbnail info: '. $thumbnail);
 
@@ -89,13 +89,18 @@ get_header(); ?>
 					<div class="head row">
 						<div class="title">Upcoming Events</div>
 						<div class="see-all">
-							<a href="#">See all events &#10165;</a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>/events">See all events &#10165;</a>
 						</div>
 					</div>
 				<div class="feed row">
 				<?php 
 					//$da_date = get_field('start_date');
 					//var_dump($da_date);
+
+					global $post;
+					$post_slug = $post->post_name;
+					//var_dump($post_slug);
+
 					$today=date('Ymd');
 					$currMonth = date('m');
 					$currYear = date('Y');
@@ -104,6 +109,14 @@ get_header(); ?>
 						'posts_per_page' => 3,
 						'orderby'=>'meta_value_num',
 						'order'=>'ASC',
+						'tax_query' => array(
+							array(
+									'taxonomy'=>'primary_section',
+									'field' => 'slug',
+									'terms' => $post_slug,
+								),	
+							),
+						
 						'meta_key'=>'start_date',
 						// 'date_query'=>array(
 						// 		'month'=>'12',
@@ -125,7 +138,9 @@ get_header(); ?>
 						//$first_loop = 0; 
 						while($the_query->have_posts()) { $the_query->the_post();
 							$start_date = get_field('start_date', false, false);
+							$end_date = get_field('end_date', false, false);
 							$s_date = new DateTime($start_date);
+							$e_date = new DateTime($end_date);
 							$event_month = $s_date->format('m');
 							$event_year = $s_date->format('Y');
 							$event_month_text = $s_date->format('F');
@@ -133,26 +148,42 @@ get_header(); ?>
 							$event_city = get_field('city');
 							$event_address = get_field('street_address');
 							$event_site = get_field('web_address');
+							$bare_event_str = preg_replace('#^https?://#', '', $event_site);
 							$event_phone = get_field('phone');
+							$hc_event = get_field('hardy_county_event', $post->ID);
 							?>
 
 						<div class="feed-item row">
-							<div class="date columns-2">
+							<div class="date columns-3">
 								<span class="date-wrap">
-									<h5 class="month"><?php echo $s_date->format('M'); ?></h5>
-									<h3 class="range"><?php echo $s_date->format('d'); ?></h3>
+									<span class="date-info">
+										<span class="month"><?php echo $s_date->format('M'); ?></span>
+										<span class="range"><?php echo $s_date->format('d'); ?></span>
+									</span>
+								<?php if ($end_date > $start_date){ ?>
+									<div class="date-sep"><span>&mdash;</span></div>
+									<span class="date-info">
+										<span class="month"><?php echo $e_date->format('M');?></span>
+										<span class="range"><?php echo $e_date->format('d');?></span>
+									</span>
+								<?php } ?>
 								</span>
 							</div>
-							<div class="event-desc columns-10">	
-								<h1 class="title"><?php the_title(); ?></h1>
+							<div class="event-desc columns-9">	
+								<h1 class="title"><?php if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>"> <?php }?><?php the_title(); ?><?php if ($hc_event == true){ ?></a> <?php }?></h1>
 								<h2 class="loc"><?php echo $event_city; ?></h2>
 								<div class="more">
+									<?php if ($event_site != ''){ ?>
 									<span class="website">
-										<a href="<?php echo $event_site; ?>"><?php echo $event_site; ?></a>
-									</span> |
+										<a href="<?php echo $event_site; ?>"><?php echo $bare_event_str; ?></a>
+									</span>
+									<?php } ?>
+									<?php if ($event_phone != ''){ ?>
+									 |
 									<span class="phone">
 										<?php echo $event_phone; ?>
 									</span>
+									<?php } ?>
 								</div>
 							</div>
 						</div>

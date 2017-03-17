@@ -14,7 +14,7 @@ get_header();
 		$banner_intro_statement=get_field('banner_intro_statement');
 		$banner_intro_cta=get_field('banner_intro_cta');
 		?>
-	<div class="banner large" style="background-image:url('<?php echo $lp_banner_url; ?>')">
+	<div class="banner large has-parallax" style="background-image:url('<?php echo $lp_banner_url; ?>')">
 		<div class="overlay" aria-hidden="true"></div>
 		
 		<div class="banner-content">

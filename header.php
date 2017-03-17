@@ -34,6 +34,15 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<?php wp_head(); ?>
 
+	<script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=zz5bdnqbi0dq6e1b2bb8ea';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+
 </head>
 <script>var $dir = '<?php echo get_template_directory_uri(); ?>'; console.log($dir);</script>
 <body <?php body_class(); ?>>

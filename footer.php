@@ -23,10 +23,6 @@
 										</p>
 									</div>
 									<div class="search columns-3 offset-by-2">
-										<div class="cta">
-											<?php $brochure_link = get_field('brochure_link', 'options'); ?>
-											<a class="cta-link white" href="<?php echo $brochure_link; ?>" target="_blank" rel="Visit Brochure">Download a visitors guide brochure &#10165;</a>
-										</div>
 										<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
 											<div class="form input">
 												<label for="searchHeader" class="sr-only">Search the site</label>
@@ -37,6 +33,11 @@
 												</button>			
 											</div>
 										</form>
+										<div class="cta">
+											<?php $brochure_link = get_field('brochure_link', 'options'); ?>
+											<a class="cta-link white" href="<?php echo $brochure_link; ?>" target="_blank" rel="Visit Brochure">Download a visitors guide brochure &#10165;</a>
+										</div>
+										
 									</div>
 									
 								<!-- </div> -->

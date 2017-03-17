@@ -269,8 +269,8 @@ get_header();
 				<div class="events_cta">
 					<div class="widebutton aquamarine">
 						<div class="button_text">
-							<h6>Have an event related to Hunting and Fishing that you want to tell people about? Fill out a form to get your post out there for people to attend.</h6>
-							<a href="">
+							<h6>Have an event that you want to tell people about? Fill out a form to get your post out there for people to attend.</h6>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>/submit-an-event">
 								<h5>Share it with us! &#10165;</h5>
 							</a>
 						</div>

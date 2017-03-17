@@ -58,6 +58,7 @@
 	
 	&.large{
 		height:650px;
+		background-attachment:fixed;
 		// background-repeat:no-repeat;
 		// background-size:cover;
 		// background-position:center center;
@@ -79,6 +80,7 @@
 
 		.page-title{	
 			margin-bottom:0;
+			text-transform:uppercase;
 
 			span{
 					font-size:.25em;
@@ -86,6 +88,7 @@
 					display:block;
 					line-height:0;
 				    margin-bottom: -1.5em;
+				    text-transform:capitalize;
 
 					a{
 						color:$white;
@@ -1436,6 +1439,43 @@
 	@include alt_gothic_reg;
 	color:$bright_green;
 	font-size:2em;
+}
+
+
+
+
+//Submit Event form
+	.submit-event{
+	input{
+	@include alt_gothic_reg;
+	color:$std_black;
+	font-size:2em;
+	}
+
+	input::-webkit-input-placeholder {
+		@include alt_gothic_reg;
+	    color:$std_black;
+	}
+
+	input::-moz-placeholder {
+	    @include alt_gothic_reg;
+	    color:$std_black;
+	}
+
+	 input:-ms-input-placeholder {
+	    @include alt_gothic_reg;
+	    color:$std_black;
+	}
+
+	 input:-moz-placeholder {
+	    @include alt_gothic_reg;
+	    color:$std_black;
+	}
+
+	 input::webkit-input-placeholder {
+	    @include alt_gothic_reg;
+	    color:$std_black;
+	}
 }
 
 //Accessibility

@@ -18,7 +18,7 @@
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: new google.maps.LatLng(38.9595194,-78.7438335),
-        mapTypeId: 'terrain',
+        //mapTypeId: 'terrain',
         disableDefaultUI: true,
         zoomControl: false,
         styles:
@@ -83,31 +83,24 @@
 
           //Create the marker
           marker = new google.maps.Marker({
+            //This is just the title of the blog post
             title: title,
+            //Style the dang label
             label: {
               text:String(ctr),
               color:"#ffffff",
               fontSize:"2em",
               fontFamily:"alternate-gothic-no-1-d"
             },
-            //labelContent: '<span>'+String(ctr)+'</span>',
-            //labelClass: "label",
             position: new google.maps.LatLng(data[i]['coordinates'][0], data[i]['coordinates'][1]),
             map: map,
-            
+            //Create the custom icon
             icon:{
               path: google.maps.SymbolPath.CIRCLE,
               scale: 15,
               fillColor:color,
               fillOpacity:1,
               strokeColor:'transparent',
-                // anchor: new google.maps.Point(15, 15),
-                // url:'data:image/svg+xml;utf-8, \
-                //   <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"> \
-                //     <circle cx="15" cy="15" r="15" fill="#75BB3E" ></circle> \
-                //   </svg>'
-
-                  //#75BB3E
              }
           });
         //d="M3.5 3.5h25v25h-25z" viewBox="0 0 32 32"
