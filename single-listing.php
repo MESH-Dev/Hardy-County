@@ -14,7 +14,40 @@
 					<?php } ?>
 
 					<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+						<h2>Location</h2>
+						<?php 
+						$city = get_field('city', $post->ID);
+						$address = get_field('street_address', $post->ID);
+						$zip = get_field('zip', $post->ID);
+						$site = get_field('web_address', $post->ID);
+						$phone = get_field('phone_number', $post->ID);
+						?>
+						<p class="loc">
+									<?php 
+										
+										if($address != ''){
+											echo $address;
+											echo '</br>';
+										}
+										if($city != ''){
+											echo $city;
+											echo ' ';
+										}
+										if($zip != ''){
+											echo $zip;
+											echo '</br>';
+										}
+										if($site != ''){?>
+											<a href="<?php echo $site; ?>" target="_blank"><?php echo $site; ?></a>
+										<?php }
+										if ($phone != ''){
+											echo '| <span class="phone">'.$phone.'</span>';
+										}
+										?>
+						</p>
+
 						<?php the_content(); ?>
+
 					<?php endwhile; ?>
 
 				

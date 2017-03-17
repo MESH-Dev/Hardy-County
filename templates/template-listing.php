@@ -8,7 +8,7 @@ get_header();
 
 
 <main id="content">
-	<div class="banner interior" >	
+	<div class="banner interior with-map" >	
 		<div id="map" style="height:400px; width:100%; position:absolute; left:0; top:0;"></div>
 		<div class="banner-content">
 			<div class="container">
@@ -23,7 +23,7 @@ get_header();
 			<?php the_title(); ?></h1>
 			</div>
 		</div>
-		
+	<?php var_dump(get_post_type($post->ID)); ?>
 	</div>
 	<script>
       var map;
@@ -126,7 +126,7 @@ get_header();
       //   }
       //}
     </script>
-<?php get_template_part('helpers/getListings'); ?>
+<?php //get_template_part('helpers/getListings'); ?>
     <?php 
 
 // $arr = array();

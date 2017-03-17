@@ -156,4 +156,83 @@ function primary_section() {
 }
 add_action( 'init', 'primary_section', 0 );
 
+add_action('init', 'primary_section_register_meta');
+        function primary_section_register_meta(){
+            register_meta('term', 'color','' );
+        }
+
+add_action( 'primary_section_add_form_fields', 'primary_section_new_term_field' ); 
+        function primary_section_new_term_field() { 
+            wp_nonce_field( basename( __FILE__ ), 'location_term_nonce' ); ?> 
+            <div class="form-field primary-section-term-wrap"> <label for="primary-section-term">
+                <?php _e( 'Color', 'primary_section' ); ?></label> 
+                <input type="text" name="primary_section_term" id="primary-section-term" value="" class="primary-section-field" /> </div> 
+            <!-- <div class="form-field location-term-wrap"> <label for="location-term">
+                <?php _e( 'Address', 'location' ); ?></label> 
+                <input type="text" name="location_term" id="location-term" value="" class="location-term-field" /> </div> 
+            <div class="form-field location-term-wrap"> <label for="location-term">
+                <?php _e( 'Phone', 'location' ); ?></label> 
+                <input type="text" name="location_term" id="location-term" value="" class="location-term-field" /> </div>  -->
+
+                <?php }
+
+ add_action( 'primary_section_edit_form_fields', 'primary_section_edit_term_field' );
+
+            function primary_section_edit_term_field( $term ) {
+
+                //$default = '#ffffff';
+                //$location_term = location_get_term( $term->term_id, true );
+
+                $color = get_term_meta( $term->term_id, 'color', true );
+                
+
+               //if ( ! $location_term )
+                    //$color = $default; ?>
+
+                <tr class="form-field primary-section-term-wrap">
+                    <th scope="row"><label for="primary-section-term"><?php _e( 'Color', 'primary_section' ); ?></label></th>
+                    <td>
+                        <?php wp_nonce_field( basename( __FILE__ ), 'primary_section_term_nonce' ); ?>
+                        <input type="text" name="primary_section_term_color" id="primary-section-term-college" value="<?php echo esc_attr( $color ); ?>" class="location-field" />
+                    </td>
+                </tr>
+               <!--  <tr class="form-field location-term-wrap">
+                    <th scope="row"><label for="location-term"><?php _e( 'Address', 'location' ); ?></label></th>
+                    <td>
+                        <?php wp_nonce_field( basename( __FILE__ ), 'location_term_nonce' ); ?>
+                        <input type="text" name="location_term_address" id="location-term-address" value="<?php echo esc_attr( $address ); ?>" class="location-field" />
+                    </td>
+                </tr>
+                <tr class="form-field location-term-wrap">
+                    <th scope="row"><label for="location-term"><?php _e( 'Phone', 'location' ); ?></label></th>
+                    <td>
+                        <?php wp_nonce_field( basename( __FILE__ ), 'location_term_nonce' ); ?>
+                        <input type="text" name="location_term_phone" id="location-term-phone" value="<?php echo esc_attr( $phone ); ?>" class="location-field" />
+                    </td>
+                </tr> -->
+                <?php }
+
+    add_action( 'edit_primary_section',   'primary_section_save_term_color' );
+        add_action( 'create_primary_section', 'primary_section_save_term_color' );
+
+        function primary_section_save_term_color($term_id) {
+
+            if ( ! isset( $_POST['primary_section_term_nonce'] ) || ! wp_verify_nonce( $_POST['primary_section_term_nonce'], basename( __FILE__ ) ) )
+                return;
+
+            $old_term = get_term_meta( $term_id, 'color', true );
+            $new_term = $_POST['primary_section_term_color'];
+
+            if ( $old_term && '' === $new_term )
+                delete_term_meta( $term_id, 'color' );
+
+            else if ( $old_term !== $new_term )
+                update_term_meta( $term_id, 'color', $new_term );
+
+            // if ( $old_term && '' === $new_term )
+            //     delete_term_meta( $term_id, 'address' );
+
+            // else if ( $old_term !== $new_term )
+            //     update_term_meta( $term_id, 'address', $new_term );
+        }
 ?>

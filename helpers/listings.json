@@ -9,21 +9,11 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": [
-            {
-                "term_id": 10,
-                "name": "Take It Easy",
-                "slug": "take-it-easy",
-                "term_group": 0,
-                "term_taxonomy_id": 10,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 5,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "CH Listing 2",
@@ -35,47 +25,27 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": [
-            {
-                "term_id": 10,
-                "name": "Take It Easy",
-                "slug": "take-it-easy",
-                "term_group": 0,
-                "term_taxonomy_id": 10,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 5,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "CH LISTING 3",
-        "address": "303 Washington St. W",
+        "address": "609 Tennessee Ave.",
         "phone": "(304) 555-5555",
         "website": "http:\/\/meshfresh.com",
         "zip": "25360",
         "coordinates": [
-            38.361146,
-            -81.6413254
+            38.3605031,
+            -81.6422159
         ],
-        "listing_category": [
-            {
-                "term_id": 10,
-                "name": "Take It Easy",
-                "slug": "take-it-easy",
-                "term_group": 0,
-                "term_taxonomy_id": 10,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 5,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "ED Listing 1",
@@ -87,21 +57,11 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": [
-            {
-                "term_id": 9,
-                "name": "Hunting &amp; Fishing",
-                "slug": "hunting-fishing",
-                "term_group": 0,
-                "term_taxonomy_id": 9,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 7,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "ED Listing 2",
@@ -113,21 +73,11 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": [
-            {
-                "term_id": 10,
-                "name": "Take It Easy",
-                "slug": "take-it-easy",
-                "term_group": 0,
-                "term_taxonomy_id": 10,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 5,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "ED Listing 3",
@@ -139,21 +89,11 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": [
-            {
-                "term_id": 9,
-                "name": "Hunting &amp; Fishing",
-                "slug": "hunting-fishing",
-                "term_group": 0,
-                "term_taxonomy_id": 9,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 7,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "OI Listing 1",
@@ -165,21 +105,11 @@
             38.3605031,
             -81.6422159
         ],
-        "listing_category": [
-            {
-                "term_id": 11,
-                "name": "Hike, Bike &amp; Float",
-                "slug": "hike-bike-float",
-                "term_group": 0,
-                "term_taxonomy_id": 11,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 3,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "OI Listing 2",
@@ -191,21 +121,11 @@
             38.3613868,
             -81.6412798
         ],
-        "listing_category": [
-            {
-                "term_id": 11,
-                "name": "Hike, Bike &amp; Float",
-                "slug": "hike-bike-float",
-                "term_group": 0,
-                "term_taxonomy_id": 11,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 3,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "OI Listing 3",
@@ -217,21 +137,11 @@
             38.953832,
             -78.8042799
         ],
-        "listing_category": [
-            {
-                "term_id": 11,
-                "name": "Hike, Bike &amp; Float",
-                "slug": "hike-bike-float",
-                "term_group": 0,
-                "term_taxonomy_id": 11,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 3,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "SR Listing 1",
@@ -243,21 +153,11 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": [
-            {
-                "term_id": 9,
-                "name": "Hunting &amp; Fishing",
-                "slug": "hunting-fishing",
-                "term_group": 0,
-                "term_taxonomy_id": 9,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 7,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "SR Listing 3",
@@ -266,24 +166,14 @@
         "website": "http:\/\/meshfresh.com",
         "zip": "26810",
         "coordinates": [
-            38.9595152,
-            -78.7416448
+            null,
+            null
         ],
-        "listing_category": [
-            {
-                "term_id": 9,
-                "name": "Hunting &amp; Fishing",
-                "slug": "hunting-fishing",
-                "term_group": 0,
-                "term_taxonomy_id": 9,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 7,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "SR Listing 3",
@@ -295,21 +185,11 @@
             38.9569706,
             -78.7893939
         ],
-        "listing_category": [
-            {
-                "term_id": 9,
-                "name": "Hunting &amp; Fishing",
-                "slug": "hunting-fishing",
-                "term_group": 0,
-                "term_taxonomy_id": 9,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 7,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "STO Listing 1",
@@ -321,21 +201,11 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": [
-            {
-                "term_id": 10,
-                "name": "Take It Easy",
-                "slug": "take-it-easy",
-                "term_group": 0,
-                "term_taxonomy_id": 10,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 5,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "STO Listing 2",
@@ -347,21 +217,11 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": [
-            {
-                "term_id": 9,
-                "name": "Hunting &amp; Fishing",
-                "slug": "hunting-fishing",
-                "term_group": 0,
-                "term_taxonomy_id": 9,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 7,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     },
     {
         "title": "STO Listing 3",
@@ -373,20 +233,10 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": [
-            {
-                "term_id": 9,
-                "name": "Hunting &amp; Fishing",
-                "slug": "hunting-fishing",
-                "term_group": 0,
-                "term_taxonomy_id": 9,
-                "taxonomy": "category",
-                "description": "",
-                "parent": 0,
-                "count": 7,
-                "filter": "raw"
-            }
-        ],
-        "description": ""
+        "listing_category": "hunting-fishing",
+        "description": "",
+        "color": [
+            "#414242"
+        ]
     }
 ]

@@ -78,6 +78,9 @@
 		//background-blend-mode:mulitply;
 		//-webkit-background-blend-mode:multiply;
 
+		&:not(.with-map){
+			background-image:url('img/banner_placeholder2.png');
+		}
 		.page-title{	
 			margin-bottom:0;
 			text-transform:uppercase;

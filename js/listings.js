@@ -44,9 +44,12 @@
           continue;
         }
         else{
+
+          
           
         //Scoop out the titles from our JSON file
         var title = data[i]['title'];
+        var color = data[i]['color'];
         //var label  = '<span class="label">'+ctr+'</span>';
 
         //var allTitles = [];
@@ -72,13 +75,13 @@
         // });
           
           //Marker color based on the listing category listing_cat
-          var color = '';
+          // var color = '';
           
-          if(listing_cat == 'hunting-fishing'){
-            color = '#4f6d6f';
-          }else{
-            color='cyan';
-          }
+          // if(listing_cat == 'hunting-fishing'){
+          //   color = '#4f6d6f';
+          // }else{
+          //   color='cyan';
+          // }
        
 
           //Create the marker
@@ -98,7 +101,7 @@
             icon:{
               path: google.maps.SymbolPath.CIRCLE,
               scale: 15,
-              fillColor:color,
+              fillColor:String(color),
               fillOpacity:1,
               strokeColor:'transparent',
              }
