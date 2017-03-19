@@ -1,0 +1,171 @@
+// Typography
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+//Fonts
+
+//__Adelle
+
+@mixin adelle{
+  font-family:'adelle-condensed';
+}
+
+@mixin adelle_thin{
+  @include adelle;
+  font-weight:200;
+  font-style:normal;
+}
+
+@mixin adelle_thin_ital{
+   @include adelle;
+  font-weight:200;
+  font-style:italic;
+}
+
+// @mixin adelle_light{
+//    @include adelle;
+//   font-weight:300;
+//   font-style:normal;
+// }
+
+// @mixin adelle_light_ital{
+//    @include adelle;
+//   font-weight:300;
+//   font-style:italic;
+// }
+
+// @mixin adelle_reg{
+//    @include adelle;
+//   font-weight:400;
+//   font-style:normal;
+// }
+
+// @mixin adelle_ital{
+//    @include adelle;
+//   font-weight:400;
+//   font-style:italic;
+// }
+
+@mixin adelle_semibold{
+   @include adelle;
+  font-weight:600;
+  font-style:normal;
+}
+
+@mixin adelle_semi_ital{
+   @include adelle;
+  font-weight:200;
+  font-style:normal;
+}
+
+@mixin adelle_bold{
+   @include adelle;
+  font-weight:700;
+  font-style:normal;
+}
+
+@mixin adelle_bold_ital{
+   @include adelle;
+  font-weight:700;
+  font-style:italic;
+}
+
+// @mixin adelle_xtra{
+//    @include adelle;
+//   font-weight:800;
+//   font-style:normal;
+// }
+
+// @mixin adelle_xtra_ital{
+//    @include adelle;
+//   font-weight:700;
+//   font-style:italic;
+// }
+
+// @mixin adelle_heavy{
+//    @include adelle;
+//   font-weight:900;
+//   font-style:normal;
+// }
+
+// @mixin adelle_heavy_ital{
+//    @include adelle;
+//   font-weight:900;
+//   font-style:italic;
+// }
+
+//==============================
+
+//Alternate Gothic No1 D
+
+@mixin alt_gothic{
+  font-family:'alternate-gothic-no-1-d';
+}
+
+@mixin alt_gothic_reg{
+  @include alt_gothic;
+  font-weight:400;
+  font-style:normal;
+}
+
+//==============================
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  text-transform:uppercase;
+  //@include adelle_thin;
+}
+
+h1 { font-size: 8em; line-height: 1.2;  letter-spacing: .002em;  }
+h2 { font-size: 3em; line-height: 1.2; letter-spacing: .0025em;  }
+h3 { font-size: 2.8em; line-height: 1.2;  letter-spacing: .002em;  }
+h4 { font-size: 3em; line-height: 1.2; letter-spacing: .0015em; }
+h5 { font-size: 1.8em; line-height: 1.2;  letter-spacing: .001em; }
+h6 { font-size: 1.5em; line-height: 1.2;  letter-spacing: .0015em; }
+
+h1,
+h2,
+h3,
+h5,
+{
+  @include alt_gothic_reg;
+  color:$white;
+}
+
+h4,
+h6{
+  @include adelle_thin;
+}
+
+
+ 
+@media($bp-smaller-than-tablet) {
+  // h1 { font-size: 5.0rem; }
+  // h2 { font-size: 4.2rem; }
+  // h3 { font-size: 3.6rem; }
+  // h4 { font-size: 3.0rem; }
+  // h5 { font-size: 2.4rem; }
+  // h6 { font-size: 1.5rem; }
+}
+
+p {
+  font-size: 2em;  
+  line-height: 1.2; 
+  margin-top: 0;
+  margin-bottom: 1.8em;
+  color:$std_black;
+  @include adelle-thin;
+}
+
+a{
+  color:$dark_aquamarine;
+  transition:all .5s ease;
+
+  &:hover,
+  &:focus,
+  &:active{
+    opacity:.5;
+    text-decoration:none;
+  }
+}
