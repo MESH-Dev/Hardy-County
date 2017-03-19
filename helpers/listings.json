@@ -9,10 +9,10 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
-            "#414242"
+            "#4f6d6f"
         ]
     },
     {
@@ -25,26 +25,26 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
-            "#414242"
+            "#4f6d6f"
         ]
     },
     {
         "title": "CH LISTING 3",
-        "address": "609 Tennessee Ave.",
+        "address": "303 Washington St. W",
         "phone": "(304) 555-5555",
         "website": "http:\/\/meshfresh.com",
         "zip": "25360",
         "coordinates": [
-            38.3605031,
-            -81.6422159
+            38.361146,
+            -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
-            "#414242"
+            "#4f6d6f"
         ]
     },
     {
@@ -57,10 +57,10 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
-            "#414242"
+            "#c16b05"
         ]
     },
     {
@@ -73,10 +73,10 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
-            "#414242"
+            "#c16b05"
         ]
     },
     {
@@ -89,10 +89,10 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
-            "#414242"
+            "#c16b05"
         ]
     },
     {
@@ -105,10 +105,10 @@
             38.3605031,
             -81.6422159
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "hike-bike-float",
         "description": "",
         "color": [
-            "#414242"
+            "#4f6d6f"
         ]
     },
     {
@@ -121,10 +121,10 @@
             38.3613868,
             -81.6412798
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "hike-bike-float",
         "description": "",
         "color": [
-            "#414242"
+            "#4f6d6f"
         ]
     },
     {
@@ -137,10 +137,10 @@
             38.953832,
             -78.8042799
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "hike-bike-float",
         "description": "",
         "color": [
-            "#414242"
+            "#4f6d6f"
         ]
     },
     {
@@ -153,7 +153,7 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
             "#414242"
@@ -166,10 +166,10 @@
         "website": "http:\/\/meshfresh.com",
         "zip": "26810",
         "coordinates": [
-            null,
-            null
+            38.9595152,
+            -78.7416448
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "hike-bike-float",
         "description": "",
         "color": [
             "#414242"
@@ -201,10 +201,10 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
-            "#414242"
+            "#853001"
         ]
     },
     {
@@ -217,10 +217,10 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
-            "#414242"
+            "#853001"
         ]
     },
     {
@@ -233,10 +233,10 @@
             38.361146,
             -81.6413254
         ],
-        "listing_category": "hunting-fishing",
+        "listing_category": "take-it-easy",
         "description": "",
         "color": [
-            "#414242"
+            "#853001"
         ]
     }
 ]

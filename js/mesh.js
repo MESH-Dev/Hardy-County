@@ -1,7 +1,6 @@
 jQuery(document).ready(function($){
 
-  //Are we loaded?
-  console.log('New theme loaded!');
+ 
 
   //Let's do something awesome!
 
@@ -67,9 +66,9 @@ function _resize(){
   gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp5, cp6, cp7);
    $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp5, cp6, cp7));
 
-  console.log("Width 2: "+gi2);
-	console.log("Width 3: "+gi3);
-	 console.log("Width 4: "+gi4);
+ //  console.log("Width 2: "+gi2);
+	// console.log("Width 3: "+gi3);
+	//  console.log("Width 4: "+gi4);
   $('.grid-item-width2').css({height: (gi2)});
   $('.grid-item-width2.nest').css({height: (gi2*2)});
   $('.grid-item-width2.nest .nested').css({height: gi2});

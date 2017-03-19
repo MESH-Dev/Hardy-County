@@ -37,9 +37,9 @@
         //console.log(data[i]['listing_category'][0]['slug']);
 
         // $listing = data[i]['listing_category'][0]['slug'];
-        // console.log()
+       // console.log(data[i]['listing_category']);
 
-        if(data[i]['listing_category'][0]['slug'] !== listing_cat){
+        if(data[i]['listing_category'] !== listing_cat){
 
           continue;
         }
@@ -61,7 +61,7 @@
         
         //Create the html for the infoWindow
         var infoWindowContent = '<div class="map-marker-title">' + data[i]['title'] + '</div>';
-        console.log(infoWindowContent);
+        //console.log(infoWindowContent);
 
         // //This is for creating multiple markers, in case we want to cluster
         // var markers = data.map(function(location, i) {
@@ -90,7 +90,7 @@
             title: title,
             //Style the dang label
             label: {
-              text:String(ctr),
+              text:String(ctr+1),
               color:"#ffffff",
               fontSize:"2em",
               fontFamily:"alternate-gothic-no-1-d"
