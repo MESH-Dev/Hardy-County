@@ -22,7 +22,7 @@
 											We promise not to overload you inbox and your email is confidential.
 										</p>
 									</div>
-									<div class="search columns-3 offset-by-2">
+									<div class="search columns-4 offset-by-1">
 										<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
 											<div class="form input">
 												<label for="searchHeader" class="sr-only">Search the site</label>
@@ -62,10 +62,11 @@
 </footer><!-- End of Footer -->
 
 <?php wp_footer(); ?>
-<?php if(is_page_template('templates/template-listing.php')){?>
+<?php if(is_page_template('templates/template-listing.php') || is_page_template('templates/template-map-full.php')){?>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8&amp;callback=initMap"></script>
  <script async src="<?php echo get_template_directory_uri() ?>/js/listings.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8&amp;callback=initMap"></script>
+ 
 <?php } ?>
 </body>
 </html>

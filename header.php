@@ -117,8 +117,9 @@
 						</a>
 					<!-- </h1> -->
 				</div>
-				
+				<div class="sidr-trigger"><span>MENU <i class="fa fa-fw fa-bars"></i></span></div>
 				<nav class="main-navigation">
+					<div class="close"><span>Close <i class="fa fa-fw fa-close"></i></span></div>
 					<?php if(has_nav_menu('main_nav')){
 								$defaults = array(
 									'theme_location'  => 'main_nav',

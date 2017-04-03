@@ -147,6 +147,7 @@ get_header();
 							$address = get_field('street_address', $post->ID);
 							$zip = get_field('zip', $post->ID);
 							$site = get_field('web_address', $post->ID);
+							$site_text = get_field('web_address_link_text', $post->ID);
 							$bare_event_str = preg_replace('#^https?://#', '', $site);
 							$phone = get_field('phone_number', $post->ID);
 							$hc_event = get_field('hardy_county_event', $post->ID);
@@ -197,10 +198,21 @@ get_header();
 											echo '</br>';
 										}
 										if($site != ''){?>
-											<a href="<?php echo $site; ?>" target="_blank"><?php echo $bare_event_str; ?></a>
+											<a href="<?php echo $site; ?>" target="_blank">
+												<?php 
+													if ($site_text == ''){
+														echo $bare_event_str; 
+													}else{
+														echo $site_text;
+													}
+											 	?>
+											</a>
 										<?php }
+										if($site !='' && $phone != ''){
+											echo '| ';
+										}
 										if ($phone != ''){
-											echo '| <span class="phone">'.$phone.'</span>';
+											echo '<span class="phone">'.$phone.'</span>';
 										}
 										?></p>
 									</div>

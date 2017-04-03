@@ -20,6 +20,7 @@ header{
 
 		@media ($bp-smaller-than-desktop){
 			width:100%;
+			margin-top:2em;
 		}
 
 		@media ($bp-smaller-than-tablet){
@@ -44,6 +45,7 @@ header{
 				margin-bottom:3px;
 				position:relative;
 
+
 				&.current-menu-item{
 					border-bottom:5px solid transparent;
 				}
@@ -55,6 +57,10 @@ header{
 					font-size:2.8em;
 				    padding-bottom: 5px;
 				    text-transform:uppercase;
+
+				    @media ($bp-smaller-than-desktop){
+						font-size:2.4em;
+					}
 				}
 
 				.sub-menu{
@@ -150,6 +156,10 @@ header{
 		padding-left:1em;
 		height:2em;
 
+		@media ($bp-smaller-than-tablet){
+			display:none;
+		}
+
 		ul{	
 			display:inline-block;
 			float:left;
@@ -197,5 +207,53 @@ header{
 				}
 			}
 		}
+	}
+}
+
+.close{
+	color:$aqua_marine;
+	text-align:right;
+	margin-bottom:2em;
+	margin-top:2.75em;
+	display:none;
+
+	span{
+		@include alt_gothic_reg;
+		font-size:2.8em;
+		text-transform:uppercase;
+		display:block;
+		padding-right:.9em;
+	}
+
+	&:active,
+	&:focus,
+	&:hover{
+		color:$dark_aquamarine;
+	}
+}
+
+.sidr-trigger{
+	cursor:pointer;
+	position:absolute;
+	top:3em;
+	right:2em;
+	display:none;
+	padding:1em;
+	span{
+		color:white;
+		@include alt_gothic_reg;
+		font-size:2.8em;
+		text-transform:uppercase;
+		line-height:.75;
+	}
+
+	&:active,
+	&:focus,
+	&:hover{
+		background-color:$dark_aquamarine;
+	}
+
+	@media ($bp-smaller-than-tablet){
+		display:block;
 	}
 }

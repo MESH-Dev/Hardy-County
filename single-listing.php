@@ -20,7 +20,9 @@
 						$address = get_field('street_address', $post->ID);
 						$zip = get_field('zip', $post->ID);
 						$site = get_field('web_address', $post->ID);
+						$strip_site = preg_replace('#^https?://#', '', $site);
 						$phone = get_field('phone_number', $post->ID);
+						$email = get_field('email', $post->ID)
 						?>
 						<p class="loc">
 									<?php 
@@ -37,11 +39,26 @@
 											echo $zip;
 											echo '</br>';
 										}
-										if($site != ''){?>
-											<a href="<?php echo $site; ?>" target="_blank"><?php echo $site; ?></a>
+										if($email != ''){?>
+											Contact: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
 										<?php }
+										if($site != ''){?>
+											<a href="<?php echo $site; ?>" target="_blank">
+												<?php //echo $strip_site; ?>
+												<?php 
+													if ($site_text == ''){
+														echo $strip_site; 
+													}else{
+														echo $site_text;
+													}
+											 	?>
+											</a>
+										<?php }
+										if($site !='' && $phone != ''){
+											echo '| ';
+										}
 										if ($phone != ''){
-											echo '| <span class="phone">'.$phone.'</span>';
+											echo '<span class="phone">'.$phone.'</span>';
 										}
 										?>
 						</p>

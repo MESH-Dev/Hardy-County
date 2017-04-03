@@ -1,7 +1,9 @@
 //General
 
 .cta{
-	margin:10px 0;
+	margin-top:10px;
+	padding:10px 10px 6px 10px;
+	background-color:$dark_aquamarine;
 
 	.cta-link{
 		//color:$white;
@@ -49,6 +51,7 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80292929', endColorstr='#80292929',GradientType=0 ); /* IE6-9 */
 
 		position:absolute;
+		display:block;
 		top:0;
 		bottom:0;
 		right:0;
@@ -1444,9 +1447,6 @@
 	font-size:2em;
 }
 
-
-
-
 //Submit Event form
 	.submit-event{
 	input{
@@ -1478,6 +1478,85 @@
 	 input::webkit-input-placeholder {
 	    @include alt_gothic_reg;
 	    color:$std_black;
+	}
+}
+
+//Sidr styling
+.sidr{
+	background-color:rgba(255, 255, 255, 0.7);
+	padding:1em;
+ 	@include alt_gothic_reg;
+
+ 	.open{
+ 		color:$white;
+ 		cursor:pointer;
+ 		// position: absolute;
+ 		display:inline-block;
+ 		//vertical-align: middle;
+	    right: 0px;
+	    top: 9px;
+	    z-index: 99999999;
+	    cursor: pointer;
+	    i{	
+	    	padding-top:3px;
+	    	transition:.3s ease-in-out;
+	    }
+ 	}
+
+ 	.close{
+ 		display:block;
+ 	}
+
+	ul{
+
+		&#menu-gateway_nav{
+			li{
+				a{
+					font-size:2em;
+				}
+			}
+		}
+
+		&.social_nav{
+			li{
+				display:inline-block;
+				float:left;
+				a{
+					font-size:1.4em;
+					color:$std_black;
+				}
+			}
+		}
+		> li{
+			a{
+				font-size:2.8em;
+				color:white;
+
+				&:hover,
+				&:active,
+				&:focus{
+					color:$seafoam;
+				}
+			}
+		}
+		li{
+			list-style-type:none;
+			position:relative;
+
+			a{
+
+			}
+			ul{
+				display:none;
+				margin:1em 0;
+
+				li{
+					a{
+						font-size:2em;
+					}
+				}
+			}
+		}
 	}
 }
 

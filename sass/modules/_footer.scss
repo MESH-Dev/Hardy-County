@@ -3,9 +3,15 @@ footer{
 	//font-size:1.6em; 
 	.top-bar{
 		background:$gray;
-		padding:10px 0;
+		padding-top:10px;
 		p{
 			color:$white;
+		}
+	}
+
+	.copy-bar{
+		@media ($bp-smaller-than-tablet){
+			text-align:center;
 		}
 	}
 
@@ -16,7 +22,9 @@ footer{
 		padding:15px 0;
 		
 			font-size:1.6em;
-		
+		@media ($bp-smaller-than-tablet){
+			float:none;
+		}
 	}
 
 	.signature{
@@ -26,6 +34,10 @@ footer{
 		padding:15px 0;
 		
 			font-size:1.6em;
+
+		@media ($bp-smaller-than-tablet){
+			float:none;
+		}
 		
 	}
 
@@ -158,8 +170,22 @@ footer{
 				}
 			}
 		}
+		@media($bp-smaller-than-tablet){
+			margin-bottom:2em;
+		}
 	}	
 
+	.signup{
+		@media($bp-smaller-than-tablet){
+			margin:2em 0;
+		}
+	}
+
+	.cta{
+		@media($bp-smaller-than-tablet){
+			margin-bottom:2em;
+		}
+	}
 }
 
 

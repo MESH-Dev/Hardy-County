@@ -1,20 +1,26 @@
-<?php get_header(); ?>
+<?php 
+/* Template Name: Search Results Page */
+get_header(); ?>
 
 
 <main id="content">
-
-	<div class="container">
+	<?php get_template_part('partials/banner-interior')?>
+	<div class="container body-content">
 		<div class="row">
-			<div class="columns-9">
+			<div class="columns-7 body-copy">
 				<?php if ( have_posts() ) : ?>
-					<h1><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h2><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<div class="post">
-							<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-							<p class="postinfo">By <?php the_author(); ?> | Categories: <?php the_category(', '); ?> | <?php comments_popup_link(); ?></p>
-							<?php the_content('Read more &#8658'); ?>
+							<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?> &#10165;</a></h2>
+							<!-- <p class="postinfo">By <?php the_author(); ?> | Categories: <?php the_category(', '); ?> | <?php comments_popup_link(); ?></p> -->
+							<?php
+								if(get_the_content() != 0){ 
+								the_content('Read more &#10165'); 
+									}
+								?>
 						</div>
 
 					<?php endwhile; ?>
@@ -26,9 +32,8 @@
 					<?php get_search_form(); ?>
 				<?php endif; ?>
 			</div>
-			<div class="columns-3">
-				<?php get_sidebar(); ?>
-			</div>
+			<?php get_template_part('partials/side-bar') ?>
+			
 		</div>
 	</div>
 

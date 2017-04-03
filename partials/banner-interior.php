@@ -6,14 +6,23 @@
 	<div class="banner-content">
 		<div class="container">
 			<h1 class="page-title">
-				<?php if ( $post->post_parent ) { ?>
+				<?php if(is_search()){ ?>
+					Search Results
+				<?php 
+				}else{
+				if ( $post->post_parent ) { ?>
 					<span>
 						<a href="<?php echo get_permalink( $post->post_parent ); ?>" >
 							<?php echo get_the_title( $post->post_parent ); ?>
 							</a>
 						</span><br>
-				<?php } ?>
-		<?php the_title(); ?></h1>
+				<?php 
+					} 
+				 the_title(); } 
+
+				 ?>
+
+			</h1>
 		</div>
 	</div>
 </div>

@@ -22,10 +22,11 @@
 							$event_year = $s_date->format('Y');
 							$event_month_text = $s_date->format('F');
 							$event_month_abbr = strtolower($s_date->format('M'));
-							$city = get_field('city', $post->ID);
+							$city = get_field('city');
 							$address = get_field('street_address');
-							$zip = get_field('zip', $post->ID);
+							$zip = get_field('zip');
 							$site = get_field('web_address');
+							$site_text = get_field('web_address_link_text');
 							$bare_event_str = preg_replace('#^https?://#', '', $site);
 							$phone = get_field('phone_number');
 							$hc_event = get_field('hardy_county_event');
@@ -49,10 +50,21 @@
 									echo '</br>';
 								}
 								if($site != ''){?>
-									<a href="<?php echo $site; ?>" target="_blank"><?php echo $bare_event_str; ?></a>
+									<a href="<?php echo $site; ?>" target="_blank">
+										<?php 
+											if ($site_text == ''){
+												echo $bare_event_str; 
+											}else{
+												echo $site_text;
+											}
+									 	?>
+									</a>
 								<?php }
+								if($site !='' && $phone != ''){
+											echo '| ';
+										}
 								if ($phone != ''){
-									echo '| <span class="phone">'.$phone.'</span>';
+									echo '<span class="phone">'.$phone.'</span>';
 								}
 							?>
 						</p>

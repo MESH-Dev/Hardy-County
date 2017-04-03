@@ -54,7 +54,7 @@ function gi_resize(){
   gi7 = $('.grid-item-width7 ').width();
   cp5 = $('.columns-5').width();
   cp6 =  $('.columns-6.eq ').width();
-  console.log(cp6);
+  //console.log(cp6);
   //cp6_alt = $('.columns-6')
   cp7 = $('.columns-7.trip').width();
   //return gi2, gi3, gi4;
@@ -120,5 +120,72 @@ $menu.on("click","a", function(){
 });
 
 //google map api key: AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8
+
+//Sidr
+$('.sidr-trigger').sidr({
+      name: 'sidr-main',
+      source: '.main-navigation, .gateway-nav',
+      renaming: false,
+      side: 'right',
+      displace: false,      
+      onOpen: function(){
+
+        //$('.sidr-trigger').fadeOut(50);
+          $clk = 0;
+        
+        $('.sidr .open').click(function(){
+            $clk++;
+            
+            //Set every .sub-menu back to initial state on click
+            if($clk == 1){
+                $('ul.sub-menu')
+                  //.slideUp()
+                  .removeClass('sidr-active');
+                //
+                $('.open i').css({
+                  '-moz-transform':'rotate(180deg)',
+                  '-webkit-transform':'rotate(180deg)',
+                  '-o-transform':'rotate(180deg)',
+                  '-ms-transform':'rotate(180deg)',
+                  'transform':'rotate(180deg)'
+                })
+                
+                //On click find the nearest ul.sub-menu and open it
+                $(this)
+                  .closest('li')
+                  .find('ul.sub-menu')
+                  .addClass('sidr-active')
+                  .slideDown();
+                //On click find the .open button and change the symbol from closed to open
+          
+            }else{
+              $clk = 0;
+              $('ul.sub-menu').slideUp();
+             
+              $('.open i').css({
+                  '-moz-transform':'rotate(180deg)',
+                  '-webkit-transform':'rotate(180deg)',
+                  '-o-transform':'rotate(180deg)',
+                  '-ms-transform':'rotate(180deg)',
+                  'transform':'rotate(180deg)'
+              });
+            }//end else
+
+        }); //end .sidr .open function
+      }////end sidr onOpen function
+
+});//end sidr onOpen function
+
+$('.close').click(
+    function(){
+      $.sidr('close', 'sidr-main');
+      //$('.sidr-trigger').fadeIn(50);
+});
+
+$('.sidr ul.menu > li')
+  .has('.sub-menu')
+  .find('a:first')
+  .after('<div class="open"><i class="fa fa-fw fa-3x fa-angle-down"></i></div>');
+
 
 });
