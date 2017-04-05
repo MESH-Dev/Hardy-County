@@ -16,112 +16,74 @@ get_header();
 					<nav id="monthselectors">
 						<div class="wrap">
 						<ul>
-
-						<?php 
-
-							$today=date('Ymd');
-							$currMonth = date('m');
-							$currYear = date('Y');
-							$month_args = array(
-								'post_type' => 'event',
-								'posts_per_page' => '-1',
-								'orderby'=>'meta_value_num',
-								'order'=>'ASC',
-								'meta_key'=>'start_date',
-								// 'date_query'=>array(
-								// 		'month'=>'12',
-								// 	),
-								'meta_query' => array(
-										array(
-												'key'=>'start_date',
-												'compare'=>'>=',
-												'value'=>$today,
-											)
-									)
-							);
-
-							$curr_label = '';
-							$month_query = new WP_Query( $month_args );
-
-					if ($month_query->have_posts()){
-						//Declare month array ($month_arr) to house the months found in the query
-						$month_arr= array();
-						while($month_query->have_posts()) { $month_query->the_post();
-							$start_date = get_field('start_date', false, false);
- 							$end_date = get_field('end_date', false, false);
-							$s_date = new DateTime($start_date);
-							$e_date = new DateTime($end_date);
-							$event_month = $s_date->format('m');
-							$event_year = $s_date->format('Y');
-							$event_month_text = $s_date->format('M');
-							//Add each instance of a month to the array
-							$month_arr[] = (string)strtolower($event_month_text);
-							var_dump($month_arr);
-						} } wp_reset_postdata();
-						?>
 						<?php 
 
 							$months = date('m');
 							//var_dump($months);
 							$list_month = date('M');
-							$list_string = (string)strtolower($list_month);
-							//var_dump($list_string);
 							$list_year = date("Y");
 							//var_dump($list_year);
 							$list_year = date("Y");
-						
+							//$date = date();
+							// $today = date('F j Y');
+							// $today_string = new DateTime($today);
+							//echo $today_string;
+							//$lm_string=(string)$months;
+							//$ly_string = (string)$list_year;
+							//var_dump($ly_string);
+							//$plus_year = strtotime("+12 Month", $ly_string); 
+							//var_dump($plus_year);
+							//var_dump($months);
+
+							//$month_list_item = $currMonth;
+							//$list_full = $month_list_item->format('M');
+							//$m_cnt=0;
+							//$loop = 0;
 							$i=1;
-
-							//Loop creates 12 month span of date elements
 							while($i < 13){
-
-								//If this is the first loop, pull the current month, based on server time
-								//And create an <li> with our information
+								//$i++;
 								if($i == 1){ ?>
-								<li <?php if (!in_array($list_string, $month_arr)){ echo 'class="disabled"';}?>>
-									<?php if (in_array($list_string, $month_arr)){ ?>
+								<li>
 									<a href="#<?php echo strtolower($list_month); ?>" class="monthscrolltrigger first">
-									<?php } ?>
 											<div class="single_month">
 												<p><?php echo $list_month; ?> <?php //echo $i; ?></p>
 												<p class="arrow_indicator">&#10165;</p>
 											</div>
-									<?php if (in_array($list_string, $month_arr)){ ?>
 									</a>
-									<?php } ?>
 								</li>
-							<?php  
-								//If we are in loops 2-12
-								//iterate over the months in this period, based on the current month from server
-								}elseif( $i > 1 && $i < 13 ){
+							<?php  }elseif( $i > 1 && $i < 13 ){
 								$month_string = (string)$list_month;
+								//$lm_string++;
+								//$single_month = date('M', strtotime())
 								$ly_string = (string)$list_year;
 								$month_text = new DateTime($month_string);
 								$lm_string=(string)$months;
 								$lm_string=$lm_string+1;
-								$abbr = strtolower(date('M', strtotime('+'.($i+2).' Month', $lm_string)));
-								//var_dump($abbr);
-								
+								//var_dump($month_text);
+							//if($loop==0){
 								?>
-								<li <?php if (!in_array($abbr, $month_arr, TRUE)){ echo 'class="disabled"'; }?>>
-									<?php if (in_array($abbr, $month_arr, TRUE)){ ?>
-									<a href="#<?php echo strtolower(date('M', strtotime('+'.($i+2).' Month', $lm_string))); ?>" class="monthscrolltrigger next">
-									<?php } ?>
+								<li>
+									<a href="#<?php echo strtolower(date('M', strtotime('+'.($i+1).' Month', $lm_string))); ?>" class="monthscrolltrigger next">
 										<div class="single_month">
-											<p><?php echo date('M', strtotime("+".($i+2)." Month", $lm_string)); ?></p>
+											<p><?php echo $i; ?><?php echo date('M', strtotime("+".($i+1)." Month", $lm_string)); ?></p>
 											<p class="arrow_indicator">&#10165;</p>
 										</div>
-									<?php if (in_array($abbr, $month_arr, TRUE)){ ?>
 									</a> 
-									<?php } ?>
 								</li>
-						<?php }
-							//If we have looped through 13 times (greater than months in year)
-							//reset our count control to 1, and stop
-							elseif($i >= 13){ $i=1;
-								break;
+						<?php }elseif($i >= 13){ $i=1;
+							// $loop=1;
+							// }else{
+								//$currMonth=$currMonth+1;
+								// var_dump($currMonth);
+								// for($currMonth; $currMonth < 13; $currMonth++){
+									//$currMonth++;
 								?>
-						
+							<!-- <a href="#<?php echo $currMonth; ?>" class="monthscrolltrigger next">
+							<div class="single_month">
+								<p><?php echo $currMonth; ?></p>
+								<p class="arrow_indicator">&#10165;</p>
+							</div>
+						</a> -->
 						<?php  } //end if
 								$i++;} //end for
 
@@ -134,6 +96,8 @@ get_header();
 		</div> <!-- end row -->
 		<div class="event-listing row">
 				<?php 
+					//$da_date = get_field('start_date');
+					//var_dump($da_date);
 					$today=date('Ymd');
 					$currMonth = date('m');
 					$currYear = date('Y');
@@ -162,11 +126,25 @@ get_header();
 					
 						$first_loop = 0; 
 						while($the_query->have_posts()) { $the_query->the_post();
-							//ACF fields from post
-							// $event_city = get_field('city');
-							// $event_address = get_field('street_address');
-							// $event_site = get_field('web_address');
-							// $event_phone = get_field('phone');
+							$event_city = get_field('city');
+							$event_address = get_field('street_address');
+							$event_site = get_field('web_address');
+							$event_phone = get_field('phone');
+							
+							//$s_test = $s_date->format('F');
+
+							// $temp_date = get_post_meta( get_the_ID(), 'start_date', true );
+							// $temp_test = new DateTime($temp_date);
+							// $temp = $temp_test->format('F');
+ 
+ 							$start_date = get_field('start_date', false, false);
+ 							$end_date = get_field('end_date', false, false);
+							$s_date = new DateTime($start_date);
+							$e_date = new DateTime($end_date);
+							$event_month = $s_date->format('m');
+							$event_year = $s_date->format('Y');
+							$event_month_text = $s_date->format('F');
+							$event_month_abbr = strtolower($s_date->format('M'));
 							$city = get_field('city', $post->ID);
 							$address = get_field('street_address', $post->ID);
 							$zip = get_field('zip', $post->ID);
@@ -176,16 +154,7 @@ get_header();
 							$phone = get_field('phone_number', $post->ID);
 							$hc_event = get_field('hardy_county_event', $post->ID);
 
-							//Date calculations from ACF fields
- 							$start_date = get_field('start_date', false, false);
- 							$end_date = get_field('end_date', false, false);
-							$s_date = new DateTime($start_date);
-							$e_date = new DateTime($end_date);
-							$event_month = $s_date->format('m');
-							$event_year = $s_date->format('Y');
-							$event_month_text = $s_date->format('F');
-							$event_month_abbr = strtolower($s_date->format('M'));
-
+							//echo "afoimwaie" . $currMonth;
  							
 							if($first_loop == 0){ ?>
 								
@@ -194,7 +163,7 @@ get_header();
 							}
 							
 							if($event_month == $currMonth){ ?>
-															<div class="single_event columns-4">
+								<div class="single_event columns-4">
 									<div class="date-item">
 										<span class="date-wrap">
 											<span class="date-info">
@@ -330,19 +299,5 @@ get_header();
 	</div>
 
 </main><!-- End of Content -->
-
-<?php
-// $people = array("Peter", "Joe", "Glenn", "Cleveland");
-// var_dump($people);
-
-// if (in_array("Glenn", $people))
-//   {
-//   echo "Match found";
-//   }
-// else
-//   {
-//   echo "Match not found";
-//   }
-?>
 
 <?php get_footer(); ?>

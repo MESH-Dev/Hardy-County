@@ -100,7 +100,6 @@ get_header();
 						$address = get_field('street_address', $post->ID);
 						$zip = get_field('zip', $post->ID);
 						$site_text = get_field('web_address_link_text');
-						var_dump($site_text);
 						$site = get_field('web_address', $post->ID);
 						$strip_site = preg_replace('#^https?://#', '', $site);
 						//var_dump($strip_site);
@@ -133,7 +132,7 @@ get_header();
 							</div><div class='columns-6'>
 							<?php } ?>
 						<div class="listing">  <!-- columns-6 -->
-							<?php if($tags != ' '){?>
+							<?php if($tags != ''){?>
 							<div class="push">
 								<span class="tags"><?php echo $tag_name; ?></span>
 							</div>

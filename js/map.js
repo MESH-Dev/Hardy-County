@@ -1,6 +1,6 @@
 
 
-  var loadListings = function(listing_cat) {
+  var loadMap = function() {
 
 
     // Set the JSON file
@@ -12,7 +12,8 @@
 
     //var infoWindow;
 
-     
+     var infoWindow = new google.maps.InfoWindow(), marker, i;
+
     //Keep this out of the getJSON loop
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
@@ -26,9 +27,6 @@
         //marker:marker
       });
 
-    var infoWindow = new google.maps.InfoWindow();//, marker, i;
-
-
     //var infoWindowContent = '<div class="title">' + title; + '</div>';
     
     //The JSON loop, parses the listings.json file for the information we need to make the map
@@ -41,11 +39,11 @@
         // $listing = data[i]['listing_category'][0]['slug'];
        // console.log(data[i]['listing_category']);
 
-        if(data[i]['listing_category'] !== listing_cat){
+        // if(data[i]['listing_category'] !== listing_cat){
 
-          continue;
-        }
-        else if(data[i]['listing_category'] === listing_cat || full == all){
+        //   continue;
+        // }
+        // else if(data[i]['listing_category'] === listing_cat || full == all){
 
         console.log(data);
           
@@ -151,16 +149,16 @@
       //   $scope.explore.push(marker);
         ctr = ctr+1;
 
-        } // end else
+        //} // end else
 
       }//end for loop
 
     }); //end $http.get
   }
 
-var listing_cat = jQuery('.listing-grid').attr('data-category');
+// var listing_cat = jQuery('.listing-grid').attr('data-category');
 var full = jQuery('main').attr('data-category');
 //console.log(full);
 // console.log(listing_cat);
 
-loadListings(listing_cat);
+loadMap(full);

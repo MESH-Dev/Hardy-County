@@ -82,12 +82,12 @@ header{
 						width:200px;
 						padding:0;
 						margin:0;
-						padding:1em 2em;
+						padding:.5em 2em;
 
 						&:first-child{
 							border-top:5px solid $white;
 							position:relative;
-							padding-top:4em;
+							padding-top:2em;
 
 							&:after{
 								position: absolute;
@@ -112,7 +112,7 @@ header{
 						}
 
 						&:last-child{
-							padding-bottom:4em;
+							padding-bottom:2em;
 						}
 
 						a{
@@ -123,6 +123,7 @@ header{
 							background-image:url('img/arrow-icon_green.png');
 							background-repeat:no-repeat;
 							background-position:95% center;
+							line-height:1;
 
 							&:hover,
 							&:active,

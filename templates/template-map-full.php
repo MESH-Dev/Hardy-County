@@ -5,7 +5,7 @@ get_header();
 
 ?>
 
-<main id="content" style="height:95vh;">
+<main id="content" style="height:95vh;" data-category="all">
 	<div id="map" style="height:100vh; width:100%; position:absolute; left:0; top:0;"></div>
 	
 

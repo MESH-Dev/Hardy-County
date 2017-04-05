@@ -31,8 +31,6 @@ function filter_function_name( $num, $post ) {
     return $num;
 }
 
-//**Move to template/functions.php
-
 //Functions file can't seem to find this function...
 function getInstagram(){
     $json = file_get_contents('https://api.instagram.com/v1/users/1167443738/media/recent?access_token=1167443738.d346c1d.1213de64f26e485e8ffe33eab03e1905');
@@ -41,8 +39,6 @@ function getInstagram(){
 
     //$instagram = getInstagram();
 }
-
-//-------------------------
 
 //var_dump(getInstagram());
 
@@ -73,8 +69,6 @@ function pluginname_ajaxurl() {
     </script>
     <?php
     }
-
-//**Move to template/functions.php
 
 // Updates the map with new or updated listings on listing post-type update
 function update_listings_map( $post_id ) {
@@ -107,6 +101,7 @@ function update_listings_map( $post_id ) {
           $website = get_field('web_address');
           $zip = get_field('zip');
           $primary_section = get_the_terms($p_id, 'primary_section'); 
+          //var_dump($primary_section);
           $color = get_term_meta($primary_section[0]->term_id, 'color');
           //__Get the categories for the post, we'll break it up below
           $listing_cats = get_the_category($p_id); 
@@ -115,10 +110,15 @@ function update_listings_map( $post_id ) {
           //get one category by splitting the value from above
           foreach ($listing_cats as $cat) {
              $listing_category = $cat->slug;
+             $listing_name = $cat->name;
              break;
           }
          
- 
+ 		  foreach ($primary_section as $ps){
+ 		  	$primary_sec = $ps->name;
+ 		  	break;
+ 		  }
+
           $description = get_the_content();
           //$logo = wp_get_attachment_url(get_post_thumbnail_id());
 
@@ -151,6 +151,8 @@ function update_listings_map( $post_id ) {
               "zip" => $zip,
               "coordinates" => $coordinates,
               "listing_category" => $listing_category,
+              "listing_name"=>$listing_name,
+              "primary_section" => $primary_sec,
               //"businesstype" => $terms,
               //"business_category" => $business_category,
               "description" => $description,
@@ -181,10 +183,6 @@ function update_listings_map( $post_id ) {
 
 add_action('save_post', 'update_listings_map', 10, 3);
 
-//-------------------------
-
-//**Move to template/functions.php
-
 //Dynamically retrieve our lat lng info based on the address provided
 //** See Override above for situations where the use of this function is overriden per lisitng post
 function getCoordinates($address){
@@ -212,6 +210,5 @@ function getCoordinates($address){
 
 }
 
-//-------------------------
 
 ?>

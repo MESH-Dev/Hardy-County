@@ -163,11 +163,11 @@ $('.sidr-trigger').sidr({
               $('ul.sub-menu').slideUp();
              
               $('.open i').css({
-                  '-moz-transform':'rotate(180deg)',
-                  '-webkit-transform':'rotate(180deg)',
-                  '-o-transform':'rotate(180deg)',
-                  '-ms-transform':'rotate(180deg)',
-                  'transform':'rotate(180deg)'
+                  '-moz-transform':'rotate(0)',
+                  '-webkit-transform':'rotate(0)',
+                  '-o-transform':'rotate(0)',
+                  '-ms-transform':'rotate(0)',
+                  'transform':'rotate(0)'
               });
             }//end else
 
