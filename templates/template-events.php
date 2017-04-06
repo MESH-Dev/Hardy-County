@@ -18,7 +18,7 @@ get_header();
 						<ul>
 
 						<?php 
-
+							//Query only to pull the months available via Event posts
 							$today=date('Ymd');
 							$currMonth = date('m');
 							$currYear = date('Y');
@@ -43,21 +43,21 @@ get_header();
 							$curr_label = '';
 							$month_query = new WP_Query( $month_args );
 
-					if ($month_query->have_posts()){
-						//Declare month array ($month_arr) to house the months found in the query
-						$month_arr= array();
-						while($month_query->have_posts()) { $month_query->the_post();
-							$start_date = get_field('start_date', false, false);
- 							$end_date = get_field('end_date', false, false);
-							$s_date = new DateTime($start_date);
-							$e_date = new DateTime($end_date);
-							$event_month = $s_date->format('m');
-							$event_year = $s_date->format('Y');
-							$event_month_text = $s_date->format('M');
-							//Add each instance of a month to the array
-							$month_arr[] = (string)strtolower($event_month_text);
-							var_dump($month_arr);
-						} } wp_reset_postdata();
+							if ($month_query->have_posts()){
+								//Declare month array ($month_arr) to house the months found in the query
+								$month_arr= array();
+								while($month_query->have_posts()) { $month_query->the_post();
+									$start_date = get_field('start_date', false, false);
+		 							$end_date = get_field('end_date', false, false);
+									$s_date = new DateTime($start_date);
+									$e_date = new DateTime($end_date);
+									$event_month = $s_date->format('m');
+									$event_year = $s_date->format('Y');
+									$event_month_text = $s_date->format('M');
+									//Add each instance of a month to the array
+									$month_arr[] = (string)strtolower($event_month_text);
+									//var_dump($month_arr);
+								} } wp_reset_postdata();
 						?>
 						<?php 
 
