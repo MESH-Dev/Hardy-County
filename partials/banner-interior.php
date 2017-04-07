@@ -9,7 +9,9 @@
 				<?php if(is_search()){ ?>
 					Search Results
 				<?php 
-				}else{
+				}elseif(is_singular('event')){?>
+				Events
+				<?php }else{
 				if ( $post->post_parent ) { ?>
 					<span>
 						<a href="<?php echo get_permalink( $post->post_parent ); ?>" >
@@ -18,9 +20,8 @@
 						</span><br>
 				<?php 
 					} 
-				 the_title(); } 
-
-				 ?>
+				 the_title(); 
+					} ?>
 
 			</h1>
 		</div>

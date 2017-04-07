@@ -1244,6 +1244,44 @@
 	}	
 }
 
+//Single Event
+
+.event-single{
+	.event-title{
+		@include adelle_thin;
+		font-size: 3em; 
+		line-height: 1.2; 
+		letter-spacing: .0015em;
+		font-weight: 300;
+		font-weight: 300;
+  		text-transform:uppercase;
+  		color:$std_black;
+  		margin:4rem 0;
+	}
+
+	.event-time{
+		@include alt_gothic_reg;
+		font-size: 3em; 
+		line-height: 1.2; 
+		letter-spacing: .0025em;
+		font-weight: 300;
+  		text-transform:uppercase;
+  		margin-bottom:0;
+  		color:$std_black;
+	}
+
+	.event-description-title{
+		@include alt_gothic_reg;
+		font-size: 1.8em; 
+		line-height: 1.2;  
+		letter-spacing: .001em; 
+		font-weight: 300;
+  		text-transform:uppercase;
+  		margin-bottom:0;
+  		color:$std_black;
+	}
+}
+
 //"Text" Default Page
 .body-content{
 	@include adelle_thin;
@@ -1514,7 +1552,7 @@
 
 //Sidr styling
 .sidr{
-	background-color:rgba(255, 255, 255, 0.7);
+	background-color:rgba(229, 176, 112, 0.8);
 	padding:1em;
  	@include alt_gothic_reg;
 
@@ -1546,6 +1584,7 @@
 				a{	
 					color:$std_black;
 					font-size:2em;
+
 					&:hover,
 					&:active,
 					&:focus{
@@ -1575,6 +1614,7 @@
 			a{
 				font-size:2.8em;
 				color:white;
+				text-transform:uppercase;
 
 				&:hover,
 				&:active,
@@ -1607,6 +1647,7 @@
 					a{
 						font-size:2em;
 						color:$seafoam;
+						text-transform:uppercase;
 						&:hover,
 						&:active,
 						&:focus{

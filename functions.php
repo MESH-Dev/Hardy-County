@@ -10,9 +10,10 @@ include('functions/clean.php');
 function my_custom_login_logo() {
   echo '<style type="text/css">
 		        h1 a {
-		          background-size: 227px 85px !important;
+	        	  width:100% !important;
+		          background-size: 250px 85px !important;
 		          margin-bottom: 20px !important;
-		          background-image:url('.get_bloginfo('template_directory').'/img/hardy-logo.png) !important; }
+		          background-image:url('.get_bloginfo('template_directory').'/img/hardy-logo_black.png) !important; }
 		    </style>';
 }
 
@@ -143,6 +144,7 @@ function update_listings_map( $post_id ) {
             $a = [
               "title" => $title,
               "address" => $address,
+              "city" => $city,
               "phone" => $phone,
               "website" => $website,
               //"count"=>$ct,

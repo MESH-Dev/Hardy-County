@@ -212,24 +212,28 @@ header{
 }
 
 .close{
-	color:$aqua_marine;
+	color:$white;
 	text-align:right;
 	margin-bottom:2em;
 	margin-top:2.75em;
 	display:none;
+	cursor:pointer;
 
 	span{
 		@include alt_gothic_reg;
 		font-size:2.8em;
 		text-transform:uppercase;
 		display:block;
-		padding-right:.9em;
+		padding-right:.5em;
 	}
 
 	&:active,
 	&:focus,
 	&:hover{
-		color:$dark_aquamarine;
+		
+			opacity:.7;
+		
+		
 	}
 }
 
