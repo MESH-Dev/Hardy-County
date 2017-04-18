@@ -79,6 +79,7 @@ get_header();
 							$event_city = get_field('city', $event_ID_1);
 							$event_address = get_field('street_address', $event_ID_1);
 							$event_site = get_field('web_address', $event_ID_1);
+							$event_site_text = get_field('web_address_link_text', $event_ID_1);
 							$bare_event_str = preg_replace('#^https?://#', '', $event_site);
 							//$event_site_text substr($event_site, )
 							$event_phone = get_field('phone', $event_ID_1);
@@ -212,7 +213,16 @@ get_header();
 						<?php wp_reset_postdata(); } ?>
 
 						<div class="hg grid-item grid-item-width2 weather weather-api no-padding">
-							<h2>WEATHER BLOCK!</h2>
+							<div class="wrap">
+								<?php 
+									//Get info from our Weather plugin, and display it here
+									//Edit shortcode through the options page
+									//Uses WP Cloudy plugin
+
+									$weather = get_field('weather_shortcode', 'options');
+									echo do_shortcode(''.$weather.'');
+								?>
+							</div>
 						</div>
 
 						<?php //Setup Instagram look at helpers/instagram.php with questions
@@ -299,6 +309,7 @@ get_header();
 						<?php $event_city = get_field('city', $event_ID_2);
 							$event_address = get_field('street_address', $event_ID_2);
 							$event_site = get_field('web_address', $event_ID_2);
+							$event_site_text = get_field('web_address_link_text', $event_ID_2);
 							//$event_site_text substr($event_site, )
 							$event_phone = get_field('phone', $event_ID_2);
 							
@@ -504,6 +515,7 @@ get_header();
 						<?php $event_city = get_field('city', $event_ID_3);
 							$event_address = get_field('street_address', $event_ID_3);
 							$event_site = get_field('web_address', $event_ID_3);
+							$event_site_text = get_field('web_address_link_text', $event_ID_3);
 							//$event_site_text substr($event_site, )
 							$event_phone = get_field('phone', $event_ID_3);
 							

@@ -26,7 +26,7 @@
 								</button>			
 							</div>
 						</form>
-						<div class="cta">
+						<div class="cta brochure">
 							<?php $brochure_link = get_field('brochure_link', 'options'); ?>
 							<a class="cta-link white" href="<?php echo $brochure_link; ?>" target="_blank" rel="Visit Brochure">Download a visitors guide brochure &#10165;</a>
 						</div>

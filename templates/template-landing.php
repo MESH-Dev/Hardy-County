@@ -82,7 +82,8 @@ get_header(); ?>
 			</div> -->
 
 			<!-- Row 2 Calendar Feed/See More -->
-
+		</div><!-- end child page row -->
+		<div class="row">
 			<div class="columns-5 event-feed no-padding"> 
 
 				<div class="content">
@@ -234,13 +235,14 @@ get_header(); ?>
 			</div>
 
 			<?php endwhile; endif; ?>
-			</div>
+		</div> <!-- end calendar feed/see more row -->
+			<!-- </div> -->
 		</div><!-- End Packery Grid -->
 
 		<?php 
 		//Add Cross promotional partial
 		get_template_part('partials/cross-promo'); ?>
-	</div>
+	</div> <!-- end container for page content -->
 
 </main><!-- End of Content -->
 

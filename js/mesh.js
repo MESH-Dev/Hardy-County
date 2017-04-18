@@ -119,6 +119,40 @@ $menu.on("click","a", function(){
   return false;
 });
 
+//Full Map Color Key functionality
+var $ctr=0;
+$('.legend-title').click(function(){
+
+  $ctr++;
+  console.log($ctr);
+  if($ctr==1){
+    $('.map-key').slideDown(100);
+    $('.map-key').addClass('open');
+    $(this).animate({'margin-bottom':'.5em'}, 50);
+    $('.indicator')
+        .css({
+        '-moz-transform':'rotate(90deg)',
+        '-webkit-transform':'rotate(90deg)',
+        '-o-transform':'rotate(90deg)',
+        '-ms-transform':'rotate(90deg)',
+        'transform':'rotate(90deg)'
+      })
+  }else{
+    $ctr=0;
+     $('.map-key').slideUp(100);
+     $('.map-key').removeClass('open');
+     $(this).animate({'margin-bottom':'0'}, 50);
+     $('.indicator')
+        .css({
+        '-moz-transform':'rotate(-90deg)',
+        '-webkit-transform':'rotate(-90deg)',
+        '-o-transform':'rotate(-90deg)',
+        '-ms-transform':'rotate(-90deg)',
+        'transform':'rotate(-90deg)'
+      })
+  }
+})
+
 //google map api key: AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8
 
 //Sidr
@@ -142,7 +176,8 @@ $('.sidr-trigger').sidr({
                   //.slideUp()
                   .removeClass('sidr-active');
                 //
-                $('.open i').css({
+                $(this).find('i img')
+                  .css({
                   '-moz-transform':'rotate(180deg)',
                   '-webkit-transform':'rotate(180deg)',
                   '-o-transform':'rotate(180deg)',
@@ -160,9 +195,10 @@ $('.sidr-trigger').sidr({
           
             }else{
               $clk = 0;
-              $('ul.sub-menu').slideUp();
-             
-              $('.open i').css({
+              //$('ul.sub-menu').slideUp();
+              
+              $(this).find('i img')
+              .css({
                   '-moz-transform':'rotate(0)',
                   '-webkit-transform':'rotate(0)',
                   '-o-transform':'rotate(0)',
@@ -185,7 +221,8 @@ $('.close').click(
 $('.sidr ul.menu > li')
   .has('.sub-menu')
   .find('a:first')
-  .after('<div class="open"><i class="fa fa-fw fa-3x fa-angle-down"></i></div>');
+  .after('<div class="open"><i class="arrow-icon"><img src="'+$dir+'/img/sidr-down-arrow.png"></i></div>');//&#10148;
+  //.after('<div class="open"><i class="fa fa-fw fa-3x fa-angle-down"></i></div>');
 
 
 });

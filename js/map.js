@@ -17,7 +17,7 @@
     //Keep this out of the getJSON loop
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
-        center: new google.maps.LatLng(38.9595194,-78.7438335),
+        center: new google.maps.LatLng(38.9991817,-79.1020919),
         //mapTypeId: 'terrain',
         disableDefaultUI: true,
         zoomControl: false,
@@ -45,15 +45,68 @@
         // }
         // else if(data[i]['listing_category'] === listing_cat || full == all){
 
-        console.log(data);
+        //console.log(data);
           
         //Scoop out the titles from our JSON file
         var title = data[i]['title'];
         var color = data[i]['color'];
 
-        
+        //Construct url parameters
+        //var $address, $city, $lat, $longitude
+        var $address, $city, $state, $;
+
+        var address = data[i]['address'];
+        if (address != ''){
+          $address = address;
+        }else{
+          $address = '';
+        }
+        var city =  data[i]['city'];
+        if (city != ''){
+          $city = city;
+        }else{
+          $city = '';
+        }
+        var zip = data[i]['zip'];
+        if (zip != ''){
+          $zip = zip;
+        }else{
+          $zip = '';
+        }
+        var lat = data[i]['coordinates'][0];
+        var _long = data[i]['coordinates'][0];
+
+        if (address != '' )
+          //Option 1, if we don't want directions, but do have the address (only shows location on map)
+          // $link = 'https://maps.google.com/?q='+address+city+zip;
+          //Option 2, if we do want directions:
+          //saddr var is the current location based on where Google "thinks" the user is
+          //daddr var is the destination, made up of the link
+          $link = 'https://www.google.com/maps?saddr=My+location&daddr='+$address+' '+$city+' '+$zip;
+        else{
+
+          $link = 'https://maps.google.com/maps/?ll='+lat+','+_long;
+        }
+        //console.log(address);
+
+        //Let's start using our icons 
+        var icon, text;
+        var basedir = $dir;
+          if(data[i]['primary_section'] == 'Outside &amp; In'){
+            icon = '/img/outdoors-map-icon.png';
+          }else if(data[i]['primary_section'] == 'Culture &amp; Heritage'){
+            icon = '/img/culture-map-icon.png';
+          }else if(data[i]['primary_section'] == 'Eat &amp; Drink'){
+            icon = '/img/eat-map-icon.png';
+          }else if(data[i]['primary_section'] == 'Sleep &amp; Relax'){
+            icon = '/img/sleep-map-icon.png';
+          }else if(data[i]['primary_section'] == 'Shop In Town &amp; Out'){
+            icon = '/img/shop-map-icon.png';
+          }
+
+
         //Create the html for the infoWindow
-        var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title">'+ data[i]['title'] + '</span></div>';
+        var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title">'+ data[i]['title'] + '</span><span class="directions cta"><a class="cta-link" href="'+$link+'" target="_blank">Get Directions &#10165;</a></span></div>';
         //console.log(infoWindowContent);
 
         // //This is for creating multiple markers, in case we want to cluster
@@ -67,14 +120,14 @@
         //   });
         // });
        
-
+          
           //Create the marker
           marker = new google.maps.Marker({
             //This is just the title of the blog post
             title: title,
             //Style the dang label
             label: {
-              text:String(ctr+1),
+              //text:String(ctr+1),
               color:"#ffffff",
               fontSize:"2em",
               fontFamily:"alternate-gothic-no-1-d"
@@ -82,13 +135,15 @@
             position: new google.maps.LatLng(data[i]['coordinates'][0], data[i]['coordinates'][1]),
             map: map,
             //Create the custom icon
-            icon:{
-              path: google.maps.SymbolPath.CIRCLE,
-              scale: 15,
-              fillColor:String(color),
-              fillOpacity:1,
-              strokeColor:'transparent',
-             }
+            icon:basedir + icon,
+            // icon:{
+
+            //   // path: google.maps.SymbolPath.CIRCLE,
+            //   // scale: 15,
+            //   // fillColor:String(color),
+            //   // fillOpacity:1,
+            //   // strokeColor:'transparent',
+            //  }
           });
 
           google.maps.event.addListener(marker, 'click', (function(marker, infoWindowContent, infoWindow) {

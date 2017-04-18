@@ -1,9 +1,23 @@
 //General
 
 .cta{
-	margin-top:10px;
-	padding:10px 10px 6px 10px;
-	background-color:$dark_aquamarine;
+	// margin-top:10px;
+	// padding:10px 10px 6px 10px;
+	// background-color:$dark_aquamarine;
+
+	//For the map tooltip
+	&.directions{
+		.cta-link{
+			font-size:1.5em;
+		}
+	}
+
+	//Download brochure link in footer
+	&.brochure{
+		margin-top:10px;
+		padding:10px 10px 6px 10px;
+		background-color:$dark_aquamarine;
+	}
 
 	.cta-link{
 		//color:$white;
@@ -32,6 +46,9 @@
 	//padding-left:15px;
 	//background-image:
 }
+
+
+
 
 //Top banner for all pages
 .banner{
@@ -599,6 +616,14 @@
 
 	.weather{
 		background-color:$peach;
+		@include alt_gothic_reg;
+		//padding:1em;
+		.wrap{
+			padding:1em;
+		    display: flex;
+			height: 100%;
+			position: relative;
+		}
 	}
 
 	.instagram{
@@ -1509,6 +1534,176 @@
 	}	
 }
 
+//__--Full Map
+
+.map-container{
+	position:relative;
+}
+
+.full-map#map{
+	height:95vh; 
+	width:100%; 
+	position:relative; 
+	left:0; 
+	top:0;
+}
+
+.map-legend {
+	background-color:white; 
+	position:absolute; 
+	bottom:2em; 
+	left:2em;
+	padding: 1em 2em;
+
+	.legend-title{
+		@include adelle_thin;
+		font-size:1.4em;
+		color:$std_black;
+		text-transform:uppercase;
+		position:relative;
+		cursor:pointer;
+		margin:0;
+		padding:0;
+		//margin:.5em 0;
+		.indicator{
+			position:absolute;
+			right:0;
+			top:-3px;
+			transform:rotate(-90deg);
+			color:$dark_aquamarine;
+			font-size:1.4em;	
+			transition:.3s .1s ease-in-out;
+		}
+
+		&:active,
+		&:focus,
+		&:hover{
+			opacity:.7;
+		}
+	}
+
+	.map-key{
+		list-style-type: none;
+		margin-bottom:0;
+		display:none;
+		li{
+			list-style-type: none;
+			vertical-align:middle;
+			padding:.5em 0 .5em 4em; 
+			margin-bottom:0;
+			//background-image:url(' <?php bloginfo('template_directory'); ?>/img/eat-map-icon.png'); 
+			background-repeat:no-repeat; 
+			background-position:left center;
+			@include alt_gothic_reg;
+			//font-size:1.4em;
+			&.eat-drink{
+				color:$dark_orange;
+				background-image:url('img/eat-map-icon.png');
+			}
+			&.outside-in{
+				color:$dark_aquamarine;
+				background-image:url('img/outdoors-map-icon.png');
+			}
+			&.shop{
+				color:$burnt_red;
+				background-image:url('img/shop-map-icon.png');
+			}
+			&.culture-heritage{
+				color:$dark_green;
+				background-image:url('img/culture-map-icon.png');
+			}
+			&.sleep-relax{
+				color:$std_black;
+				background-image:url('img/sleep-map-icon.png');
+			}
+
+			span{
+				font-size:1.6em;
+			}
+		}
+
+	}
+
+	// .key{
+	// 	// span{
+	// 		@include alt_gothic_reg;
+	// 		font-size:1.4em;
+	// 	// }
+
+	// 	&.eat{
+	// 		color:$dark_orange;
+	// 	}
+	// 	&.outside-in{
+	// 		color:$dark_aquamarine;
+	// 	}
+	// 	&.shop{
+	// 		color:$burnt_red;
+	// 	}
+	// 	&.culture-heritage{
+	// 		color:$dark_green;
+	// 	}
+	// 	&.sleep-relax{
+	// 		color:$std_black;
+	// 	}
+	// }
+}
+
+//Weather API styling
+//Mostly overrides, hence all the classes and the '!importants'
+
+#wpc-weather.small .now .time_temperature:after, 
+#wpc-weather .forecast .temp_max:after, 
+#wpc-weather .forecast .temp_min:after, 
+#wpc-weather .hours .temperature:after, 
+#wpc-weather .today .time_temperature_max:after, 
+#wpc-weather .today .time_temperature_min:after, 
+#wpc-weather .now .time_temperature:after, 
+#wpc-weather .today .time_temperature_ave:after{
+	content:"\00b0" !important;
+}
+
+#wpc-weather{
+	margin:0 !important;
+	padding:0 !important;
+	line-height:1 !important;
+	height: 100%;
+    display: flex;
+    position: initial !important;
+	.now{
+		//text-align:left;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+		.time_symbol,
+		.time_temperature{
+			text-align:left;
+			display:inline-block;
+			float:left;
+		}
+
+		.time_temperature{
+			font-size:3.6em !important;
+			margin-top:10px !important;
+		}
+
+
+	}	
+	.curr-condition{
+	    position: absolute;
+		bottom: 0;
+		p{
+			color:$white;
+			font-size:1.5em;
+		}
+		.short_condition{
+			color:white;
+			font-size:2em;
+			text-align:left !important;
+			text-transform:uppercase;
+		}
+	}
+} 
+
 //Gets rid of the close button on the tooltip
 //Delete this declaration if this is wanted
 .gm-style-iw + div{
@@ -1552,7 +1747,7 @@
 
 //Sidr styling
 .sidr{
-	background-color:rgba(229, 176, 112, 0.8);
+	background-color:$sidr_orange;
 	padding:1em;
  	@include alt_gothic_reg;
 
@@ -1566,10 +1761,14 @@
 	    top: 9px;
 	    z-index: 99999999;
 	    cursor: pointer;
-        vertical-align: -3px;
+        vertical-align: 4px;
+    	padding: 0 5px;
 	    i{	
-	    	padding-top:3px;
-	    	transition:.3s ease-in-out;
+	    	//padding-top:3px;
+	    	
+	    	img{
+	    		transition:.3s ease-in-out;
+	    	}
 	    }
  	}
 
@@ -1648,6 +1847,13 @@
 						font-size:2em;
 						color:$seafoam;
 						text-transform:uppercase;
+						position:relative;
+						padding-right:23px;
+						&:after{
+							content:"\27B5";
+							position:absolute;
+							right:0;
+						}
 						&:hover,
 						&:active,
 						&:focus{
