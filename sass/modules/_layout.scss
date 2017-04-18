@@ -1570,7 +1570,7 @@
 			right:0;
 			top:-3px;
 			transform:rotate(-90deg);
-			color:$dark_aquamarine;
+			color:$ml_teal;
 			font-size:1.4em;	
 			transition:.3s .1s ease-in-out;
 		}
@@ -1597,23 +1597,23 @@
 			@include alt_gothic_reg;
 			//font-size:1.4em;
 			&.eat-drink{
-				color:$dark_orange;
+				color:$ml_orange;
 				background-image:url('img/eat-map-icon.png');
 			}
 			&.outside-in{
-				color:$dark_aquamarine;
+				color:$ml_teal;
 				background-image:url('img/outdoors-map-icon.png');
 			}
 			&.shop{
-				color:$burnt_red;
+				color:$ml_red;
 				background-image:url('img/shop-map-icon.png');
 			}
 			&.culture-heritage{
-				color:$dark_green;
+				color:$ml_green;
 				background-image:url('img/culture-map-icon.png');
 			}
 			&.sleep-relax{
-				color:$std_black;
+				color:$ml_black;
 				background-image:url('img/sleep-map-icon.png');
 			}
 
@@ -1694,6 +1694,7 @@
 		p{
 			color:$white;
 			font-size:1.5em;
+			line-height:2em;
 		}
 		.short_condition{
 			color:white;
