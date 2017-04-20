@@ -127,8 +127,6 @@ get_header();
 							foreach($tags as $tag){
 								$tag_name = $tag->name;
 							}
-						}else{
-							$tag_name = "Other";
 						}
 
 						$title = get_the_title();
@@ -151,20 +149,14 @@ get_header();
 						<?php if($l_cnt == $half_round+1){ ?>
 							</div><div class='columns-6'>
 							<?php } ?>
-						<div class="listing row" id="<?php echo $post_slug; ?>">  <!-- columns-6 -->
-							
-							<div class="line-item" style="width:7%; display:inline-block; float:left; margin-right:1%; text-align:right;">
-								<h2 style="margin-top:18px;"><?php echo $l_cnt; ?>.</h2>
-							</div>
-							<div class="listing-content" style="width:85%; display:inline-block; float:left;">
-							<!-- <div class=""> --><!-- push -->
-							<?php //if($tags != ''){?>
+						<div class="listing" id="<?php echo $post_slug; ?>">  <!-- columns-6 -->
+							<?php if($tags != ''){?>
+							<div class="push">
 								<span class="tags"><?php echo $tag_name; ?></span>
-							<!-- </div> -->
-							<?php //}else ?>
-
-							<h2><?php //echo $l_cnt; ?> <?php the_title(); ?></h2>
-							<div class="lc-push"><!-- push -->
+							</div>
+							<?php } ?>
+							<h2><?php echo $l_cnt; ?>. <?php the_title(); ?></h2>
+							<div class="push">
 								<p class="loc">
 									<?php 
 										
@@ -203,16 +195,22 @@ get_header();
 										}
 										?>
 								</p>
-							</div><!-- end lc-push -->
-						</div><!-- end listing.row -->
-					</div>
+							</div>
+						</div>
 						<?php if($count-$l_cnt == 0){?>
 							</div>
 						<?php } ?>
 				<?php } } wp_reset_postdata(); ?>
 			</div>
 		</div>
-		
+		<!-- <div class="cp-leadin">
+			<?php $cp_leadin = get_field('cpl_text');?>
+			<?php if($cp_leadin != ''){ ?>
+				<p><?php echo $cp_leadin; ?></p>
+			<?php }else{ ?>
+				<p class="error">**You have not included text here, please return to the edit screen to add</p>
+			<?php } ?>
+		</div> -->
 		<?php get_template_part('partials/cross-promo'); ?>
 		</div>
 	</div>

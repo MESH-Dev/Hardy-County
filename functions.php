@@ -96,6 +96,8 @@ function update_listings_map( $post_id ) {
 
           //Get post info to save to our json file
           $title = get_the_title();
+          GLOBAL $post;
+          $slug = $post->post_name;
           $address = get_field('street_address');
           $city = get_field('city');
           $phone = get_field('phone_number');
@@ -143,6 +145,7 @@ function update_listings_map( $post_id ) {
             //Add all of the listing 'parts' to an array
             $a = [
               "title" => $title,
+              "slug"=> $slug,
               "address" => $address,
               "city" => $city,
               "phone" => $phone,

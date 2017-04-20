@@ -4,7 +4,7 @@
 			<div class="row">
 				<!-- <div class="columns-12"> -->
 					<div class="footer-logo columns-1">
-						<img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.png">
+						<img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.png" aria-hidden="true">
 					</div>
 					<div class="signup columns-6">
 						<div class="row">
@@ -19,7 +19,7 @@
 						<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
 							<div class="form input">
 								<label for="searchHeader" class="sr-only">Search the site</label>
-								<input id="searchHeader" class="hide" type="text" placeholder="Search the site..." value="<?php the_search_query(); ?>" name="s" id="s" />
+								<input id="searchHeader" name="searchHeader" class="hide" type="text" placeholder="Search the site..." value="<?php the_search_query(); ?>" name="s" id="s" />
 								<div class="focus-bg"></div>
 								<button type="submit" class="form submit search-submit" id="searchsubmit" value="" >
 									<span class="sr-only">Submit search</span>

@@ -104,7 +104,7 @@
 					<!-- <h1 class="site-title"> -->
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<span class="sr-only"><?php bloginfo( 'name' ); ?></span>
-							<img src="<?php bloginfo('template_directory'); ?>/img/hardy-logo.png">
+							<img src="<?php bloginfo('template_directory'); ?>/img/hardy-logo.png" alt="Hardy County Logo, Click here to return to the homepage">
 							<!-- <svg 
 								 xmlns="http://www.w3.org/2000/svg"
 								 xmlns:xlink="http://www.w3.org/1999/xlink"

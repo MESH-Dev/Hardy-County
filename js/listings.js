@@ -47,15 +47,16 @@
         }
         else if(data[i]['listing_category'] === listing_cat || full == all){
 
-        console.log(data);
+        //console.log(data);
           
         //Scoop out the titles from our JSON file
         var title = data[i]['title'];
         var color = data[i]['color'];
 
+        var slug = data[i]['slug'];
         
         //Create the html for the infoWindow
-        var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title">'+ data[i]['title'] + '</span></div>';
+        var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><a href="#'+slug+'"><span class="list-title">'+ data[i]['title'] + '</span></a></div>';
         //console.log(infoWindowContent);
 
         // //This is for creating multiple markers, in case we want to cluster

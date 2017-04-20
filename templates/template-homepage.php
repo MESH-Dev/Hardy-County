@@ -25,7 +25,7 @@ get_header();
 					<span class="banner-cta"><?php echo $banner_intro_cta; ?></span></h2>
 				</div>
 				<div class="wv-logo">
-					<img src="<?php bloginfo('template_directory'); ?>/img/logo-color-white.png">
+					<img src="<?php bloginfo('template_directory'); ?>/img/logo-color-white.png" alt="Wild, Wonderful, West Virginia">
 				</div>
 			</div>
 		</div>

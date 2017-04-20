@@ -107,17 +107,88 @@ $('#monthselectors a').on('click', function(){
 //     TweenMax.to(window, 0.5, {scrollTo:{y:"#section" + (index+1)}});
 //   })
 // })
-var $menu = $("#monthselectors"),
-    $window = $(window);
 
-$menu.on("click","a", function(){
-    var $this = $(this),
-        href = $this.attr("href"),
-        topY = $(href).offset().top;
-    TweenMax.to($window, 1, {scrollTo:{y:(topY-40), autoKill: true}, ease:Power3.easeInOut});
-  
-  return false;
+//Smooth page scroll + page scroll location control
+$(function() {
+$('a[href*=#]:not([href=#])').click(function() {
+if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  var target = $(this.hash);
+  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+  if (target.length) {
+    //alert("BAMM!");
+    $('html,body').animate({
+      //'top-75' is custom.  limits the offset to top of window plus 75px
+      scrollTop: (target.offset().top-75)
+    }, 800);
+    return false;
+  }
+}
 });
+});
+
+// $(function(){
+//     $(document).scroll(function(){
+//         if($(this).scrollTop() >= $('.listing').offset().top - 50) {
+//             $(".listing").css("background","red");
+//         } else {
+//             $(".listing").css("background","orange");
+//         }
+//     });
+// });
+
+
+// var $menu = $("#monthselectors"),
+//     $window = $(window);
+
+// $menu.on("click","a", function(){
+//     var $this = $(this),
+//         href = $this.attr("href"),
+//         topY = $(href).offset().top;
+//     TweenMax.to($window, 1, {scrollTo:{y:(topY-40), autoKill: true}, ease:Power3.easeInOut});
+  
+//   return false;
+// });
+
+ (function($) {
+  $.fn.yellowFade = function() {
+    return (this.css({backgroundColor: "#ffff66"}).animate(
+    {backgroundColor: "#ffffff"}, 1000));
+  }
+  })(jQuery);
+
+// If there is a '#' in the URL (someone linking directly to a page with an anchor), highlight that section and set focus to it.
+  // The tabindex attribute is removed AFTER the user navigates away from the element to help address a nasty VoiceOver bug.
+  
+  if (document.location.hash) {
+    var myAnchor = document.location.hash;
+    $(myAnchor).attr('tabindex', -1).on('blur focusout', function () {
+      $(this).removeAttr('tabindex');
+    }).focus(function(){
+      $(this).removeClass("redFade");
+      setTimeout(function() {
+        $(this).addClass("redFade");
+    }, 1);    });//.addClass('yellowFade');//.delay(50).removeClass('yellowFade');
+  }
+  
+  /* This function looks for a change in the hash (activation of an in-page link) and sets focus to and 
+  highlights the target element. This is necessary because webkit does not set focus as it should. If 
+  the hash is empty (the user hit the back button after activating an in-page link) focus is set to body.
+  */
+  $(window).bind('hashchange', function() {
+    var hash = "#"+window.location.hash.replace(/^#/,'');
+    if (hash!="#") {
+      $(hash).attr('tabindex', -1).on('blur focusout', function () {
+        $(this).removeAttr('tabindex');
+      }).focus().addClass('redFade');
+    }
+    else {
+      $("#headcontainer").attr('tabindex', -1).on('blur focusout', function () {
+        $(this).removeAttr('tabindex');
+      }).focus();
+    }
+  });
+
+ 
 
 //Full Map Color Key functionality
 var $ctr=0;
