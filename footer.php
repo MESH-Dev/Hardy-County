@@ -4,7 +4,7 @@
 			<div class="row">
 				<!-- <div class="columns-12"> -->
 					<div class="footer-logo columns-1">
-						<img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.png" aria-hidden="true">
+						<img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.png" alt="Hardy County West Virginia logo" aria-hidden="true">
 					</div>
 					<div class="signup columns-6">
 						<div class="row">

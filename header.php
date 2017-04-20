@@ -119,7 +119,7 @@
 				</div>
 				<div class="sidr-trigger"><span>MENU <i class="fa fa-fw fa-bars"></i></span></div>
 				<nav class="main-navigation">
-					<div class="close"><span>Close <img src="<?php bloginfo('template_directory'); ?>/img/sidr-close.png"></span></div>
+					<div class="close"><span>Close <img src="<?php bloginfo('template_directory'); ?>/img/sidr-close.png" alt="Close this navigation" aria-hidden="true"></span></div>
 					<?php if(has_nav_menu('main_nav')){
 								$defaults = array(
 									'theme_location'  => 'main_nav',

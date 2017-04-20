@@ -292,7 +292,7 @@ $('.close').click(
 $('.sidr ul.menu > li')
   .has('.sub-menu')
   .find('a:first')
-  .after('<div class="open"><i class="arrow-icon"><img src="'+$dir+'/img/sidr-down-arrow.png"></i></div>');//&#10148;
+  .after('<div class="open"><i class="arrow-icon"><img src="'+$dir+'/img/sidr-down-arrow.png" alt="Press to show or hide more links"></i></div>');//&#10148;
   //.after('<div class="open"><i class="fa fa-fw fa-3x fa-angle-down"></i></div>');
 
 
