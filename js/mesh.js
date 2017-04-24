@@ -188,7 +188,7 @@ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && lo
     }
   });
 
-$('.with-map').hover(function(){
+$('.with-map').on('hover click',function(){
   //console.log('Map hovered');
   //$('.banner-content').slideDown(50);
   setTimeout(function() {
