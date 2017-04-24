@@ -9,7 +9,8 @@ get_header();
 
 <main id="content">
 	<div class="banner interior with-map" >	
-		<div id="map" style="height:400px; width:100%; position:absolute; left:0; top:0;"></div>
+		<!-- <div class="overlay" aria-hidden="true"></div> -->
+		<div id="map" style="height:650px; width:100%; position:absolute; left:0; top:0;"></div>
 		<div class="banner-content">
 			<div class="container">
 				<h1 class="page-title">
@@ -151,10 +152,10 @@ get_header();
 						<?php if($l_cnt == $half_round+1){ ?>
 							</div><div class='columns-6'>
 							<?php } ?>
-						<div class="listing row" id="<?php echo $post_slug; ?>">  <!-- columns-6 -->
+						<div class="listing row" id="<?php echo $post_slug; ?>" tabindex="<?php echo $l_cnt; ?>">  <!-- columns-6 -->
 							
 							<div class="line-item" style="width:7%; display:inline-block; float:left; margin-right:1%; text-align:right;">
-								<h2 style="margin-top:18px;"><?php echo $l_cnt; ?>.</h2>
+								<h2 style="margin-top:19px;"><?php echo $l_cnt; ?>.</h2>
 							</div>
 							<div class="listing-content" style="width:85%; display:inline-block; float:left;">
 							<!-- <div class=""> --><!-- push -->

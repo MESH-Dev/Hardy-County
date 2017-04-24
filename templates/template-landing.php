@@ -9,7 +9,7 @@ get_header(); ?>
 		$ip_banner_url=$ip_banner['sizes']['short-banner'];
 	?>
 	<div class="banner interior" style="background-image:url('<?php echo $ip_banner_url; ?>')">
-		<!-- <div class="overlay" aria-hidden="true"></div> -->
+		<div class="overlay" aria-hidden="true"></div>
 		<div class="banner-content">
 			<div class="container">
 				<h1 class="page-title"><?php the_title(); ?></h1>

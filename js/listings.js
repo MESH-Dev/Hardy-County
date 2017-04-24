@@ -11,19 +11,32 @@
     var map;
 
     //var infoWindow;
-
+    // var controlDiv = document.createElement('div');
+    // var myControl = new MyControl(controlDiv);
+    // controlDiv.index = 10;
+    // map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(controlDiv);
      
     //Keep this out of the getJSON loop
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: new google.maps.LatLng(38.9595194,-78.7438335),
-        //mapTypeId: 'terrain',
-        disableDefaultUI: true,
-        zoomControl: false,
+        scrollwheel:  false,
+        zoomControl: true,
+        zoomControlOptions: {
+          position: google.maps.ControlPosition.LEFT_BOTTOM,
+        },
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: true,
         styles:
             [{"featureType":"all","elementType":"geometry","stylers":[{"color":"#ebe3cd"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#523735"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#f5f1e6"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#c9b2a6"}]},{"featureType":"administrative.land_parcel","elementType":"geometry.stroke","stylers":[{"color":"#dcd2be"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.fill","stylers":[{"color":"#ae9e90"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#dfd2ae"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#dfd2ae"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#93817c"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#a5b076"}]},{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#447530"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#f5f1e6"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#f8c967"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#e9bc62"}]},{"featureType":"road.highway.controlled_access","elementType":"geometry","stylers":[{"color":"#e98d58"}]},{"featureType":"road.highway.controlled_access","elementType":"geometry.stroke","stylers":[{"color":"#db8555"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#fdfcf8"}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"color":"#806b63"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"color":"#dfd2ae"}]},{"featureType":"transit.line","elementType":"labels.text.fill","stylers":[{"color":"#8f7d77"}]},{"featureType":"transit.line","elementType":"labels.text.stroke","stylers":[{"color":"#ebe3cd"}]},{"featureType":"transit.station","elementType":"geometry","stylers":[{"color":"#dfd2ae"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#b9d3c2"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#92998d"}]}]
 
         //marker:marker
+
+        // controlDiv.index = 10;
+        // map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(controlDiv);
       });
 
     var infoWindow = new google.maps.InfoWindow();//, marker, i;
@@ -56,7 +69,7 @@
         var slug = data[i]['slug'];
         
         //Create the html for the infoWindow
-        var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><a href="#'+slug+'"><span class="list-title">'+ data[i]['title'] + '</span></a></div>';
+        var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title"><a href="#'+slug+'">'+ data[i]['title'] + '</a></span></div>';
         //console.log(infoWindowContent);
 
         // //This is for creating multiple markers, in case we want to cluster
@@ -69,7 +82,7 @@
         //     //title: infoW
         //   });
         // });
-       
+
 
           //Create the marker
           marker = new google.maps.Marker({

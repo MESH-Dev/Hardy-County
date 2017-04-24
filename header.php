@@ -47,7 +47,7 @@
 <script>var $dir = '<?php echo get_template_directory_uri(); ?>'; console.log($dir);</script>
 <body <?php body_class(); ?>>
  
-	<header>
+	<header <?php if(is_page_template('templates/template-listing.php') || is_page_template('templates/template-map-full.php')){?> class="has-overlay" <?php } ?>>
 		<div class="container">
 
 			<div class=""><!-- columns-12 -->
@@ -77,21 +77,21 @@
 							} ?>
 					<ul class="social_nav">
 						<li>
-							<a href="#">
+							<a href="https://twitter.com/visithardy" target="_blank">
 								<i class="fa fa-fw fa-twitter fa-lg">
 									<span class="sr-only">Follow us on twitter</span>
 								</i>
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="https://www.facebook.com/pages/Visit-Hardy/153163514721890" target="_blank">
 								<i class="fa fa-fw fa-facebook fa-lg">
 									<span class="sr-only">Follow us on facebook</span>
 								</i>
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="https://twitter.com/visithardy/" target="_blank">
 								<i class="fa fa-fw fa-instagram fa-lg">
 									<span class="sr-only">Follow us on instagram</span>
 								</i>

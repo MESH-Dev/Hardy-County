@@ -98,6 +98,21 @@
 		//background-blend-mode:mulitply;
 		//-webkit-background-blend-mode:multiply;
 
+		&.with-map{
+			height:650px;
+			overflow:hidden;
+			.overlay{
+				z-index:1;
+			}
+
+			.banner-content{
+				background: -moz-linear-gradient(top,  rgba(41,41,41,0.5) 0%, rgba(41,137,216,0) 15%, rgba(32,124,202,0) 51%, rgba(41,41,41,0.5) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top,  rgba(41,41,41,0.5) 0%,rgba(41,137,216,0) 15%,rgba(32,124,202,0) 51%,rgba(41,41,41,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom,  rgba(41,41,41,0) 0%,rgba(41,41,41,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80292929', endColorstr='#80292929',GradientType=0 ); /* IE6-9 */
+			}
+		}
+
 		&:not(.with-map){
 			background-image:url('img/banner_placeholder2.png');
 		}
@@ -147,7 +162,9 @@
 		align-self: flex-end;
 		width:100%;
 		position:relative;
-		margin-bottom:2em;
+		//margin-bottom:2em;
+		padding-bottom:2em; 
+		z-index:5;
 
 		.text{
 			//width:50%;
@@ -1551,8 +1568,10 @@
 .map-legend {
 	background-color:white; 
 	position:absolute; 
-	bottom:2em; 
-	left:2em;
+	// bottom:2em; 
+	// left:2em;
+	bottom: 3.5em;
+    left: 5em;
 	padding: 1em 2em;
 
 	.legend-title{

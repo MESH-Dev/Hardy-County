@@ -4,6 +4,14 @@ header{
 	z-index:100;
 	padding-top:2em;
 
+	&.has-overlay{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#292929+0,2989d8+15,207cca+51,292929+100&0.5+0,0+15,0+51,0.5+100 */
+		background: -moz-linear-gradient(top,  rgba(41,41,41,0.5) 0%, rgba(41,137,216,0) 15%, rgba(32,124,202,0) 51%, rgba(41,41,41,0.5) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(41,41,41,0.5) 0%,rgba(41,137,216,0) 15%,rgba(32,124,202,0) 51%,rgba(41,41,41,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(41,41,41,0.5) 0%,rgba(41,137,216,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80292929', endColorstr='#80292929',GradientType=0 ); /* IE6-9 */
+	}
+
 	.logo,
 	.main-navigation{
 		display:inline-block;
@@ -61,6 +69,15 @@ header{
 				    @media ($bp-smaller-than-desktop){
 						font-size:2.4em;
 					}
+
+					&:hover,
+					&:active,
+					&:focus{
+						+ .sub-menu{
+							left:0;
+							opacity:1;
+							}
+						}
 				}
 
 				.sub-menu{

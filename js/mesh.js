@@ -188,7 +188,26 @@ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && lo
     }
   });
 
- 
+$('.with-map').hover(function(){
+  //console.log('Map hovered');
+  //$('.banner-content').slideDown(50);
+  setTimeout(function() {
+  $('.banner-content').animate({
+    position:'absolute',
+    bottom:'-500px',
+    opacity:'0'
+  },400);
+}, 500);
+},function(){
+  setTimeout(function() {
+   //$('.banner-content').slideDown(50);
+   $('.banner-content').animate({
+    position:'relative',
+    bottom:'',
+    opacity:'1'
+  },400);
+  }, 300);
+}); 
 
 //Full Map Color Key functionality
 var $ctr=0;
@@ -288,6 +307,10 @@ $('.close').click(
       $.sidr('close', 'sidr-main');
       //$('.sidr-trigger').fadeIn(50);
 });
+
+//IDs would be re-used in sidr, as it is cloning our global nav
+//For the sake of accessibility, we are removing IDs in the sidr menu
+$('.sidr li').removeAttr('id');
 
 $('.sidr ul.menu > li')
   .has('.sub-menu')
