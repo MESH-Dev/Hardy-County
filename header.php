@@ -34,7 +34,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<?php wp_head(); ?>
 
-// 	<script type='text/javascript'>
+	<script type='text/javascript'>
 // (function (d, t) {
 //   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
 //   bh.type = 'text/javascript';
