@@ -80,7 +80,8 @@
 		height:650px;
 		background-attachment:fixed;
 		@media($bp-smaller-than-desktop){
-			background-attachment:local;
+			background-attachment:initial;
+			background-position:center center !important;
 		}
 		// background-repeat:no-repeat;
 		// background-size:cover;

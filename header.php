@@ -34,13 +34,23 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<?php wp_head(); ?>
 
-	<script type='text/javascript'>
-(function (d, t) {
-  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-  bh.type = 'text/javascript';
-  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=zz5bdnqbi0dq6e1b2bb8ea';
-  s.parentNode.insertBefore(bh, s);
-  })(document, 'script');
+// 	<script type='text/javascript'>
+// (function (d, t) {
+//   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+//   bh.type = 'text/javascript';
+//   bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=zz5bdnqbi0dq6e1b2bb8ea';
+//   s.parentNode.insertBefore(bh, s);
+//   })(document, 'script');
+// </script>
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'wlr8dyx',
+      scriptTimeout: 3000,
+      async: false
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
 </script>
 
 </head>
@@ -91,7 +101,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="https://twitter.com/visithardy/" target="_blank">
+							<a href="#" target="_blank">
 								<i class="fa fa-fw fa-instagram fa-lg">
 									<span class="sr-only">Follow us on instagram</span>
 								</i>

@@ -22,14 +22,35 @@ jQuery(document).ready(function($){
   //Homepage parallax
 
   var windowW = $(window).width();
-  
-  if (windowW > 768){
-  $('.panel').each(function(i){
-      i = i++;
-      $(this).parallax("50%", .05);
-    });   
+  var _windowResize;
+ //Calculate window size 
+$(window).resize(
+    function _resizeW(){
+      _windowResize = $(window).width();
+      _bodyResize = $('body').width();
+      //console.log(_windowResize);
+  if (_windowResize > 1070){
+        console.log(_windowResize);
+        $('.has-parallax').parallax("50%",.5);
+      }  
+});
 
-  $('.has-parallax').parallax("50%",.5);
+
+
+//Run funciton on load and resize
+//$(document).ready(_resizeW(_windowResize));
+//$(window).resize(console.log(_bodyResize));
+
+
+
+
+  if (windowW > 1070){
+    $('.panel').each(function(i){
+        i = i++;
+        $(this).parallax("50%", .05);
+      });   
+
+    $('.has-parallax').parallax("50%",.5);
   }
 
   $('#masonry').masonry({
@@ -41,9 +62,10 @@ jQuery(document).ready(function($){
 	});
 
   //Force divs in homepage grid to be square
+//Setup variables to hold our sizes
+var gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7;
 
-  var gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7;
-
+//Grab the width of each element
 function gi_resize(){
   gi2 = $('.grid-item-width2 ').width();
   gi3 = $('.grid-item-width3 ').width();
@@ -60,9 +82,11 @@ function gi_resize(){
   cp7 = $('.columns-7.trip').width();
   //return gi2, gi3, gi4;
 }
+//Run the function above at document ready and on a window resize event
  $(document).ready(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7));
  $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7));
 
+//Apply our widths to the height of selected elements either on load, or on resize
 function _resize(){
   gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7);
    $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7));
@@ -91,6 +115,7 @@ function _resize(){
 
 }
 
+//Run the function on load & on resize
 _resize();
 $(window).resize(_resize);
 
@@ -311,11 +336,7 @@ $('.sidr-trigger').sidr({
               $clk = 0;
               //$('ul.sub-menu').slideUp();
               
-              $(this)
-                  .closest('li')
-                  .find('ul.sub-menu')
-                  .addClass('sidr-active')
-                  .slideUp();
+              $('ul.sub-menu').slideUp();
 
               $(this).find('i img')
               .css({
