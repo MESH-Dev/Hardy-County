@@ -27,6 +27,10 @@ header{
 		@media($bp-smaller-than-mobile){
 			
 		}
+
+		img{
+			max-width:100%;
+		}
 	}
 
 	.main-navigation{

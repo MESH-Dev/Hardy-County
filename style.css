@@ -953,37 +953,41 @@ header .logo {
     width: 20%;
   }
 }
-/* line 32, sass/modules/_header.scss */
+/* line 31, sass/modules/_header.scss */
+header .logo img {
+  max-width: 100%;
+}
+/* line 36, sass/modules/_header.scss */
 header .main-navigation {
   width: 73%;
   vertical-align: bottom;
 }
 @media (max-width: 1070px) {
-  /* line 32, sass/modules/_header.scss */
+  /* line 36, sass/modules/_header.scss */
   header .main-navigation {
     width: 100%;
     margin-top: 2em;
   }
 }
 @media (max-width: 750px) {
-  /* line 32, sass/modules/_header.scss */
+  /* line 36, sass/modules/_header.scss */
   header .main-navigation {
     display: none;
   }
 }
-/* line 45, sass/modules/_header.scss */
+/* line 49, sass/modules/_header.scss */
 header .main-navigation ul {
   float: right;
   margin: 0;
   padding: 0;
 }
 @media (max-width: 1070px) {
-  /* line 45, sass/modules/_header.scss */
+  /* line 49, sass/modules/_header.scss */
   header .main-navigation ul {
     float: none;
   }
 }
-/* line 55, sass/modules/_header.scss */
+/* line 59, sass/modules/_header.scss */
 header .main-navigation ul li {
   display: inline-block;
   float: left;
@@ -992,11 +996,11 @@ header .main-navigation ul li {
   margin-bottom: 3px;
   position: relative;
 }
-/* line 64, sass/modules/_header.scss */
+/* line 68, sass/modules/_header.scss */
 header .main-navigation ul li.current-menu-item, header .main-navigation ul li.current_page_parent {
   border-bottom: 5px solid transparent;
 }
-/* line 69, sass/modules/_header.scss */
+/* line 73, sass/modules/_header.scss */
 header .main-navigation ul li a {
   color: white;
   font-family: 'alternate-gothic-no-1-d';
@@ -1008,17 +1012,17 @@ header .main-navigation ul li a {
   text-transform: uppercase;
 }
 @media (max-width: 1070px) {
-  /* line 69, sass/modules/_header.scss */
+  /* line 73, sass/modules/_header.scss */
   header .main-navigation ul li a {
     font-size: 2.4em;
   }
 }
-/* line 84, sass/modules/_header.scss */
+/* line 88, sass/modules/_header.scss */
 header .main-navigation ul li a:hover + .sub-menu, header .main-navigation ul li a:active + .sub-menu, header .main-navigation ul li a:focus + .sub-menu {
   left: 0;
   opacity: 1;
 }
-/* line 91, sass/modules/_header.scss */
+/* line 95, sass/modules/_header.scss */
 header .main-navigation ul li .sub-menu {
   position: absolute;
   width: 200px;
@@ -1027,7 +1031,7 @@ header .main-navigation ul li .sub-menu {
   padding-top: 1.8em;
   transition: right .2s ease-in-out, opacity .2s .1s linear;
 }
-/* line 102, sass/modules/_header.scss */
+/* line 106, sass/modules/_header.scss */
 header .main-navigation ul li .sub-menu li {
   display: list-item;
   list-style-type: none;
@@ -1038,18 +1042,18 @@ header .main-navigation ul li .sub-menu li {
   margin: 0;
   padding: .5em 2em;
 }
-/* line 113, sass/modules/_header.scss */
+/* line 117, sass/modules/_header.scss */
 header .main-navigation ul li .sub-menu li.current_page_item a {
   color: #00b0a2;
   background-image: url("img/arrow-icon_green_hover.png");
 }
-/* line 119, sass/modules/_header.scss */
+/* line 123, sass/modules/_header.scss */
 header .main-navigation ul li .sub-menu li:first-child {
   border-top: 5px solid #FFFFFF;
   position: relative;
   padding-top: 2em;
 }
-/* line 124, sass/modules/_header.scss */
+/* line 128, sass/modules/_header.scss */
 header .main-navigation ul li .sub-menu li:first-child:after {
   position: absolute;
   pointer-events: none;
@@ -1064,11 +1068,11 @@ header .main-navigation ul li .sub-menu li:first-child:after {
   border-bottom: 12px solid #FFFFFF;
   top: -1.6em;
 }
-/* line 146, sass/modules/_header.scss */
+/* line 150, sass/modules/_header.scss */
 header .main-navigation ul li .sub-menu li:last-child {
   padding-bottom: 2em;
 }
-/* line 150, sass/modules/_header.scss */
+/* line 154, sass/modules/_header.scss */
 header .main-navigation ul li .sub-menu li a {
   color: #017667;
   font-size: 2em;
@@ -1079,17 +1083,17 @@ header .main-navigation ul li .sub-menu li a {
   background-position: 95% center;
   line-height: 1;
 }
-/* line 160, sass/modules/_header.scss */
+/* line 164, sass/modules/_header.scss */
 header .main-navigation ul li .sub-menu li a:hover, header .main-navigation ul li .sub-menu li a:active, header .main-navigation ul li .sub-menu li a:focus {
   color: #00b0a2;
   background-image: url("img/arrow-icon_green_hover.png");
 }
-/* line 177, sass/modules/_header.scss */
+/* line 181, sass/modules/_header.scss */
 header .main-navigation ul li:hover .sub-menu, header .main-navigation ul li:active .sub-menu, header .main-navigation ul li:focus .sub-menu {
   left: 0;
   opacity: 1;
 }
-/* line 186, sass/modules/_header.scss */
+/* line 190, sass/modules/_header.scss */
 header .gateway-nav {
   position: absolute;
   right: 0;
@@ -1099,31 +1103,31 @@ header .gateway-nav {
   height: 2em;
 }
 @media (max-width: 750px) {
-  /* line 186, sass/modules/_header.scss */
+  /* line 190, sass/modules/_header.scss */
   header .gateway-nav {
     display: none;
   }
 }
-/* line 198, sass/modules/_header.scss */
+/* line 202, sass/modules/_header.scss */
 header .gateway-nav ul {
   display: inline-block;
   float: left;
   margin: 0;
   list-style-type: none;
 }
-/* line 206, sass/modules/_header.scss */
+/* line 210, sass/modules/_header.scss */
 header .gateway-nav ul#menu-gateway_nav li a {
   font-size: 1.6em;
 }
-/* line 214, sass/modules/_header.scss */
+/* line 218, sass/modules/_header.scss */
 header .gateway-nav ul.social_nav li {
   vertical-align: middle;
 }
-/* line 217, sass/modules/_header.scss */
+/* line 221, sass/modules/_header.scss */
 header .gateway-nav ul.social_nav li a i {
   padding-top: 5px;
 }
-/* line 223, sass/modules/_header.scss */
+/* line 227, sass/modules/_header.scss */
 header .gateway-nav ul li {
   display: inline-block;
   float: left;
@@ -1132,12 +1136,12 @@ header .gateway-nav ul li {
   height: 20px;
   vertical-align: middle;
 }
-/* line 231, sass/modules/_header.scss */
+/* line 235, sass/modules/_header.scss */
 header .gateway-nav ul li.current_page_item a {
   color: #c2572f;
   opacity: 1;
 }
-/* line 236, sass/modules/_header.scss */
+/* line 240, sass/modules/_header.scss */
 header .gateway-nav ul li a {
   color: #292929;
   font-family: 'alternate-gothic-no-1-d';
@@ -1145,13 +1149,13 @@ header .gateway-nav ul li a {
   font-style: normal;
   text-transform: uppercase;
 }
-/* line 242, sass/modules/_header.scss */
+/* line 246, sass/modules/_header.scss */
 header .gateway-nav ul li a:hover, header .gateway-nav ul li a:active, header .gateway-nav ul li a:focus {
   color: #c2572f;
   opacity: 1;
 }
 
-/* line 256, sass/modules/_header.scss */
+/* line 260, sass/modules/_header.scss */
 .close {
   color: #FFFFFF;
   text-align: right;
@@ -1160,7 +1164,7 @@ header .gateway-nav ul li a:hover, header .gateway-nav ul li a:active, header .g
   display: none;
   cursor: pointer;
 }
-/* line 264, sass/modules/_header.scss */
+/* line 268, sass/modules/_header.scss */
 .close span {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -1170,12 +1174,12 @@ header .gateway-nav ul li a:hover, header .gateway-nav ul li a:active, header .g
   display: block;
   padding-right: .5em;
 }
-/* line 272, sass/modules/_header.scss */
+/* line 276, sass/modules/_header.scss */
 .close:active, .close:focus, .close:hover {
   opacity: .7;
 }
 
-/* line 282, sass/modules/_header.scss */
+/* line 286, sass/modules/_header.scss */
 .sidr-trigger {
   cursor: pointer;
   position: absolute;
@@ -1184,7 +1188,7 @@ header .gateway-nav ul li a:hover, header .gateway-nav ul li a:active, header .g
   display: none;
   padding: 1em;
 }
-/* line 289, sass/modules/_header.scss */
+/* line 293, sass/modules/_header.scss */
 .sidr-trigger span {
   color: white;
   font-family: 'alternate-gothic-no-1-d';
@@ -1194,12 +1198,12 @@ header .gateway-nav ul li a:hover, header .gateway-nav ul li a:active, header .g
   text-transform: uppercase;
   line-height: .75;
 }
-/* line 297, sass/modules/_header.scss */
+/* line 301, sass/modules/_header.scss */
 .sidr-trigger:active, .sidr-trigger:focus, .sidr-trigger:hover {
   background-color: #00b0a2;
 }
 @media (max-width: 750px) {
-  /* line 282, sass/modules/_header.scss */
+  /* line 286, sass/modules/_header.scss */
   .sidr-trigger {
     display: block;
   }
