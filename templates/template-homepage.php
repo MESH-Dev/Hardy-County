@@ -234,6 +234,7 @@ get_header();
 						<!-- Instagram Block 1 -->
 
 						<a href="<?php echo $instagram[2]->link; ?>" target="_blank">
+							<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
 							<div class="hg grid-item grid-item-width2 instagram no-padding"style="background-image:url('<?php echo $instagram[2]->images->low_resolution->url; ?>');">
 								<div class="instagram-icon">
 									<i class="fa fa-fw fa-instagram fa-2x"></i>
@@ -416,6 +417,7 @@ get_header();
 
 							<!-- Instagram Block 2 -->
 							<a href="<?php echo $instagram[3]->link; ?>" target="_blank">
+								<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
 								<div class="hg nested instagram no-padding" style="background-image:url('<?php echo $instagram[3]->images->low_resolution->url; ?>');">
 									<div class="instagram-icon">
 										<i class="fa fa-fw fa-instagram fa-2x"></i>
@@ -630,6 +632,7 @@ get_header();
 
 						<!-- Instagram block  3-->
 						<a href="<?php echo $instagram[4]->link; ?>" target="_blank">
+							<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
 							<div class="hg grid-item grid-item-width2 instagram no-padding" style="background-image:url('<?php echo $instagram[4]->images->low_resolution->url; ?>');">
 								<div class="instagram-icon">
 									<i class="fa fa-fw fa-instagram fa-2x"></i>

@@ -58,7 +58,7 @@ get_header(); ?>
 
 				?>
 			<a href="<?php the_permalink($children->ID); ?>">
-			<figure class="columns-4 no-padding primary" style="background-image:url('<?php echo $background_url; ?>')"><!-- grid-item grid-item-width4 -->
+			<figure class="columns-4 no-padding primary child-links" style="background-image:url('<?php echo $background_url; ?>')"><!-- grid-item grid-item-width4 -->
 				<!-- <div class="wrap">
 					<div class="content"> -->
 						<!-- <img src="<?php echo $thumbnail; ?>"> -->
@@ -155,7 +155,7 @@ get_header(); ?>
 							?>
 
 						<div class="feed-item row">
-							<div class="date columns-3">
+							<div class="date columns-2">
 								<span class="date-wrap">
 									<span class="date-info">
 										<span class="month"><?php echo $s_date->format('M'); ?></span>
@@ -170,7 +170,7 @@ get_header(); ?>
 								<?php } ?>
 								</span>
 							</div>
-							<div class="event-desc columns-9">	
+							<div class="event-desc columns-10">	
 								<h1 class="title"><?php if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>"> <?php }?><?php the_title(); ?><?php if ($hc_event == true){ ?></a> <?php }?></h1>
 								<h2 class="loc"><?php echo $event_city; ?></h2>
 								<div class="more">

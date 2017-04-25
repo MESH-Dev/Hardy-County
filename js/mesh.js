@@ -42,7 +42,7 @@ jQuery(document).ready(function($){
 
   //Force divs in homepage grid to be square
 
-  var gi2, gi3, gi4, gi5, gi6, gi7, cp5, cp6, cp7;
+  var gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7;
 
 function gi_resize(){
   gi2 = $('.grid-item-width2 ').width();
@@ -52,6 +52,7 @@ function gi_resize(){
   gi5 = $('.grid-item-width5 ').width();
   gi6 = $('.grid-item-width6 ').width();
   gi7 = $('.grid-item-width7 ').width();
+  cp4 = $('.columns-4').width();
   cp5 = $('.columns-5').width();
   cp6 =  $('.columns-6.eq ').width();
   //console.log(cp6);
@@ -59,12 +60,12 @@ function gi_resize(){
   cp7 = $('.columns-7.trip').width();
   //return gi2, gi3, gi4;
 }
- $(document).ready(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp5, cp6, cp7));
- $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp5, cp6, cp7));
+ $(document).ready(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7));
+ $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7));
 
 function _resize(){
-  gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp5, cp6, cp7);
-   $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp5, cp6, cp7));
+  gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7);
+   $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7));
 
  //  console.log("Width 2: "+gi2);
 	// console.log("Width 3: "+gi3);
@@ -77,6 +78,7 @@ function _resize(){
   $('.grid-item-width5').css({height: gi5})
   $('.grid-item-width6').css({height: (gi6*.66)});
   $('.width6-diamond').css({height: (gi6*0.4)});
+  $('.columns-4.child-links').css({height:cp4});
   $('.columns-6.promo').css({height: (cp6*.5)});
   $('.columns-6.cpromo').css({height: (cp6*.66)});
   //console.log(cp6*.66);
@@ -209,6 +211,28 @@ $('.with-map').hover(function(){
   }, 300);
 }); 
 
+if (windowW > 768){
+$('.with-map').click(function(){
+  //console.log('Map hovered');
+  //$('.banner-content').slideDown(50);
+  setTimeout(function() {
+  $('.banner-content').animate({
+    position:'absolute',
+    bottom:'-500px',
+    opacity:'0'
+  },400);
+}, 500);
+},function(){
+  setTimeout(function() {
+   //$('.banner-content').slideDown(50);
+   $('.banner-content').animate({
+    position:'relative',
+    bottom:'',
+    opacity:'1'
+  },400);
+  }, 300);
+}); 
+}
 //Full Map Color Key functionality
 var $ctr=0;
 $('.legend-title').click(function(){
@@ -254,7 +278,7 @@ $('.sidr-trigger').sidr({
       displace: false,      
       onOpen: function(){
 
-        //$('.sidr-trigger').fadeOut(50);
+        $('.sidr-trigger').animate({right:"20000"},50);
           $clk = 0;
         
         $('.sidr .open').click(function(){
@@ -311,7 +335,7 @@ $('.sidr-trigger').sidr({
 $('.close').click(
     function(){
       $.sidr('close', 'sidr-main');
-      //$('.sidr-trigger').fadeIn(50);
+      $('.sidr-trigger').animate({right:"2em"},50);
 });
 
 //IDs would be re-used in sidr, as it is cloning our global nav

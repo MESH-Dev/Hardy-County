@@ -18,14 +18,14 @@ header{
 	}
 
 	.logo{
-		width:25%;
+		//width:25%;
 
 		@media($bp-smaller-than-tablet){
-			width:20%;
+			
 		}
 
 		@media($bp-smaller-than-mobile){
-			
+			width:50%;
 		}
 
 		img{
@@ -277,7 +277,7 @@ header{
 	&:focus,
 	&:hover{
 		
-			opacity:.7;
+			color:$seafoam;
 		
 		
 	}
@@ -290,6 +290,11 @@ header{
 	right:2em;
 	display:none;
 	padding:1em;
+
+	@media ($bp-smaller-than-mobile){
+		top:2.5em;
+	}
+
 	span{
 		color:white;
 		@include alt_gothic_reg;

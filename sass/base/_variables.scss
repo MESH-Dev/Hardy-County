@@ -25,6 +25,10 @@ $light_gray: #ccc;
 $gray: #7f8084;
 $menu_gray: #c9ccc8;
 
+//Menu
+$sub_menu_color: #00b0a2;
+
+
 //Map Legend
 $ml_orange: #c16b05;
 $ml_teal: #4f6d6f;
@@ -40,6 +44,7 @@ $bp-larger-than-phablet   : "min-width: 550px" !default;
 $bp-larger-than-tablet    : "min-width: 750px" !default;
 $bp-larger-than-desktop   : "min-width: 1000px" !default;
 $bp-larger-than-desktophd : "min-width: 1200px" !default;
+$bp-larger-than-mobile : "min-width:480px" !default;
 
 $bp-smaller-than-desktophd : "max-width: 1200px" !default;
 $bp-smaller-than-desktop : "max-width: 1070px" !default;
