@@ -188,7 +188,7 @@ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && lo
     }
   });
 
-$('.with-map').on('hover click',function(){
+$('.with-map').hover(function(){
   //console.log('Map hovered');
   //$('.banner-content').slideDown(50);
   setTimeout(function() {
@@ -287,6 +287,12 @@ $('.sidr-trigger').sidr({
               $clk = 0;
               //$('ul.sub-menu').slideUp();
               
+              $(this)
+                  .closest('li')
+                  .find('ul.sub-menu')
+                  .addClass('sidr-active')
+                  .slideUp();
+
               $(this).find('i img')
               .css({
                   '-moz-transform':'rotate(0)',

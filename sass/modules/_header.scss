@@ -20,6 +20,13 @@ header{
 	.logo{
 		width:25%;
 
+		@media($bp-smaller-than-tablet){
+			width:20%;
+		}
+
+		@media($bp-smaller-than-mobile){
+			
+		}
 	}
 
 	.main-navigation{
@@ -54,7 +61,8 @@ header{
 				position:relative;
 
 
-				&.current-menu-item{
+				&.current-menu-item,
+				&.current_page_parent{
 					border-bottom:5px solid transparent;
 				}
 
@@ -100,6 +108,13 @@ header{
 						padding:0;
 						margin:0;
 						padding:.5em 2em;
+
+						&.current_page_item{
+							a{
+								color:$dark_aquamarine;
+								background-image:url('img/arrow-icon_green_hover.png');
+							}		
+						}
 
 						&:first-child{
 							border-top:5px solid $white;
@@ -148,6 +163,8 @@ header{
 								color:$dark_aquamarine;
 								background-image:url('img/arrow-icon_green_hover.png');
 							}
+
+							
 						}
 
 					}
@@ -210,6 +227,12 @@ header{
 				margin-right:1em;
 				height:20px;
 				vertical-align:middle;
+				&.current_page_item{
+					a{
+						color:$dark_orange;
+						opacity:1;
+					}
+				}
 				a{
 					color:$std_black;
 					@include alt_gothic_reg;
@@ -222,6 +245,8 @@ header{
 						color:$dark_orange;
 						opacity:1;
 					}
+
+
 				}
 			}
 		}

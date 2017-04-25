@@ -32,11 +32,13 @@
 				while(have_rows('cta_link')):the_row(); 
 					$cta_text = get_sub_field('cta_link_text');
 					$cta_link = get_sub_field('cta_link');
+
+					if($cta_text != ''){
 			?>
 			<div class="cta">
 				<a class="cta-link" href="<?php echo $cta_link; ?>"><?php echo $cta_text ?> &#10165;</a>
 			</div>
-			<?php endwhile; endif; //end cta link loop?> 
+			<?php } endwhile; endif; //end cta link loop?> 
 		</div>	
 
 	<?php }elseif ($block_type = 'cross-promotional'){ 
