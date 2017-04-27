@@ -259,6 +259,9 @@
 		background-color: $black;
 
 		&.child-links{
+			img{
+				right:40%;
+			}
 			@media($bp-smaller-than-desktop) and ($bp-larger-than-tablet){
 				h1{
 					font-size:4em;
