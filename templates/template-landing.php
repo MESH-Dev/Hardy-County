@@ -58,11 +58,12 @@ get_header(); ?>
 
 				?>
 			<a href="<?php the_permalink($children->ID); ?>">
-			<figure class="columns-4 no-padding primary child-links" style="background-image:url('<?php echo $background_url; ?>')"><!-- grid-item grid-item-width4 -->
+			<figure class="columns-4 no-padding primary child-links" ><!-- grid-item grid-item-width4 -->
 				<!-- <div class="wrap">
 					<div class="content"> -->
 						<!-- <img src="<?php echo $thumbnail; ?>"> -->
-						<img alt="<?php echo $background_alt; ?>" src="<?php echo $background_url; ?>">
+						<img style="opacity:0; position:absolute;" src="<?php echo $background_url; ?>" >
+						<div class="portrait" alt="<?php echo $background_alt; ?>" style="opacity:.7; background-image:url('<?php echo $background_url ?>'); height:100%;"></div>
 						<figcaption>
 						<h1><?php echo $children->post_title; ?></h1>
 						<p><?php echo $hover; ?><br><span>&#10165;</span></p>

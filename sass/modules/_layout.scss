@@ -262,6 +262,14 @@
 			img{
 				right:40%;
 			}
+
+			.portrait{
+				-webkit-transition: all 0.35s ease-in-out;
+				transition: all 0.35s ease-in-out;
+				background-position:center center;
+				opacity:.7;
+				height:100%;
+			}
 			@media($bp-smaller-than-desktop) and ($bp-larger-than-tablet){
 				h1{
 					font-size:4em;
@@ -272,6 +280,17 @@
 						font-size:1.4em;
 					}
 				}
+			}
+
+			&:hover,
+			&:active,
+			&:focus{
+				.portrait{
+					opacity: 1;
+					-webkit-transform: scale3d(1.05,1.05,1);
+					transform: scale3d(1.05,1.05,1);
+				}
+				
 			}
 		}
 
