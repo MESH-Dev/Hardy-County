@@ -12,7 +12,7 @@
 						</div>
 						<p class="mail-statement row">
 							Stay in the loop with the occasional email update.<br>
-							We promise not to overload you inbox and your email is confidential.
+							We promise not to overload your inbox and your email is confidential.
 						</p>
 					</div>
 					<div class="search columns-4 offset-by-1">
