@@ -7,7 +7,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title><?php bloginfo('name'); ?></title>
+	<title><?php bloginfo('name'); ?> <?php if(!is_front_page()){ echo ' | ' . get_the_title(); } ?></title>
 
 	<!-- Meta / og: tags -->
 	<meta name="description" content="">
