@@ -279,8 +279,8 @@ get_header();
 
 								//Declare sub_fields for this row
 								$secondary_row_bg_3 = $third_secondary_row['background_image'];
-								$secondary_row_bg_url = $secondary_row_bg['sizes']['large'];
-								$secondary_row_bg_alt = $secondary_row_bg['alt'];
+								$secondary_row3_bg_url = $secondary_row_bg['sizes']['large'];
+								$secondary_row3_bg_alt = $secondary_row_bg['alt'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
 								$s3_post_link = $third_secondary_row['section_title'];
@@ -296,7 +296,7 @@ get_header();
 						?>
 						<a href="<?php echo the_permalink($s_post_3->ID); ?>">
 							<figure class="hg grid-item grid-item-width3 secondary no-padding">
-								<img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>">
+								<img alt="<?php echo $secondary_row3_bg_alt; ?>" src="<?php echo $secondary_row3_bg_url; ?>">
 								<figcaption>
 									<p><?php echo $s_parent_post_title; ?></p>
 									<h2><?php echo $s_post_3->post_title; ?></h2>
@@ -429,9 +429,9 @@ get_header();
 							<?php if($fourth_secondary_row){
 
 								//Declare sub_fields for this row
-								$secondary_row_bg = $fourth_secondary_row['background_image'];
-								$secondary_row_bg_url = $secondary_row_bg['sizes']['large'];
-								$secondary_row_bg_alt = $secondary_row_bg['alt'];
+								$secondary_row_bg_4 = $fourth_secondary_row['background_image'];
+								$secondary_row4_bg_url = $secondary_row_bg_4['sizes']['large'];
+								$secondary_row4_bg_alt = $secondary_row_bg['alt'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
 								$s4_post_link = $fourth_secondary_row['section_title'];
@@ -447,9 +447,9 @@ get_header();
 									setup_postdata($s_post_4);
 
 									//__This section queries the title of the post parent for the page chosen in the 'section_title' field
-									$s_parent_post_id = $s_post_4->post_parent;
-								    $s_parent_post = get_post($s_parent_post_id);
-								    $s_parent_post_title = $s_parent_post->post_title;
+									$s4_parent_post_id = $s_post_4->post_parent;
+								    $s4_parent_post = get_post($s4_parent_post_id);
+								    $s4_parent_post_title = $s4_parent_post->post_title;
 								}
 
 							?>
@@ -457,15 +457,15 @@ get_header();
 							<a href="<?php echo the_permalink($s_post_4->ID); ?>">
 							<?php } ?>
 								<figure class="hg nested secondary no-padding <?php if ($s_post_link == null ){ echo 'no-hover'; }?>">
-									<img alt="<?php $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>">
+									<img alt="<?php $secondary_row4_bg_alt; ?>" src="<?php echo $secondary_row4_bg_url; ?>">
 									<?php 
 									//Don't render this stuff if we aren't passing any of the variables above
-									if ($s_post_link != null){ 
+									if ($s4_post_link != null){ 
 									?>
 
 									<figcaption>
-										<p><?php echo $s_parent_post_title; ?></p>
-										<h2><?php echo $s_post_1->post_title; ?></h2>
+										<p><?php echo $s4_parent_post_title; ?></p>
+										<h2><?php echo $s_post_4->post_title; ?></h2>
 									</figcaption>	
 
 									<?php } ?>
@@ -577,9 +577,9 @@ get_header();
 								setup_postdata($s_post_5);
 
 								//__This section queries the title of the post parent for the page chosen in the 'section_title' field
-								$s_parent_post_id = $s_post_5->post_parent;
-							    $s_parent_post = get_post($s_parent_post_id);
-							    $s_parent_post_title = $s_parent_post->post_title;
+								$s5_parent_post_id = $s_post_5->post_parent;
+							    $s5_parent_post = get_post($s5_parent_post_id);
+							    $s5_parent_post_title = $s5_parent_post->post_title;
 
 							?>
 						
@@ -589,7 +589,7 @@ get_header();
 								<?php if ($s_post_5 != ''){ ?>
 
 								<figcaption>
-									<p><?php echo $s_parent_post_title; ?></p>
+									<p><?php echo $s5_parent_post_title; ?></p>
 									<h2><?php echo $s_post_5->post_title; ?></h2>
 								</figcaption>		
 
@@ -661,9 +661,9 @@ get_header();
 								setup_postdata($s_post_6);
 
 								//__This section queries the title of the post parent for the page chosen in the 'section_title' field
-								$s_parent_post_id = $s_post_6->post_parent;
-							    $s_parent_post = get_post($s_parent_post_id);
-							    $s_parent_post_title = $s_parent_post->post_title;
+								$s6_parent_post_id = $s_post_6->post_parent;
+							    $s6_parent_post = get_post($s6_parent_post_id);
+							    $s6_parent_post_title = $s6_parent_post->post_title;
 							}
 
 						?>
@@ -678,8 +678,8 @@ get_header();
 								?>
 
 								<figcaption>
-									<p><?php echo $s_parent_post_title; ?></p>
-									<h2><?php echo $s_post_1->post_title; ?></h2>
+									<p><?php echo $s6_parent_post_title; ?></p>
+									<h2><?php echo $s_post_6->post_title; ?></h2>
 								</figcaption>	
 
 								<?php } ?>
@@ -712,9 +712,9 @@ get_header();
 								setup_postdata($s_post_7);
 
 								//__This section queries the title of the post parent for the page chosen in the 'section_title' field
-								$s_parent_post_id = $s_post_7->post_parent;
-							    $s_parent_post = get_post($s_parent_post_id);
-							    $s_parent_post_title = $s_parent_post->post_title;
+								$s7_parent_post_id = $s_post_7->post_parent;
+							    $s7_parent_post = get_post($s7_parent_post_id);
+							    $s7_parent_post_title = $s7_parent_post->post_title;
 							}
 						?>
 						<?php if ($s7_post_link != null ){ ?>
@@ -728,7 +728,7 @@ get_header();
 								?>
 
 								<figcaption>
-									<p><?php echo $s_parent_post_title; ?></p>
+									<p><?php echo $s7_parent_post_title; ?></p>
 									<h2><?php echo $s_post_7->post_title; ?></h2>
 								</figcaption>	
 
