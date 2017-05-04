@@ -235,7 +235,7 @@ get_header();
 
 						<a href="<?php echo $instagram[2]->link; ?>" target="_blank">
 							<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
-							<div class="hg grid-item grid-item-width2 instagram no-padding"style="background-image:url('<?php echo $instagram[2]->images->low_resolution->url; ?>');">
+							<div class="hg grid-item grid-item-width2 instagram no-padding"style="background-image:url('<?php echo $instagram[2]->images->standard_resolution->url; ?>');">
 								<div class="instagram-icon">
 									<i class="fa fa-fw fa-instagram fa-2x"></i>
 								</div>
@@ -248,7 +248,7 @@ get_header();
 
 								//Declare sub_fields for this row
 								$secondary_row_bg = $second_secondary_row['background_image'];
-								$secondary_row_bg_url_2 = $secondary_row_bg['sizes']['medium'];
+								$secondary_row_bg_url_2 = $secondary_row_bg['sizes']['large'];
 								$secondary_row_bg_alt = $secondary_row_bg['alt'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
@@ -279,8 +279,8 @@ get_header();
 
 								//Declare sub_fields for this row
 								$secondary_row_bg_3 = $third_secondary_row['background_image'];
-								$secondary_row3_bg_url = $secondary_row_bg['sizes']['large'];
-								$secondary_row3_bg_alt = $secondary_row_bg['alt'];
+								$secondary_row3_bg_url = $secondary_row_bg_3['sizes']['large'];
+								$secondary_row3_bg_alt = $secondary_row_bg_3['alt'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
 								$s3_post_link = $third_secondary_row['section_title'];
@@ -418,7 +418,7 @@ get_header();
 							<!-- Instagram Block 2 -->
 							<a href="<?php echo $instagram[3]->link; ?>" target="_blank">
 								<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
-								<div class="hg nested instagram no-padding" style="background-image:url('<?php echo $instagram[3]->images->low_resolution->url; ?>');">
+								<div class="hg nested instagram no-padding" style="background-image:url('<?php echo $instagram[3]->images->standard_resolution->url; ?>');">
 									<div class="instagram-icon">
 										<i class="fa fa-fw fa-instagram fa-2x"></i>
 									</div>
@@ -633,7 +633,7 @@ get_header();
 						<!-- Instagram block  3-->
 						<a href="<?php echo $instagram[4]->link; ?>" target="_blank">
 							<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
-							<div class="hg grid-item grid-item-width2 instagram no-padding" style="background-image:url('<?php echo $instagram[4]->images->low_resolution->url; ?>');">
+							<div class="hg grid-item grid-item-width2 instagram no-padding" style="background-image:url('<?php echo $instagram[4]->images->standard_resolution->url; ?>');">
 								<div class="instagram-icon">
 									<i class="fa fa-fw fa-instagram fa-2x"></i>
 								</div>

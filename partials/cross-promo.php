@@ -40,9 +40,20 @@
 						$cp_background=$featured_items[0]['background'];
 						$background_url = $cp_background['sizes']['large'];
 						$background_alt = $cp_background['alt'];
+						$curated_bg = get_sub_field('curated_bg_image');
+						$curated_bg_url=$curated_bg['sizes']['large'];
+						$curated_alt = $curated_bg['alt'];
 						$tagline = $featured_items[0]['tagline'];
 
 						$block_type = '';
+
+						if($curated_bg_url != ''){
+							$bg = $curated_bg_url;
+							$bg_alt = $curated_alt;
+						}else{
+							$bg = $background_url;
+							$bg_alt = $background_alt;
+						}
 
 						if(is_page_template('templates/template-listing.php')){
 					
@@ -52,7 +63,7 @@
 						<figure class="columns-6 eq primary cpromo no-padding " ><!-- grid-item grid-item-width4  style="background-image:url('<?php //echo $thumbnail; ?>')"-->
 							<!-- <div class="wrap">
 								<div class="content"> -->
-									<img alt="<?php echo $background_alt; ?>" src="<?php echo $background_url; ?>">
+									<img alt="<?php echo $bg_alt; ?>" src="<?php echo $bg; ?>">
 									<!-- <figcaption> -->
 										<h1><?php echo $post_p->post_title; ?></h1>
 										<p><?php echo $tagline; ?><br><span>&#10165;</span></p>
@@ -68,7 +79,7 @@
 					<a href="<?php echo the_permalink($post_p->ID); ?>" >
 						<figure class="columns-6 eq secondary promo no-padding" ><!-- style="background-image:url('<?php echo $background_url; ?>');" -->
 							<!-- <div class="wrap"> -->
-							<img alt="<?php echo $background_alt; ?>" src="<?php echo $background_url; ?>">
+							<img alt="<?php echo $bg_alt; ?>" src="<?php echo $bg; ?>">
 							<figcaption class="content">
 								<p><?php echo $tagline; ?></p>
 								<h2><?php echo $post_p->post_title; ?></h2>
