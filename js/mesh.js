@@ -24,18 +24,33 @@ jQuery(document).ready(function($){
   var windowW = $(window).width();
   var _windowResize;
  //Calculate window size 
-$(window).resize(
+//$(window).resize(
     function _resizeW(){
       _windowResize = $(window).width();
+      console.log(_windowResize);
       _bodyResize = $('body').width();
       //console.log(_windowResize);
-  if (_windowResize > 1070){
-        console.log(_windowResize);
-        $('.has-parallax').parallax("50%",.5);
-      }  
-});
+  // if (_windowResize > 1070){
+  //       //console.log(_windowResize);
+  //       $('.has-parallax').parallax("50%",.5);
+  //     }  
+}
 
+_resizeW(_windowResize);
+$(window).resize(_resizeW(_windowResize));
 
+function _parallax(e){
+  _resizeW(_windowResize);
+  $(window).resize(_resizeW(_windowResize));
+  if(_windowResize > 1000){
+    $('.has-parallax').parallax("50%",.5);
+  }else{
+    $('.has-parallax').removeClass('has-parallax');
+  }
+}
+
+_parallax();
+$(window).resize(_parallax);
 
 //Run funciton on load and resize
 //$(document).ready(_resizeW(_windowResize));
@@ -44,14 +59,14 @@ $(window).resize(
 
 
 
-  if (windowW > 1070){
-    $('.panel').each(function(i){
-        i = i++;
-        $(this).parallax("50%", .05);
-      });   
+  // if (windowW > 1070){
+  //   $('.panel').each(function(i){
+  //       i = i++;
+  //       $(this).parallax("50%", .05);
+  //     });   
 
-    $('.has-parallax').parallax("50%",.5);
-  }
+  //   $('.has-parallax').parallax("50%",.5);
+  // }
 
   $('#masonry').masonry({
   // set itemSelector so .grid-sizer is not used in layout

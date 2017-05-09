@@ -161,7 +161,12 @@ get_header();
 						?>
 						<a href="<?php echo the_permalink($s_post_1->ID); ?>">
 							<figure class="hg grid-item grid-item-width3 secondary no-padding">
-								<img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>">
+								<div class="portrait" style="background-image:url('<?php echo $secondary_row_bg_url; ?>');">
+									<span class="sr-only">
+										<?php echo $secondary_row_bg_alt; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>"> -->
 								<figcaption>
 									<p><?php echo $s_parent_post_title; ?></p>
 									<h2><?php echo $s_post_1->post_title; ?></h2>
@@ -198,9 +203,14 @@ get_header();
 
 						<!-- Primary Block 1 -->
 						<a href="<?php echo the_permalink($post_1->ID); ?>">
-							<figure class="hg grid-item grid-item-width4 primary no-padding" style="background-image:url('<?php echo $primary_row_url; ?>');">
+							<figure class="hg grid-item grid-item-width4 primary no-padding" >
 								<!-- columns-4 -->
-								<img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>" alt=""/>
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>');">
+									<span class="sr-only">
+										<?php echo $primary_row_alt; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>" alt=""/> -->
 								<figcaption>
 									<h1><?php echo $post_1->post_title; ?></h1>
 									<!--Hover Content?-->
@@ -264,7 +274,12 @@ get_header();
 						?>
 						<a href="<?php echo the_permalink($s_post_2->ID); ?>">
 							<figure class="hg grid-item grid-item-width3 secondary no-padding">
-								<img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url_2; ?>">
+								<div class="portrait" style="background-image:url('<?php echo $secondary_row_bg_url_2; ?>');">
+									<span class="sr-only">
+										<?php echo $secondary_row_bg_alt; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url_2; ?>"> -->
 								<figcaption>
 									<p><?php echo $s2_parent_post_title; ?></p>
 									<h2><?php echo $s_post_2->post_title; ?></h2>
@@ -296,7 +311,12 @@ get_header();
 						?>
 						<a href="<?php echo the_permalink($s_post_3->ID); ?>">
 							<figure class="hg grid-item grid-item-width3 secondary no-padding">
-								<img alt="<?php echo $secondary_row3_bg_alt; ?>" src="<?php echo $secondary_row3_bg_url; ?>">
+								<div class="portrait" style="background-image:url('<?php echo $secondary_row3_bg_url; ?>')">
+									<span class="sr-only">
+										<?php echo $secondary_row3_bg_alt; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $secondary_row3_bg_alt; ?>" src="<?php echo $secondary_row3_bg_url; ?>"> -->
 								<figcaption>
 									<p><?php echo $s_parent_post_title; ?></p>
 									<h2><?php echo $s_post_3->post_title; ?></h2>
@@ -370,7 +390,12 @@ get_header();
 						<a href="<?php echo the_permalink($post_2->ID); ?>">
 							<figure class="hg grid-item grid-item-width3 primary no-padding">
 								<!-- columns-4 -->
-								<img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>" alt=""/>
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
+									<span class="sr-only">
+										<?php echo $primary_row_alt; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>" alt=""/> -->
 								<figcaption>
 									<h1><?php echo $post_2->post_title; ?></h1>
 									<!-- Hover? -->
@@ -404,7 +429,12 @@ get_header();
 						?>
 						<a href="<?php echo the_permalink($post_1->ID); ?>">
 							<figure class="hg grid-item grid-item-width6 primary no-padding">
-								<img alt="<?php echo $primary_row_alt; ?>"src="<?php echo $primary_row_url; ?>">
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
+									<span class="sr-only">
+										<?php echo $primary_row_alt; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $primary_row_alt; ?>"src="<?php echo $primary_row_url; ?>"> -->
 								<h1><?php echo $post_3->post_title; ?></h1>
 								<!--Hover?-->
 								<p><?php echo $hover; ?><br><span>&#10165;</span></p>
@@ -457,7 +487,12 @@ get_header();
 							<a href="<?php echo the_permalink($s_post_4->ID); ?>">
 							<?php } ?>
 								<figure class="hg nested secondary no-padding <?php if ($s_post_link == null ){ echo 'no-hover'; }?>">
-									<img alt="<?php $secondary_row4_bg_alt; ?>" src="<?php echo $secondary_row4_bg_url; ?>">
+									<div class="portrait" style="background-image:url('<?php echo $secondary_row4_bg_url; ?>')">
+										<span class="sr-only">
+										<?php echo $secondary_row4_bg_alt; ?>
+										</span>
+									</div>
+									<!-- <img alt="<?php $secondary_row4_bg_alt; ?>" src="<?php echo $secondary_row4_bg_url; ?>"> -->
 									<?php 
 									//Don't render this stuff if we aren't passing any of the variables above
 									if ($s4_post_link != null){ 
@@ -498,7 +533,10 @@ get_header();
 						?>
 						<a href="<?php echo the_permalink($post_1->ID); ?>">
 							<figure class="hg grid-item grid-item-width4 primary no-padding">
-								<img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>" alt=""/>
+								<!-- <img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>" alt=""/> -->
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
+									<span class="sr-only"><?php echo $primary_row_alt; ?></span>
+								</div>
 								<figcaption>
 									<h1><?php echo $post_4->post_title; ?></h1>
 									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
@@ -585,7 +623,12 @@ get_header();
 						
 						<a href="<?php echo the_permalink($s_post_1->ID); ?>">
 							<figure class="hg grid-item grid-item-width3 secondary no-padding">
-								<img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>">
+								<div class="portrait" style="background-image:url('<?php echo $secondary_row_bg_url; ?>')">
+									<span class="sr-only">
+										<?php echo $secondary_row_bg_alt; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>"> -->
 								<?php if ($s_post_5 != ''){ ?>
 
 								<figcaption>
@@ -620,7 +663,12 @@ get_header();
 						?>
 						<a href="<?php echo the_permalink($post_1->ID); ?>">
 							<figure class="hg grid-item grid-item-width6 primary no-padding">
-								<img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>">
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
+									<span class="sr-only">
+										<?php echo $primary_row_alt;; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>"> -->
 								<h1><?php echo $post_5->post_title; ?></h1>
 								<!--Hover?-->
 								<p><?php echo $hover; ?><br><span>&#10165;</span></p>
@@ -671,7 +719,12 @@ get_header();
 						<a href="<?php echo the_permalink($s_post_6->ID); ?>">
 							<?php } ?>
 							<figure class="hg grid-item grid-item-width2 secondary no-padding <?php if ($s6_post_link == null ){ echo 'no-hover'; }?>">
-								<img alt="<?php echo $secondary_row_bg_alt; ?>"src="<?php echo $secondary_row_bg_url; ?>">
+								<div class="portrait" style="background-image:url('<?php echo $secondary_row_bg_url; ?>')">
+									<span class="sr-only">
+										<?php echo $secondary_row_bg_alt; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>"src="<?php echo $secondary_row_bg_url; ?>"> -->
 								<?php 
 								//Don't render this stuff if we aren't passing any of the variables above
 								if ($s6_post_link != null){ 
@@ -721,7 +774,12 @@ get_header();
 						<a href="<?php echo the_permalink($s_post_7->ID); ?>">
 						<?php } ?>
 							<figure class="hg grid-item grid-item-width2 secondary no-padding <?php if ($s7_post_link == null ){ echo 'no-hover'; }?> ">
-								<img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>">
+								<div class="portrait" style="background-image:url('<?php echo $secondary_row_bg_url; ?>')">
+									<span class="sr-only">
+										<?php echo $secondary_row_bg_alt; ?>
+									</span>
+								</div>
+								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>"> -->
 								<?php 
 								//Don't render this stuff if we aren't passing any of the variables above
 								if ($s7_post_link != null ){ 

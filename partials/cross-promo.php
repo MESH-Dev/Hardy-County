@@ -61,9 +61,12 @@
 
 					<a href="<?php echo the_permalink($post_p->ID); ?>">
 						<figure class="columns-6 eq primary cpromo no-padding " ><!-- grid-item grid-item-width4  style="background-image:url('<?php //echo $thumbnail; ?>')"-->
-							<!-- <div class="wrap">
-								<div class="content"> -->
-									<img alt="<?php echo $bg_alt; ?>" src="<?php echo $bg; ?>">
+							<div class="portrait" style="background-image:url('<?php echo $bg; ?>');">
+								<span class="sr-only">
+									<?php echo $bg_alt; ?>
+								</span>
+							</div>
+									<!-- <img alt="<?php echo $bg_alt; ?>" src="<?php echo $bg; ?>"> -->
 									<!-- <figcaption> -->
 										<h1><?php echo $post_p->post_title; ?></h1>
 										<p><?php echo $tagline; ?><br><span>&#10165;</span></p>
@@ -79,7 +82,12 @@
 					<a href="<?php echo the_permalink($post_p->ID); ?>" >
 						<figure class="columns-6 eq secondary promo no-padding" ><!-- style="background-image:url('<?php echo $background_url; ?>');" -->
 							<!-- <div class="wrap"> -->
-							<img alt="<?php echo $bg_alt; ?>" src="<?php echo $bg; ?>">
+							<div class="portrait" style="background-image:url('<?php echo $bg; ?>');">
+								<span class="sr-only">
+									<?php echo $bg_alt; ?>
+								</span>
+							</div>
+							<!-- <img alt="<?php echo $bg_alt; ?>" src="<?php echo $bg; ?>"> -->
 							<figcaption class="content">
 								<p><?php echo $tagline; ?></p>
 								<h2><?php echo $post_p->post_title; ?></h2>
