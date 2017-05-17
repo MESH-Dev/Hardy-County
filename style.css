@@ -431,7 +431,7 @@ a:hover, a:focus, a:active {
 }
 
 /* line 176, sass/base/_typography.scss */
-main a {
+a.site {
   word-break: break-word;
 }
 

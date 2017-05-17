@@ -185,7 +185,7 @@ get_header();
 											Contact: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
 										<?php }
 										if($site != ''){?>
-											<a href="<?php echo $site; ?>" target="_blank">
+											<a class="site" href="<?php echo $site; ?>" target="_blank">
 												<?php //echo $strip_site; ?>
 												<?php 
 												if ($site_text == ''){

@@ -182,14 +182,14 @@ get_header();
 							$event_month_text = $s_date->format('F');
 							$event_month_abbr = strtolower($s_date->format('M'));
 							$month_arr[] = (string)strtolower($event_month_text);
-							var_dump($month_arr);
+							//var_dump($month_arr);
 							
 
  							//while($evt_cnt < 13){
 							?>
 								
 								<div class="events_month row" id="<?php echo $event_month_abbr;  ?>">
-									<h2 class="event-title"><?php echo $event_month_text; ?><?php echo $evt_cnt; ?></h2>
+									<h2 class="event-title"><?php echo $event_month_text; ?><?php //echo $evt_cnt; ?></h2>
 								<div class="single_event columns-4">
 									<div class="date-item">
 										<span class="date-wrap">
@@ -225,7 +225,7 @@ get_header();
 												echo '</br>';
 											}
 											if($site != ''){?>
-												<a href="<?php echo $site; ?>" target="_blank"><?php echo $bare_event_str; ?></a>
+												<a class="site" href="<?php echo $site; ?>" target="_blank"><?php echo $bare_event_str; ?></a>
 											<?php }
 											if ($phone != ''){
 												echo '| <span class="phone">'.$phone.'</span>';
