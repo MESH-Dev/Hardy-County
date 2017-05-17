@@ -99,23 +99,28 @@
         //console.log(address);
 
         //Let's start using our icons 
-        var icon, text;
+        var icon, text, type_class;
         var basedir = $dir;
           if(data[i]['primary_section'] == 'Outside &amp; In'){
             icon = '/img/outdoors-map-icon.png';
+            type_class = 'outside-in-iw';
           }else if(data[i]['primary_section'] == 'Culture &amp; Heritage'){
             icon = '/img/culture-map-icon.png';
+            type_class = 'culture-iw';
           }else if(data[i]['primary_section'] == 'Eat &amp; Drink'){
             icon = '/img/eat-map-icon.png';
+            type_class = 'eat-drink-iw';
           }else if(data[i]['primary_section'] == 'Sleep &amp; Relax'){
             icon = '/img/sleep-map-icon.png';
+            type_class = 'sleep-relax-iw';
           }else if(data[i]['primary_section'] == 'Shop In Town &amp; Out'){
             icon = '/img/shop-map-icon.png';
+            type_class = 'shop-iw';
           }
 
 
         //Create the html for the infoWindow
-        var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title">'+ data[i]['title'] + '</span><span class="directions cta"><a class="cta-link" href="'+$link+'" target="_blank">Get Directions &#10165;</a></span></div>';
+        var infoWindowContent = '<div class="map-marker-title '+type_class+'"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title">'+ data[i]['title'] + '</span><span class="directions cta"><a class="cta-link" href="'+$link+'" target="_blank">Get Directions &#10165;</a></span></div>';
         //console.log(infoWindowContent);
 
         // //This is for creating multiple markers, in case we want to cluster

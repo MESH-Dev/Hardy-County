@@ -1837,29 +1837,36 @@
 		}
 
 	}
+}
 
-	// .key{
-	// 	// span{
-	// 		@include alt_gothic_reg;
-	// 		font-size:1.4em;
-	// 	// }
+//Full Map infowindow colors
+.outside-in-iw{
+	.section,.list-title{
+		color:$ml_teal;
+	}
+}
 
-	// 	&.eat{
-	// 		color:$dark_orange;
-	// 	}
-	// 	&.outside-in{
-	// 		color:$dark_aquamarine;
-	// 	}
-	// 	&.shop{
-	// 		color:$burnt_red;
-	// 	}
-	// 	&.culture-heritage{
-	// 		color:$dark_green;
-	// 	}
-	// 	&.sleep-relax{
-	// 		color:$std_black;
-	// 	}
-	// }
+.culture-iw{
+	.section,.list-title{
+		color:$ml_green;
+	}
+}
+
+.sleep-relax-iw{
+	.section,.list-title{
+		color:$ml_black;
+	}
+}
+
+.shop-iw{
+	.section,.list-title{
+		color:$ml_red;
+	}
+}
+.eat-drink-iw{
+	.section,.list-title{
+		color:$ml_orange;
+	}
 }
 
 //Weather API styling
