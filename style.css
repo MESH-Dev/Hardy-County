@@ -3858,7 +3858,6 @@ img {
 }
 /* line 2102, sass/modules/_layout.scss */
 .sidr ul li ul.sub-menu {
-  display: none;
   margin: 1em 0;
 }
 /* line 2108, sass/modules/_layout.scss */
@@ -3886,6 +3885,139 @@ img {
 }
 
 /* line 2137, sass/modules/_layout.scss */
+.is-404 {
+  min-height: 600px;
+}
+/* line 2139, sass/modules/_layout.scss */
+.is-404 #searchform {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px solid #292929;
+  overflow: hidden;
+}
+/* line 2160, sass/modules/_layout.scss */
+.is-404 #searchform input::-webkit-input-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 2165, sass/modules/_layout.scss */
+.is-404 #searchform input::-moz-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 2170, sass/modules/_layout.scss */
+.is-404 #searchform input:-ms-input-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 2175, sass/modules/_layout.scss */
+.is-404 #searchform input:-moz-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 2180, sass/modules/_layout.scss */
+.is-404 #searchform input::webkit-input-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 2185, sass/modules/_layout.scss */
+.is-404 #searchform .focus-bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  top: 100px;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+/* line 2199, sass/modules/_layout.scss */
+.is-404 #searchform .form {
+  display: inline-block;
+  float: left;
+}
+/* line 2203, sass/modules/_layout.scss */
+.is-404 #searchform button {
+  width: 6%;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+  color: #292929;
+  font-size: 2.5em;
+  line-height: 0.4;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  padding: 0;
+}
+/* line 2222, sass/modules/_layout.scss */
+.is-404 #searchform button.search-submit {
+  background-image: url("img/search-icon-dark.png");
+}
+/* line 2234, sass/modules/_layout.scss */
+.is-404 #searchform .form.input {
+  width: 95%;
+}
+/* line 2236, sass/modules/_layout.scss */
+.is-404 #searchform .form.input input {
+  position: absolute;
+  left: 8px;
+  background: transparent;
+  border: none;
+  font-size: 2em;
+  width: 100%;
+  padding: 6px 10px 6px 0;
+  z-index: 1;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+/* line 2256, sass/modules/_layout.scss */
+.is-404 #searchform .form.input input:focus {
+  color: #292929;
+}
+/* line 2257, sass/modules/_layout.scss */
+.is-404 #searchform .form.input input:focus ~ .focus-bg {
+  top: 0;
+}
+/* line 2261, sass/modules/_layout.scss */
+.is-404 #searchform .form.input input:focus #submit {
+  color: #292929;
+}
+/* line 2264, sass/modules/_layout.scss */
+.is-404 #searchform .form.input input:focus ~ button {
+  color: #292929;
+}
+/* line 2266, sass/modules/_layout.scss */
+.is-404 #searchform .form.input input:focus ~ button.search-submit {
+  background-image: url("img/search-icon-dark.png");
+}
+@media (max-width: 750px) {
+  /* line 2254, sass/modules/_layout.scss */
+  .is-404 #searchform {
+    margin-bottom: 2em;
+  }
+}
+
+/* line 2279, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -3899,66 +4031,66 @@ img {
 
 /* =WordPress Core
 -------------------------------------------------------------- */
-/* line 2150, sass/modules/_layout.scss */
+/* line 2292, sass/modules/_layout.scss */
 .alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 2154, sass/modules/_layout.scss */
+/* line 2296, sass/modules/_layout.scss */
 .aligncenter,
 div.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
 
-/* line 2160, sass/modules/_layout.scss */
+/* line 2302, sass/modules/_layout.scss */
 .alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 2165, sass/modules/_layout.scss */
+/* line 2307, sass/modules/_layout.scss */
 .alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 2170, sass/modules/_layout.scss */
+/* line 2312, sass/modules/_layout.scss */
 p img.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 2174, sass/modules/_layout.scss */
+/* line 2316, sass/modules/_layout.scss */
 p img.aligncenter,
 div.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
 
-/* line 2180, sass/modules/_layout.scss */
+/* line 2322, sass/modules/_layout.scss */
 p img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 2185, sass/modules/_layout.scss */
+/* line 2327, sass/modules/_layout.scss */
 p img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 2190, sass/modules/_layout.scss */
+/* line 2332, sass/modules/_layout.scss */
 a img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 2195, sass/modules/_layout.scss */
+/* line 2337, sass/modules/_layout.scss */
 a img.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 2199, sass/modules/_layout.scss */
+/* line 2341, sass/modules/_layout.scss */
 a img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;

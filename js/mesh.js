@@ -319,57 +319,57 @@ $('.sidr-trigger').sidr({
       renaming: false,
       side: 'right',
       displace: false,      
-      onOpen: function(){
+       onOpen: function(){
 
         $('.sidr-trigger').animate({right:"20000"},50);
-          $clk = 0;
+//           $clk = 0;
         
-        $('.sidr .open').click(function(){
-            $clk++;
+//         $('.sidr .open').click(function(){
+//             $clk++;
             
-            //Set every .sub-menu back to initial state on click
-            if($clk == 1){
-                $('ul.sub-menu')
-                  //.slideUp()
-                  .removeClass('sidr-active');
-                //
-                $(this).find('i img')
-                  .css({
-                  '-moz-transform':'rotate(180deg)',
-                  '-webkit-transform':'rotate(180deg)',
-                  '-o-transform':'rotate(180deg)',
-                  '-ms-transform':'rotate(180deg)',
-                  'transform':'rotate(180deg)'
-                })
+//             //Set every .sub-menu back to initial state on click
+//             if($clk == 1){
+//                 $('ul.sub-menu')
+//                   //.slideUp()
+//                   .removeClass('sidr-active');
+//                 //
+//                 $(this).find('i img')
+//                   .css({
+//                   '-moz-transform':'rotate(180deg)',
+//                   '-webkit-transform':'rotate(180deg)',
+//                   '-o-transform':'rotate(180deg)',
+//                   '-ms-transform':'rotate(180deg)',
+//                   'transform':'rotate(180deg)'
+//                 })
                 
-                //On click find the nearest ul.sub-menu and open it
-                $(this)
-                  .closest('li')
-                  .find('ul.sub-menu')
-                  .addClass('sidr-active')
-                  .slideDown();
-                //On click find the .open button and change the symbol from closed to open
+//                 //On click find the nearest ul.sub-menu and open it
+//                 $(this)
+//                   .closest('li')
+//                   .find('ul.sub-menu')
+//                   .addClass('sidr-active')
+//                   .slideDown();
+//                 //On click find the .open button and change the symbol from closed to open
           
-            }else{
-              $clk = 0;
-              //$('ul.sub-menu').slideUp();
+//             }else{
+//               $clk = 0;
+//               //$('ul.sub-menu').slideUp();
               
-              $('ul.sub-menu').slideUp();
+//               $('ul.sub-menu').slideUp();
 
-              $(this).find('i img')
-              .css({
-                  '-moz-transform':'rotate(0)',
-                  '-webkit-transform':'rotate(0)',
-                  '-o-transform':'rotate(0)',
-                  '-ms-transform':'rotate(0)',
-                  'transform':'rotate(0)'
-              });
-            }//end else
+//               $(this).find('i img')
+//               .css({
+//                   '-moz-transform':'rotate(0)',
+//                   '-webkit-transform':'rotate(0)',
+//                   '-o-transform':'rotate(0)',
+//                   '-ms-transform':'rotate(0)',
+//                   'transform':'rotate(0)'
+//               });
+//             }//end else
 
-        }); //end .sidr .open function
+//         }); //end .sidr .open function
       }////end sidr onOpen function
 
-});//end sidr onOpen function
+ });//end sidr onOpen function
 
 $('.close').click(
     function(){
@@ -381,11 +381,11 @@ $('.close').click(
 //For the sake of accessibility, we are removing IDs in the sidr menu
 $('.sidr li').removeAttr('id');
 
-$('.sidr ul.menu > li')
-  .has('.sub-menu')
-  .find('a:first')
-  .after('<div class="open"><i class="arrow-icon"><img src="'+$dir+'/img/sidr-down-arrow.png" alt="Press to show or hide more links"></i></div>');//&#10148;
-  //.after('<div class="open"><i class="fa fa-fw fa-3x fa-angle-down"></i></div>');
+// $('.sidr ul.menu > li')
+//   .has('.sub-menu')
+//   .find('a:first')
+//   .after('<div class="open"><i class="arrow-icon"><img src="'+$dir+'/img/sidr-down-arrow.png" alt="Press to show or hide more links"></i></div>');//&#10148;
+//   //.after('<div class="open"><i class="fa fa-fw fa-3x fa-angle-down"></i></div>');
 
 
 });

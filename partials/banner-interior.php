@@ -12,6 +12,8 @@
 				<?php 
 				}elseif(is_singular('event')){?>
 				Events
+				<?php }elseif(is_404()){?>
+				Page Not found!
 				<?php }else{
 				if ( $post->post_parent ) { ?>
 					<span>
