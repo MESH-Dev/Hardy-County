@@ -423,12 +423,16 @@ p {
 a {
   color: #00b0a2;
   transition: all .5s ease;
-  word-break: break-all;
 }
 /* line 167, sass/base/_typography.scss */
 a:hover, a:focus, a:active {
   opacity: .5;
   text-decoration: none;
+}
+
+/* line 176, sass/base/_typography.scss */
+main a {
+  word-break: break-word;
 }
 
 /* line 3, sass/base/_grid.scss */
