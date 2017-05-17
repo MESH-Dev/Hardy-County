@@ -21,7 +21,7 @@
         scrollwheel:  false,
         zoomControl: true,
         zoomControlOptions: {
-          position: google.maps.ControlPosition.LEFT_BOTTOM,
+          position: google.maps.ControlPosition.RIGHT_BOTTOM,
         },
         mapTypeControl: false,
         scaleControl: false,

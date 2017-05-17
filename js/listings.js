@@ -23,7 +23,7 @@
         scrollwheel:  false,
         zoomControl: true,
         zoomControlOptions: {
-          position: google.maps.ControlPosition.LEFT_BOTTOM,
+          position: google.maps.ControlPosition.RIGHT_BOTTOM,
         },
         mapTypeControl: false,
         scaleControl: false,
@@ -67,9 +67,46 @@
         var color = data[i]['color'];
 
         var slug = data[i]['slug'];
+
+        var address = data[i]['address'];
+        if (address != ''){
+          $address = address;
+        }else{
+          $address = '';
+        }
+        var city =  data[i]['city'];
+        if (city != ''){
+          $city = city;
+        }else{
+          $city = '';
+        }
+        var zip = data[i]['zip'];
+        if (zip != ''){
+          $zip = zip;
+        }else{
+          $zip = '';
+        }
+        var lat = data[i]['coordinates'][0];
+        var _long = data[i]['coordinates'][0];
+
+        if (address != '' )
+          //Option 1, if we don't want directions, but do have the address (only shows location on map)
+          // $link = 'https://maps.google.com/?q='+address+city+zip;
+          //Option 2, if we do want directions:
+          //saddr var is the current location based on where Google "thinks" the user is
+          //daddr var is the destination, made up of the link
+          $link = 'https://www.google.com/maps?saddr=My+location&daddr='+$address+' '+$city+' '+$zip;
+        else{
+          //Option 1 - no directions
+          //$link = 'https://maps.google.com/maps/?ll='+lat+','+_long;
+          //Option 2 - directions
+          $link = 'https://www.google.com/maps?saddr=My+location&daddr='+lat+','+_long;
+        }
         
         //Create the html for the infoWindow
-        var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title"><a href="#'+slug+'">'+ data[i]['title'] + '</a></span></div>';
+        //var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title"><a href="#'+slug+'">'+ data[i]['title'] + '</a></span></div>';
+        var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title">'+ data[i]['title'] + '</span><span class="directions cta"><a class="cta-link" href="'+$link+'" target="_blank">Get Directions &#10165;</a></span></div>';
+
         //console.log(infoWindowContent);
 
         // //This is for creating multiple markers, in case we want to cluster

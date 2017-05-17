@@ -345,7 +345,7 @@ get_header();
 							$s_date = new DateTime($start_date);
 							$e_date = new DateTime($end_date);?>
 						<a href="<?php echo the_permalink($event_ID_2); ?>">
-							<div class="hg grid-item grid-item-width3 event no-padding">
+							<div class="hg grid-item grid-item-width3 event second no-padding">
 								<div class="date date-wrap">
 									<span class="date-info">
 										<span class="month"><?php echo $s_date->format('M');?></span>
@@ -571,7 +571,7 @@ get_header();
 							$e_date = new DateTime($end_date);?>
 
 						<a href="<?php echo the_permalink($event_ID_3); ?>">
-							<div class="hg grid-item grid-item-width3 event no-padding">
+							<div class="hg grid-item grid-item-width3 event third no-padding">
 								<div class="date date-wrap">
 									<span class="date-info">
 										<span class="month"><?php echo $s_date->format('M');?></span>

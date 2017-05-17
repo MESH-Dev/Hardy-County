@@ -1,9 +1,9 @@
 
 
-	<?php //if (have_rows('sidebar_block')):?>
-		
-		<?php while (have_rows('sidebar_block')):the_row(); ?>
+	<?php if (have_rows('sidebar_block')):?>
 		<div class="columns-4 sidebar">
+		<?php while (have_rows('sidebar_block')):the_row(); ?>
+		
 <?php
 		$block_type = get_sub_field('block_type');
 		//Choose:
@@ -12,14 +12,16 @@
 		// 3) cross-promotional
 		$background = get_sub_field('background_image');
 		$background_url = $background['sizes']['large'];
+		$background_alt = $background['alt'];
 		$tb_title = get_sub_field('text_block_title');
 		$tb_content = get_sub_field('text_content');
 		//cross_promotion_link
 
 		if ($block_type == 'image-only'){
 	?>
-		<figure>
-			<img src="<?php echo $background_url; ?>">		
+		<figure class="sidebar-io" style="background-image:url('<?php echo $background_url; ?>')">
+			<!-- <img src="<?php echo $background_url; ?>"> -->		
+			<span class="sr-only"><?php echo $background_alt; ?></span>
 		</figure>
 
 	<?php }elseif ($block_type == 'text-box'){ ?>
@@ -75,8 +77,8 @@
 		</a>
 
 	<?php }	?>	
-</div>
-	<?php endwhile; ?>
-	
-<?php //endif; ?>
+
+	<?php endwhile;?>
+	</div>
+<?php endif; ?>
 	

@@ -95,6 +95,8 @@ function gi_resize(){
   //console.log(cp6);
   //cp6_alt = $('.columns-6')
   cp7 = $('.columns-7.trip').width();
+
+
   //return gi2, gi3, gi4;
 }
 //Run the function above at document ready and on a window resize event
@@ -127,6 +129,7 @@ function _resize(){
   $('.grid-item-width6.nest').css({height: gi2});
   $('.grid-item-width6.nest .nested').css({height: gi2});
   $('.grid-item-width7').css({height: (gi5)});
+  $('.sidebar-io').css({height:cp4});
 
 }
 
@@ -251,7 +254,7 @@ $('.with-map').hover(function(){
   }, 300);
 }); 
 
-if (windowW > 768){
+if (windowW < 768){
 $('.with-map').click(function(){
   //console.log('Map hovered');
   //$('.banner-content').slideDown(50);
@@ -278,7 +281,7 @@ var $ctr=0;
 $('.legend-title').click(function(){
 
   $ctr++;
-  console.log($ctr);
+  //console.log($ctr);
   if($ctr==1){
     $('.map-key').slideDown(100);
     $('.map-key').addClass('open');

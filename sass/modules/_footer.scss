@@ -43,7 +43,8 @@ footer{
 
 	.mail-statement{
 			margin-top:5px;
-			font-size:1.6em;
+			font-size:1.5em;
+			@include adelle_bold;
 		}
 
 	//Mailchimp & Search form styling

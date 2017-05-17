@@ -89,7 +89,7 @@
 							</div>
 							<!-- <img alt="<?php echo $bg_alt; ?>" src="<?php echo $bg; ?>"> -->
 							<figcaption class="content">
-								<p><?php echo $tagline; ?></p>
+								<!-- <p><?php //echo $tagline; ?></p> -->
 								<h2><?php echo $post_p->post_title; ?></h2>
 								<!-- <h2><?php //echo $parent_post_title ?></h2> -->
 							</figcaption>

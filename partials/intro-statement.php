@@ -2,6 +2,8 @@
 	<?php 
 		if(is_page_template('templates/template-listing.php')){
 			$template="listing";
+		}elseif(is_page_template('templates/template-events.php')){
+			$template="events";
 		}else{
 			$template="";
 		}

@@ -21,6 +21,7 @@ get_header();
 							//Query only to pull the months available via Event posts
 							$today=date('Ymd');
 							$currMonth = date('m');
+							//var_dump($currMonth);
 							$currYear = date('Y');
 							$month_args = array(
 								'post_type' => 'event',
@@ -46,6 +47,9 @@ get_header();
 							if ($month_query->have_posts()){
 								//Declare month array ($month_arr) to house the months found in the query
 								$month_arr= array();
+								$mth_ctr = 0;
+								$curr_mnth = 13;
+								 //$monthNum needs created should be month counter
 								while($month_query->have_posts()) { $month_query->the_post();
 									$start_date = get_field('start_date', false, false);
 		 							$end_date = get_field('end_date', false, false);
@@ -71,59 +75,49 @@ get_header();
 							$list_year = date("Y");
 						
 							$i=1;
+							$month_num = $currMonth; //$month_num = 5
+
 
 							//Loop creates 12 month span of date elements
 							while($i < 13){
 
-								//If this is the first loop, pull the current month, based on server time
-								//And create an <li> with our information
-								if($i == 1){ ?>
-								<li <?php if (!in_array($list_string, $month_arr)){ echo 'class="disabled"';}?>>
-									<?php if (in_array($list_string, $month_arr)){ ?>
-									<a href="#<?php echo strtolower($list_month); ?>" class="monthscrolltrigger first">
+								//1. get month name from $month num
+								//2. Check if $month_num is in month array to determine disable or not
+								//3. Echo LI 
+								//4. increment $i
+								//5. increment $month num
+								//5a. Check if monthnum = 13 and set back to 1
+
+								$monthName = date('M', mktime(0, 0, 0, $month_num, 10));
+								$monthName_lower = strtolower($monthName);
+								//var_dump($monthName);
+								
+								if($i < 13){ 
+									
+									?>
+								<li <?php if (!in_array($monthName_lower, $month_arr)){ echo 'class="disabled"';}?>>
+									<?php if (in_array($monthName_lower, $month_arr)){ ?>
+									<a href="#<?php echo strtolower($monthName); ?>" class="monthscrolltrigger first">
 									<?php } ?>
 											<div class="single_month">
-												<p><?php echo $list_month; ?> <?php //echo $i; ?></p>
+												<p><?php echo $monthName; ?> <?php //echo $i; ?></p>
 												<p class="arrow_indicator">&#10165;</p>
 											</div>
-									<?php if (in_array($list_string, $month_arr)){ ?>
+									<?php if (in_array($monthName_lower, $month_arr)){ ?>
 									</a>
 									<?php } ?>
 								</li>
-							<?php  
-								//If we are in loops 2-12
-								//iterate over the months in this period, based on the current month from server
-								}elseif( $i > 1 && $i < 13 ){
-								$month_string = (string)$list_month;
-								$ly_string = (string)$list_year;
-								$month_text = new DateTime($month_string);
-								$lm_string=(string)$months;
-								$lm_string=$lm_string+1;
-								$abbr = strtolower(date('M', strtotime('+'.($i+2).' Month', $lm_string)));
-								//var_dump($abbr);
 								
-								?>
-								<li <?php if (!in_array($abbr, $month_arr, TRUE)){ echo 'class="disabled"'; }?>>
-									<?php if (in_array($abbr, $month_arr, TRUE)){ ?>
-									<a href="#<?php echo strtolower(date('M', strtotime('+'.($i+2).' Month', $lm_string))); ?>" class="monthscrolltrigger next">
-									<?php } ?>
-										<div class="single_month">
-											<p><?php echo date('M', strtotime("+".($i+2)." Month", $lm_string)); ?></p>
-											<p class="arrow_indicator">&#10165;</p>
-										</div>
-									<?php if (in_array($abbr, $month_arr, TRUE)){ ?>
-									</a> 
-									<?php } ?>
-								</li>
-						<?php }
+						<?php 
 							//If we have looped through 13 times (greater than months in year)
 							//reset our count control to 1, and stop
-							elseif($i >= 13){ $i=1;
-								break;
-								?>
-						
-						<?php  } //end if
-								$i++;} //end for
+
+							}elseif($i >= 13){ 
+								
+								$month_num=1;
+							
+						 	}  //end if
+								$i++; $month_num++;} //end while
 
 						?>
 						</ul>
@@ -159,7 +153,9 @@ get_header();
 					$the_query = new WP_Query( $args );
 
 					if ($the_query->have_posts()){
-					
+						$month_arr= array();
+						$evt_cnt = 1;
+						$month_num = $currMonth;
 						$first_loop = 0; 
 						while($the_query->have_posts()) { $the_query->the_post();
 							//ACF fields from post
@@ -185,79 +181,15 @@ get_header();
 							$event_year = $s_date->format('Y');
 							$event_month_text = $s_date->format('F');
 							$event_month_abbr = strtolower($s_date->format('M'));
-
- 							
-							if($first_loop == 0){ ?>
-								
-								<div class="events_month row" id="<?php echo $event_month_abbr; ?>"><h2 class="event-title"><?php echo $event_month_text; //change this to text! ?></h2>
-								<?php $first_loop = 1;
-							}
+							$month_arr[] = (string)strtolower($event_month_text);
+							var_dump($month_arr);
 							
-							if($event_month == $currMonth){ ?>
-															<div class="single_event columns-4">
-									<div class="date-item">
-										<span class="date-wrap">
-											<span class="date-info">
-												<span class="month"><?php echo $s_date->format('M');?></span>
-												<span class="range"><?php echo $s_date->format('d');?></span>
-											</span>
-											<?php if ($end_date > $start_date){ ?>
-												<div class="date-sep"><span>&mdash;</span></div>
-												<span class="date-info">
-													<span class="month"><?php echo $e_date->format('M');?></span>
-													<span class="range"><?php echo $e_date->format('d');?></span>
-												</span>
-											<?php } ?>
-										</span>
 
-
-									</div>
-									<!-- <div class="columns-8"> -->
-									<div class="info">
-										<h2><?php if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>" target="_self"> <?php } ?><?php the_title(); ?><?php if ($hc_event == true){ ?></a> <?php } ?></h2>
-										<p>
-										<?php 
-										
-										if($address != ''){
-											echo $address;
-											echo '</br>';
-										}
-										if($city != ''){
-											echo $city;
-											echo ' ';
-										}
-										if($zip != ''){
-											echo $zip;
-											echo '</br>';
-										}
-										if($site != ''){?>
-											<a href="<?php echo $site; ?>" target="_blank">
-												<?php 
-													if ($site_text == ''){
-														echo $bare_event_str; 
-													}else{
-														echo $site_text;
-													}
-											 	?>
-											</a>
-										<?php }
-										if($site !='' && $phone != ''){
-											echo '| ';
-										}
-										if ($phone != ''){
-											echo '<span class="phone">'.$phone.'</span>';
-										}
-										?></p>
-									</div>
-									<!-- </div> -->
-								</div>
-						<?php 	
-							}
-							else{
-								echo "</div>";
-								$currMonth = $event_month;?>
+ 							//while($evt_cnt < 13){
+							?>
+								
 								<div class="events_month row" id="<?php echo $event_month_abbr;  ?>">
-									<h2 class="event-title"><?php echo $event_month_text; //change this to text! ?></h2>
+									<h2 class="event-title"><?php echo $event_month_text; ?><?php echo $evt_cnt; ?></h2>
 								<div class="single_event columns-4">
 									<div class="date-item">
 										<span class="date-wrap">
@@ -301,13 +233,17 @@ get_header();
 											?>
 										</p>
 									</div>
-									<!-- </div> -->
+									</div>
 								</div>
-						<?php } ?>
+						<?php //}  //end cnt while
+
+								} //endwhile ?>
  
 	 
 
-				<?php } } wp_reset_postdata(); ?>
+				<?php } //endif  //} //} 
+					wp_reset_postdata(); 
+				?>
 				</div><!-- end row -->
 				
 		</div><!-- end event-listing -->

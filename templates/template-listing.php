@@ -154,10 +154,10 @@ get_header();
 							<?php } ?>
 						<div class="listing row" id="<?php echo $post_slug; ?>" tabindex="<?php echo $l_cnt; ?>">  <!-- columns-6 -->
 							
-							<div class="line-item" style="width:7%; display:inline-block; float:left; margin-right:1%; text-align:right;">
-								<h2 style="margin-top:19px;"><?php echo $l_cnt; ?>.</h2>
+							<div class="line-item" >
+								<h2><?php echo $l_cnt; ?>.</h2>
 							</div>
-							<div class="listing-content" style="width:85%; display:inline-block; float:left;">
+							<div class="listing-content">
 							<!-- <div class=""> --><!-- push -->
 							<?php //if($tags != ''){?>
 								<span class="tags"><?php echo $tag_name; ?></span>

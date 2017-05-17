@@ -160,7 +160,9 @@ p {
 
 a{
   color:$dark_aquamarine;
+
   transition:all .5s ease;
+  word-break: break-all;
 
   &:hover,
   &:focus,

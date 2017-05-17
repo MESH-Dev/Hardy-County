@@ -30,7 +30,7 @@ get_header(); ?>
 			$my_wp_query = new WP_Query();
 
 			//Setup a new array from the query made up of all pages,
-			$all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' =>'-1')); //var_dump($all_wp_pages);
+			$all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' =>'-1', 'order'=>'ASC', 'orderby'=>'menu_order')); //var_dump($all_wp_pages);
 			
 			//Get the page ID for the current page
 			$page_ID=get_the_ID(); //var_dump($page_ID); 
@@ -59,28 +59,18 @@ get_header(); ?>
 				?>
 			<a href="<?php the_permalink($children->ID); ?>">
 			<figure class="columns-4 no-padding primary child-links" ><!-- grid-item grid-item-width4 -->
-				<!-- <div class="wrap">
-					<div class="content"> -->
-						<!-- <img src="<?php echo $thumbnail; ?>"> -->
-						<!-- <img style="opacity:0; position:absolute;" src="<?php echo $background_url; ?>" > -->
-						<div class="portrait" alt="<?php echo $background_alt; ?>" style="background-image:url('<?php echo $background_url ?>');"></div>
-						<figcaption>
-						<h1><?php echo $children->post_title; ?></h1>
-						<p><?php echo $hover; ?><br><span>&#10165;</span></p>
-						</figcaption>
-					<!-- </div>
-				</div> -->
-
+				<div class="portrait" alt="<?php echo $background_alt; ?>" style="background-image:url('<?php echo $background_url ?>');">
+					<span class="sr-only">
+						<?php echo $background_alt; ?>
+					</span>
+				</div>
+				<figcaption>
+					<h1><?php echo $children->post_title; ?></h1>
+					<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+				</figcaption>
 			</figure>
 			</a>
 			<?php } wp_reset_query(); ?>
-			<!-- </div> -->
-			<!-- <div class="grid-item grid-item-width4 primary" style="background-color:purple;">
-				<h1>PRIMARY ITEM!</h1>
-			</div>
-			<div class="grid-item grid-item-width4 primary" style="background-color:green;">
-				<h1>PRIMARY ITEM!</h1>
-			</div> -->
 
 			<!-- Row 2 Calendar Feed/See More -->
 		</div><!-- end child page row -->
@@ -227,9 +217,14 @@ get_header(); ?>
 								$target = 'target="_blank"';
 							}
 
-							if($link_text != ''){
+							if($link != ''){
 						?>
 							<a href="<?php echo $link; ?>" <?php echo $target; ?> ><?php echo $link_text; ?></a>
+
+							<?php }elseif ($link_text != '' && $link == ''){ ?>
+							<p><?php echo $link_text ?></p>
+							<?php }elseif($link_text == '' && $link == ''){ ?>
+							
 						<?php } endwhile; endif; ?>
 					</div>
 				</div>

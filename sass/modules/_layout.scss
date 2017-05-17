@@ -38,7 +38,7 @@
 		&:focus, 
 		&:hover{
 			//background-image:url('img/arrow-icon_hover.png');
-			opacity:.7;
+			opacity:.5;
 		}
 	}
 	
@@ -223,6 +223,13 @@
 
 	&.listing{
 		margin:6em 0 11em 0;
+		.intro-text{
+			font-size:20px;
+		}
+	}
+
+	&.events{
+		margin:6em 0 2em 0;
 		.intro-text{
 			font-size:20px;
 		}
@@ -612,6 +619,14 @@
 		position: relative;
 		// padding: 1em;
 		background-color:$aqua_marine;
+
+		&.second{
+			background-color:$dark_green;
+		}
+
+		&.third{
+			background-color:$burnt_red;
+		}
 		.date{
 			position: absolute;
 			top: 1em;
@@ -780,6 +795,15 @@
     				margin: 0 auto 1.5em auto;
 				}
 
+				p{
+					color:$white;
+					font-size:2em;
+					text-transform:uppercase;
+					@include alt_gothic_reg;
+					padding:0;
+					margin:0;
+				}
+
 				a{
 					color:$white;
 					font-size:2em;
@@ -933,6 +957,14 @@
 		    position: absolute;
 			bottom: 2em;
 		}
+
+		a{
+			&:hover,
+			&:active,
+			&:focus{
+				opacity:.5;
+			}
+		}
 	}
 
 	.post-parent{
@@ -1070,7 +1102,7 @@
 // Events Page
 .events_heading{
 	//width: 66.66667%;
-	margin: 40px auto;
+	margin: 0 auto;
 }
 
 .event-listing{
@@ -1466,7 +1498,7 @@
 		font-size: 2.4em;
 		@include adelle_thin;
 		color:$std_black;
-		margin-bottom:2.5em;
+		margin-bottom:1.66em;
 		text-transform:none;
 		line-height: 1.5;
 	}
@@ -1503,6 +1535,26 @@
 		overflow: hidden;
 		margin: 0px;
 		background-color: $black;
+
+		&.sidebar-io{
+			background-color:transparent;
+			background-repeat:no-repeat;
+			background-position:center center;
+			background-size:cover;
+
+			img{
+				opacity:1;
+			}
+
+			&:hover,
+			&:active,
+			&:focus{
+				img{
+					opacity:1;
+					transform:none;
+				}
+			}
+		}
 		img{
 			opacity: 0.7;
 			position:relative;
@@ -1535,7 +1587,7 @@
 				-webkit-transform: scale3d(1.05,1.05,1);
 				transform: scale3d(1.05,1.05,1);
 			}
-			background-size:110% 110%;
+			//background-size:110% 110%;
 
 			figcaption{
 				opacity: 0;
@@ -1560,6 +1612,23 @@
 		margin:0 auto;
 		@media($bp-smaller-than-tablet){
 			width:96%;
+		}
+
+		.listing-content{
+			width:85%; 
+			display:inline-block; 
+			float:left;
+		}
+
+		.line-item{
+			width:7%; 
+			display:inline-block; 
+			float:left; 
+			margin-right:1%; 
+			text-align:right;
+			h2{
+				margin-top:19px;
+			}
 		}
 
 		.listing{
@@ -1840,7 +1909,7 @@
 //==========================================
 
 //Submit Event form
-	.submit-event{
+.submit-event{
 	input{
 	@include alt_gothic_reg;
 	color:$std_black;
@@ -1871,12 +1940,57 @@
 	    @include alt_gothic_reg;
 	    color:$std_black;
 	}
+
+	.frm_blank_field{
+		input::-webkit-input-placeholder {
+			@include alt_gothic_reg;
+		    color:$red;
+		}
+
+		input::-moz-placeholder {
+		    @include alt_gothic_reg;
+		    color:$red;
+		}
+
+		 input:-ms-input-placeholder {
+		    @include alt_gothic_reg;
+		    color:$red;
+		}
+
+		 input:-moz-placeholder {
+		    @include alt_gothic_reg;
+		    color:$red;
+		}
+
+		 input::webkit-input-placeholder {
+		    @include alt_gothic_reg;
+		    color:$red;
+		}
+
+		.focus-bg{
+			display:none;
+		}
+	}
+}
+
+.frm_error_style{
+	color:$red;
+	font-size:2em;
+	@include alt_gothic_reg;
+	padding:1em 0;
+}
+
+.frm_error{
+	color:$std_black;
+	font-size:2em;
+	@include alt_gothic_reg;
+
 }
 
 //Sidr styling
 .sidr{
 	background-color:$sidr_orange;
-	padding:1em;
+	padding:2em;
  	@include alt_gothic_reg;
 
  	.open{
@@ -1915,13 +2029,13 @@
 					&:hover,
 					&:active,
 					&:focus{
-						color:$seafoam;;
+						color:$sub_menu_color;
 					}
 				}
 
 				&.current-menu-item{
 					a{
-						color:$seafoam;
+						color:$sub_menu_color;
 					}
 				}
 			}
@@ -1937,7 +2051,7 @@
 					&:hover,
 					&:active,
 					&:focus{
-						color:$seafoam;;
+						color:$sub_menu_color;
 						opacity:1;
 					}
 				}
@@ -1952,14 +2066,14 @@
 				&:hover,
 				&:active,
 				&:focus{
-					color:$seafoam;
+					color:$sub_menu_color;
 					opacity:1;
 				}
 			}
 			&.current_page_item,
 			&.current-menu-parent{
 				a{
-					color:$seafoam;
+					color:$sub_menu_color;
 				}
 			}
 		}
@@ -1979,7 +2093,7 @@
 					}
 					a{
 						font-size:2em;
-						color:$seafoam;
+						color:$sub_menu_color;
 						text-transform:uppercase;
 						position:relative;
 						padding-right:23px;
