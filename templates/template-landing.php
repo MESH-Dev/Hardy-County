@@ -184,7 +184,10 @@ get_header(); ?>
 						
 					</div>
 					<div class="foot row">
-						Have an event you want to tell people about? <a href="#">Share it with us! &#10165;</a>
+						<?php 
+							$event_form = get_field('submit_form_url', 'options');
+						?>
+						Have an event you want to tell people about? <a href="<?php echo $event_form; ?>">Share it with us! &#10165;</a>
 					</div>
 				</div>	
 			</div>
