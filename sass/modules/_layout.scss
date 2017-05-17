@@ -396,7 +396,9 @@
 				pointer-events: none;
 			}
 		}
-		&:hover{
+		&:hover,
+		&:focus,
+		&:active{
 			img{
 				opacity: 1;
 				-webkit-transform: scale3d(1.05,1.05,1);
@@ -423,7 +425,9 @@
 				-webkit-transform: rotate3d(0,0,1,0deg) scale3d(0,0,1);
 				transform: rotate3d(0,0,1,0deg) scale3d(0,0,1);			
 			}
-			&:hover{
+			&:hover,
+			&:active,
+			&:focus{
 				figcaption::before{
 					-webkit-transform: rotate3d(0,0,1,0deg) scale3d(2,2,1);
 					transform: rotate3d(0,0,1,0deg) scale3d(2,2,1);
@@ -471,7 +475,9 @@
 			pointer-events: none;
 			z-index: 0;
 		}
-		&:hover{
+		&:hover,
+		&:active,
+		&:focus{
 			img{
 				opacity: 1;
 				-webkit-transform: scale3d(1.05,1.05,1);
@@ -715,10 +721,14 @@
 			background-color:$burnt_red;
 		}
 
-		&:hover .info{
+		&:hover .info,
+		&:focus .info,
+		&:active .info{
 			bottom: 10px;
 		}
-		&:hover .info .reveal{
+		&:hover .info .reveal,
+		&:focus .info .reveal,
+		&:active .info .reveal{
 			opacity: 1;
 		}
 		h3{
@@ -1307,7 +1317,9 @@
 		-moz-transition-property: none;
 		-o-transition-property: none;
 		transition-property: none;
-		&:hover{
+		&:hover,
+		&:active,
+		&:focus{
 			opacity: 1;
 		}
 	}	
@@ -1365,7 +1377,9 @@
 	}
 	.white{
 		background-color: $white;
-		&:hover > p{
+		&:hover > p,
+		&:focus > p,
+		&:active > p{
 		}
 		p{
 			color: $dark_green;
@@ -1406,7 +1420,9 @@
 			color: $white;
 			margin-bottom: 0;
 		}
-		&:hover{
+		&:hover,
+		&:active,
+		&:focus{
 			img{
 				opacity: 1;
 				-webkit-transform: scale3d(1.05,1.05,1);
@@ -1581,7 +1597,9 @@
 		h2{
 			color: $white;
 		}
-		&:hover{
+		&:hover,
+		&:active,
+		&:focus{
 			img{
 				opacity: 1;
 				-webkit-transform: scale3d(1.05,1.05,1);
