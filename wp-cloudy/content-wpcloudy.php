@@ -31,6 +31,7 @@
 	</div>
 
 	<!-- Today -->
+	<!-- We aren't using any of this -->
 	<?php //echo $wpc_html_today_temp_start; ?>
 		<?php //echo $wpc_html_today_temp_day; ?>
 		<?php //echo $wpc_html_today_sun; ?>

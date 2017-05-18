@@ -2,9 +2,9 @@
 /* Template Name: Search Results Page */
 get_header(); ?>
 
-
-<main id="content">
-	<?php get_template_part('partials/banner-interior')?>
+<?php get_template_part('partials/banner-interior')?>
+<main id="content" class="search-page">
+	
 	<div class="container body-content">
 		<div class="row">
 			<div class="columns-7 body-copy">
@@ -29,7 +29,7 @@ get_header(); ?>
 					<h1>Nothing Found</h1>
 					<p>Nothing matched your search criteria. Please try again with some different keywords.</p>
 
-					<?php get_search_form(); ?>
+					<?php get_template_part('partials/searchform') ?>
 				<?php endif; ?>
 			</div>
 			<?php get_template_part('partials/side-bar') ?>

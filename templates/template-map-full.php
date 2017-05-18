@@ -5,12 +5,12 @@ get_header();
 
 ?>
 
-<main id="content" style="height:95vh;" data-category="all">
+<main id="content" class="map-full" data-category="all">
 	<h1 class="sr-only">Full Hardy County Map</h1>
 	<div class="map-container">
-		<div class="full-map" id="map" style="height:95vh; width:100%; position:relative; left:0; top:0;">
+		<div class="full-map" id="map">
 		</div>
-		<div class="map-legend columns-2" style="background-color:white; position:absolute; "><!-- bottom:2em; left:2em; -->
+		<div class="map-legend columns-2"><!-- bottom:2em; left:2em; -->
 			<div class="legend-title">Map Color Key <span class="indicator">&#10165;</span></div>
 			<ul class="map-key">
 				<li class="key eat-drink">
