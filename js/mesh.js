@@ -260,14 +260,14 @@ $('.with-map').click(function(){
   //$('.banner-content').slideDown(50);
   $clk_ctr++;
   if($clk_ctr == 1){
-  setTimeout(function() {
-  $('.banner-content').animate({
-    position:'absolute',
-    bottom:'-500px',
-    opacity:'0'
-  },400);
-}, 500);
-}
+    setTimeout(function() {
+    $('.banner-content').animate({
+      position:'absolute',
+      bottom:'-500px',
+      opacity:'0'
+    },400);
+  }, 500);
+  });
 }else{
   $clk_ctr=0;
   setTimeout(function() {
