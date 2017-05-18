@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
 //$(window).resize(
     function _resizeW(){
       _windowResize = $(window).width();
-      console.log(_windowResize);
+      //console.log(_windowResize);
       _bodyResize = $('body').width();
       //console.log(_windowResize);
   // if (_windowResize > 1070){

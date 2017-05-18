@@ -44,7 +44,7 @@
 	</script>
 
 </head>
-<script>var $dir = '<?php echo get_template_directory_uri(); ?>'; console.log($dir);</script>
+<script>var $dir = '<?php echo get_template_directory_uri(); ?>';  </script>
 <body <?php body_class(); ?>>
  
 	<header <?php if(is_page_template('templates/template-listing.php') || is_page_template('templates/template-map-full.php')){?> class="has-overlay" <?php } ?>>

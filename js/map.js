@@ -140,12 +140,12 @@
             //This is just the title of the blog post
             title: title,
             //Style the dang label
-            label: {
-              //text:String(ctr+1),
-              color:"#ffffff",
-              fontSize:"2em",
-              fontFamily:"alternate-gothic-no-1-d"
-            },
+            // label: {
+            //   //text:String(ctr+1),
+            //   color:"#ffffff",
+            //   fontSize:"2em",
+            //   fontFamily:"alternate-gothic-no-1-d"
+            // },
             position: new google.maps.LatLng(data[i]['coordinates'][0], data[i]['coordinates'][1]),
             map: map,
             //Create the custom icon
