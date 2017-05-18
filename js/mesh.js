@@ -253,11 +253,13 @@ $('.with-map').hover(function(){
   },400);
   }, 300);
 }); 
-
+var $clk_ctr=0;
 if (windowW < 768){
 $('.with-map').click(function(){
   //console.log('Map hovered');
   //$('.banner-content').slideDown(50);
+  $clk_ctr++;
+  if($clk_ctr == 1){
   setTimeout(function() {
   $('.banner-content').animate({
     position:'absolute',
@@ -265,7 +267,9 @@ $('.with-map').click(function(){
     opacity:'0'
   },400);
 }, 500);
-},function(){
+}
+}else{
+  $clk_ctr=0;
   setTimeout(function() {
    //$('.banner-content').slideDown(50);
    $('.banner-content').animate({
@@ -275,6 +279,11 @@ $('.with-map').click(function(){
   },400);
   }, 300);
 }); 
+}
+
+
+function(){
+  
 }
 //Full Map Color Key functionality
 var $ctr=0;
