@@ -56,6 +56,15 @@
 <?php if(is_page_template('templates/template-listing.php') || is_page_template('templates/template-map-full.php')){?>
 <!-- <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script> -->
 
+<?php 
+//Notes on Google maps
+// 1. Most examples add "initmap" as a callback in the api script call.  Unless you are calling your function "initmap",
+//    or you want to update the end of the api string, don't call initmap as a callback
+// 2. Do not use async or defer in any google calls, or your own script calls
+// 3. While calling the map script from google at the end of the body is fine, make sure that any accompanying script files
+//    are called after the map.google script has loaded
+?>
+
  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8"></script>
  
 <?php } ?>
