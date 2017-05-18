@@ -233,6 +233,7 @@ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && lo
     }
   });
 
+//Desktop version, works on hover
 $('.with-map').hover(function(){
   //console.log('Map hovered');
   //$('.banner-content').slideDown(50);
@@ -253,38 +254,35 @@ $('.with-map').hover(function(){
   },400);
   }, 300);
 }); 
+
+//Mobile version works on touch/click
 var $clk_ctr=0;
 if (windowW < 768){
-$('.with-map').click(function(){
-  //console.log('Map hovered');
-  //$('.banner-content').slideDown(50);
-  $clk_ctr++;
-  if($clk_ctr == 1){
-    setTimeout(function() {
-    $('.banner-content').animate({
-      position:'absolute',
-      bottom:'-500px',
-      opacity:'0'
-    },400);
-  }, 500);
-  });
-}else{
-  $clk_ctr=0;
-  setTimeout(function() {
-   //$('.banner-content').slideDown(50);
-   $('.banner-content').animate({
-    position:'relative',
-    bottom:'',
-    opacity:'1'
-  },400);
-  }, 300);
-}); 
-}
-
-
-// function(){
+  $('.with-map').click(function(){
+    $clk_ctr++;
+    if($clk_ctr == 1){
+      setTimeout(function() {
+      $('.banner-content').animate({
+        position:'absolute',
+        bottom:'-500px',
+        opacity:'0'
+      },400);//end animate
+    }, 500); //end setTimeout
+    }else{
+      $clk_ctr=0;
+      setTimeout(function() {
+       //$('.banner-content').slideDown(50);
+         $('.banner-content').animate({
+            position:'relative',
+            bottom:'',
+            opacity:'1'
+          },400);//end animate
+        }, 300); //end setTimeout
+    }
+  }); //end click
+} //end if
   
-}
+//}
 //Full Map Color Key functionality
 var $ctr=0;
 $('.legend-title').click(function(){
