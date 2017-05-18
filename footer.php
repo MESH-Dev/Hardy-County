@@ -10,10 +10,10 @@
 						<div class="row">
 						<?php echo do_shortcode('[mc4wp_form id="29"]'); ?>
 						</div>
-						<p class="mail-statement row">
+						<!-- <p class="mail-statement row">
 							Stay in the loop with the occasional email update.<br>
 							We promise not to overload your inbox and your email is confidential.
-						</p>
+						</p> -->
 					</div>
 					<div class="search columns-4 offset-by-1">
 						<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">

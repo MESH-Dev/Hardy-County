@@ -1277,14 +1277,15 @@ footer .signature {
   }
 }
 /* line 44, sass/modules/_footer.scss */
-footer .mail-statement {
+footer .mail-statement,
+footer .mc4wp-alert p {
   margin-top: 5px;
   font-size: 1.5em;
   font-family: 'adelle-condensed';
   font-weight: 700;
   font-style: normal;
 }
-/* line 51, sass/modules/_footer.scss */
+/* line 52, sass/modules/_footer.scss */
 footer .subscribe-form,
 footer #searchform {
   position: relative;
@@ -1294,7 +1295,7 @@ footer #searchform {
   border-bottom: 2px solid #fff;
   overflow: hidden;
 }
-/* line 72, sass/modules/_footer.scss */
+/* line 73, sass/modules/_footer.scss */
 footer .subscribe-form .focus-bg,
 footer #searchform .focus-bg {
   display: block;
@@ -1308,13 +1309,13 @@ footer #searchform .focus-bg {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 86, sass/modules/_footer.scss */
+/* line 87, sass/modules/_footer.scss */
 footer .subscribe-form .form,
 footer #searchform .form {
   display: inline-block;
   float: left;
 }
-/* line 90, sass/modules/_footer.scss */
+/* line 91, sass/modules/_footer.scss */
 footer .subscribe-form button,
 footer #searchform button {
   width: 6%;
@@ -1334,17 +1335,17 @@ footer #searchform button {
   transition: all 0.25s ease-in-out;
   padding: 0;
 }
-/* line 109, sass/modules/_footer.scss */
+/* line 110, sass/modules/_footer.scss */
 footer .subscribe-form button.search-submit,
 footer #searchform button.search-submit {
   background-image: url("img/search-icon.png");
 }
-/* line 121, sass/modules/_footer.scss */
+/* line 122, sass/modules/_footer.scss */
 footer .subscribe-form .form.input,
 footer #searchform .form.input {
   width: 95%;
 }
-/* line 123, sass/modules/_footer.scss */
+/* line 124, sass/modules/_footer.scss */
 footer .subscribe-form .form.input input,
 footer #searchform .form.input input {
   position: absolute;
@@ -1358,62 +1359,62 @@ footer #searchform .form.input input {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 142, sass/modules/_footer.scss */
+/* line 143, sass/modules/_footer.scss */
 footer .subscribe-form .form.input input:focus {
   color: #292929;
 }
-/* line 143, sass/modules/_footer.scss */
+/* line 144, sass/modules/_footer.scss */
 footer .subscribe-form .form.input input:focus ~ .focus-bg {
   top: 0;
 }
-/* line 147, sass/modules/_footer.scss */
+/* line 148, sass/modules/_footer.scss */
 footer .subscribe-form .form.input input:focus #submit {
   color: #292929;
 }
-/* line 150, sass/modules/_footer.scss */
+/* line 151, sass/modules/_footer.scss */
 footer .subscribe-form .form.input input:focus ~ button {
   color: #292929;
 }
-/* line 158, sass/modules/_footer.scss */
+/* line 159, sass/modules/_footer.scss */
 footer #searchform .form.input input:focus {
   color: #292929;
 }
-/* line 159, sass/modules/_footer.scss */
+/* line 160, sass/modules/_footer.scss */
 footer #searchform .form.input input:focus ~ .focus-bg {
   top: 0;
 }
-/* line 163, sass/modules/_footer.scss */
+/* line 164, sass/modules/_footer.scss */
 footer #searchform .form.input input:focus #submit {
   color: #292929;
 }
-/* line 166, sass/modules/_footer.scss */
+/* line 167, sass/modules/_footer.scss */
 footer #searchform .form.input input:focus ~ button {
   color: #292929;
 }
-/* line 168, sass/modules/_footer.scss */
+/* line 169, sass/modules/_footer.scss */
 footer #searchform .form.input input:focus ~ button.search-submit {
   background-image: url("img/search-icon-dark.png");
 }
 @media (max-width: 750px) {
-  /* line 156, sass/modules/_footer.scss */
+  /* line 157, sass/modules/_footer.scss */
   footer #searchform {
     margin-bottom: 2em;
   }
 }
 @media (max-width: 750px) {
-  /* line 179, sass/modules/_footer.scss */
+  /* line 180, sass/modules/_footer.scss */
   footer .signup {
     margin: 2em 0;
   }
 }
 @media (max-width: 750px) {
-  /* line 185, sass/modules/_footer.scss */
+  /* line 186, sass/modules/_footer.scss */
   footer .cta {
     margin-bottom: 2em;
   }
 }
 
-/* line 193, sass/modules/_footer.scss */
+/* line 194, sass/modules/_footer.scss */
 input {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -1422,7 +1423,7 @@ input {
   font-size: 2em;
 }
 
-/* line 199, sass/modules/_footer.scss */
+/* line 200, sass/modules/_footer.scss */
 input::-webkit-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -1430,7 +1431,7 @@ input::-webkit-input-placeholder {
   color: #FFFFFF;
 }
 
-/* line 204, sass/modules/_footer.scss */
+/* line 205, sass/modules/_footer.scss */
 input::-moz-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -1438,7 +1439,7 @@ input::-moz-placeholder {
   color: #FFFFFF;
 }
 
-/* line 209, sass/modules/_footer.scss */
+/* line 210, sass/modules/_footer.scss */
 input:-ms-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -1446,7 +1447,7 @@ input:-ms-input-placeholder {
   color: #FFFFFF;
 }
 
-/* line 214, sass/modules/_footer.scss */
+/* line 215, sass/modules/_footer.scss */
 input:-moz-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
@@ -1454,7 +1455,7 @@ input:-moz-placeholder {
   color: #FFFFFF;
 }
 
-/* line 219, sass/modules/_footer.scss */
+/* line 220, sass/modules/_footer.scss */
 input::webkit-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;

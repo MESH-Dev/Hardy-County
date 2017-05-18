@@ -131,21 +131,22 @@ get_header();
 					$today=date('Ymd');
 					$currMonth = date('m');
 					$currYear = date('Y');
+					$oneYearOn = date('Ymd',strtotime(date("Ymd", time()) . " + 364 day"));
 					$args = array(
 						'post_type' => 'event',
-						'posts_per_page' => '-1',
+						'posts_per_page' => '12',
 						'orderby'=>'meta_value_num',
 						'order'=>'ASC',
 						'meta_key'=>'start_date',
-						// 'date_query'=>array(
-						// 		'month'=>'12',
-						// 	),
+						//Compare $today value and $oneYearOn value, and only sho events that 
+						//appear between those dates (basically a year's worth of events at any given time)
 						'meta_query' => array(
 								array(
 										'key'=>'start_date',
-										'compare'=>'>=',
-										'value'=>$today,
-									)
+										'compare'=>'BETWEEN',
+										'value'=>array($today, $oneYearOn)
+									),
+								
 							)
 					);
 
@@ -153,10 +154,10 @@ get_header();
 					$the_query = new WP_Query( $args );
 
 					if ($the_query->have_posts()){
-						$month_arr= array();
-						$evt_cnt = 1;
-						$month_num = $currMonth;
-						$first_loop = 0; 
+						//$month_arr= array();
+						//$evt_cnt = 1;
+						//$month_num = $currMonth;
+						//$first_loop = 0; 
 						while($the_query->have_posts()) { $the_query->the_post();
 							//ACF fields from post
 							// $event_city = get_field('city');
@@ -253,7 +254,6 @@ get_header();
 							<h6>Have an event that you want to tell people about? Fill out a form to get your post out there for people to attend.</h6>
 							<?php 
 								$event_form = get_field('submit_form_url', 'options');
-								//var_dump($event_form);
 							?>
 							<a href="<?php echo $event_form; ?>">
 								<h5>Share it with us! &#10165;</h5>
