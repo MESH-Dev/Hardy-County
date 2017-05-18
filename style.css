@@ -3926,6 +3926,11 @@ img {
   overflow: hidden;
 }
 /* line 2168, sass/modules/_layout.scss */
+.is-404 #searchform input,
+.search-page #searchform input {
+  color: #292929;
+}
+/* line 2172, sass/modules/_layout.scss */
 .is-404 #searchform input::-webkit-input-placeholder,
 .search-page #searchform input::-webkit-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
@@ -3933,7 +3938,7 @@ img {
   font-style: normal;
   color: #292929;
 }
-/* line 2173, sass/modules/_layout.scss */
+/* line 2177, sass/modules/_layout.scss */
 .is-404 #searchform input::-moz-placeholder,
 .search-page #searchform input::-moz-placeholder {
   font-family: 'alternate-gothic-no-1-d';
@@ -3941,7 +3946,7 @@ img {
   font-style: normal;
   color: #292929;
 }
-/* line 2178, sass/modules/_layout.scss */
+/* line 2182, sass/modules/_layout.scss */
 .is-404 #searchform input:-ms-input-placeholder,
 .search-page #searchform input:-ms-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
@@ -3949,7 +3954,7 @@ img {
   font-style: normal;
   color: #292929;
 }
-/* line 2183, sass/modules/_layout.scss */
+/* line 2187, sass/modules/_layout.scss */
 .is-404 #searchform input:-moz-placeholder,
 .search-page #searchform input:-moz-placeholder {
   font-family: 'alternate-gothic-no-1-d';
@@ -3957,7 +3962,7 @@ img {
   font-style: normal;
   color: #292929;
 }
-/* line 2188, sass/modules/_layout.scss */
+/* line 2192, sass/modules/_layout.scss */
 .is-404 #searchform input::webkit-input-placeholder,
 .search-page #searchform input::webkit-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
@@ -3965,7 +3970,7 @@ img {
   font-style: normal;
   color: #292929;
 }
-/* line 2193, sass/modules/_layout.scss */
+/* line 2197, sass/modules/_layout.scss */
 .is-404 #searchform .focus-bg,
 .search-page #searchform .focus-bg {
   display: block;
@@ -3979,13 +3984,13 @@ img {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 2207, sass/modules/_layout.scss */
+/* line 2211, sass/modules/_layout.scss */
 .is-404 #searchform .form,
 .search-page #searchform .form {
   display: inline-block;
   float: left;
 }
-/* line 2211, sass/modules/_layout.scss */
+/* line 2215, sass/modules/_layout.scss */
 .is-404 #searchform button,
 .search-page #searchform button {
   width: 6%;
@@ -4005,17 +4010,17 @@ img {
   transition: all 0.25s ease-in-out;
   padding: 0;
 }
-/* line 2230, sass/modules/_layout.scss */
+/* line 2234, sass/modules/_layout.scss */
 .is-404 #searchform button.search-submit,
 .search-page #searchform button.search-submit {
   background-image: url("img/search-icon-dark.png");
 }
-/* line 2242, sass/modules/_layout.scss */
+/* line 2246, sass/modules/_layout.scss */
 .is-404 #searchform .form.input,
 .search-page #searchform .form.input {
   width: 95%;
 }
-/* line 2244, sass/modules/_layout.scss */
+/* line 2248, sass/modules/_layout.scss */
 .is-404 #searchform .form.input input,
 .search-page #searchform .form.input input {
   position: absolute;
@@ -4029,40 +4034,40 @@ img {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 2264, sass/modules/_layout.scss */
+/* line 2268, sass/modules/_layout.scss */
 .is-404 #searchform .form.input input:focus,
 .search-page #searchform .form.input input:focus {
   color: #292929;
 }
-/* line 2265, sass/modules/_layout.scss */
+/* line 2269, sass/modules/_layout.scss */
 .is-404 #searchform .form.input input:focus ~ .focus-bg,
 .search-page #searchform .form.input input:focus ~ .focus-bg {
   top: 0;
 }
-/* line 2269, sass/modules/_layout.scss */
+/* line 2273, sass/modules/_layout.scss */
 .is-404 #searchform .form.input input:focus #submit,
 .search-page #searchform .form.input input:focus #submit {
   color: #292929;
 }
-/* line 2272, sass/modules/_layout.scss */
+/* line 2276, sass/modules/_layout.scss */
 .is-404 #searchform .form.input input:focus ~ button,
 .search-page #searchform .form.input input:focus ~ button {
   color: #292929;
 }
-/* line 2274, sass/modules/_layout.scss */
+/* line 2278, sass/modules/_layout.scss */
 .is-404 #searchform .form.input input:focus ~ button.search-submit,
 .search-page #searchform .form.input input:focus ~ button.search-submit {
   background-image: url("img/search-icon-dark.png");
 }
 @media (max-width: 750px) {
-  /* line 2262, sass/modules/_layout.scss */
+  /* line 2266, sass/modules/_layout.scss */
   .is-404 #searchform,
   .search-page #searchform {
     margin-bottom: 2em;
   }
 }
 
-/* line 2287, sass/modules/_layout.scss */
+/* line 2291, sass/modules/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -4076,66 +4081,66 @@ img {
 
 /* =WordPress Core
 -------------------------------------------------------------- */
-/* line 2300, sass/modules/_layout.scss */
+/* line 2304, sass/modules/_layout.scss */
 .alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 2304, sass/modules/_layout.scss */
+/* line 2308, sass/modules/_layout.scss */
 .aligncenter,
 div.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
 
-/* line 2310, sass/modules/_layout.scss */
+/* line 2314, sass/modules/_layout.scss */
 .alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 2315, sass/modules/_layout.scss */
+/* line 2319, sass/modules/_layout.scss */
 .alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 2320, sass/modules/_layout.scss */
+/* line 2324, sass/modules/_layout.scss */
 p img.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 2324, sass/modules/_layout.scss */
+/* line 2328, sass/modules/_layout.scss */
 p img.aligncenter,
 div.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
 
-/* line 2330, sass/modules/_layout.scss */
+/* line 2334, sass/modules/_layout.scss */
 p img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 2335, sass/modules/_layout.scss */
+/* line 2339, sass/modules/_layout.scss */
 p img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
 
-/* line 2340, sass/modules/_layout.scss */
+/* line 2344, sass/modules/_layout.scss */
 a img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
 
-/* line 2345, sass/modules/_layout.scss */
+/* line 2349, sass/modules/_layout.scss */
 a img.alignnone {
   margin: 5px 20px 20px 0;
 }
 
-/* line 2349, sass/modules/_layout.scss */
+/* line 2353, sass/modules/_layout.scss */
 a img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;

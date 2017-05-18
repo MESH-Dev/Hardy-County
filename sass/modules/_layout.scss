@@ -2165,6 +2165,10 @@
 			// transition: all 0.25s ease-in-out;
 			// }
 
+			input{
+				color:$std_black;
+			}
+
 			input::-webkit-input-placeholder {
 				@include alt_gothic_reg;
 			    color:$std_black;
