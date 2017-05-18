@@ -282,7 +282,7 @@ $('.with-map').click(function(){
 }
 
 
-function(){
+// function(){
   
 }
 //Full Map Color Key functionality
