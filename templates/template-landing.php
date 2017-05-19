@@ -179,7 +179,13 @@ get_header(); ?>
 								</div>
 							</div>
 						</div>
-						<?php } } wp_reset_query(); ?>
+						<?php }
+						 	}
+						 	 //else{
+						 	 	?>
+						 	<!-- <h2>No events scheduled in this category! See our events page for more events!</h2> -->
+					 	<?php //}
+						  wp_reset_query(); ?>
 					
 						
 					</div>

@@ -290,29 +290,29 @@ $('.legend-title').click(function(){
   $ctr++;
   //console.log($ctr);
   if($ctr==1){
-    $('.map-key').slideDown(100);
+    $('.map-key').slideUp(100);
     $('.map-key').addClass('open');
-    $(this).animate({'margin-bottom':'.5em'}, 50);
+    $(this).animate({'margin-bottom':'0'}, 50);
     $('.indicator')
-        .css({
-        '-moz-transform':'rotate(90deg)',
-        '-webkit-transform':'rotate(90deg)',
-        '-o-transform':'rotate(90deg)',
-        '-ms-transform':'rotate(90deg)',
-        'transform':'rotate(90deg)'
-      })
-  }else{
-    $ctr=0;
-     $('.map-key').slideUp(100);
-     $('.map-key').removeClass('open');
-     $(this).animate({'margin-bottom':'0'}, 50);
-     $('.indicator')
         .css({
         '-moz-transform':'rotate(-90deg)',
         '-webkit-transform':'rotate(-90deg)',
         '-o-transform':'rotate(-90deg)',
         '-ms-transform':'rotate(-90deg)',
         'transform':'rotate(-90deg)'
+      })
+  }else{
+    $ctr=0;
+     $('.map-key').slideDown(100);
+     $('.map-key').removeClass('open');
+     $(this).animate({'margin-bottom':'.5em'}, 50);
+     $('.indicator')
+        .css({
+        '-moz-transform':'rotate(90deg)',
+        '-webkit-transform':'rotate(90deg)',
+        '-o-transform':'rotate(90deg)',
+        '-ms-transform':'rotate(90deg)',
+        'transform':'rotate(90deg)'
       })
   }
 })
