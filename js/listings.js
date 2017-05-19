@@ -46,7 +46,7 @@
     
     //The JSON loop, parses the listings.json file for the information we need to make the map
     jQuery.getJSON(listingsFile).success(function(data) {
-      var ctr = 0;
+      var ctr = 1;
             // Loop through the JSON file adding the markers
       for (var i = 0; i < data.length; i++) {
         //console.log(data[i]['listing_category'][0]['slug']);
@@ -124,7 +124,7 @@
         
         //Create the html for the infoWindow
         //var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title"><a href="#'+slug+'">'+ data[i]['title'] + '</a></span></div>';
-        var infoWindowContent = '<div class="map-marker-title '+type_class+'"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title">'+ data[i]['title'] + '</span><span class="directions cta"><a class="cta-link" href="'+$link+'" target="_blank">Get Directions &#10165;</a></span></div>';
+        var infoWindowContent = '<div class="map-marker-title '+type_class+'"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title">'+ctr+ '. ' + data[i]['title'] + '</span><span class="directions cta"><a class="cta-link" href="'+$link+'" target="_blank">Get Directions &#10165;</a></span></div>';
 
         //console.log(infoWindowContent);
 
@@ -146,7 +146,7 @@
             title: title,
             //Style the dang label
             label: {
-              text:String(ctr+1),
+              text:String(ctr),
               color:"#ffffff",
               fontSize:"2em",
               fontFamily:"alternate-gothic-no-1-d"
@@ -219,8 +219,8 @@
       //   }
 
       //   $scope.explore.push(marker);
-        ctr = ctr+1;
-
+        //ctr = ctr+1;
+        ctr++;
         } // end else
 
       }//end for loop
@@ -229,7 +229,7 @@
   }
 
 var listing_cat = jQuery('.listing-grid').attr('data-category');
-var full = jQuery('main').attr('data-category');
+//var full = jQuery('main').attr('data-category');
 //console.log(full);
 // console.log(listing_cat);
 
