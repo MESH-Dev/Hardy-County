@@ -22,35 +22,35 @@ jQuery(document).ready(function($){
   //Homepage parallax
 
   var windowW = $(window).width();
-  var _windowResize;
- //Calculate window size 
-//$(window).resize(
-    function _resizeW(){
-      _windowResize = $(window).width();
-      //console.log(_windowResize);
-      _bodyResize = $('body').width();
-      //console.log(_windowResize);
-  // if (_windowResize > 1070){
-  //       //console.log(_windowResize);
-  //       $('.has-parallax').parallax("50%",.5);
-  //     }  
-}
+//   var _windowResize;
+//  //Calculate window size 
+// //$(window).resize(
+//     function _resizeW(){
+//       _windowResize = $(window).width();
+//       //console.log(_windowResize);
+//       _bodyResize = $('body').width();
+//       //console.log(_windowResize);
+//   // if (_windowResize > 1070){
+//   //       //console.log(_windowResize);
+//   //       $('.has-parallax').parallax("50%",.5);
+//   //     }  
+// }
 
-_resizeW(_windowResize);
-$(window).resize(_resizeW(_windowResize));
+// _resizeW(_windowResize);
+// $(window).resize(_resizeW(_windowResize));
 
-function _parallax(e){
-  _resizeW(_windowResize);
-  $(window).resize(_resizeW(_windowResize));
-  if(_windowResize > 1000){
-    $('.has-parallax').parallax("50%",.5);
-  }else{
-    $('.has-parallax').removeClass('has-parallax');
-  }
-}
+// function _parallax(e){
+//   _resizeW(_windowResize);
+//   $(window).resize(_resizeW(_windowResize));
+//   if(_windowResize > 1000){
+//     $('.has-parallax').parallax("50%",.5);
+//   }else{
+//     $('.has-parallax').removeClass('has-parallax');
+//   }
+// }
 
-_parallax();
-$(window).resize(_parallax);
+// _parallax();
+// $(window).resize(_parallax);
 
 //Run funciton on load and resize
 //$(document).ready(_resizeW(_windowResize));
@@ -59,14 +59,14 @@ $(window).resize(_parallax);
 
 
 
-  // if (windowW > 1070){
-  //   $('.panel').each(function(i){
-  //       i = i++;
-  //       $(this).parallax("50%", .05);
-  //     });   
+  if (windowW > 1070){
+    $('.panel').each(function(i){
+        i = i++;
+        $(this).parallax("50%", .05);
+      });   
 
-  //   $('.has-parallax').parallax("50%",.5);
-  // }
+    $('.has-parallax').parallax("50%",.5);
+  }
 
   $('#masonry').masonry({
   // set itemSelector so .grid-sizer is not used in layout
@@ -78,7 +78,7 @@ $(window).resize(_parallax);
 
   //Force divs in homepage grid to be square
 //Setup variables to hold our sizes
-var gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7;
+var gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7, $wW;
 
 //Grab the width of each element
 function gi_resize(){
@@ -95,18 +95,19 @@ function gi_resize(){
   //console.log(cp6);
   //cp6_alt = $('.columns-6')
   cp7 = $('.columns-7.trip').width();
+  //$wW = $(window).width();
 
 
   //return gi2, gi3, gi4;
 }
 //Run the function above at document ready and on a window resize event
- $(document).ready(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7));
- $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7));
+ $(document).ready(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7, $wW));
+ $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7, $wW));
 
 //Apply our widths to the height of selected elements either on load, or on resize
 function _resize(){
-  gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7);
-   $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7));
+  gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7, $wW);
+   $(window).resize(gi_resize(gi2, gi3, gi4, gi5, gi6, gi7, cp4, cp5, cp6, cp7,$wW));
 
  //  console.log("Width 2: "+gi2);
 	// console.log("Width 3: "+gi3);
@@ -130,7 +131,7 @@ function _resize(){
   $('.grid-item-width6.nest .nested').css({height: gi2});
   $('.grid-item-width7').css({height: (gi5)});
   $('.sidebar-io').css({height:cp4});
-
+  console.log($wW);
 }
 
 //Run the function on load & on resize
@@ -219,19 +220,19 @@ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && lo
   highlights the target element. This is necessary because webkit does not set focus as it should. If 
   the hash is empty (the user hit the back button after activating an in-page link) focus is set to body.
   */
-  $(window).bind('hashchange', function() {
-    var hash = "#"+window.location.hash.replace(/^#/,'');
-    if (hash!="#") {
-      $(hash).attr('tabindex', -1).on('blur focusout', function () {
-        $(this).removeAttr('tabindex');
-      }).focus().addClass('redFade');
-    }
-    else {
-      $("#headcontainer").attr('tabindex', -1).on('blur focusout', function () {
-        $(this).removeAttr('tabindex');
-      }).focus();
-    }
-  });
+  // $(window).bind('hashchange', function() {
+  //   var hash = "#"+window.location.hash.replace(/^#/,'');
+  //   if (hash!="#") {
+  //     $(hash).attr('tabindex', -1).on('blur focusout', function () {
+  //       $(this).removeAttr('tabindex');//.removeClass('yellowFade');
+  //       }).focus().addClass('yellowFade');
+  //   }
+  //   else {
+  //     $("#headcontainer").attr('tabindex', -1).on('blur focusout', function () {
+  //       $(this).removeAttr('tabindex');
+  //     }).focus();
+  //   }
+  // });
 
 //Desktop version, works on hover
 $('.with-map').hover(function(){

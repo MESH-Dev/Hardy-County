@@ -129,7 +129,7 @@ get_header();
 								$tag_name = $tag->name;
 							}
 						}else{
-							$tag_name = "Other";
+							$tag_name = "&nbsp;";
 						}
 
 						$title = get_the_title();

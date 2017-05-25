@@ -1695,6 +1695,7 @@
 		.tags{
 			text-transform:uppercase;
 			font-size:1.4em;
+			height:2em;
 			@include adelle_thin;
 		}
 
@@ -1879,30 +1880,66 @@
 //Full Map infowindow colors
 .outside-in-iw{
 	.section,.list-title{
-		color:$ml_teal;
+		a{
+			color:$ml_teal;
+			&:hover,
+			&:active,
+			&:focus{
+				opacity:.7;
+			}
+		}
+		
 	}
 }
 
 .culture-iw{
 	.section,.list-title{
-		color:$ml_green;
+		a{
+			color:$ml_green;
+			&:hover,
+			&:active,
+			&:focus{
+				opacity:.7;
+			}
+		}	
 	}
 }
 
 .sleep-relax-iw{
 	.section,.list-title{
-		color:$ml_black;
+		a{
+			color:$ml_black;
+			&:hover,
+			&:active,
+			&:focus{
+				opacity:.7;
+			}
+		}	
 	}
 }
 
 .shop-iw{
 	.section,.list-title{
-		color:$ml_red;
+		a{
+			color:$ml_red;
+			&:hover,
+			&:active,
+			&:focus{
+				opacity:.7;
+			}
+		}	
 	}
 }
 .eat-drink-iw{
 	.section,.list-title{
-		color:$ml_orange;
+		a{
+			color:$ml_orange;
+			&:hover,
+			&:active,
+			&:focus{
+				opacity:.7;
+			}
+		}	
 	}
 }
 
@@ -2091,7 +2128,7 @@
 					&:hover,
 					&:active,
 					&:focus{
-						color:$sub_menu_color;
+						text-decoration:underline;
 					}
 				}
 
@@ -2128,14 +2165,14 @@
 				&:hover,
 				&:active,
 				&:focus{
-					color:$sub_menu_color;
+					text-decoration:underline;
 					opacity:1;
 				}
 			}
 			&.current_page_item,
 			&.current-menu-parent{
 				a{
-					color:$sub_menu_color;
+					text-decoration:underline;
 				}
 			}
 		}
@@ -2151,15 +2188,16 @@
 				li{
 					&.current_page_item{
 						a{
-							color:$white;
+							text-decoration:underline;
 						}
 					}
 					a{
 						font-size:2em;
-						color:$sub_menu_color;
+						color:$white;
 						text-transform:uppercase;
 						position:relative;
 						padding-right:23px;
+						text-decoration:none;
 						&:after{
 							content:"\27B5";
 							position:absolute;
@@ -2168,7 +2206,7 @@
 						&:hover,
 						&:active,
 						&:focus{
-							color:$white;
+							text-decoration:underline;
 							opacity:1;
 						}
 					}
@@ -2323,6 +2361,21 @@
 				margin-bottom:2em;
 			}
 		}	
+}
+
+//Animation
+
+.yellowFade{
+	animation: accyellow linear 1s;
+}
+
+@keyframes accyellow{
+  0% {
+    background-color:  #ffff66;
+  }
+  100% {
+    background-color:transparent;
+  }
 }
 
 //Accessibility

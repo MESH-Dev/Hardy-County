@@ -34,8 +34,12 @@ function filter_function_name( $num, $post ) {
 
 //Functions file can't seem to find this function...
 function getInstagram(){
-    $json = file_get_contents('https://api.instagram.com/v1/users/1167443738/media/recent?access_token=1167443738.d346c1d.1213de64f26e485e8ffe33eab03e1905');
+    //Get Likes  
+    $json = file_get_contents('https://api.instagram.com/v1/users/self/media/liked?access_token=5484662713.fe363d8.a42b970204c040918c2ee52f5c7d9462');
+    //Original - recent posts
+    //$json = file_get_contents('https://api.instagram.com/v1/users/5484662713/media/recent?access_token=5484662713.fe363d8.a42b970204c040918c2ee52f5c7d9462');
     $obj = json_decode($json);
+    var_dump($obj);
     return $obj->data;
 
     //$instagram = getInstagram();

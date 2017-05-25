@@ -243,9 +243,9 @@ get_header();
 
 						<!-- Instagram Block 1 -->
 
-						<a href="<?php echo $instagram[2]->link; ?>" target="_blank">
+						<a href="<?php echo $instagram[0]->link; ?>" target="_blank">
 							<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
-							<div class="hg grid-item grid-item-width2 instagram no-padding"style="background-image:url('<?php echo $instagram[2]->images->standard_resolution->url; ?>');">
+							<div class="hg grid-item grid-item-width2 instagram no-padding"style="background-image:url('<?php echo $instagram[0]->images->standard_resolution->url; ?>');">
 								<div class="instagram-icon">
 									<i class="fa fa-fw fa-instagram fa-2x"></i>
 								</div>
@@ -446,9 +446,9 @@ get_header();
 						<div class="hg grid-item grid-item-width2 nest">
 
 							<!-- Instagram Block 2 -->
-							<a href="<?php echo $instagram[3]->link; ?>" target="_blank">
+							<a href="<?php echo $instagram[1]->link; ?>" target="_blank">
 								<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
-								<div class="hg nested instagram no-padding" style="background-image:url('<?php echo $instagram[3]->images->standard_resolution->url; ?>');">
+								<div class="hg nested instagram no-padding" style="background-image:url('<?php echo $instagram[1]->images->standard_resolution->url; ?>');">
 									<div class="instagram-icon">
 										<i class="fa fa-fw fa-instagram fa-2x"></i>
 									</div>
@@ -679,9 +679,9 @@ get_header();
 						<?php wp_reset_postdata(); } ?>
 
 						<!-- Instagram block  3-->
-						<a href="<?php echo $instagram[4]->link; ?>" target="_blank">
+						<a href="<?php echo $instagram[2]->link; ?>" target="_blank">
 							<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
-							<div class="hg grid-item grid-item-width2 instagram no-padding" style="background-image:url('<?php echo $instagram[4]->images->standard_resolution->url; ?>');">
+							<div class="hg grid-item grid-item-width2 instagram no-padding" style="background-image:url('<?php echo $instagram[2]->images->standard_resolution->url; ?>');">
 								<div class="instagram-icon">
 									<i class="fa fa-fw fa-instagram fa-2x"></i>
 								</div>
