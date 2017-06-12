@@ -757,20 +757,42 @@
 	}
 
 	.instagram{
-		background-size:cover;
-		background-repeat:no-repeat;
-		background-position:center center;
+		overflow:hidden;
 		img{
 			position:relative;
 			max-width:100%;
 			min-height:100%;
 		}
+
+		.portrait{
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-position:center center;
+			transition:all .35s ease-in-out;
+			height:100%;
+		}
 		.instagram-icon{
 			position:absolute;
 			bottom:10px;
 			left:10px;
+			transition:all .35s ease-in-out;
 			i{
 				color:white;
+			}
+		}
+
+		&:hover,
+		&:focus,
+		&:active{
+			.portrait{
+				opacity: 1;
+				-webkit-transform: scale(1.05,1.05);
+				transform: scale(1.05,1.05);
+			}
+
+			.instagram-icon{
+			    opacity: 0;
+    			bottom: 3em;
 			}
 		}
 	}
@@ -1299,6 +1321,7 @@
 		width: 30%;
 		min-width: 325px;
 		margin-right: 40px;
+		height:250px;
 
 		.date-item{
 			max-width:25%;

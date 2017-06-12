@@ -245,9 +245,11 @@ get_header();
 
 						<a href="<?php echo $instagram[0]->link; ?>" target="_blank">
 							<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
-							<div class="hg grid-item grid-item-width2 instagram no-padding"style="background-image:url('<?php echo $instagram[0]->images->standard_resolution->url; ?>');">
-								<div class="instagram-icon">
-									<i class="fa fa-fw fa-instagram fa-2x"></i>
+							<div class="hg grid-item grid-item-width2 instagram no-padding">
+								<div class="portrait" style="background-image:url('<?php echo $instagram[0]->images->standard_resolution->url; ?>');">
+									<div class="instagram-icon">
+										<i class="fa fa-fw fa-instagram fa-2x"></i>
+									</div>
 								</div>
 							</div>
 						</a>
@@ -448,9 +450,11 @@ get_header();
 							<!-- Instagram Block 2 -->
 							<a href="<?php echo $instagram[1]->link; ?>" target="_blank">
 								<span class="sr-only">Find out more about this image, and follow us on Instagram</span>
-								<div class="hg nested instagram no-padding" style="background-image:url('<?php echo $instagram[1]->images->standard_resolution->url; ?>');">
-									<div class="instagram-icon">
-										<i class="fa fa-fw fa-instagram fa-2x"></i>
+								<div class="hg nested instagram no-padding" >
+									<div class="portrait" style="background-image:url('<?php echo $instagram[1]->images->standard_resolution->url; ?>');">
+										<div class="instagram-icon">
+											<i class="fa fa-fw fa-instagram fa-2x"></i>
+										</div>
 									</div>
 								</div>
 							</a>

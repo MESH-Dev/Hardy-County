@@ -126,40 +126,42 @@ get_header();
 				</div>
 			</div><!-- end columns-12 -->
 		</div> <!-- end row -->
-		<div class="event-listing row">
+		<div class="event-listing">
 				<?php 
 					$today=date('Ymd');
-					//var_dump($today);
 					$currMonth = date('m');
 					$currYear = date('Y');
 					$oneYearOn = date('Ymd',strtotime(date("Ymd", time()) . " + 364 day"));
-					//var_dump($oneYearOn);
 					$args = array(
 						'post_type' => 'event',
 						'posts_per_page' => '-1',
+						'meta_key'=>'start_date',
 						'orderby'=>'meta_value_num',
 						'order'=>'ASC',
-						'meta_key'=>'start_date',
-						//Compare $today value and $oneYearOn value, and only sho events that 
-						//appear between those dates (basically a year's worth of events at any given time)
+
+						// 'date_query'=>array(
+						// 		'month'=>'12',
+						// 	),
 						'meta_query' => array(
 								array(
 										'key'=>'start_date',
 										'compare'=>'BETWEEN',
 										'value'=>array($today, $oneYearOn)
-									),
-								
+									)
 							)
 					);
 
+
+
 					$curr_label = '';
 					$the_query = new WP_Query( $args );
+					$change_month_check = '';
+
+					
 
 					if ($the_query->have_posts()){
-						//$month_arr= array();
-						//$evt_cnt = 1;
-						//$month_num = $currMonth;
-						//$first_loop = 0; 
+						$evt_cnt=0;
+						$first_loop = 0; 
 						while($the_query->have_posts()) { $the_query->the_post();
 							//ACF fields from post
 							// $event_city = get_field('city');
@@ -174,6 +176,7 @@ get_header();
 							$bare_event_str = preg_replace('#^https?://#', '', $site);
 							$phone = get_field('phone_number', $post->ID);
 							$hc_event = get_field('hardy_county_event', $post->ID);
+							//$evt_cnt++;
 
 							//Date calculations from ACF fields
  							$start_date = get_field('start_date', false, false);
@@ -184,15 +187,27 @@ get_header();
 							$event_year = $s_date->format('Y');
 							$event_month_text = $s_date->format('F');
 							$event_month_abbr = strtolower($s_date->format('M'));
-							$month_arr[] = (string)strtolower($event_month_text);
-							//var_dump($month_arr);
 							
 
- 							//while($evt_cnt < 13){
-							?>
-								
-							<div class="events_month row" id="<?php echo $event_month_abbr;  ?>">
-									<h2 class="event-title"><?php echo $event_month_text; ?></h2>
+ 							
+							if($first_loop == 0){ ?>
+								<?php $change_month_check = $event_month_text; ?>
+
+								<div class="events_month" id="<?php echo $event_month_abbr; ?>">
+									<h2 class="event-title">
+										<?php echo $event_month_text; //change this to text! ?>
+									</h2>
+								</div>
+									<!-- <div class="row"> -->
+								<?php $first_loop = 1;
+							}
+							
+							if($event_month_text == $change_month_check){ 
+								 
+								if($evt_cnt % 3 == 0 ){
+									echo '<div class="row">';
+								}
+								?>
 								<div class="single_event columns-4">
 									<div class="date-item">
 										<span class="date-wrap">
@@ -208,45 +223,127 @@ get_header();
 												</span>
 											<?php } ?>
 										</span>
+										
+
 									</div>
 									<!-- <div class="columns-8"> -->
 									<div class="info">
-										<h2><?php //if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>" target="_self"> <?php //} ?><?php the_title(); ?><?php //if ($hc_event == true){ ?></a> <?php //} ?></h2>
+										<h2><?php echo $start_date; if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>" target="_self"> <?php } ?><?php the_title(); ?> <?php echo $evt_cnt; ?> <?php if ($hc_event == true){ ?></a> <?php } ?></h2>
 										<p>
 										<?php 
-										
-											if($address != ''){
-												echo $address;
-												echo '</br>';
-											}
-											if($city != ''){
-												echo $city;
-												echo ' ';
-											}
-											if($zip != ''){
-												echo $zip;
-												echo '</br>';
-											}
-											if($site != ''){?>
-												<a class="site" href="<?php echo $site; ?>" target="_blank"><?php echo $bare_event_str; ?></a>
-											<?php }
-											if ($phone != ''){
-												echo '| <span class="phone">'.$phone.'</span>';
-											}
-											?>
-										</p>
+									   echo $change_month_check . "||" . $event_month_text; //********************
+										if($address != ''){
+											echo $address;
+											echo '</br>';
+										}
+										if($city != ''){
+											echo $city;
+											echo ' ';
+										}
+										if($zip != ''){
+											echo $zip;
+											echo '</br>';
+										}
+										if($site != ''){?>
+											<a href="<?php echo $site; ?>" target="_blank">
+												<?php 
+													if ($site_text == ''){
+														echo $bare_event_str; 
+													}else{
+														echo $site_text;
+													}
+											 	?>
+											</a>
+										<?php }
+										if($site !='' && $phone != ''){
+											echo '| ';
+										}
+										if ($phone != ''){
+											echo '<span class="phone">'.$phone.'</span>';
+										}
+										?></p>
 									</div>
-								</div>
-							</div>
-						<?php //}  //end cnt while
+									 
+								</div> <!-- end single event -->
 
-								} //endwhile ?>
- 
-	 
+						<?php 
+								if(($evt_cnt%3) == 2){
+								
+									echo '</div>'; //close out row
+								}
 
-				<?php } //endif  //} //} 
-					wp_reset_postdata(); 
-				?>
+								$evt_cnt++;
+
+								var_dump($start_date);
+							}
+
+							else{ // Month has changed
+								$change_month_check = $event_month_text;
+								if($evt_cnt %3 != 0){
+									echo "</div>"; // close out previous row (if isnt already)
+								}
+								$evt_cnt=0;
+								
+								?>
+								<div class="events_month" id="<?php echo $event_month_abbr;  ?>">
+									<h2 class="event-title">
+										<?php echo $event_month_text; //change this to text! ?>
+									</h2>
+								</div>	
+								<div class="row">
+									<div class="single_event columns-4">
+										<div class="date-item">
+											<span class="date-wrap">
+												<span class="date-info">
+													<span class="month"><?php echo $s_date->format('M');?></span>
+													<span class="range"><?php echo $s_date->format('d');?></span>
+												</span>
+												<?php if ($end_date > $start_date){ ?>
+													<div class="date-sep"><span>&mdash;</span></div>
+													<span class="date-info">
+														<span class="month"><?php echo $e_date->format('M');?></span>
+														<span class="range"><?php echo $e_date->format('d');?></span>
+													</span>
+												<?php } ?>
+											</span>
+										</div>
+										<!-- <div class="columns-8"> -->
+										<div class="info">
+											<h2><?php if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>" target="_self"> <?php } ?><?php the_title(); ?><?php if ($hc_event == true){ ?></a> <?php } ?></h2>
+											<p>
+											<?php 
+											
+												if($address != ''){
+													echo $address;
+													echo '</br>';
+												}
+												if($city != ''){
+													echo $city;
+													echo ' ';
+												}
+												if($zip != ''){
+													echo $zip;
+													echo '</br>';
+												}
+												if($site != ''){?>
+													<a href="<?php echo $site; ?>" target="_blank"><?php echo $bare_event_str; ?></a>
+												<?php }
+												if ($phone != ''){
+													echo '| <span class="phone">'.$phone.'</span>';
+												}
+												?>
+											</p>
+										</div>
+										<!-- </div> -->
+									</div>
+
+						<?php $evt_cnt++;
+						} //end month check else?>
+ 						 
+	 	
+
+				<?php } } wp_reset_postdata(); ?>
+			</div>
 				</div><!-- end row -->
 				
 		</div><!-- end event-listing -->
