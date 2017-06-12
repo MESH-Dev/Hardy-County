@@ -4,7 +4,6 @@
  *
  */
 ?>
-<!-- <h2>Holy Fuck!</h2> -->
 <div class="wpc-loading-spinner" style="display:none">
 	<img src="<?php echo plugins_url( 'img/ajax-loader.gif', dirname(__FILE__)); ?>" alt="loader"/>
 </div>

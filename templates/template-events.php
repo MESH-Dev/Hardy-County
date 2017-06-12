@@ -129,12 +129,14 @@ get_header();
 		<div class="event-listing row">
 				<?php 
 					$today=date('Ymd');
+					//var_dump($today);
 					$currMonth = date('m');
 					$currYear = date('Y');
 					$oneYearOn = date('Ymd',strtotime(date("Ymd", time()) . " + 364 day"));
+					//var_dump($oneYearOn);
 					$args = array(
 						'post_type' => 'event',
-						'posts_per_page' => '12',
+						'posts_per_page' => '-1',
 						'orderby'=>'meta_value_num',
 						'order'=>'ASC',
 						'meta_key'=>'start_date',
@@ -189,8 +191,8 @@ get_header();
  							//while($evt_cnt < 13){
 							?>
 								
-								<div class="events_month row" id="<?php echo $event_month_abbr;  ?>">
-									<h2 class="event-title"><?php echo $event_month_text; ?><?php //echo $evt_cnt; ?></h2>
+							<div class="events_month row" id="<?php echo $event_month_abbr;  ?>">
+									<h2 class="event-title"><?php echo $event_month_text; ?></h2>
 								<div class="single_event columns-4">
 									<div class="date-item">
 										<span class="date-wrap">
@@ -209,7 +211,7 @@ get_header();
 									</div>
 									<!-- <div class="columns-8"> -->
 									<div class="info">
-										<h2><?php if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>" target="_self"> <?php } ?><?php the_title(); ?><?php if ($hc_event == true){ ?></a> <?php } ?></h2>
+										<h2><?php //if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>" target="_self"> <?php //} ?><?php the_title(); ?><?php //if ($hc_event == true){ ?></a> <?php //} ?></h2>
 										<p>
 										<?php 
 										
@@ -234,8 +236,8 @@ get_header();
 											?>
 										</p>
 									</div>
-									</div>
 								</div>
+							</div>
 						<?php //}  //end cnt while
 
 								} //endwhile ?>
@@ -272,17 +274,6 @@ get_header();
 </main><!-- End of Content -->
 
 <?php
-// $people = array("Peter", "Joe", "Glenn", "Cleveland");
-// var_dump($people);
-
-// if (in_array("Glenn", $people))
-//   {
-//   echo "Match found";
-//   }
-// else
-//   {
-//   echo "Match not found";
-//   }
 ?>
 
 <?php get_footer(); ?>

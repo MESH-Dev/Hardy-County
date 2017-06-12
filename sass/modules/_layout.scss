@@ -279,8 +279,8 @@
 			&:focus{
 				.portrait{
 					opacity: 1;
-					-webkit-transform: scale3d(1.05,1.05,1);
-					transform: scale3d(1.05,1.05,1);
+					-webkit-transform: scale(1.05,1.05);
+					transform: scale(1.05,1.05);
 				}
 				
 			}
@@ -316,8 +316,8 @@
 			&:focus{
 				.portrait{
 					opacity: 1;
-					-webkit-transform: scale3d(1.05,1.05,1);
-					transform: scale3d(1.05,1.05,1);
+					-webkit-transform: scale(1.05,1.05);
+					transform: scale(1.05,1.05);
 				}
 				
 			}
@@ -524,8 +524,8 @@
 			&:focus{
 				.portrait{
 					opacity: 1;
-					-webkit-transform: scale3d(1.05,1.05,1);
-					transform: scale3d(1.05,1.05,1);
+					-webkit-transform: scale(1.05,1.05);
+					transform: scale(1.05,1.05);
 				}
 				
 			}
@@ -563,7 +563,7 @@
 				-webkit-transform: scale3d(1.05,1.05,1);
 				transform: scale3d(1.05,1.05,1);
 			}
-			background-size:110% 110%;
+			//background-size:110% 110%;
 
 			figcaption{
 				opacity: 0;
@@ -1201,7 +1201,7 @@
 	}
 
 	.info{
-		max-width: 80%;
+		max-width: 75%;
 		vertical-align: top;
 		display: inline-block;
 		h2{
@@ -1317,7 +1317,7 @@
 		}
 	}
 	.info{
-		max-width: 80%;
+		max-width: 74%;
 		vertical-align: top;
 		display: inline-block;
 		h2{
@@ -1450,8 +1450,8 @@
 		&:focus{
 			img{
 				opacity: 1;
-				-webkit-transform: scale3d(1.05,1.05,1);
-				transform: scale3d(1.05,1.05,1);
+				-webkit-transform: scale(1.05,1.05);
+				transform: scale(1.05,1.05);
 			}
 			background-size:110% 110%;
 
@@ -1627,8 +1627,8 @@
 		&:focus{
 			img{
 				opacity: 1;
-				-webkit-transform: scale3d(1.05,1.05,1);
-				transform: scale3d(1.05,1.05,1);
+				-webkit-transform: scale(1.05,1.05);
+				transform: scale(1.05,1.05);
 			}
 			//background-size:110% 110%;
 

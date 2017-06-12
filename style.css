@@ -1730,8 +1730,8 @@ img {
 .grid .primary:active .portrait,
 .grid .primary:focus .portrait {
   opacity: 1;
-  -webkit-transform: scale3d(1.05, 1.05, 1);
-  transform: scale3d(1.05, 1.05, 1);
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
 }
 /* line 293, sass/modules/_layout.scss */
 .home-grid .primary.child-links .portrait,
@@ -1768,8 +1768,8 @@ img {
 .grid .primary.child-links:active .portrait,
 .grid .primary.child-links:focus .portrait {
   opacity: 1;
-  -webkit-transform: scale3d(1.05, 1.05, 1);
-  transform: scale3d(1.05, 1.05, 1);
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
 }
 /* line 326, sass/modules/_layout.scss */
 .home-grid .primary img,
@@ -2128,8 +2128,8 @@ img {
 .grid .secondary:active .portrait,
 .grid .secondary:focus .portrait {
   opacity: 1;
-  -webkit-transform: scale3d(1.05, 1.05, 1);
-  transform: scale3d(1.05, 1.05, 1);
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
 }
 /* line 532, sass/modules/_layout.scss */
 .home-grid .secondary img,
@@ -2162,12 +2162,6 @@ img {
   line-height: 2em;
   padding: 0;
   margin: 0;
-}
-/* line 560, sass/modules/_layout.scss */
-.home-grid .secondary:not(.no-hover):hover,
-.landing-grid .secondary:not(.no-hover):hover,
-.grid .secondary:not(.no-hover):hover {
-  background-size: 110% 110%;
 }
 /* line 561, sass/modules/_layout.scss */
 .home-grid .secondary:not(.no-hover):hover img,
@@ -2955,7 +2949,7 @@ img {
 }
 /* line 1203, sass/modules/_layout.scss */
 .event-listing .info {
-  max-width: 80%;
+  max-width: 75%;
   vertical-align: top;
   display: inline-block;
 }
@@ -3084,7 +3078,7 @@ img {
 }
 /* line 1319, sass/modules/_layout.scss */
 .events_month .info {
-  max-width: 80%;
+  max-width: 74%;
   vertical-align: top;
   display: inline-block;
 }
@@ -3221,8 +3215,8 @@ img {
 /* line 1451, sass/modules/_layout.scss */
 .events_cta figure:hover img, .events_cta figure:active img, .events_cta figure:focus img {
   opacity: 1;
-  -webkit-transform: scale3d(1.05, 1.05, 1);
-  transform: scale3d(1.05, 1.05, 1);
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
 }
 /* line 1458, sass/modules/_layout.scss */
 .events_cta figure:hover figcaption, .events_cta figure:active figcaption, .events_cta figure:focus figcaption {
@@ -3408,8 +3402,8 @@ img {
 /* line 1628, sass/modules/_layout.scss */
 .body-content figure:hover img, .body-content figure:active img, .body-content figure:focus img {
   opacity: 1;
-  -webkit-transform: scale3d(1.05, 1.05, 1);
-  transform: scale3d(1.05, 1.05, 1);
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
 }
 /* line 1635, sass/modules/_layout.scss */
 .body-content figure:hover figcaption, .body-content figure:active figcaption, .body-content figure:focus figcaption {
