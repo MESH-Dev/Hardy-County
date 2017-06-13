@@ -31,9 +31,7 @@ get_header(); ?>
 						}
 
 						$post_type = get_post_type($post->ID);
-							//$link='';
 						$home = esc_url( home_url( '/' ) );
-						//var_dump($home);
 						$link='';
 						if($post_type == 'listing'){
 							$link = $home.'/'.$section_slug.'/'.$category_slug;
@@ -47,7 +45,6 @@ get_header(); ?>
 									<?php the_title(); ?> &#10165;
 								</a>
 							</h2>
-							<!-- <p class="postinfo">By <?php the_author(); ?> | Categories: <?php the_category(', '); ?> | <?php comments_popup_link(); ?></p> -->
 							<?php
 								if(get_the_content() != 0){ 
 								the_content('Read more &#10165'); 

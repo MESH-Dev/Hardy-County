@@ -2,7 +2,6 @@
 	<div class="top-bar">
 		<div class="container">
 			<div class="row">
-				<!-- <div class="columns-12"> -->
 					<div class="footer-logo columns-1">
 						<img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.png" alt="Hardy County West Virginia logo" aria-hidden="true">
 					</div>
@@ -10,10 +9,6 @@
 						<div class="row">
 						<?php echo do_shortcode('[mc4wp_form id="29"]'); ?>
 						</div>
-						<!-- <p class="mail-statement row">
-							Stay in the loop with the occasional email update.<br>
-							We promise not to overload your inbox and your email is confidential.
-						</p> -->
 					</div>
 					<div class="search columns-4 offset-by-1">
 						<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
@@ -54,7 +49,6 @@
 
 
 <?php if(is_page_template('templates/template-listing.php') || is_page_template('templates/template-map-full.php')){?>
-<!-- <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script> -->
 
 <?php 
 //Notes on Google maps
@@ -65,9 +59,7 @@
 //    are called after the map.google script has loaded
 ?>
 
-<!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8"></script> -->
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBajBo1S4jsOG9KUNEC86Eb7r6sbsX55qI"></script>
-<!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBQElNHiK0Ojt3OI7AiFJMxo7ozF6qYRDU"></script> -->
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBQElNHiK0Ojt3OI7AiFJMxo7ozF6qYRDU"></script>
  
 <?php } ?>
 

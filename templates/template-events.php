@@ -21,7 +21,6 @@ get_header();
 							//Query only to pull the months available via Event posts
 							$today=date('Ymd');
 							$currMonth = date('m');
-							//var_dump($currMonth);
 							$currYear = date('Y');
 							$month_args = array(
 								'post_type' => 'event',
@@ -30,9 +29,6 @@ get_header();
 								'orderby'=>'meta_value_num',
 								'order'=>'ASC',
 								'meta_key'=>'start_date',
-								// 'date_query'=>array(
-								// 		'month'=>'12',
-								// 	),
 								'meta_query' => array(
 										array(
 												'key'=>'start_date',
@@ -50,7 +46,6 @@ get_header();
 								$month_arr= array();
 								$mth_ctr = 0;
 								$curr_mnth = 13;
-								 //$monthNum needs created should be month counter
 								while($month_query->have_posts()) { $month_query->the_post();
 									$start_date = get_field('start_date', false, false);
 		 							$end_date = get_field('end_date', false, false);
@@ -61,22 +56,17 @@ get_header();
 									$event_month_text = $s_date->format('M');
 									//Add each instance of a month to the array
 									$month_arr[] = (string)strtolower($event_month_text);
-									//var_dump($month_arr);
 								} } wp_reset_postdata();
 						?>
 						<?php 
 
 							$months = date('m');
-							//var_dump($months);
 							$list_month = date('M');
 							$list_string = (string)strtolower($list_month);
-							//var_dump($list_string);
 							$list_year = date("Y");
-							//var_dump($list_year);
 							$list_year = date("Y");
-						
 							$i=1;
-							$month_num = $currMonth; //$month_num = 5
+							$month_num = $currMonth;
 
 
 							//Loop creates 12 month span of date elements
@@ -91,7 +81,6 @@ get_header();
 
 								$monthName = date('M', mktime(0, 0, 0, $month_num, 10));
 								$monthName_lower = strtolower($monthName);
-								//var_dump($monthName);
 								
 								if($i < 13){ 
 									
@@ -140,10 +129,6 @@ get_header();
 						'meta_key'=>'start_date',
 						'orderby'=>'meta_value_num',
 						'order'=>'ASC',
-
-						// 'date_query'=>array(
-						// 		'month'=>'12',
-						// 	),
 						'meta_query' => array(
 								array(
 										'key'=>'start_date',
@@ -153,23 +138,15 @@ get_header();
 							)
 					);
 
-
-
 					$curr_label = '';
 					$the_query = new WP_Query( $args );
 					$change_month_check = '';
-
-
 
 					if ($the_query->have_posts()){
 						$evt_cnt=0;
 						$first_loop = 0; 
 						while($the_query->have_posts()) { $the_query->the_post();
 							//ACF fields from post
-							// $event_city = get_field('city');
-							// $event_address = get_field('street_address');
-							// $event_site = get_field('web_address');
-							// $event_phone = get_field('phone');
 							$city = get_field('city', $post->ID);
 							$address = get_field('street_address', $post->ID);
 							$zip = get_field('zip', $post->ID);
@@ -178,7 +155,6 @@ get_header();
 							$bare_event_str = preg_replace('#^https?://#', '', $site);
 							$phone = get_field('phone_number', $post->ID);
 							$hc_event = get_field('hardy_county_event', $post->ID);
-							//$evt_cnt++;
 
 							//Date calculations from ACF fields
  							$start_date = get_field('start_date', false, false);
@@ -225,10 +201,7 @@ get_header();
 												</span>
 											<?php } ?>
 										</span>
-										
-
 									</div>
-									<!-- <div class="columns-8"> -->
 									<div class="info">
 										<h2>
 											<a href="<?php the_permalink(); ?>" target="_self"> 
@@ -278,8 +251,6 @@ get_header();
 								}
 
 								$evt_cnt++;
-
-								//var_dump($start_date);
 							}
 
 							else{ // Month has changed
@@ -312,7 +283,6 @@ get_header();
 												<?php } ?>
 											</span>
 										</div>
-										<!-- <div class="columns-8"> -->
 										<div class="info">
 											<h2>
 												<a href="<?php the_permalink(); ?>" target="_self">

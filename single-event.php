@@ -5,14 +5,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="columns-7 event-single">
-
-					<?php 
-						//$page_intro = get_field('page_intro_text');
-						//if ($page_intro != ''){?>
-						<!-- <h1 class="page-intro"><?php echo $page_intro; ?></h1> -->
-					<?php //} ?>
-					
+			<div class="columns-7 event-single">		
 					<?php 
 							$start_date = get_field('start_date', false, false);
  							$end_date = get_field('end_date', false, false);

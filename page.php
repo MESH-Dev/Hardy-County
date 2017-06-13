@@ -15,13 +15,7 @@
 
 					<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 						<?php the_content(); ?>
-					<?php endwhile; 
-
-					$coor = getCoordinates('303 West Washington Street Charleston 25302');
-					var_dump($coor);
-					
-					
-					?>
+					<?php endwhile; ?>
 				
 			</div>
 

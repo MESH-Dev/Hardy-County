@@ -44,7 +44,6 @@
 										<?php }
 										if($site != ''){?>
 											<a href="<?php echo $site; ?>" target="_blank">
-												<?php //echo $strip_site; ?>
 												<?php 
 													if ($site_text == ''){
 														echo $strip_site; 

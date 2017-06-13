@@ -5,8 +5,6 @@ get_header();
 
 ?>
 
-
-
 <main id="content">
 	<div class="banner interior with-map" >	
 		<!-- <div class="overlay" aria-hidden="true"></div> -->
@@ -24,11 +22,7 @@ get_header();
 			<?php the_title(); ?></h1>
 			</div>
 		</div>
-	<?php //var_dump(get_post_type($post->ID)); ?>
 	</div>
-	
-
-
 
     <?php 
 
@@ -50,11 +44,6 @@ get_header();
 			<div class="listing-grid" data-category="<?php echo $listing_cat; ?>" >
 				<div class="listings row">
 			<?php 
-					//$da_date = get_field('start_date');
-					//var_dump($da_date);
-					//$today=date('Ymd');
-					//$currMonth = date('m');
-					//$currYear = date('Y');
 					$args = array(
 						'post_type' => 'listing',
 						'posts_per_page' => '-1',
@@ -67,32 +56,16 @@ get_header();
 								'terms'=>$listing_cat,
 								),
 							),
-						//'meta_key'=>'primary_section',
-						// 'date_query'=>array(
-						// 		'month'=>'12',
-						// 	),
-						// 'meta_query' => array(
-						// 		array(
-						// 				'key'=>'start_date',
-						// 				'compare'=>'>=',
-						// 				'value'=>$today,
-						// 			)
-						// 	)
 					);
 
 					$the_query = new WP_Query( $args );
 
 					$count=$the_query->post_count;
-					//$post_slug = $the_query->post_name;
 					$half_count=$count/2;
-					
 					$half_round = round($half_count);
 					
-
-					//var_dump($count);
 					if ($the_query->have_posts()){
-						//var_dump($the_query);
-						//$first_loop = 0; 
+
 						$l_cnt=0;?>
 						<div class="columns-6">
 						<?php
@@ -104,13 +77,10 @@ get_header();
 						$site_text = get_field('web_address_link_text');
 						$site = get_field('web_address', $post->ID);
 						$strip_site = preg_replace('#^https?://#', '', $site);
-						//var_dump($strip_site);
 						$phone = get_field('phone_number', $post->ID);
 						$email = get_field('email', $post->ID);
 						global $post;
     					$post_slug=$post->post_name;
-						//$post_slug = $the_query->slug;
-						//var_dump($post_slug);
 
 						$sections = get_the_terms($post->ID,'category');
 						$sec_name = '';
@@ -123,7 +93,7 @@ get_header();
 						}
 						$tag_name = '';
 						$tags = get_the_tags($post->ID);
-						//var_dump($tags);
+
 						if($tags != ''){
 							foreach($tags as $tag){
 								$tag_name = $tag->name;
@@ -133,20 +103,16 @@ get_header();
 						}
 
 						$title = get_the_title();
-						//$title_lc = strtolower($title);
-
-						//function seoUrl($string) {
-						    //Lower case everything
-						    $title_lc = strtolower($title);
-						    //Make alphanumeric (removes all other characters)
-						    $title_cln = preg_replace("/[^a-z0-9_\s-]/", "", $title_lc);
-						    //Clean up multiple dashes or whitespaces
-						    $title_sanit = preg_replace("/[\s-]+/", " ", $title_cln);
-						    //Convert whitespaces and underscore to dash
-						    $title_id = preg_replace("/[\s_]/", "-", $title_sanit);
-						    //return $title;
-						//}
-
+					
+					    //Lower case everything
+					    $title_lc = strtolower($title);
+					    //Make alphanumeric (removes all other characters)
+					    $title_cln = preg_replace("/[^a-z0-9_\s-]/", "", $title_lc);
+					    //Clean up multiple dashes or whitespaces
+					    $title_sanit = preg_replace("/[\s-]+/", " ", $title_cln);
+					    //Convert whitespaces and underscore to dash
+					    $title_id = preg_replace("/[\s_]/", "-", $title_sanit);
+					    
 						?>
 
 						<?php if($l_cnt == $half_round+1){ ?>
@@ -158,14 +124,9 @@ get_header();
 								<h2><?php echo $l_cnt; ?>.</h2>
 							</div>
 							<div class="listing-content">
-							<!-- <div class=""> --><!-- push -->
-							<?php //if($tags != ''){?>
 								<span class="tags"><?php echo $tag_name; ?></span>
-							<!-- </div> -->
-							<?php //}else ?>
-
-							<h2><?php //echo $l_cnt; ?> <?php the_title(); ?></h2>
-							<div class="lc-push"><!-- push -->
+							<h2><?php the_title(); ?></h2>
+							<div class="lc-push">
 								<p class="loc">
 									<?php 
 										
@@ -186,7 +147,6 @@ get_header();
 										<?php }
 										if($site != ''){?>
 											<a class="site" href="<?php echo $site; ?>" target="_blank">
-												<?php //echo $strip_site; ?>
 												<?php 
 												if ($site_text == ''){
 													echo $strip_site; 

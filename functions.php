@@ -41,29 +41,7 @@ function getInstagram(){
     $obj = json_decode($json);
     var_dump($obj);
     return $obj->data;
-
-    //$instagram = getInstagram();
 }
-
-//var_dump(getInstagram());
-
-// function blogrollPosts($include, $tag_id, $returnNum){
-//     $timestamps = array();
-
-//     //if(in_array('instagram', $include)){
-//                 //Get Instagram
-//                 $instagram = getInstagram();
-//                 //var_dump($instagram);
-//                 foreach($instagram as $post){
-//                     $post->unix_timestamp = $post->created_time;
-//                     $post->post_source = 'instagram';
-//                     array_push($timestamps, $post->created_time);
-//                 }
-//                 //var_dump($instagram);
-//             // }else{
-//             //     $instagram = array();
-//             // }
-// }
 
 //Add ajax functionality to pages, all not just in admin
 add_action('wp_head','pluginname_ajaxurl');
@@ -93,9 +71,8 @@ function update_listings_map( $post_id ) {
         );
 
         query_posts( $args );
-        //$ct = 0;
+
         while (have_posts()) { the_post();
-          //$ct++;
           //Save the post ID to a variable
           $p_id = get_the_ID();
 
@@ -109,9 +86,7 @@ function update_listings_map( $post_id ) {
           $website = get_field('web_address',$p_id);
           $zip = get_field('zip',$p_id);
           $primary_section = get_the_terms($p_id, 'primary_section'); 
-          //var_dump($primary_section);
           $color = get_term_meta($primary_section[0]->term_id, 'color');
-          //var_dump($color);
           //__Get the categories for the post, we'll break it up below
           $listing_cats = get_the_category($p_id); 
           //----
@@ -134,9 +109,6 @@ function update_listings_map( $post_id ) {
           
 
           $description = get_the_content();
-          //$logo = wp_get_attachment_url(get_post_thumbnail_id());
-
-          //$business_category = get_field('business_category');
 
           //Save the address, city, & zip to a variable to use in the getCoordinates function
          
@@ -166,19 +138,13 @@ function update_listings_map( $post_id ) {
               "city" => $city,
               "phone" => $phone,
               "website" => $website,
-              //"count"=>$ct,
-              //"facebook" => $facebook,
-              //"twitter" => $twitter,
               "zip" => $zip,
               "coordinates" => $coordinates,
               "listing_category" => $listing_category,
               "listing_name"=>$listing_name,
               "primary_section" => $primary_sec,
-              //"businesstype" => $terms,
-              //"business_category" => $business_category,
               "description" => $description,
               "color" => $color
-              //"logo" => $logo
             ];
 
             array_push($arr, $a);
@@ -229,9 +195,7 @@ function getCoordinates($address){
             $lng = $json['results'];
           }
 
-          return array($lat, $lng);
-          //return($response);
-         
+          return array($lat, $lng);      
 }
 
 

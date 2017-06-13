@@ -39,7 +39,7 @@ get_header();
 
 	<div class="container">
 		<div class="row">
-			<div class="home-grid grid" id="packery"><!-- macy --><!-- masonry --><!-- macy -->
+			<div class="home-grid grid" id="packery">
 
 						<?php //Row 1 ?>
 
@@ -69,7 +69,6 @@ get_header();
 									)
 							);
 
-							//$curr_label = '';
 							$event_query = new WP_Query( $args );
 							$events = $event_query->posts;
 							$event_ID_1 = $events[0]->ID;
@@ -81,14 +80,7 @@ get_header();
 							$event_site = get_field('web_address', $event_ID_1);
 							$event_site_text = get_field('web_address_link_text', $event_ID_1);
 							$bare_event_str = preg_replace('#^https?://#', '', $event_site);
-							//$event_site_text substr($event_site, )
 							$event_phone = get_field('phone', $event_ID_1);
-							
-							//$s_test = $s_date->format('F');
-
-							// $temp_date = get_post_meta( get_the_ID(), 'start_date', true );
-							// $temp_test = new DateTime($temp_date);
-							// $temp = $temp_test->format('F');
  
  							$start_date = get_field('start_date', $event_ID_1, false, false);
  							$end_date = get_field('end_date', $event_ID_1, false, false);
@@ -120,7 +112,7 @@ get_header();
 									<p>Upcoming Event</p>
 									<h2><?php echo get_the_title($event_ID_1); ?></h2>
 									<div class="reveal">
-										<p><?php echo $event_address; ?> <?php //if ($event_site != ''){?><!-- |  <a href="<?php //echo $event_site; ?>" target="_blank"><?php //echo $bare_event_str; ?>  </a>--><?php //} ?></p>
+										<p><?php echo $event_address; ?></p>
 										<h6>Learn More &#10165;</h6>
 									</div>
 								</div>
@@ -166,7 +158,6 @@ get_header();
 										<?php echo $secondary_row_bg_alt; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>"> -->
 								<figcaption>
 									<p><?php echo $s_parent_post_title; ?></p>
 									<h2><?php echo $s_post_1->post_title; ?></h2>
@@ -210,12 +201,9 @@ get_header();
 										<?php echo $primary_row_alt; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>" alt=""/> -->
 								<figcaption>
 									<h1><?php echo $post_1->post_title; ?></h1>
-									<!--Hover Content?-->
 									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
-									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
 									
 								</figcaption>
 							</figure>
@@ -238,7 +226,6 @@ get_header();
 						<?php //Setup Instagram look at helpers/instagram.php with questions
 
 						$instagram = getInstagram();
-						//var_dump($instagram);
 						?>
 
 						<!-- Instagram Block 1 -->
@@ -281,7 +268,6 @@ get_header();
 										<?php echo $secondary_row_bg_alt; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url_2; ?>"> -->
 								<figcaption>
 									<p><?php echo $s2_parent_post_title; ?></p>
 									<h2><?php echo $s_post_2->post_title; ?></h2>
@@ -318,7 +304,6 @@ get_header();
 										<?php echo $secondary_row3_bg_alt; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $secondary_row3_bg_alt; ?>" src="<?php echo $secondary_row3_bg_url; ?>"> -->
 								<figcaption>
 									<p><?php echo $s_parent_post_title; ?></p>
 									<h2><?php echo $s_post_3->post_title; ?></h2>
@@ -333,15 +318,8 @@ get_header();
 							$event_address = get_field('street_address', $event_ID_2);
 							$event_site = get_field('web_address', $event_ID_2);
 							$event_site_text = get_field('web_address_link_text', $event_ID_2);
-							//$event_site_text substr($event_site, )
 							$event_phone = get_field('phone', $event_ID_2);
 							
-							//$s_test = $s_date->format('F');
-
-							// $temp_date = get_post_meta( get_the_ID(), 'start_date', true );
-							// $temp_test = new DateTime($temp_date);
-							// $temp = $temp_test->format('F');
- 
  							$start_date = get_field('start_date', $event_ID_2, false, false);
  							$end_date = get_field('end_date', $event_ID_2, false, false);
 							$s_date = new DateTime($start_date);
@@ -365,7 +343,7 @@ get_header();
 									<p>Upcoming Event</p>
 									<h2><?php echo get_the_title($event_ID_2); ?></h2>
 									<div class="reveal">
-										<p><?php echo $event_address; ?> <?php //if ($event_site != ''){?><!-- |  <a href="<?php //echo $event_site; ?>" target="_blank"><?php //echo $event_site; ?>  </a>--><?php //} ?></p>
+										<p><?php echo $event_address; ?></p>
 										<h6>Learn More &#10165;</h6>
 									</div>
 								</div>
@@ -391,19 +369,14 @@ get_header();
 						?>
 						<a href="<?php echo the_permalink($post_2->ID); ?>">
 							<figure class="hg grid-item grid-item-width3 primary no-padding">
-								<!-- columns-4 -->
 								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
 									<span class="sr-only">
 										<?php echo $primary_row_alt; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>" alt=""/> -->
 								<figcaption>
 									<h1><?php echo $post_2->post_title; ?></h1>
-									<!-- Hover? -->
 									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
-									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-									
 								</figcaption>
 							</figure>						
 						</a>
@@ -436,9 +409,7 @@ get_header();
 										<?php echo $primary_row_alt; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $primary_row_alt; ?>"src="<?php echo $primary_row_url; ?>"> -->
 								<h1><?php echo $post_3->post_title; ?></h1>
-								<!--Hover?-->
 								<p><?php echo $hover; ?><br><span>&#10165;</span></p>
 								<div class="width6-diamond"></div>
 							</figure>
@@ -477,7 +448,6 @@ get_header();
 
 								if($s4_post_link != null ){
 									$s_post_4 = $s4_post_link;
-									//var_dump($s_post_1);
 									setup_postdata($s_post_4);
 
 									//__This section queries the title of the post parent for the page chosen in the 'section_title' field
@@ -496,7 +466,6 @@ get_header();
 										<?php echo $secondary_row4_bg_alt; ?>
 										</span>
 									</div>
-									<!-- <img alt="<?php $secondary_row4_bg_alt; ?>" src="<?php echo $secondary_row4_bg_url; ?>"> -->
 									<?php 
 									//Don't render this stuff if we aren't passing any of the variables above
 									if ($s4_post_link != null){ 
@@ -537,15 +506,12 @@ get_header();
 						?>
 						<a href="<?php echo the_permalink($post_1->ID); ?>">
 							<figure class="hg grid-item grid-item-width4 primary no-padding">
-								<!-- <img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>" alt=""/> -->
 								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
 									<span class="sr-only"><?php echo $primary_row_alt; ?></span>
 								</div>
 								<figcaption>
 									<h1><?php echo $post_4->post_title; ?></h1>
 									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
-									<!-- <h2><?php //echo $parent_post_title ?></h2> -->
-									
 								</figcaption>
 							</figure>
 						</a>
@@ -560,14 +526,7 @@ get_header();
 							$event_address = get_field('street_address', $event_ID_3);
 							$event_site = get_field('web_address', $event_ID_3);
 							$event_site_text = get_field('web_address_link_text', $event_ID_3);
-							//$event_site_text substr($event_site, )
 							$event_phone = get_field('phone', $event_ID_3);
-							
-							//$s_test = $s_date->format('F');
-
-							// $temp_date = get_post_meta( get_the_ID(), 'start_date', true );
-							// $temp_test = new DateTime($temp_date);
-							// $temp = $temp_test->format('F');
  
  							$start_date = get_field('start_date', $event_ID_3, false, false);
  							$end_date = get_field('end_date', $event_ID_3, false, false);
@@ -632,7 +591,6 @@ get_header();
 										<?php echo $secondary_row_bg_alt; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>"> -->
 								<?php if ($s_post_5 != ''){ ?>
 
 								<figcaption>
@@ -672,9 +630,7 @@ get_header();
 										<?php echo $primary_row_alt;; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $primary_row_alt; ?>" src="<?php echo $primary_row_url; ?>"> -->
 								<h1><?php echo $post_5->post_title; ?></h1>
-								<!--Hover?-->
 								<p><?php echo $hover; ?><br><span>&#10165;</span></p>
 								<div class="width6-diamond"></div>
 							</figure>
@@ -728,7 +684,6 @@ get_header();
 										<?php echo $secondary_row_bg_alt; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>"src="<?php echo $secondary_row_bg_url; ?>"> -->
 								<?php 
 								//Don't render this stuff if we aren't passing any of the variables above
 								if ($s6_post_link != null){ 
@@ -765,7 +720,6 @@ get_header();
 
 							if($s7_post_link != null ){
 								$s_post_7 = $s7_post_link;
-								//var_dump($s_post_1);
 								setup_postdata($s_post_7);
 
 								//__This section queries the title of the post parent for the page chosen in the 'section_title' field
@@ -783,7 +737,6 @@ get_header();
 										<?php echo $secondary_row_bg_alt; ?>
 									</span>
 								</div>
-								<!-- <img alt="<?php echo $secondary_row_bg_alt; ?>" src="<?php echo $secondary_row_bg_url; ?>"> -->
 								<?php 
 								//Don't render this stuff if we aren't passing any of the variables above
 								if ($s7_post_link != null ){ 

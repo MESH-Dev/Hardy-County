@@ -41,10 +41,9 @@ get_header(); ?>
 
 			?>
 			<!-- Row 1 stuff from sub-pages -->
-			<!-- <div class="row"> -->
 			<?php foreach( $get_children as $children){ 
 					
-					$child_ID = $children->ID; //var_dump($children->ID);
+					$child_ID = $children->ID; 
 					$thumbnail = get_the_post_thumbnail_url($child_ID, 'large'); 
 					$alt = get_the_post_thumbnail($child_ID, 'large');
 					$landing_link = get_field('featured_information', $child_ID);
@@ -53,12 +52,10 @@ get_header(); ?>
 					$background_url = $background['sizes']['large'];
 					$background_alt = $background['alt'];
 					$hover = $landing_link_row['tagline'];
-					//var_dump($alt);
-					//var_dump('Thumbnail info: '. $thumbnail);
 
 				?>
 			<a href="<?php the_permalink($children->ID); ?>">
-			<figure class="columns-4 no-padding primary child-links" ><!-- grid-item grid-item-width4 -->
+			<figure class="columns-4 no-padding primary child-links" >
 				<div class="portrait" alt="<?php echo $background_alt; ?>" style="background-image:url('<?php echo $background_url ?>');">
 					<span class="sr-only">
 						<?php echo $background_alt; ?>
@@ -86,12 +83,9 @@ get_header(); ?>
 					</div>
 				<div class="feed row">
 				<?php 
-					//$da_date = get_field('start_date');
-					//var_dump($da_date);
 
 					global $post;
 					$post_slug = $post->post_name;
-					//var_dump($post_slug);
 
 					$today=date('Ymd');
 					$currMonth = date('m');
@@ -108,11 +102,7 @@ get_header(); ?>
 									'terms' => $post_slug,
 								),	
 							),
-						
 						'meta_key'=>'start_date',
-						// 'date_query'=>array(
-						// 		'month'=>'12',
-						// 	),
 						'meta_query' => array(
 								array(
 										'key'=>'start_date',
@@ -127,7 +117,6 @@ get_header(); ?>
 
 					if ($the_query->have_posts()){
 					
-						//$first_loop = 0; 
 						while($the_query->have_posts()) { $the_query->the_post();
 							$start_date = get_field('start_date', false, false);
 							$end_date = get_field('end_date', false, false);
@@ -168,27 +157,12 @@ get_header(); ?>
 									</a> 
 								</h1>
 								<h2 class="loc"><?php echo $event_city; ?></h2>
-								<!-- <div class="more">
-									<?php if ($event_site != ''){ ?>
-									<span class="website">
-										<a href="<?php echo $event_site; ?>"><?php echo $bare_event_str; ?></a>
-									</span>
-									<?php } ?>
-									<?php if ($event_phone != ''){ ?>
-									 |
-									<span class="phone">
-										<?php echo $event_phone; ?>
-									</span>
-									<?php } ?>
-								</div> -->
 							</div>
 						</div>
-						<?php }
+						<?php
+								}
 						 	}
-						 	 //else{
-						 	 	?>
-						 	<!-- <h2>No events scheduled in this category! See our events page for more events!</h2> -->
-					 	<?php //}
+					
 						  wp_reset_query(); ?>
 					
 						
@@ -245,7 +219,6 @@ get_header(); ?>
 
 			<?php endwhile; endif; ?>
 		</div> <!-- end calendar feed/see more row -->
-			<!-- </div> -->
 		</div><!-- End Packery Grid -->
 
 		<?php 
