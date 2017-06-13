@@ -35,9 +35,9 @@ function filter_function_name( $num, $post ) {
 //Functions file can't seem to find this function...
 function getInstagram(){
     //Get Likes  
-    $json = file_get_contents('https://api.instagram.com/v1/users/self/media/liked?access_token=5484662713.fe363d8.a42b970204c040918c2ee52f5c7d9462');
+    //$json = file_get_contents('https://api.instagram.com/v1/users/self/media/liked?access_token=5484662713.fe363d8.a42b970204c040918c2ee52f5c7d9462');
     //Original - recent posts
-    //$json = file_get_contents('https://api.instagram.com/v1/users/5484662713/media/recent?access_token=5484662713.fe363d8.a42b970204c040918c2ee52f5c7d9462');
+    $json = file_get_contents('https://api.instagram.com/v1/users/5484662713/media/recent?access_token=5484662713.fe363d8.a42b970204c040918c2ee52f5c7d9462');
     $obj = json_decode($json);
     var_dump($obj);
     return $obj->data;
@@ -111,21 +111,27 @@ function update_listings_map( $post_id ) {
           $primary_section = get_the_terms($p_id, 'primary_section'); 
           //var_dump($primary_section);
           $color = get_term_meta($primary_section[0]->term_id, 'color');
+          //var_dump($color);
           //__Get the categories for the post, we'll break it up below
           $listing_cats = get_the_category($p_id); 
           //----
         
           //get one category by splitting the value from above
-          foreach ($listing_cats as $cat) {
+          if($listing_cats){
+            foreach ($listing_cats as $cat) {
              $listing_category = $cat->slug;
              $listing_name = $cat->name;
              break;
+            }
           }
-         
-     		  foreach ($primary_section as $ps){
-     		  	$primary_sec = $ps->name;
-     		  	break;
-     		  }
+          
+          if($primary_section){
+            foreach ($primary_section as $ps){
+             $primary_sec = $ps->name;
+              break;
+            }
+          }
+     		  
 
           $description = get_the_content();
           //$logo = wp_get_attachment_url(get_post_thumbnail_id());
@@ -178,6 +184,8 @@ function update_listings_map( $post_id ) {
 
         }
 
+        sleep(1);
+
         //Reset the query in-between loops
         wp_reset_query();
 
@@ -220,9 +228,9 @@ function getCoordinates($address){
             $lng = 0;
           }
 
-          return array($lat, $lng);
-          //return($response);
-
+          //return array($lat, $lng);
+          return($response);
+          //sleep(2);
 }
 
 

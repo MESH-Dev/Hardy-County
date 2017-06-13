@@ -237,7 +237,6 @@ get_header();
 										</h2>
 										<p>
 										<?php 
-									   echo $change_month_check . "||" . $event_month_text; //********************
 										if($address != ''){
 											echo $address;
 											echo '</br>';
