@@ -77,8 +77,8 @@
 							} ?>
 					<ul class="social_nav">
 						<li>
-							<a href="https://twitter.com/visithardy" target="_blank">
-								<i class="fa fa-fw fa-twitter fa-lg">
+							<a href="https://www.youtube.com/user/HardyCountyCVB" target="_blank">
+								<i class="fa fa-fw fa-youtube-square fa-lg">
 									<span class="sr-only">Follow us on twitter</span>
 								</i>
 							</a>

@@ -230,7 +230,11 @@ get_header();
 									</div>
 									<!-- <div class="columns-8"> -->
 									<div class="info">
-										<h2><?php echo $start_date;?><a href="<?php the_permalink(); ?>" target="_self"> <?php the_title(); ?> <?php echo $evt_cnt; ?></a></h2>
+										<h2>
+											<a href="<?php the_permalink(); ?>" target="_self"> 
+												<?php the_title(); ?> 
+											</a>
+										</h2>
 										<p>
 										<?php 
 									   echo $change_month_check . "||" . $event_month_text; //********************
@@ -276,7 +280,7 @@ get_header();
 
 								$evt_cnt++;
 
-								var_dump($start_date);
+								//var_dump($start_date);
 							}
 
 							else{ // Month has changed
@@ -311,7 +315,11 @@ get_header();
 										</div>
 										<!-- <div class="columns-8"> -->
 										<div class="info">
-											<h2><?php if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>" target="_self"> <?php } ?><?php the_title(); ?><?php if ($hc_event == true){ ?></a> <?php } ?></h2>
+											<h2>
+												<a href="<?php the_permalink(); ?>" target="_self">
+													<?php the_title(); ?>
+												</a> 
+											</h2>
 											<p>
 											<?php 
 											
