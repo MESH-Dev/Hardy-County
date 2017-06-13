@@ -9,19 +9,19 @@ include('functions/clean.php');
 //Custon wp-admin logo
 function my_custom_login_logo() {
   echo '<style type="text/css">
-		        h1 a {
-	        	  width:100% !important;
-		          background-size: 250px 85px !important;
-		          margin-bottom: 20px !important;
-		          background-image:url('.get_bloginfo('template_directory').'/img/hardy-logo_black.png) !important; }
-		    </style>';
+            h1 a {
+              width:100% !important;
+              background-size: 250px 85px !important;
+              margin-bottom: 20px !important;
+              background-image:url('.get_bloginfo('template_directory').'/img/hardy-logo_black.png) !important; }
+        </style>';
 }
 
 //Add ACF Options page, good for Global ACF inputs, like things in the header/footer.
 if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page();
-	
+  
+  acf_add_options_page();
+  
 }
 
 //Reduce the number of revisions available in the site
@@ -87,9 +87,9 @@ function update_listings_map( $post_id ) {
         $args = array(
           'post_type' => 'listing',
           'posts_per_page'=> -1,
-          'orderby' => 'title',
-          'order' => 'asc',
           'post_status' => 'publish'
+          'orderby' => 'title',
+          'order' => 'asc'
         );
 
         query_posts( $args );
@@ -103,11 +103,11 @@ function update_listings_map( $post_id ) {
           $title = get_the_title();
           GLOBAL $post;
           $slug = $post->post_name;
-          $address = get_field('street_address');
-          $city = get_field('city');
-          $phone = get_field('phone_number');
-          $website = get_field('web_address');
-          $zip = get_field('zip');
+          $address = get_field('street_address',$p_id);
+          $city = get_field('city',$p_id);
+          $phone = get_field('phone_number',$p_id);
+          $website = get_field('web_address',$p_id);
+          $zip = get_field('zip',$p_id);
           $primary_section = get_the_terms($p_id, 'primary_section'); 
           //var_dump($primary_section);
           $color = get_term_meta($primary_section[0]->term_id, 'color');
@@ -131,7 +131,7 @@ function update_listings_map( $post_id ) {
               break;
             }
           }
-     		  
+          
 
           $description = get_the_content();
           //$logo = wp_get_attachment_url(get_post_thumbnail_id());
@@ -139,17 +139,18 @@ function update_listings_map( $post_id ) {
           //$business_category = get_field('business_category');
 
           //Save the address, city, & zip to a variable to use in the getCoordinates function
-          $f = $address . ' ' . $city . ' ' . $zip;
+         
            
           //Override   
           //Check to see if the latitude and longitude overides on the listing posttype are being used
           //If so, use those values to retrieve our location information for our map
           //If not, run the getCoordinates function to dynamically retrieve the lat and lng  
-          if (get_field('latitude') && get_field('longitude')) {
-            $lat = get_field('latitude');
-            $long = get_field('longitude');
-            $coordinates = array((float)$lat, (float)$long);
-          }else{
+           if (get_field('latitude',$p_id) && get_field('longitude',$p_id)) {
+             $lat = get_field('latitude');
+             $long = get_field('longitude');
+             $coordinates = array((float)$lat, (float)$long);
+           }else{
+            $f = $address . ' ' . $city . ' ' . $zip;
             $coordinates = getCoordinates($f);
             //If we got a good response from Google, update post_meta 
             //For latitude and longitude to help save some time when new entries are created
@@ -184,7 +185,7 @@ function update_listings_map( $post_id ) {
 
         }
 
-        sleep(1);
+        
 
         //Reset the query in-between loops
         wp_reset_query();
@@ -212,7 +213,7 @@ function getCoordinates($address){
           //var_dump($response)
           $address = urlencode($address);
 
-          $url = "http://maps.google.com/maps/api/geocode/json?sensor=false&address=" . $address;
+          $url = "https://maps.google.com/maps/api/geocode/json?sensor=false&address=" . $address . "&key=AIzaSyDXR8bORut0sXyoust5FWnhi-9TA8TWktw";
           $response = file_get_contents($url);
           $json = json_decode($response,true);
 
@@ -224,13 +225,13 @@ function getCoordinates($address){
           //** This should be good to narrow down issues with a particular listing,
           //   as problem listings will return a 0 value lat lng in our json file
           }else{
-            $lat = 0;
-            $lng = 0;
+            $lat = $json['status'];
+            $lng = $json['results'];
           }
 
           return array($lat, $lng);
           //return($response);
-          //sleep(2);
+         
 }
 
 

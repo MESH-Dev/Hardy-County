@@ -16,8 +16,8 @@
 
     //Keep this out of the getJSON loop
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
-        center: new google.maps.LatLng(38.9991817,-79.1020919),
+        zoom: 11,
+        center: new google.maps.LatLng(39.031599, -78.888010),
         scrollwheel:  false,
         zoomControl: true,
         zoomControlOptions: {

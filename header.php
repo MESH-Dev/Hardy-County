@@ -94,7 +94,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" target="_blank">
+							<a href="https://www.instagram.com/visithardy/" target="_blank">
 								<i class="fa fa-fw fa-instagram fa-lg">
 									<span class="sr-only">Follow us on instagram</span>
 								</i>
