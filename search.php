@@ -33,22 +33,9 @@ get_header(); ?>
 						$post_type = get_post_type($post->ID);
 							//$link='';
 						$home = esc_url( home_url( '/' ) );
-						var_dump($home);
+						//var_dump($home);
 						$link='';
 						if($post_type == 'listing'){
-							//$link = $home .'/culture-heritage/';
-							// if($section_title == 'Culture & Heritage' ){
-							// 	$link = $home .'/culture-heritage';
-							// }elseif($section_title == 'Eat & Drink' ){
-							// 	$link = $home .'/eat-drink';
-							// }elseif($section_title == 'Eat & Drink' )
-							//Eat & Drink
-							//Fairs & Festivals
-							//Hunt & Fish
-							//	Outside & In
-							//Shop In Town & Out
-							//Sleep & Relax
-							//	Take it Easy
 							$link = $home.'/'.$section_slug.'/'.$category_slug;
 						}else{
 							$link = get_the_permalink();
@@ -57,7 +44,7 @@ get_header(); ?>
 						<div class="post">
 							<h2>
 								<a href="<?php echo $link; ?>">
-									<?php the_title(); ?> <?php echo $post_type; ?> <?php echo $section_title; ?> &#10165;
+									<?php the_title(); ?> &#10165;
 								</a>
 							</h2>
 							<!-- <p class="postinfo">By <?php the_author(); ?> | Categories: <?php the_category(', '); ?> | <?php comments_popup_link(); ?></p> -->
