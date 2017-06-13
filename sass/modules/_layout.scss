@@ -2394,6 +2394,14 @@
 		}	
 }
 
+.post{
+	.loc{
+		font-size:2em;
+		@include adelle-thin;
+		color:$std_black;
+	}
+}
+
 //Animation
 
 .yellowFade{

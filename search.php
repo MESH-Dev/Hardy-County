@@ -31,7 +31,9 @@ get_header(); ?>
 						}
 
 						$post_type = get_post_type($post->ID);
+							//$link='';
 						$home = esc_url( home_url( '/' ) );
+						//var_dump($home);
 						$link='';
 						if($post_type == 'listing'){
 							$link = $home.'/'.$section_slug.'/'.$category_slug;
@@ -41,6 +43,7 @@ get_header(); ?>
 					?>
 						<div class="post">
 							<h2>
+								<?php if ($post_type == 'event'){ echo 'Event: ';}?>
 								<a href="<?php echo $link; ?>">
 									<?php the_title(); ?> &#10165;
 								</a>
