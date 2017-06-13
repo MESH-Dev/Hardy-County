@@ -162,9 +162,13 @@ get_header(); ?>
 								</span>
 							</div>
 							<div class="event-desc columns-10">	
-								<h1 class="title"><?php if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>"> <?php }?><?php the_title(); ?><?php if ($hc_event == true){ ?></a> <?php }?></h1>
+								<h1 class="title">
+									<a href="<?php the_permalink(); ?>"> 
+										<?php the_title(); ?>
+									</a> 
+								</h1>
 								<h2 class="loc"><?php echo $event_city; ?></h2>
-								<div class="more">
+								<!-- <div class="more">
 									<?php if ($event_site != ''){ ?>
 									<span class="website">
 										<a href="<?php echo $event_site; ?>"><?php echo $bare_event_str; ?></a>
@@ -176,7 +180,7 @@ get_header(); ?>
 										<?php echo $event_phone; ?>
 									</span>
 									<?php } ?>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<?php }
