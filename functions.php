@@ -87,7 +87,7 @@ function update_listings_map( $post_id ) {
         $args = array(
           'post_type' => 'listing',
           'posts_per_page'=> -1,
-          'post_status' => 'publish'
+          'post_status' => 'publish',
           'orderby' => 'title',
           'order' => 'asc'
         );
