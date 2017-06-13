@@ -122,10 +122,10 @@ function update_listings_map( $post_id ) {
              break;
           }
          
- 		  foreach ($primary_section as $ps){
- 		  	$primary_sec = $ps->name;
- 		  	break;
- 		  }
+     		  foreach ($primary_section as $ps){
+     		  	$primary_sec = $ps->name;
+     		  	break;
+     		  }
 
           $description = get_the_content();
           //$logo = wp_get_attachment_url(get_post_thumbnail_id());
@@ -145,6 +145,10 @@ function update_listings_map( $post_id ) {
             $coordinates = array((float)$lat, (float)$long);
           }else{
             $coordinates = getCoordinates($f);
+            //If we got a good response from Google, update post_meta 
+            //For latitude and longitude to help save some time when new entries are created
+            update_post_meta($post->ID, 'latitude', $coordinates[0]);
+            update_post_meta($post->ID, 'longitude' , $coordinates[1]);
           }
   
             //Add all of the listing 'parts' to an array
@@ -216,7 +220,8 @@ function getCoordinates($address){
             $lng = 0;
           }
 
-          return array($lat, $lng);
+          //return array($lat, $lng);
+          return($response);
 
 }
 

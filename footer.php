@@ -65,7 +65,9 @@
 //    are called after the map.google script has loaded
 ?>
 
- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8"></script>
+ <!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBajBo1S4jsOG9KUNEC86Eb7r6sbsX55qI"></script> -->
+ <!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBQElNHiK0Ojt3OI7AiFJMxo7ozF6qYRDU"></script> -->
  
 <?php } ?>
 

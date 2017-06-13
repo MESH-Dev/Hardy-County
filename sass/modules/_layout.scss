@@ -901,6 +901,10 @@
 				@include adelle-thin;
 				color:$std_black;
 			}
+
+			.website{
+			    word-break: break-all;
+			}
 		}
 		
 		.see-all{
@@ -1322,6 +1326,10 @@
 		min-width: 325px;
 		margin-right: 40px;
 		height:250px;
+
+		a{
+			word-break: break-all;
+		}
 
 		.date-item{
 			max-width:25%;

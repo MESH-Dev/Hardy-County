@@ -26,6 +26,7 @@ get_header();
 							$month_args = array(
 								'post_type' => 'event',
 								'posts_per_page' => '-1',
+								'post_status' => 'publish',
 								'orderby'=>'meta_value_num',
 								'order'=>'ASC',
 								'meta_key'=>'start_date',
@@ -135,6 +136,7 @@ get_header();
 					$args = array(
 						'post_type' => 'event',
 						'posts_per_page' => '-1',
+						'post_status' => 'publish',
 						'meta_key'=>'start_date',
 						'orderby'=>'meta_value_num',
 						'order'=>'ASC',
@@ -157,7 +159,7 @@ get_header();
 					$the_query = new WP_Query( $args );
 					$change_month_check = '';
 
-					
+
 
 					if ($the_query->have_posts()){
 						$evt_cnt=0;
@@ -228,7 +230,7 @@ get_header();
 									</div>
 									<!-- <div class="columns-8"> -->
 									<div class="info">
-										<h2><?php echo $start_date; if ($hc_event == true){ ?><a href="<?php the_permalink(); ?>" target="_self"> <?php } ?><?php the_title(); ?> <?php echo $evt_cnt; ?> <?php if ($hc_event == true){ ?></a> <?php } ?></h2>
+										<h2><?php echo $start_date;?><a href="<?php the_permalink(); ?>" target="_self"> <?php the_title(); ?> <?php echo $evt_cnt; ?></a></h2>
 										<p>
 										<?php 
 									   echo $change_month_check . "||" . $event_month_text; //********************
