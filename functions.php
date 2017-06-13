@@ -228,8 +228,8 @@ function getCoordinates($address){
             $lng = 0;
           }
 
-          //return array($lat, $lng);
-          return($response);
+          return array($lat, $lng);
+          //return($response);
           //sleep(2);
 }
 
