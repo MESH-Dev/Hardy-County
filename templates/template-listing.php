@@ -148,16 +148,21 @@ get_header();
 										<?php }
 										if($site != ''){?>
 											<a class="site" href="<?php echo $site; ?>" target="_blank">
-												<?php 
+												<?php if (strpos($site, 'facebook')){ ?>
+												<i class="fa fa-fw fa-facebook-official"></i>
+												<?php }elseif(strpos($site, 'pdf')){?>
+												<i class="fa fa-fw fa-file-text"></i>
+												<?php }else{ 
 												if ($site_text == ''){
 													echo $strip_site; 
 												}else{
 													echo $site_text;
 												}
+												}
 												 ?>
 											</a>
 										<?php }
-										if($site !='' && $phone != ''){
+										if(($site !='' || $email !='') && $phone != ''){
 											echo '| ';
 										}
 										if ($phone != ''){

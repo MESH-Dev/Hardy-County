@@ -135,7 +135,7 @@ get_header(); ?>
 							?>
 
 						<div class="feed-item row">
-							<div class="date columns-2">
+							<div class="date">
 								<span class="date-wrap">
 									<span class="date-info">
 										<span class="month"><?php echo $s_date->format('M'); ?></span>
@@ -150,7 +150,7 @@ get_header(); ?>
 								<?php } ?>
 								</span>
 							</div>
-							<div class="event-desc columns-10">	
+							<div class="event-desc">	
 								<h1 class="title">
 									<a href="<?php the_permalink(); ?>"> 
 										<?php the_title(); ?>

@@ -881,6 +881,10 @@
 		position:relative;
 		min-height:500px;
 
+		@media ($bp-smaller-than-tablet){
+			height:600px !important;
+		}
+
 		.content{
 			width:90%;
 			margin:0 auto;
@@ -930,6 +934,12 @@
 			padding-bottom:3em;
 		}
 
+		.event-desc{
+			max-width: 74%;
+			vertical-align: top;
+			display: inline-block;
+			}
+
 		.date{
 			//position: absolute;
 			//top: 1em;
@@ -937,6 +947,9 @@
 			// border-top: solid 2px $white;
 			// border-bottom: solid 2px $white;
 			color:$std_black;
+			max-width:25%;
+			display:inline-block;
+			margin-right:2em;
 
 			.month,
 			.range{
