@@ -150,7 +150,13 @@ get_header();
 											<a class="site" href="<?php echo $site; ?>" target="_blank">
 												<?php if (strpos($site, 'facebook')){ ?>
 												<i class="fa fa-fw fa-facebook-official"></i>
-												<?php }elseif(strpos($site, 'pdf')){?>
+												<?php }elseif(strpos($site, 'pdf')){
+													if($site_text !=''){
+													echo $site_text; 
+													}else{
+														echo 'View PDF';
+													}
+													?>
 												<i class="fa fa-fw fa-file-text"></i>
 												<?php }else{ 
 												if ($site_text == ''){
