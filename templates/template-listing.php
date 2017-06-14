@@ -77,6 +77,11 @@ get_header();
 						$site_text = get_field('web_address_link_text');
 						$site = get_field('web_address', $post->ID);
 						$strip_site = preg_replace('#^https?://#', '', $site);
+						if($site != ''){
+							$site_parse = parse_url($site);
+							$domain = preg_replace('/^www\./', '', $site_parse['host']);
+						}
+						//var_dump($site_parse);
 						$phone = get_field('phone_number', $post->ID);
 						$email = get_field('email', $post->ID);
 						global $post;
@@ -128,19 +133,26 @@ get_header();
 								<span class="tags"><?php echo rtrim($tag_name, $separator); ?></span>
 							<h2><?php the_title(); ?></h2>
 							<div class="lc-push">
+								<?php //if ($address != '' && $site != '' && $phone != ''){?>
 								<p class="loc">
 									<?php 
 										
 										if($address != ''){
-											echo $address;
+											echo '<span class="address">'.$address.'</span>';
 											echo '</br>';
 										}
+										// if($address != '' && $city == ''){
+										// 	echo '</br>';	
+										// }
 										if($city != ''){
-											echo $city;
+											echo '<span class="city">'.$city.'</span>';
 											echo ' ';
 										}
 										if($zip != ''){
 											echo $zip;
+											echo '</br>';
+										}
+										elseif($zip == '' && $city != ''){
 											echo '</br>';
 										}
 										if($email != ''){?>
@@ -160,7 +172,7 @@ get_header();
 												<i class="fa fa-fw fa-file-text"></i>
 												<?php }else{ 
 												if ($site_text == ''){
-													echo $strip_site; 
+													echo $domain; 
 												}else{
 													echo $site_text;
 												}
@@ -176,6 +188,7 @@ get_header();
 										}
 										?>
 								</p>
+								<?php //} ?>
 							</div><!-- end lc-push -->
 						</div><!-- end listing.row -->
 					</div>
