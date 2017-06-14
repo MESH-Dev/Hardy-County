@@ -39,7 +39,7 @@ function getInstagram(){
     //Original - recent posts
     $json = file_get_contents('https://api.instagram.com/v1/users/5484662713/media/recent?access_token=5484662713.fe363d8.a42b970204c040918c2ee52f5c7d9462');
     $obj = json_decode($json);
-    var_dump($obj);
+    //var_dump($obj);
     return $obj->data;
 }
 
