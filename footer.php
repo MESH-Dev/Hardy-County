@@ -35,7 +35,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="columns-12">
-						<p class="copyright">Copyright &copy; <?php date('Y') ?> Hardy County CVB.  All rights reserved.</p> 
+						<p class="copyright">Copyright &copy; <?php echo date('Y'); ?> Hardy County CVB.  All rights reserved.</p> 
 						<p class="signature">Site By <a href="http://meshfresh.com" target="_blank">MESH</a></p>
 				</div>
 			</div>

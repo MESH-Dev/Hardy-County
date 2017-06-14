@@ -155,8 +155,11 @@ get_header();
 										elseif($zip == '' && $city != ''){
 											echo '</br>';
 										}
+										if ($phone != ''){
+											echo '<span class="phone">'.$phone.'</span><br>';
+										}
 										if($email != ''){?>
-											Contact: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+											Contact: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a><br>
 										<?php }
 										if($site != ''){?>
 											<a class="site" href="<?php echo $site; ?>" target="_blank">
@@ -180,12 +183,12 @@ get_header();
 												 ?>
 											</a>
 										<?php }
-										if(($site !='' || $email !='') && $phone != ''){
-											echo '| ';
-										}
-										if ($phone != ''){
-											echo '<span class="phone">'.$phone.'</span>';
-										}
+										// if(($site !='' || $email !='') && $phone != ''){
+										// 	echo '| ';
+										// }
+										// if ($phone != ''){
+										// 	echo '<br><span class="phone">'.$phone.'</span>';
+										// }
 										?>
 								</p>
 								<?php //} ?>
