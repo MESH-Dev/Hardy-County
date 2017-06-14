@@ -93,10 +93,11 @@ get_header();
 						}
 						$tag_name = '';
 						$tags = get_the_tags($post->ID);
+						$separator = ', ';
 
 						if($tags != ''){
 							foreach($tags as $tag){
-								$tag_name = $tag->name;
+								$tag_name .= $tag->name.$separator;
 							}
 						}else{
 							$tag_name = "&nbsp;";
@@ -118,13 +119,13 @@ get_header();
 						<?php if($l_cnt == $half_round+1){ ?>
 							</div><div class='columns-6'>
 							<?php } ?>
-						<div class="listing row" id="<?php echo $post_slug; ?>" tabindex="<?php echo $l_cnt; ?>">  <!-- columns-6 -->
+						<div class="listing row" id="<?php echo $post_slug; ?>" tabindex="<?php echo $l_cnt; ?>">  
 							
 							<div class="line-item" >
 								<h2><?php echo $l_cnt; ?>.</h2>
 							</div>
 							<div class="listing-content">
-								<span class="tags"><?php echo $tag_name; ?></span>
+								<span class="tags"><?php echo rtrim($tag_name, $separator); ?></span>
 							<h2><?php the_title(); ?></h2>
 							<div class="lc-push">
 								<p class="loc">
