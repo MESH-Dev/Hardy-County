@@ -106,7 +106,7 @@
           $zip = '';
         }
         var lat = data[i]['coordinates'][0];
-        var _long = data[i]['coordinates'][0];
+        var _long = data[i]['coordinates'][1];
 
         //if (($lat != '' || $lat != 0) || (_long != '' || _long != 0) )//address != '' 
           //Option 1, if we don't want directions, but do have the address (only shows location on map)

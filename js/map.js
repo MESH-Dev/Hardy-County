@@ -81,21 +81,21 @@
           $zip = '';
         }
         var lat = data[i]['coordinates'][0];
-        var _long = data[i]['coordinates'][0];
+        var _long = data[i]['coordinates'][1];
 
-        if (address != '' )
+        //if (address != '' )
           //Option 1, if we don't want directions, but do have the address (only shows location on map)
           // $link = 'https://maps.google.com/?q='+address+city+zip;
           //Option 2, if we do want directions:
           //saddr var is the current location based on where Google "thinks" the user is
           //daddr var is the destination, made up of the link
-          $link = 'https://www.google.com/maps?saddr=My+location&daddr='+$address+' '+$city+' '+$zip;
-        else{
+          //$link = 'https://www.google.com/maps?saddr=My+location&daddr='+$address+' '+$city+' '+$zip;
+       // else{
           //Option 1 - no directions
           //$link = 'https://maps.google.com/maps/?ll='+lat+','+_long;
           //Option 2 - directions
           $link = 'https://www.google.com/maps?saddr=My+location&daddr='+lat+','+_long;
-        }
+       // }
         //console.log(address);
 
         //Let's start using our icons 
