@@ -47,7 +47,7 @@ get_header();
 					$args = array(
 						'post_type' => 'listing',
 						'posts_per_page' => '-1',
-						'orderby'=>'name',
+						'orderby'=>'title',
 						'order'=>'ASC',
 						'tax_query'=>array(
 								array(
