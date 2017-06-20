@@ -131,7 +131,7 @@
         var infoWindowContent = '<div class="map-marker-title '+type_class+'"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title"><a href="#'+slug+'">'+ctr+ '. ' + data[i]['title'] + '</a></span><span class="directions cta"><a class="cta-link" href="'+$link+'" target="_blank">Get Directions &#10165;</a></span></div>';
 
 
-        if(data[i]['coordinates'][0] != 0  || data[i]['coordinates'][1] != 0 ){
+        //if(data[i]['coordinates'][0] != 0  || data[i]['coordinates'][1] != 0 ){
          
           //Create the marker
           marker = new google.maps.Marker({
@@ -155,10 +155,10 @@
               strokeColor:'transparent',
              }
           });
-        }else{ 
-          continue;
-          ctr++;
-        }
+        // }else{ 
+        //   continue;
+        //   ctr++;
+        // }
 
           google.maps.event.addListener(marker, 'click', (function(marker, infoWindowContent, infoWindow) {
                 return function() {
