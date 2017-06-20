@@ -191,8 +191,8 @@ function getCoordinates($address){
           //** This should be good to narrow down issues with a particular listing,
           //   as problem listings will return a 0 value lat lng in our json file
           }else{
-            $lat = $json['status'];
-            $lng = $json['results'];
+            $lat = 0;
+            $lng = 0;
           }
 
           return array($lat, $lng);      

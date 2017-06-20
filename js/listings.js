@@ -155,7 +155,8 @@
         //   });
         // });
 
-
+        if((data[i]['coordinates'][0] == 0 || data[i]['coordinates'][0] != '') || (data[i]['coordinates'][1] == 0 || data[i]['coordinates'][1] != '')){
+         
           //Create the marker
           marker = new google.maps.Marker({
             //This is just the title of the blog post
@@ -178,6 +179,10 @@
               strokeColor:'transparent',
              }
           });
+        }else{ 
+          continue;
+          ctr++;
+        }
 
           google.maps.event.addListener(marker, 'click', (function(marker, infoWindowContent, infoWindow) {
                 return function() {
