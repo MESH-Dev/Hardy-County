@@ -108,21 +108,9 @@
         var lat = data[i]['coordinates'][0];
         var _long = data[i]['coordinates'][1];
 
-        //if (($lat != '' || $lat != 0) || (_long != '' || _long != 0) )//address != '' 
-          //Option 1, if we don't want directions, but do have the address (only shows location on map)
-          // $link = 'https://maps.google.com/?q='+address+city+zip;
-          //Option 2, if we do want directions:
-          //saddr var is the current location based on where Google "thinks" the user is
-          //daddr var is the destination, made up of the link
-          $link = 'https://www.google.com/maps?saddr=My+location&daddr='+lat+','+_long;
-          //$link = 'https://www.google.com/maps?saddr=My+location&daddr='+$address+' '+$city+' '+$zip;
-        //else{
-          //Option 1 - no directions
-          //$link = 'https://maps.google.com/maps/?ll='+lat+','+_long;
-          //Option 2 - directions
-          //$link = 'https://www.google.com/maps?saddr=My+location&daddr='+lat+','+_long;
-          //$link = 'https://www.google.com/maps?saddr=My+location&daddr='+$address+' '+$city+' '+$zip;
-        //}
+        
+        $link = 'https://www.google.com/maps?saddr=My+location&daddr='+lat+','+_long;
+      
 
         // if (address != '' )
         //   //Option 1, if we don't want directions, but do have the address (only shows location on map)
@@ -142,20 +130,8 @@
         //var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title"><a href="#'+slug+'">'+ data[i]['title'] + '</a></span></div>';
         var infoWindowContent = '<div class="map-marker-title '+type_class+'"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title"><a href="#'+slug+'">'+ctr+ '. ' + data[i]['title'] + '</a></span><span class="directions cta"><a class="cta-link" href="'+$link+'" target="_blank">Get Directions &#10165;</a></span></div>';
 
-        //console.log(infoWindowContent);
 
-        // //This is for creating multiple markers, in case we want to cluster
-        // var markers = data.map(function(location, i) {
-        //   return new google.maps.Marker({
-        //     position: new google.maps.LatLng(data[i]['coordinates'][0], data[i]['coordinates'][1]),
-        //     //label: labels[i % labels.length],
-        //     //title: labels[i % labels.length]
-        //     //var infoW = location[3];
-        //     //title: infoW
-        //   });
-        // });
-
-        if((data[i]['coordinates'][0] == 0 || data[i]['coordinates'][0] != '') || (data[i]['coordinates'][1] == 0 || data[i]['coordinates'][1] != '')){
+        if(data[i]['coordinates'][0] == 0  || data[i]['coordinates'][1] == 0){
          
           //Create the marker
           marker = new google.maps.Marker({
@@ -192,55 +168,6 @@
                 }
             })(marker, infoWindowContent, infoWindow));
 
-          // google.maps.event.addListener(marker, 'click', (function(marker, i) {
-          //   return function() {
-
-              // Close all previous info windows
-              // if ($scope.firstRun == true) {
-              //   $scope.firstRun = false;
-              // } else {
-              //   // $scope.infowindow.close();
-              //   $scope.prevMarker.setIcon($scope.prevMarker['visIcon']);
-              // }
-
-              // $scope.panel_active.state=true;
-              // $scope.toggle.state=false;
-
-              // $scope.active_title = marker.title;
-              // $scope.active_description = marker.description;
-              // $scope.active_address = marker.address;
-              // $scope.active_phone = marker.phone;
-
-              // $scope.active_facebook = marker.facebook;
-              // $scope.active_twitter = marker.twitter;
-              // $scope.active_website = marker.website;
-
-              // $scope.active_logo = marker.logo;
-
-              // $scope.$apply();
-
-              // Create the new info window
-              // var cString = '<div id="content"><div id="bodyContent"><p>'+ title+'</p></div></div>';
-              // //
-              // var infowindow = new google.maps.InfoWindow({
-              //   content: cString
-              // });
-              //
-            //   $scope.infowindow.open($scope.map, marker);
-
-              //marker.setIcon(marker['activeIcon']);
-              //$scope.prevMarker = marker;
-          //   }
-          // })(marker, i));
-
-
-          // allTitles.push(marker);
-          // console.log(allTitles.length);
-
-      //   }
-
-      //   $scope.explore.push(marker);
-        //ctr = ctr+1;
         ctr++;
         } // end else
 
