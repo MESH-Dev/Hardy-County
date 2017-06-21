@@ -60,7 +60,7 @@
 ?>
 
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBQElNHiK0Ojt3OI7AiFJMxo7ozF6qYRDU"></script>
- 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js"></script>
 <?php } ?>
 
 <?php if(is_page_template('templates/template-listing.php')){?>

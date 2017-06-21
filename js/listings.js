@@ -41,6 +41,11 @@
 
     var infoWindow = new google.maps.InfoWindow();//, marker, i;
 
+    var oms = new OverlappingMarkerSpiderfier(map, { 
+            markersWontMove: true, 
+            markersWontHide: true,
+            basicFormatEvents: true
+          });
 
     //var infoWindowContent = '<div class="title">' + title; + '</div>';
     
@@ -112,25 +117,6 @@
         
         $link = 'https://www.google.com/maps?saddr=My+location&daddr='+lat+','+_long;
       
-
-        // if (address != '' )
-        //   //Option 1, if we don't want directions, but do have the address (only shows location on map)
-        //   // $link = 'https://maps.google.com/?q='+address+city+zip;
-        //   //Option 2, if we do want directions:
-        //   //saddr var is the current location based on where Google "thinks" the user is
-        //   //daddr var is the destination, made up of the link
-        //   $link = 'https://www.google.com/maps?saddr=My+location&daddr='+$address+' '+$city+' '+$zip;
-        // else{
-        //   //Option 1 - no directions
-        //   //$link = 'https://maps.google.com/maps/?ll='+lat+','+_long;
-        //   //Option 2 - directions
-        //   $link = 'https://www.google.com/maps?saddr=My+location&daddr='+lat+','+_long;
-        // }
-
-
-        if(data[i]['coordinates'][0] !== 0  || data[i]['coordinates'][1] !== 0 ){
-         
-
           //Create the marker
           marker = new google.maps.Marker({
             //This is just the title of the blog post
@@ -154,26 +140,18 @@
              }
           });
 
-          //console.log('NOT EMPTY');
-        //Create the html for the infoWindow
-        //var infoWindowContent = '<div class="map-marker-title"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title"><a href="#'+slug+'">'+ data[i]['title'] + '</a></span></div>';
         var infoWindowContent = '<div class="map-marker-title '+type_class+'"><span class="section">'+data[i]['primary_section'] +'</span><span class="list-title"><a href="#'+slug+'">'+ctr+ '. ' + data[i]['title'] + '</a></span><span class="directions cta"><a class="cta-link" href="'+$link+'" target="_blank">Get Directions &#10165;</a></span></div>';
 
 
-         google.maps.event.addListener(marker, 'click', (function(marker, infoWindowContent, infoWindow) {
+         google.maps.event.addListener(marker, 'spider_click', (function(marker, infoWindowContent, infoWindow) {
                 return function() {
                   
                     infoWindow.setContent(infoWindowContent);
                     infoWindow.open(map, marker);
                 }
+                
             })(marker, infoWindowContent, infoWindow));
-        }else{ 
-          // ctr++;
-          // continue;
-          //break;
-          
-          //console.log('EMPTY');
-        }
+         oms.addMarker(marker);
 
          
 

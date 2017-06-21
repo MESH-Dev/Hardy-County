@@ -22,39 +22,6 @@ jQuery(document).ready(function($){
   //Homepage parallax
 
   var windowW = $(window).width();
-//   var _windowResize;
-//  //Calculate window size 
-// //$(window).resize(
-//     function _resizeW(){
-//       _windowResize = $(window).width();
-//       //console.log(_windowResize);
-//       _bodyResize = $('body').width();
-//       //console.log(_windowResize);
-//   // if (_windowResize > 1070){
-//   //       //console.log(_windowResize);
-//   //       $('.has-parallax').parallax("50%",.5);
-//   //     }  
-// }
-
-// _resizeW(_windowResize);
-// $(window).resize(_resizeW(_windowResize));
-
-// function _parallax(e){
-//   _resizeW(_windowResize);
-//   $(window).resize(_resizeW(_windowResize));
-//   if(_windowResize > 1000){
-//     $('.has-parallax').parallax("50%",.5);
-//   }else{
-//     $('.has-parallax').removeClass('has-parallax');
-//   }
-// }
-
-// _parallax();
-// $(window).resize(_parallax);
-
-//Run funciton on load and resize
-//$(document).ready(_resizeW(_windowResize));
-//$(window).resize(console.log(_bodyResize));
 
 
 
@@ -172,29 +139,6 @@ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && lo
 });
 });
 
-// $(function(){
-//     $(document).scroll(function(){
-//         if($(this).scrollTop() >= $('.listing').offset().top - 50) {
-//             $(".listing").css("background","red");
-//         } else {
-//             $(".listing").css("background","orange");
-//         }
-//     });
-// });
-
-
-// var $menu = $("#monthselectors"),
-//     $window = $(window);
-
-// $menu.on("click","a", function(){
-//     var $this = $(this),
-//         href = $this.attr("href"),
-//         topY = $(href).offset().top;
-//     TweenMax.to($window, 1, {scrollTo:{y:(topY-40), autoKill: true}, ease:Power3.easeInOut});
-  
-//   return false;
-// });
-
  (function($) {
   $.fn.yellowFade = function() {
     return (this.css({backgroundColor: "#ffff66"}).animate(
@@ -216,23 +160,6 @@ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && lo
     }, 1);    });//.addClass('yellowFade');//.delay(50).removeClass('yellowFade');
   }
   
-  /* This function looks for a change in the hash (activation of an in-page link) and sets focus to and 
-  highlights the target element. This is necessary because webkit does not set focus as it should. If 
-  the hash is empty (the user hit the back button after activating an in-page link) focus is set to body.
-  */
-  // $(window).bind('hashchange', function() {
-  //   var hash = "#"+window.location.hash.replace(/^#/,'');
-  //   if (hash!="#") {
-  //     $(hash).attr('tabindex', -1).on('blur focusout', function () {
-  //       $(this).removeAttr('tabindex');//.removeClass('yellowFade');
-  //       }).focus().addClass('yellowFade');
-  //   }
-  //   else {
-  //     $("#headcontainer").attr('tabindex', -1).on('blur focusout', function () {
-  //       $(this).removeAttr('tabindex');
-  //     }).focus();
-  //   }
-  // });
 
 //Desktop version, works on hover
 $('.with-map').hover(function(){
@@ -283,7 +210,6 @@ if (windowW < 768){
   }); //end click
 } //end if
   
-//}
 //Full Map Color Key functionality
 var $ctr=0;
 $('.legend-title').click(function(){
@@ -318,8 +244,6 @@ $('.legend-title').click(function(){
   }
 })
 
-//google map api key: AIzaSyCpTB55GXBBqmS_nEt_XH_HKGf_mSTQUY8
-
 //Sidr
 $('.sidr-trigger').sidr({
       name: 'sidr-main',
@@ -330,51 +254,6 @@ $('.sidr-trigger').sidr({
        onOpen: function(){
 
         $('.sidr-trigger').animate({right:"20000"},50);
-//           $clk = 0;
-        
-//         $('.sidr .open').click(function(){
-//             $clk++;
-            
-//             //Set every .sub-menu back to initial state on click
-//             if($clk == 1){
-//                 $('ul.sub-menu')
-//                   //.slideUp()
-//                   .removeClass('sidr-active');
-//                 //
-//                 $(this).find('i img')
-//                   .css({
-//                   '-moz-transform':'rotate(180deg)',
-//                   '-webkit-transform':'rotate(180deg)',
-//                   '-o-transform':'rotate(180deg)',
-//                   '-ms-transform':'rotate(180deg)',
-//                   'transform':'rotate(180deg)'
-//                 })
-                
-//                 //On click find the nearest ul.sub-menu and open it
-//                 $(this)
-//                   .closest('li')
-//                   .find('ul.sub-menu')
-//                   .addClass('sidr-active')
-//                   .slideDown();
-//                 //On click find the .open button and change the symbol from closed to open
-          
-//             }else{
-//               $clk = 0;
-//               //$('ul.sub-menu').slideUp();
-              
-//               $('ul.sub-menu').slideUp();
-
-//               $(this).find('i img')
-//               .css({
-//                   '-moz-transform':'rotate(0)',
-//                   '-webkit-transform':'rotate(0)',
-//                   '-o-transform':'rotate(0)',
-//                   '-ms-transform':'rotate(0)',
-//                   'transform':'rotate(0)'
-//               });
-//             }//end else
-
-//         }); //end .sidr .open function
       }////end sidr onOpen function
 
  });//end sidr onOpen function
@@ -388,12 +267,5 @@ $('.close').click(
 //IDs would be re-used in sidr, as it is cloning our global nav
 //For the sake of accessibility, we are removing IDs in the sidr menu
 $('.sidr li').removeAttr('id');
-
-// $('.sidr ul.menu > li')
-//   .has('.sub-menu')
-//   .find('a:first')
-//   .after('<div class="open"><i class="arrow-icon"><img src="'+$dir+'/img/sidr-down-arrow.png" alt="Press to show or hide more links"></i></div>');//&#10148;
-//   //.after('<div class="open"><i class="fa fa-fw fa-3x fa-angle-down"></i></div>');
-
 
 });
