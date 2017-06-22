@@ -93,7 +93,14 @@ label > .label-body {
     @include alt_gothic_reg;
     color:$std_black;
     font-size:2em;
-    height:100px;
+    height:150px;
+    transition:all .3s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus{
+      background:$white;
+    }
   }
 
   input{
