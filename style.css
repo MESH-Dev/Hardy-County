@@ -794,6 +794,20 @@ label > .label-body {
   margin-bottom: 6em;
 }
 /* line 87, sass/modules/_forms.scss */
+.submit-event textarea {
+  border: 2px solid #7f8084;
+  background: none;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+  font-size: 2em;
+  height: 100px;
+}
+/* line 99, sass/modules/_forms.scss */
 .submit-event input {
   border: none;
   border-bottom: 2px solid #7f8084;
@@ -808,64 +822,99 @@ label > .label-body {
   font-size: 2em;
   height: 38px;
 }
-/* line 100, sass/modules/_forms.scss */
-.submit-event input:focus {
+/* line 112, sass/modules/_forms.scss */
+.submit-event input:focus, .submit-event input:active, .submit-event input:hover {
   color: #292929;
 }
-/* line 101, sass/modules/_forms.scss */
-.submit-event input:focus ~ .focus-bg {
+/* line 115, sass/modules/_forms.scss */
+.submit-event input:focus ~ .focus-bg, .submit-event input:active ~ .focus-bg, .submit-event input:hover ~ .focus-bg {
   top: 0;
 }
-/* line 105, sass/modules/_forms.scss */
-.submit-event input:focus #submit {
+/* line 119, sass/modules/_forms.scss */
+.submit-event input:focus #submit, .submit-event input:active #submit, .submit-event input:hover #submit {
   color: #292929;
 }
-/* line 108, sass/modules/_forms.scss */
-.submit-event input:focus ~ button {
+/* line 122, sass/modules/_forms.scss */
+.submit-event input:focus ~ button, .submit-event input:active ~ button, .submit-event input:hover ~ button {
   color: #292929;
 }
-/* line 114, sass/modules/_forms.scss */
+/* line 128, sass/modules/_forms.scss */
 .submit-event input::-webkit-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
   font-style: normal;
   color: #292929;
 }
-/* line 119, sass/modules/_forms.scss */
+/* line 133, sass/modules/_forms.scss */
 .submit-event input::-moz-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
   font-style: normal;
   color: #292929;
 }
-/* line 124, sass/modules/_forms.scss */
+/* line 138, sass/modules/_forms.scss */
 .submit-event input:-ms-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
   font-style: normal;
   color: #292929;
 }
-/* line 129, sass/modules/_forms.scss */
+/* line 143, sass/modules/_forms.scss */
 .submit-event input:-moz-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
   font-style: normal;
   color: #292929;
 }
-/* line 134, sass/modules/_forms.scss */
+/* line 148, sass/modules/_forms.scss */
 .submit-event input::webkit-input-placeholder {
   font-family: 'alternate-gothic-no-1-d';
   font-weight: 400;
   font-style: normal;
   color: #292929;
 }
-/* line 139, sass/modules/_forms.scss */
+/* line 153, sass/modules/_forms.scss */
+.submit-event textarea::-webkit-input-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 158, sass/modules/_forms.scss */
+.submit-event textarea::-moz-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 163, sass/modules/_forms.scss */
+.submit-event textarea:-ms-input-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 168, sass/modules/_forms.scss */
+.submit-event textarea:-moz-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 173, sass/modules/_forms.scss */
+.submit-event textarea::webkit-input-placeholder {
+  font-family: 'alternate-gothic-no-1-d';
+  font-weight: 400;
+  font-style: normal;
+  color: #292929;
+}
+/* line 178, sass/modules/_forms.scss */
 .submit-event [class$="_container"] {
   position: relative;
   overflow: hidden;
   margin-bottom: 2em;
 }
-/* line 145, sass/modules/_forms.scss */
+/* line 184, sass/modules/_forms.scss */
 .submit-event .focus-bg {
   display: block;
   width: 100%;
@@ -878,7 +927,7 @@ label > .label-body {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 158, sass/modules/_forms.scss */
+/* line 197, sass/modules/_forms.scss */
 .submit-event .submit {
   border: none;
   background: transparent;
@@ -889,7 +938,7 @@ label > .label-body {
   font-size: 2em;
   margin-top: 1em;
 }
-/* line 168, sass/modules/_forms.scss */
+/* line 207, sass/modules/_forms.scss */
 .submit-event .submit:hover, .submit-event .submit:focus, .submit-event .submit:active {
   color: #7ac3bd;
 }
@@ -2497,7 +2546,7 @@ img {
 .home-grid .trip,
 .landing-grid .trip,
 .grid .trip {
-  background-color: rgba(4, 4, 4, 0.5);
+  background-color: rgba(4, 4, 4, 0.25);
   background-blend-mode: multiply;
   text-align: center;
   min-height: 500px;
