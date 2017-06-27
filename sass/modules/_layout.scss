@@ -898,6 +898,7 @@
 				@include alt_gothic_reg;
 				text-transform:uppercase;
 				color:$std_black;
+				line-height: .8em;
 			}
 
 			.loc{
@@ -1245,6 +1246,7 @@
 		display: inline-block;
 		h2{
 			line-height: 0.8em;
+			margin:0;
 		}
 	}
 }

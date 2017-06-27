@@ -166,7 +166,10 @@ get_header();
 							$event_month_text = $s_date->format('F');
 							$event_month_abbr = strtolower($s_date->format('M'));
 							
-
+							if($site != ''){
+								$site_parse = parse_url($site);
+								$domain = preg_replace('/^www\./', '', $site_parse['host']);
+							}
  							
 							if($first_loop == 0){ ?>
 								<?php $change_month_check = $event_month_text; ?>
@@ -222,15 +225,29 @@ get_header();
 											echo $zip;
 											echo '</br>';
 										}
+										elseif($zip == '' && $city != ''){
+											echo '</br>';
+										}
 										if($site != ''){?>
 											<a href="<?php echo $site; ?>" target="_blank">
-												<?php 
-													if ($site_text == ''){
-														echo $bare_event_str; 
+												<?php if (strpos($site, 'facebook')){ ?>
+												<i class="fa fa-fw fa-facebook-official"></i>
+												<?php }elseif(strpos($site, 'pdf')){
+													if($site_text !=''){
+													echo $site_text; 
 													}else{
-														echo $site_text;
+														echo 'View PDF';
 													}
-											 	?>
+													?>
+												<i class="fa fa-fw fa-file-text"></i>
+												<?php }else{ 
+												if ($site_text == ''){
+													echo $domain; 
+												}else{
+													echo $site_text;
+												}
+												}
+												 ?>
 											</a>
 										<?php }
 										if($site !='' && $phone != ''){
@@ -304,8 +321,30 @@ get_header();
 													echo $zip;
 													echo '</br>';
 												}
+												elseif($zip == '' && $city != ''){
+													echo '</br>';
+												}			
 												if($site != ''){?>
-													<a href="<?php echo $site; ?>" target="_blank"><?php echo $bare_event_str; ?></a>
+													<a href="<?php echo $site; ?>" target="_blank">
+														<?php if (strpos($site, 'facebook')){ ?>
+														<i class="fa fa-fw fa-facebook-official"></i>
+														<?php }elseif(strpos($site, 'pdf')){
+															if($site_text !=''){
+															echo $site_text; 
+															}else{
+																echo 'View PDF';
+															}
+															?>
+														<i class="fa fa-fw fa-file-text"></i>
+														<?php }else{ 
+														if ($site_text == ''){
+															echo $domain; 
+														}else{
+															echo $site_text;
+														}
+														}
+														 ?>
+													</a>
 												<?php }
 												if ($phone != ''){
 													echo '| <span class="phone">'.$phone.'</span>';
