@@ -182,14 +182,14 @@ get_header();
 							if($first_primary_row){
 
 								//Declare sub_fields for this row
-								$primary_row_bg = $first_primary_row['background_image'];
-								$primary_row_url = $primary_row_bg['sizes']['large'];
-								$primary_row_alt = $primary_row_bg['alt'];
-								$hover = $first_primary_row['hover_text'];
+								$primary_row_bg1 = $first_primary_row['background_image'];
+								$primary_row_url1 = $primary_row_bg1['sizes']['large'];
+								$primary_row_alt1 = $primary_row_bg1['alt'];
+								$hover1 = $first_primary_row['hover_text'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
-								$post_link=$first_primary_row['section_title'];
-								$post_1 = $post_link;
+								$post_link1=$first_primary_row['section_title'];
+								$post_1 = $post_link1;
 								setup_postdata( $post_1 );
 						?>
 
@@ -197,14 +197,14 @@ get_header();
 						<a href="<?php echo the_permalink($post_1->ID); ?>">
 							<figure class="hg grid-item grid-item-width4 primary no-padding" >
 								<!-- columns-4 -->
-								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>');">
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url1; ?>');">
 									<span class="sr-only">
-										<?php echo $primary_row_alt; ?>
+										<?php echo $primary_row_alt1; ?>
 									</span>
 								</div>
 								<figcaption>
 									<h1><?php echo $post_1->post_title; ?></h1>
-									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+									<p><?php echo $hover1; ?><br><span>&#10165;</span></p>
 									
 								</figcaption>
 							</figure>
@@ -357,27 +357,27 @@ get_header();
 						if($second_primary_row){
 
 							//Declare sub_fields for this row
-							$primary_row_bg = $second_primary_row['background_image'];
-							$primary_row_url = $primary_row_bg['sizes']['large'];
-							$primary_row_alt = $primary_row_bg['alt'];
-							$hover = $second_primary_row['hover_text'];
+							$primary_row_bg2 = $second_primary_row['background_image'];
+							$primary_row_url2 = $primary_row_bg2['sizes']['large'];
+							$primary_row_alt2 = $primary_row_bg2['alt'];
+							$hover2 = $second_primary_row['hover_text'];
 
 							//__This section sets up the post_object for the 'section_title' subfield
-							$post_link=$second_primary_row['section_title'];
-							$post_2 = $post_link;
+							$post_link2=$second_primary_row['section_title'];
+							$post_2 = $post_link2;
 							setup_postdata( $post_2 );
 
 						?>
 						<a href="<?php echo the_permalink($post_2->ID); ?>">
 							<figure class="hg grid-item grid-item-width3 primary no-padding">
-								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url2; ?>')">
 									<span class="sr-only">
-										<?php echo $primary_row_alt; ?>
+										<?php echo $primary_row_alt2; ?>
 									</span>
 								</div>
 								<figcaption>
 									<h1><?php echo $post_2->post_title; ?></h1>
-									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+									<p><?php echo $hover2; ?><br><span>&#10165;</span></p>
 								</figcaption>
 							</figure>						
 						</a>
@@ -392,26 +392,26 @@ get_header();
 						if($third_primary_row){
 
 							//Declare sub_fields for this row
-							$primary_row_bg = $third_primary_row['background_image'];
-							$primary_row_url = $primary_row_bg['sizes']['large'];
-							$primary_row_alt = $primary_row_bg['alt'];
-							$hover = $third_primary_row['hover_text'];
+							$primary_row_bg3 = $third_primary_row['background_image'];
+							$primary_row_url3 = $primary_row_bg3['sizes']['large'];
+							$primary_row_alt3 = $primary_row_bg3['alt'];
+							$hover3 = $third_primary_row['hover_text'];
 
 							//__This section sets up the post_object for the 'section_title' subfield
-							$post_link=$third_primary_row['section_title'];
-							$post_3 = $post_link;
+							$post_link3=$third_primary_row['section_title'];
+							$post_3 = $post_link3;
 							setup_postdata( $post_3 );
 
 						?>
-						<a href="<?php echo the_permalink($post_1->ID); ?>">
+						<a href="<?php echo the_permalink($post_3->ID); ?>">
 							<figure class="hg grid-item grid-item-width6 primary no-padding">
-								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url3; ?>')">
 									<span class="sr-only">
-										<?php echo $primary_row_alt; ?>
+										<?php echo $primary_row_alt3; ?>
 									</span>
 								</div>
 								<h1><?php echo $post_3->post_title; ?></h1>
-								<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+								<p><?php echo $hover3; ?><br><span>&#10165;</span></p>
 								<div class="width6-diamond"></div>
 							</figure>
 						</a>
@@ -494,25 +494,25 @@ get_header();
 						if($fourth_primary_row){
 
 							//Declare sub_fields for this row
-							$primary_row_bg = $fourth_primary_row['background_image'];
-							$primary_row_url = $primary_row_bg['sizes']['large'];
-							$primary_row_alt = $primary_row_bg['alt'];
-							$hover = $fourth_primary_row['hover_text'];
+							$primary_row_bg4 = $fourth_primary_row['background_image'];
+							$primary_row_url4 = $primary_row_bg4['sizes']['large'];
+							$primary_row_alt4 = $primary_row_bg4['alt'];
+							$hover4 = $fourth_primary_row['hover_text'];
 
 							//__This section sets up the post_object for the 'section_title' subfield
-							$post_link=$fourth_primary_row['section_title'];
-							$post_4 = $post_link;
+							$post_link4=$fourth_primary_row['section_title'];
+							$post_4 = $post_link4;
 							setup_postdata( $post_4 );
 
 						?>
-						<a href="<?php echo the_permalink($post_1->ID); ?>">
+						<a href="<?php echo the_permalink($post_4->ID); ?>">
 							<figure class="hg grid-item grid-item-width4 primary no-padding">
-								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
-									<span class="sr-only"><?php echo $primary_row_alt; ?></span>
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url4; ?>')">
+									<span class="sr-only"><?php echo $primary_row_alt4; ?></span>
 								</div>
 								<figcaption>
 									<h1><?php echo $post_4->post_title; ?></h1>
-									<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+									<p><?php echo $hover4; ?><br><span>&#10165;</span></p>
 								</figcaption>
 							</figure>
 						</a>
@@ -568,9 +568,9 @@ get_header();
 								//   visually.
 
 								//Declare sub_fields for this row
-								$secondary_row_bg = $fifth_secondary_row['background_image'];
-								$secondary_row_bg_url = $secondary_row_bg['sizes']['large'];
-								$secondary_row_bg_alt = $secondary_row_bg['alt'];
+								$secondary_row_bg5 = $fifth_secondary_row['background_image'];
+								$secondary_row_bg_url5 = $secondary_row_bg5['sizes']['large'];
+								$secondary_row_bg_alt5 = $secondary_row_bg5['alt'];
 
 								//__This section sets up the post_object for the 'section_title' subfield
 								$s5_post_link = $fifth_secondary_row['section_title'];
@@ -585,11 +585,11 @@ get_header();
 
 							?>
 						
-						<a href="<?php echo the_permalink($s_post_1->ID); ?>">
+						<a href="<?php echo the_permalink($s_post_5->ID); ?>">
 							<figure class="hg grid-item grid-item-width3 secondary no-padding">
-								<div class="portrait" style="background-image:url('<?php echo $secondary_row_bg_url; ?>')">
+								<div class="portrait" style="background-image:url('<?php echo $secondary_row_bg_url5; ?>')">
 									<span class="sr-only">
-										<?php echo $secondary_row_bg_alt; ?>
+										<?php echo $secondary_row_bg_alt5; ?>
 									</span>
 								</div>
 								<?php if ($s_post_5 != ''){ ?>
@@ -614,25 +614,25 @@ get_header();
 						if($fifth_primary_row){
 
 							//Declare sub_fields for this row
-							$primary_row_bg = $fifth_primary_row['background_image'];
-							$primary_row_url = $primary_row_bg['sizes']['large'];
-							$primary_row_alt = $primary_row_bg['alt'];
-							$hover = $fifth_primary_row['hover_text'];
+							$primary_row_bg5 = $fifth_primary_row['background_image'];
+							$primary_row_url5 = $primary_row_bg5['sizes']['large'];
+							$primary_row_alt5 = $primary_row_bg5['alt'];
+							$hover5 = $fifth_primary_row['hover_text'];
 
 							//__This section sets up the post_object for the 'section_title' subfield
-							$post_link=$fifth_primary_row['section_title'];
-							$post_5 = $post_link;
+							$post_link5=$fifth_primary_row['section_title'];
+							$post_5 = $post_link5;
 							setup_postdata( $post_5 );
 						?>
-						<a href="<?php echo the_permalink($post_1->ID); ?>">
+						<a href="<?php echo the_permalink($post_5->ID); ?>">
 							<figure class="hg grid-item grid-item-width6 primary no-padding">
-								<div class="portrait" style="background-image:url('<?php echo $primary_row_url; ?>')">
+								<div class="portrait" style="background-image:url('<?php echo $primary_row_url5; ?>')">
 									<span class="sr-only">
-										<?php echo $primary_row_alt;; ?>
+										<?php echo $primary_row_alt5; ?>
 									</span>
 								</div>
 								<h1><?php echo $post_5->post_title; ?></h1>
-								<p><?php echo $hover; ?><br><span>&#10165;</span></p>
+								<p><?php echo $hover5; ?><br><span>&#10165;</span></p>
 								<div class="width6-diamond"></div>
 							</figure>
 						</a>
