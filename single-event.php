@@ -47,14 +47,25 @@
 									echo '</br>';
 								}
 								if($site != ''){?>
-									<a href="<?php echo $site; ?>" target="_blank">
-										<?php 
-											if ($site_text == ''){
-												echo $bare_event_str; 
+									<a class="site" href="<?php echo $site; ?>" target="_blank">
+										<?php if (strpos($site, 'facebook')){ ?>
+										<i class="fa fa-fw fa-facebook-official"></i>
+										<?php }elseif(strpos($site, 'pdf')){
+											if($site_text !=''){
+											echo $site_text; 
 											}else{
-												echo $site_text;
+												echo 'View PDF';
 											}
-									 	?>
+											?>
+										<i class="fa fa-fw fa-file-text"></i>
+										<?php }else{ 
+										if ($site_text == ''){
+											echo $domain; 
+										}else{
+											echo $site_text;
+										}
+										}
+										 ?>
 									</a>
 								<?php }
 								if($site !='' && $phone != ''){
@@ -65,8 +76,10 @@
 								}
 							?>
 						</p>
+						<?php if (get_the_content() != ''){ ?>
 						<h3 class="event-description-title">Description</h3>
 						<?php the_content(); ?>
+						<?php } ?>
 					<?php endwhile; ?>
 
 				
